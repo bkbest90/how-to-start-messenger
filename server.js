@@ -33,6 +33,7 @@ app.post('/webhook/', function (req, res) {
     }
     if (text === 'ควย'){
     sendTextMessage(sender, 'ควยเอี้ยงไง')
+    res.sendStatus(200)
     }
     else if (event.postback) {
       let text = JSON.stringify(event.postback)
