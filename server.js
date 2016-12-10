@@ -32,7 +32,7 @@ app.post('/webhook/', function (req, res) {
       sendTextMessage(sender, text.substring(0, 200))
     }
     if (text === 'ควย'){
-    sendTextMessage(sender, 'ควยเอีี้ยงไง')
+    sendTextMessage(sender, 'ควยเอี้ยงไง')
     }
     else if (event.postback) {
       let text = JSON.stringify(event.postback)
