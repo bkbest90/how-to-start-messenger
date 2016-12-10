@@ -24,16 +24,17 @@ app.post('/webhook/', function (req, res) {
     let sender = event.sender.id
     if (event.message && event.message.text) {
       let text = event.message.text
-      if (text === 'ควย'){
-      sendTextMessage(sender, 'ควยเอีี้ยงไง')
-      }
+
       if (text === 'Generic') {
         sendGenericMessage(sender)
         continue
       }
       sendTextMessage(sender, text.substring(0, 200))
     }
-    if (event.postback) {
+    if (text === 'ควย'){
+    sendTextMessage(sender, 'ควยเอีี้ยงไง')
+    }
+    else if (event.postback) {
       let text = JSON.stringify(event.postback)
       sendTextMessage(sender, 'Postback received: ' + text.substring(0, 200), token)
       continue
