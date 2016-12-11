@@ -33,9 +33,8 @@ app.post('/webhook/', function (req, res) {
               try {
                 var condition = body.main;
                 var realname = body.name;
-                var locationid = body.id;
-                var weathe = body.weather.locationid;
-                sendTextMessage(sender, "Today is " + condition.temp + " Celsius in " + realname + " Weather is " + weathe.main);
+                var weather = body.weather.main;
+                sendTextMessage(sender, "Today is " + condition.temp + " Celsius in " + realname + " Weather is " + weather);
               } catch(err) {
                 console.error('error caught', err);
                 sendTextMessage(sender, "There was an error. Please enter location. Ex. Huahin");
@@ -43,8 +42,11 @@ app.post('/webhook/', function (req, res) {
       })
 
 
-      
-
+      if (text === 'Generic') {
+        sendGenericMessage(sender)
+        continue
+      }
+      sendTextMessage(sender, text.substring(0, 200))
     }
     if (event.postback) {
       let text = JSON.stringify(event.postback)
