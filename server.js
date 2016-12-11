@@ -35,10 +35,10 @@ app.post('/webhook/', function (req, res) {
                 var cloud = body.clouds.all;
                 var realname = body.name;
                 var weathe = body.weather;
-                sendTextMessage(sender, "Today is " + condition.temp + " Celsius in " + realname + " Min temperature " + condition.temp_min +" Max temperature " + condition.temp_max +" Cloud "+ cloud + " % ");
+                sendTextMessage(sender, realname + "อุณหภูมิวันนี้คือ " + condition.temp + " องศาเซลเซียส " + " อุณหภูมิต่ำสุดคือ " + condition.temp_min +" อุณหภูมิสูงสุดคือ " + condition.temp_max +" เมฆ "+ cloud + " % ");
               } catch(err) {
                 console.error('error caught', err);
-                sendTextMessage(sender, "There was an error. Please enter location. Ex. Huahin");
+                sendTextMessage(sender, "เราหาเมืองนี้ไม่เจอ. กรุณาใส่ชื่อเมืองใหม่อีกครั้ง. Ex. Huahin");
               }
       })
 
