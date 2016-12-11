@@ -32,9 +32,8 @@ app.post('/webhook/', function (req, res) {
             }, function(error, response, body) {
               try {
                 var condition = body.main;
-                var realname = body.name;
                 var weathe = body.weather;
-                sendTextMessage(sender, "Today is " + condition.temp + " Celsius in " + location + " Weather is " + weathe.main);
+                sendTextMessage(sender, "Today is " + condition.temp + " Celsius in " + location + " Weather is " + weathe.main + " Min temperature " + condition.temp_min );
               } catch(err) {
                 console.error('error caught', err);
                 sendTextMessage(sender, "There was an error. Please enter location. Ex. Huahin");
