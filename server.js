@@ -34,7 +34,7 @@ app.post('/webhook/', function (req, res) {
                 var condition = body.main;
                 var realname = body.name;
                 var locationid = body.id;
-                var weathe = body.weather;
+                var weathe = body.weather.locationid;
                 sendTextMessage(sender, "Today is " + condition.temp + " Celsius in " + realname + " Weather is " + weathe.main);
               } catch(err) {
                 console.error('error caught', err);
