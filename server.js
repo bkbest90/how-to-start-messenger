@@ -35,7 +35,7 @@ app.post('/webhook/', function (req, res) {
                 var cloud = body.clouds.all;
                 var realname = body.name;
                 var weathe = body.weather;
-                sendTextMessage(sender, realname + "   อุณหภูมิวันนี้คือ " + condition.temp + " องศาเซลเซียส " + " อุณหภูมิต่ำสุดคือ " + condition.temp_min +" อุณหภูมิสูงสุดคือ " + condition.temp_max +" เมฆ "+ cloud + " % "+" ค่าความชื้น "+ condition.humidity);
+                sendTextMessage(sender, realname + "   อุณหภูมิวันนี้คือ " + condition.temp + " องศาเซลเซียส " + " \nอุณหภูมิต่ำสุดคือ " + condition.temp_min +" \nอุณหภูมิสูงสุดคือ " + condition.temp_max +" \nเมฆ "+ cloud + " % "+" \nค่าความชื้น "+ condition.humidity);
               } catch(err) {
                 console.error('error caught', err);
                 sendTextMessage(sender, "เราหาเมืองนี้ไม่เจอ. กรุณาใส่ชื่อเมืองใหม่อีกครั้ง. Ex. Huahin");
