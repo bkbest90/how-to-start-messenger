@@ -33,6 +33,7 @@ app.post('/webhook/', function (req, res) {
               try {
                 var condition = body.main;
                 var realname = body.name;
+                var locationid = body.id;
                 var weathe = body.weather;
                 sendTextMessage(sender, "Today is " + condition.temp + " Celsius in " + realname + " Weather is " + weathe.main);
               } catch(err) {
