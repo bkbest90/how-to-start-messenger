@@ -4,7 +4,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
-const token = 'EAAQpZAwzHccYBAAp15jpgZC5yGZAI8uXnN7bBLoZCsr6dWRqMlaZBCnsez538ZAyRcru8RNcgCyZBJtp1JkP7r5qqOp7s7fpaUbCcTWg3ZBh34t3ZC9613hgZCwgHUhh5a8pHJiseNRairnSjGdnUZC1o6Lyc4o8e0tk9RPAfkbmmZCl1QZDZD'
+const token = 'EAAYzVx44hnYBAEiaPrinabDZBWmwC1rkal50SOWUpTiIt8ZChgu6BhNLQF3R8W2Qj24bNpCLEh3RbB4OBorD29649XGKQtXbgZCxkBdNpU2uvCFAZAXB2FyyMqW6ucKM3ueg0QttOnsWP5tbfGl2iYvfJrZAUNpd2mr1SPPicLQZDZD'
 app.set('port', (process.env.PORT || 5000))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
