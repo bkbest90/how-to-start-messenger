@@ -51,7 +51,7 @@ app.post('/webhook/', function (req, res) {
     }
     if (event.postback) {
       let text = JSON.stringify(event.postback)
-      sendTextMessage(sender, 'สวัสดี                  ต้องการจะรู้อุณหภูมิเมืองไหน พิมพ์ชื่อเมืองแล้วส่งมาได้เลย ^^')
+      sendTextMessage(sender, 'สวัสดี ต้องการจะรู้อุณหภูมิเมืองไหน พิมพ์ชื่อเมืองแล้วส่งมาได้เลย ^^')
       continue
     }
   }
