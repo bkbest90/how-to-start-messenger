@@ -77,7 +77,7 @@ if (text === 'table'){
 
   function callback(options,error, response, body) {
 
-      sendTextMessage(sender, "เราหาเมืองนี้ไม่เจอ. กรุณาใส่ชื่อเมืองใหม่อีกครั้ง. Ex. Huahin");
+      sendTextMessage(sender, "เข้าcallbackแล้ว");
     if (!error && response.statusCode == 200) {
       var info = JSON.parse(body);
       console.log(info.stargazers_count + " Stars");
