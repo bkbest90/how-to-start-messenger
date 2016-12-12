@@ -24,34 +24,19 @@ app.post('/webhook/', function (req, res) {
     let sender = event.sender.id
     if (event.message && event.message.text) {
       let text = event.message.text
-      var location = event.message.text
-            var weatherEndpoint = 'http://api.openweathermap.org/data/2.5/weather?q=' +location+ '&units=metric&appid=ea5272e74853f242bc0efa9fef3dd9f3'
-            request({
-              url: weatherEndpoint,
-              json: true
-            }, function(error, response, body) {
-              try {
-                var condition = body.main;
-                var cloud = body.clouds.all;
-                var realname = body.name;
-                var weathe = body.weather;
-                sendTextMessage(sender, realname + "   อุณหภูมิวันนี้คือ " + condition.temp + " องศาเซลเซียส " + " \nอุณหภูมิต่ำสุดคือ " + condition.temp_min +" \nอุณหภูมิสูงสุดคือ " + condition.temp_max +" \nเมฆ "+ cloud + " % "+" \nค่าความชื้น "+ condition.humidity);
-              } catch(err) {
-                console.error('error caught', err);
-                sendTextMessage(sender, "เราหาเมืองนี้ไม่เจอ. กรุณาใส่ชื่อเมืองใหม่อีกครั้ง. Ex. Huahin");
-              }
-      })
-
-
       if (text === 'Generic') {
         sendGenericMessage(sender)
         continue
       }
-      
-    }
+      // sendTextMessage(sender, 'Text received, echo: ' + text.substring(0, 200))
+        axios.get('https://api.crowdscores.com/v1/' + text + '?api_key=913c96f103e1455680ea7fa572422835').then(function (res) {
+
+          sendTextMessage(sender,res.data.name)
+        })
+      }
     if (event.postback) {
       let text = JSON.stringify(event.postback)
-      sendTextMessage(sender, 'สวัสดี\n ต้องการจะรู้อุณหภูมิเมืองไหน พิมพ์ชื่อเมืองแล้วส่งมาได้เลย ^^')
+      sendTextMessage(sender, 'สวัสดี\n')
       continue
     }
   }
