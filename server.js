@@ -75,11 +75,9 @@ if (text === 'table'){
     }
   };
 
-  request(options, callback);
-
   function callback(options,error, response, body) {
 
-      sendTextMessage(sender, " เข้าcallbackแล้ว " );
+      sendTextMessage(sender, "เข้าcallbackแล้ว");
     if (!error && response.statusCode == 200) {
       var info = JSON.parse(body);
       console.log(info.stargazers_count + " Stars");
@@ -87,8 +85,7 @@ if (text === 'table'){
     }
   }
 
-
-
+  request(options, callback);
 }
 
 
