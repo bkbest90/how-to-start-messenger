@@ -23,27 +23,24 @@ app.post('/webhook/', function (req, res) {
     let event = req.body.entry[0].messaging[i]
     let sender = event.sender.id
     if (event.message && event.message.text) {
-      var text = event.message.text
-
-
-      if (text === 'Man U') {    
-        var futbol = 'https://api.crowdscores.com/v1/teams/2?api_key=913c96f103e1455680ea7fa572422835'
-        request({
-          url: futbol,
-          json: true
-        }, function(error, response, body) {
-          try {
-            var teamName = body.name;
-
-            sendTextMessage(sender, "   ทีม " + teamName );
-          } catch(err) {
-            console.error('error caught', err);
-            sendTextMessage(sender, "เราหาเมืองนี้ไม่เจอ. กรุณาใส่ชื่อเมืองใหม่อีกครั้ง. Ex. Huahin");
-          }
-  })
-      }
-
-
+      let text = event.message.text
+      var location = event.message.text
+            var weatherEndpoint = 'http://api.openweathermap.org/data/2.5/weather?q=' +location+ '&units=metric&appid=ea5272e74853f242bc0efa9fef3dd9f3'
+            request({
+              url: weatherEndpoint,
+              json: true
+            }, function(error, response, body) {
+              try {
+                var condition = body.main;
+                var cloud = body.clouds.all;
+                var realname = body.name;
+                var weathe = body.weather;
+                sendTextMessage(sender, realname + "   อุณหภูมิวันนี้คือ " + condition.temp + " องศาเซลเซียส " + " \nอุณหภูมิต่ำสุดคือ " + condition.temp_min +" \nอุณหภูมิสูงสุดคือ " + condition.temp_max +" \nเมฆ "+ cloud + " % "+" \nค่าความชื้น "+ condition.humidity);
+              } catch(err) {
+                console.error('error caught', err);
+                sendTextMessage(sender, "เราหาเมืองนี้ไม่เจอ. กรุณาใส่ชื่อเมืองใหม่อีกครั้ง. Ex. Huahin");
+              }
+      })
 
 
       if (text === 'Generic') {
