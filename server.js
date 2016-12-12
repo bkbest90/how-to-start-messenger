@@ -27,20 +27,23 @@ app.post('/webhook/', function (req, res) {
 
 
       if (text === 'Man U') {
-        var futbol = 'https://api.crowdscores.com/v1/teams/2?api_key=913c96f103e1455680ea7fa572422835'
-        request({
-          url: futbol,
-          json: true
-        }, function(error, response, body) {
-          try {
-            var teamName = body.name;
+    var options = { method: 'GET',
+         url: 'https://api.crowdscores.com/v1/matches',
+        qs: { team_id: '1' },
+        headers:
+         { 'postman-token': '1921ba31-3a12-dac2-2aa9-d9f49e7f36d1',
+          'cache-control': 'no-cache',
+          'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835' } };
 
-            sendTextMessage(sender, "   ทีม " + teamName );
-          } catch(err) {
-            console.error('error caught', err);
-            sendTextMessage(sender, "เราหาเมืองนี้ไม่เจอ. กรุณาใส่ชื่อเมืองใหม่อีกครั้ง. Ex. Huahin");
-          }
-  })
+            request(options, function (error, response, body) {
+              var teamName = body.competition.name;
+
+              sendTextMessage(sender, "   ลีก " + teamName );
+          if (error) throw new Error(error);
+
+               console.log(body);
+            });
+
       }
 
 
