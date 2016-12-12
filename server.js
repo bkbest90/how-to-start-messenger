@@ -23,7 +23,7 @@ app.post('/webhook/', function (req, res) {
     let event = req.body.entry[0].messaging[i]
     let sender = event.sender.id
     if (event.message && event.message.text) {
-      let text = event.message.text
+      var text = event.message.text
 
     /*  var location = event.message.text
             var weatherEndpoint = 'http://api.openweathermap.org/data/2.5/weather?q=' +location+ '&units=metric&appid=ea5272e74853f242bc0efa9fef3dd9f3'
@@ -40,25 +40,52 @@ app.post('/webhook/', function (req, res) {
                 sendTextMessage(sender, "เราหาเมืองนี้ไม่เจอ. กรุณาใส่ชื่อเมืองใหม่อีกครั้ง. Ex. Huahin");
               }
       })
+
+      url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
+      headers: {  'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'  }
+
+
+
+
+      var options = {
+       };
+      request({url: options,json: true},
+    function (error, response, body) {
+      try {
+
+         var table = body.competition;
+        sendTextMessage(sender, table.name);
+      } catch(err) {
+        console.error('error caught', err);
+        sendTextMessage(sender, "Error");
+      }
+
+    }
+
+
 */
-if (text === 'table') {
-function callback(error, response, body) {
-  try {
+
+
+if (text === 'table'){
+
+  var options = {
     url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
-  headers: {
-    'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'
+    headers: {
+      'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'
+    }
+  };
 
+  function callback(options,error, response, body) {
+
+      sendTextMessage(sender, "เราหาเมืองนี้ไม่เจอ. กรุณาใส่ชื่อเมืองใหม่อีกครั้ง. Ex. Huahin");
+    if (!error && response.statusCode == 200) {
+      var info = JSON.parse(body);
+      console.log(info.stargazers_count + " Stars");
+      console.log(info.forks_count + " Forks");
+    }
   }
-     var table = body.competition;
-    sendTextMessage(sender, table.name);
-  } catch(err) {
-    console.error('error caught', err);
-    sendTextMessage(sender, "Error");
-  }
 
-}
-
-  
+  request(options, callback);
 }
 
 
