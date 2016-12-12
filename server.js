@@ -35,8 +35,8 @@ app.post('/webhook/', function (req, res) {
           'cache-control': 'no-cache',
           'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835' } };
 
-            request(options, function (error, response, body) {
-              
+            request(teamName, function (error, response, body) {
+
 
               sendTextMessage(sender, "   ลีก " + teamName.body.competition.name );
           if (error) throw new Error(error);
