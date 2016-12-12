@@ -77,7 +77,7 @@ if (text === 'table'){
 
   function callback(options,error, response, body) {
 
-      sendTextMessage(sender, "เข้าcallbackแล้ว"+options.competition.name);
+      sendTextMessage(sender, "เข้าcallbackแล้ว"+body.competition.name);
     if (!error && response.statusCode == 200) {
       var info = JSON.parse(body);
       console.log(info.stargazers_count + " Stars");
