@@ -54,7 +54,7 @@ var options = {
 function callback(error, response, body) {
   try {
      var table = body.competition;
-    sendTextMessage(sender, table.name);
+    sendTextMessage(sender, competition.name);
   } catch(err) {
     console.error('error caught', err);
     sendTextMessage(sender, "Error");
