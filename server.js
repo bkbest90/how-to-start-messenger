@@ -27,7 +27,7 @@ app.post('/webhook/', function (req, res) {
 
 
       if (text === 'Man U') {
-    var options = { method: 'GET',
+    var teamName = { method: 'GET',
          url: 'https://api.crowdscores.com/v1/matches',
         qs: { team_id: '1' },
         headers:
@@ -36,9 +36,9 @@ app.post('/webhook/', function (req, res) {
           'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835' } };
 
             request(options, function (error, response, body) {
-              var teamName = body.competition.name;
+              
 
-              sendTextMessage(sender, "   ลีก " + teamName );
+              sendTextMessage(sender, "   ลีก " + teamName.body.competition.name );
           if (error) throw new Error(error);
 
                console.log(body);
