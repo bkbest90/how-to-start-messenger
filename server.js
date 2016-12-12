@@ -30,7 +30,7 @@ app.post('/webhook/', function (req, res) {
       }
       // sendTextMessage(sender, 'Text received, echo: ' + text.substring(0, 200))
         axios.get('https://api.crowdscores.com/v1/teams/' + text + '?api_key=913c96f103e1455680ea7fa572422835').then(function (res) {
-
+               console.log(res)
           sendTextMessage(sender,res.name)
         })
       }
