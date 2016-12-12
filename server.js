@@ -24,12 +24,11 @@ app.post('/webhook/', function (req, res) {
     let sender = event.sender.id
     if (event.message && event.message.text) {
       let text = event.message.text
-      var location = event.message.text
+
+    /*  var location = event.message.text
             var weatherEndpoint = 'http://api.openweathermap.org/data/2.5/weather?q=' +location+ '&units=metric&appid=ea5272e74853f242bc0efa9fef3dd9f3'
-            request({
-              url: weatherEndpoint,
-              json: true
-            }, function(error, response, body) {
+            request({url: weatherEndpoint,json: true},
+            function(error, response, body) {
               try {
                 var condition = body.main;
                 var cloud = body.clouds.all;
@@ -41,7 +40,34 @@ app.post('/webhook/', function (req, res) {
                 sendTextMessage(sender, "เราหาเมืองนี้ไม่เจอ. กรุณาใส่ชื่อเมืองใหม่อีกครั้ง. Ex. Huahin");
               }
       })
+*/
 
+var request = require('request');
+
+var options = {
+  url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
+  headers: {
+    'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'
+
+  }
+};
+
+function callback(error, response, body) {
+  try {
+  
+    sendTextMessage(sender, body.competition.name);
+  } catch(err) {
+    console.error('error caught', err);
+    sendTextMessage(sender, "เราหาเมืองนี้ไม่เจอ. กรุณาใส่ชื่อเมืองใหม่อีกครั้ง. Ex. Huahin");
+  }
+  if (!error && response.statusCode == 200) {
+    var info = JSON.parse(body);
+    console.log(info.stargazers_count + " Stars");
+    console.log(info.forks_count + " Forks");
+  }
+}
+
+request(options, callback);
 
       if (text === 'Generic') {
         sendGenericMessage(sender)
