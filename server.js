@@ -74,12 +74,17 @@ if (text === 'table'){
       'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'
     }
   };
-  callback(options)
 
+  request(options, callback);
 
-  //request(options, callback);
+  function callback(options,error, response, body) {
 
-
+      sendTextMessage(sender, "เข้าcallbackแล้ว" );
+    if (!error && response.statusCode == 200) {
+      var info = JSON.parse(body);
+      console.log(info.stargazers_count + " Stars");
+      console.log(info.forks_count + " Forks");
+    }
   }
 
 
@@ -120,12 +125,6 @@ function sendTextMessage (sender, text) {
     }
   })
 }
-
-function callback(options) {
-
-    sendTextMessage(sender, "เข้าcallbackแล้ว" + options);
-
-  }
 
 function sendGenericMessage (sender) {
   let messageData = {
