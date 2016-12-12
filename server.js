@@ -27,8 +27,6 @@ app.post('/webhook/', function (req, res) {
 
 
       if (text === 'Man U') {
-        sendGenericMessage(sender)
-        continue
         var futbol = 'https://api.crowdscores.com/v1/teams/2?api_key=913c96f103e1455680ea7fa572422835'
         request({
           url: futbol,
