@@ -54,8 +54,8 @@ var options = {
 
 function callback(error, response, body) {
   try {
-
-    sendTextMessage(sender, body.competition.name);
+     var table = body.competition;
+    sendTextMessage(sender, table.name);
   } catch(err) {
     console.error('error caught', err);
     sendTextMessage(sender, "เราหาเมืองนี้ไม่เจอ. กรุณาใส่ชื่อเมืองใหม่อีกครั้ง. Ex. Huahin");
