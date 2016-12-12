@@ -23,17 +23,16 @@ app.post('/webhook/', function (req, res) {
     let event = req.body.entry[0].messaging[i]
     let sender = event.sender.id
     if (event.message && event.message.text) {
-      let text = event.message.text
-      var location = event.message.text
-            var futbol = 'https://api.crowdscores.com/v1/teams/' +location+ '?api_key=913c96f103e1455680ea7fa572422835'
+      var text = event.message.text
+            var futbol = 'https://api.crowdscores.com/v1/teams/2?api_key=913c96f103e1455680ea7fa572422835'
             request({
               url: futbol,
               json: true
             }, function(error, response, body) {
               try {
-                var condition = body.name;
+                var teamName = body.name;
 
-                sendTextMessage(sender, "   อุณหภูมิวันนี้คือ " + condition );
+                sendTextMessage(sender, "   ทีม " + teamName );
               } catch(err) {
                 console.error('error caught', err);
                 sendTextMessage(sender, "เราหาเมืองนี้ไม่เจอ. กรุณาใส่ชื่อเมืองใหม่อีกครั้ง. Ex. Huahin");
