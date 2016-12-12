@@ -3,7 +3,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
-const axios = require('axios')
 const app = express()
 const token = 'EAAYzVx44hnYBAEiaPrinabDZBWmwC1rkal50SOWUpTiIt8ZChgu6BhNLQF3R8W2Qj24bNpCLEh3RbB4OBorD29649XGKQtXbgZCxkBdNpU2uvCFAZAXB2FyyMqW6ucKM3ueg0QttOnsWP5tbfGl2iYvfJrZAUNpd2mr1SPPicLQZDZD'
 app.set('port', (process.env.PORT || 5000))
@@ -25,19 +24,32 @@ app.post('/webhook/', function (req, res) {
     let sender = event.sender.id
     if (event.message && event.message.text) {
       let text = event.message.text
+      var location = event.message.text
+            var futbol = 'https://api.crowdscores.com/v1/teams/' +location+ '?api_key=913c96f103e1455680ea7fa572422835'
+            request({
+              url: futbol,
+              json: true
+            }, function(error, response, body) {
+              try {
+                var condition = body.name;
+
+                sendTextMessage(sender, "   อุณหภูมิวันนี้คือ " + condition );
+              } catch(err) {
+                console.error('error caught', err);
+                sendTextMessage(sender, "เราหาเมืองนี้ไม่เจอ. กรุณาใส่ชื่อเมืองใหม่อีกครั้ง. Ex. Huahin");
+              }
+      })
+
+
       if (text === 'Generic') {
         sendGenericMessage(sender)
         continue
       }
-      // sendTextMessage(sender, 'Text received, echo: ' + text.substring(0, 200))
-        axios.get('https://api.crowdscores.com/v1/teams/' + text + '?api_key=913c96f103e1455680ea7fa572422835').then(function (res) {
-               console.log(res)
-          sendTextMessage(sender,res.name)
-        })
-      }
+
+    }
     if (event.postback) {
       let text = JSON.stringify(event.postback)
-      sendTextMessage(sender, 'สวัสดี\n')
+      sendTextMessage(sender, 'สวัสดี\n ต้องการจะรู้อุณหภูมิเมืองไหน พิมพ์ชื่อเมืองแล้วส่งมาได้เลย ^^')
       continue
     }
   }
