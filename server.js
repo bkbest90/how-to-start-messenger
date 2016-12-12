@@ -24,20 +24,28 @@ app.post('/webhook/', function (req, res) {
     let sender = event.sender.id
     if (event.message && event.message.text) {
       var text = event.message.text
-            var futbol = 'https://api.crowdscores.com/v1/teams/2?api_key=913c96f103e1455680ea7fa572422835'
-            request({
-              url: futbol,
-              json: true
-            }, function(error, response, body) {
-              try {
-                var teamName = body.name;
 
-                sendTextMessage(sender, "   ทีม " + teamName );
-              } catch(err) {
-                console.error('error caught', err);
-                sendTextMessage(sender, "เราหาเมืองนี้ไม่เจอ. กรุณาใส่ชื่อเมืองใหม่อีกครั้ง. Ex. Huahin");
-              }
-      })
+
+      if (text === 'Man U') {
+        sendGenericMessage(sender)
+        continue
+        var futbol = 'https://api.crowdscores.com/v1/teams/2?api_key=913c96f103e1455680ea7fa572422835'
+        request({
+          url: futbol,
+          json: true
+        }, function(error, response, body) {
+          try {
+            var teamName = body.name;
+
+            sendTextMessage(sender, "   ทีม " + teamName );
+          } catch(err) {
+            console.error('error caught', err);
+            sendTextMessage(sender, "เราหาเมืองนี้ไม่เจอ. กรุณาใส่ชื่อเมืองใหม่อีกครั้ง. Ex. Huahin");
+          }
+  })
+      }
+
+
 
 
       if (text === 'Generic') {
