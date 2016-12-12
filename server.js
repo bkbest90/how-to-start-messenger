@@ -41,29 +41,24 @@ app.post('/webhook/', function (req, res) {
               }
       })
 */
-
-
-var options = {
-  url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
+if (text === 'table') {
+function callback(error, response, body) {
+  try {
+    url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
   headers: {
     'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'
 
   }
-};
-
-function callback(error, response, body) {
-  try {
      var table = body.competition;
-    sendTextMessage(sender, competition.name);
+    sendTextMessage(sender, table.name);
   } catch(err) {
     console.error('error caught', err);
     sendTextMessage(sender, "Error");
   }
 
 }
-if (text === 'table') {
-  request(options, callback);
-  continue
+
+  
 }
 
 
@@ -75,7 +70,7 @@ if (text === 'table') {
     }
     if (event.postback) {
       let text = JSON.stringify(event.postback)
-      sendTextMessage(sender, 'สวัสดี\n ต้องการจะรู้อุณหภูมิเมืองไหน พิมพ์ชื่อเมืองแล้วส่งมาได้เลย ^^')
+      sendTextMessage(sender, 'สวัสดี')
       continue
     }
   }
