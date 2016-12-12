@@ -42,7 +42,6 @@ app.post('/webhook/', function (req, res) {
       })
 */
 
-var request = require('request');
 
 var options = {
   url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
@@ -60,7 +59,7 @@ function callback(error, response, body) {
     console.error('error caught', err);
     sendTextMessage(sender, "Error");
   }
-  
+
 }
 if (text === 'table') {
   request(options, callback);
