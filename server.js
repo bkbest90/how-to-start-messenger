@@ -29,9 +29,9 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       // sendTextMessage(sender, 'Text received, echo: ' + text.substring(0, 200))
-        axios.get('https://api.crowdscores.com/v1/' + text + '?api_key=913c96f103e1455680ea7fa572422835').then(function (res) {
+        axios.get('https://api.crowdscores.com/v1/teams/' + text + '?api_key=913c96f103e1455680ea7fa572422835').then(function (res) {
 
-          sendTextMessage(sender,res.data.name)
+          sendTextMessage(sender,res.name)
         })
       }
     if (event.postback) {
