@@ -74,7 +74,7 @@ if (text === 'table'){
       'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'
     }
   };
-  callback(options,error, response, body)
+  callback(options)
 
 
   //request(options, callback);
@@ -121,13 +121,10 @@ function sendTextMessage (sender, text) {
   })
 }
 
-function callback(options,error, response, body) {
+function callback(options) {
 
     sendTextMessage(sender, "เข้าcallbackแล้ว" + options);
-  if (!error && response.statusCode == 200) {
-    var info = JSON.parse(body);
-    console.log(info.stargazers_count + " Stars");
-    console.log(info.forks_count + " Forks");
+
   }
 
 function sendGenericMessage (sender) {
