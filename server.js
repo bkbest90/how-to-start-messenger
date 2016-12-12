@@ -54,7 +54,7 @@ var options = {
 
 function callback(error, response, body) {
   try {
-  
+
     sendTextMessage(sender, body.competition.name);
   } catch(err) {
     console.error('error caught', err);
@@ -66,8 +66,11 @@ function callback(error, response, body) {
     console.log(info.forks_count + " Forks");
   }
 }
+if (text === 'table') {
+  request(options, callback);
+  continue
+}
 
-request(options, callback);
 
       if (text === 'Generic') {
         sendGenericMessage(sender)
