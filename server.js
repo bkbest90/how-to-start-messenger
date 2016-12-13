@@ -41,8 +41,9 @@ app.post('/webhook/', function (req, res) {
         sendTextMessage(sender, 'สวัสดีครับ')
         sendGenericMessage (sender)
       }
-      if (payloadt === 'table') {
-        premierleaguetable(sender)
+      if (payloadt === 'table1') {
+        setTimeout(premierleaguetable1(sender), 50);
+        setTimeout(premierleaguetable2(sender), 100);
       }
       if (payloadt === 'back') {
         sendGenericMessage (sender)
@@ -150,7 +151,7 @@ function premierleaguetable(sender) {
   })
 }
 */
-function premierleaguetable(sender){
+function premierleaguetable1(sender){
 
     var options = {
       url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
@@ -169,8 +170,8 @@ function premierleaguetable(sender){
               'elements': [{
                 'title': '1  '+JSON.parse(body)[0].leagueTable[0].name,
                 'subtitle':JSON.parse(body)[0].leagueTable[0].points +" คะแนน\n " + "แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[0].gamesPlayed+ " นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[0].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[0].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[0].losses
+                          +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[0].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[0].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[0].goalDiff
+                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[0].wins  + " เสมอ "+JSON.parse(body)[0].leagueTable[0].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[0].losses
                           ,
                 'buttons': [{
                   'type': 'postback',
@@ -180,8 +181,8 @@ function premierleaguetable(sender){
               }, {
                 'title': '2  '+JSON.parse(body)[0].leagueTable[1].name,
                 'subtitle': JSON.parse(body)[0].leagueTable[1].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[1].gamesPlayed +" นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[1].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[1].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[1].losses
+                          +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[1].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[1].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[1].goalDiff
+                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[1].wins + " เสมอ "+JSON.parse(body)[0].leagueTable[1].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[1].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
@@ -191,8 +192,8 @@ function premierleaguetable(sender){
               }, {
                 'title': '3  '+JSON.parse(body)[0].leagueTable[2].name,
                 'subtitle': JSON.parse(body)[0].leagueTable[2].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[2].gamesPlayed +" นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[2].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[2].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[2].losses
+                          +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[2].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[2].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[2].goalDiff
+                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[2].wins + " เสมอ "+JSON.parse(body)[0].leagueTable[2].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[2].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
@@ -202,8 +203,8 @@ function premierleaguetable(sender){
               }, {
                 'title': '4  '+JSON.parse(body)[0].leagueTable[3].name,
                 'subtitle': JSON.parse(body)[0].leagueTable[3].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[3].gamesPlayed +" นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[3].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[3].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[3].losses
+                          +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[3].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[3].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[3].goalDiff
+                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[3].wins + " เสมอ "+JSON.parse(body)[0].leagueTable[3].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[3].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
@@ -213,8 +214,8 @@ function premierleaguetable(sender){
               }, {
                 'title': '5  '+JSON.parse(body)[0].leagueTable[4].name,
                 'subtitle': JSON.parse(body)[0].leagueTable[4].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[4].gamesPlayed+ " นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[4].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[4].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[4].losses
+                          +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[4].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[4].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[4].goalDiff
+                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[4].wins + " เสมอ "+JSON.parse(body)[0].leagueTable[4].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[4].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
@@ -224,8 +225,8 @@ function premierleaguetable(sender){
               }, {
                 'title': '6  '+JSON.parse(body)[0].leagueTable[5].name,
                 'subtitle': JSON.parse(body)[0].leagueTable[5].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[5].gamesPlayed+ " นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[5].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[5].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[5].losses
+                          +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[5].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[5].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[5].goalDiff
+                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[5].wins + " เสมอ "+JSON.parse(body)[0].leagueTable[5].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[5].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
@@ -235,8 +236,8 @@ function premierleaguetable(sender){
               }, {
                 'title': '7  '+JSON.parse(body)[0].leagueTable[6].name,
                 'subtitle': JSON.parse(body)[0].leagueTable[6].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[6].gamesPlayed+ " นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[6].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[6].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[6].losses
+                          +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[6].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[6].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[6].goalDiff
+                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[6].wins+ " เสมอ "+JSON.parse(body)[0].leagueTable[6].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[6].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
@@ -246,8 +247,8 @@ function premierleaguetable(sender){
               }, {
                 'title': '8  '+JSON.parse(body)[0].leagueTable[7].name,
                 'subtitle': JSON.parse(body)[0].leagueTable[7].points+ " คะแนน\n"+ " แข่งทั\nงหมด "+JSON.parse(body)[0].leagueTable[7].gamesPlayed+ " นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[7].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[7].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[7].losses
+                          +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[7].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[7].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[7].goalDiff
+                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[7].wins+ " เสมอ "+JSON.parse(body)[0].leagueTable[7].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[7].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
@@ -257,8 +258,8 @@ function premierleaguetable(sender){
               }, {
                 'title': '9  '+JSON.parse(body)[0].leagueTable[8].name,
                 'subtitle': JSON.parse(body)[0].leagueTable[8].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[8].gamesPlayed+ " นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[8].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[8].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[8].losses
+                          +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[8].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[8].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[8].goalDiff
+                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[8].wins + " เสมอ "+JSON.parse(body)[0].leagueTable[8].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[8].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
@@ -268,127 +269,15 @@ function premierleaguetable(sender){
               }  , {
                 'title': '10  '+JSON.parse(body)[0].leagueTable[9].name,
                 'subtitle': JSON.parse(body)[0].leagueTable[9].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[9].gamesPlayed+ " นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[9].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[9].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[9].losses
+                          +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[9].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[9].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[9].goalDiff
+                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[9].wins + " เสมอ "+JSON.parse(body)[0].leagueTable[9].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[9].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
                   'title': 'Back',
                   'payload': 'back'
                 }]
-              }  /*, {
-                'title': '11  '+JSON.parse(body)[0].leagueTable[10].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[10].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[10].gamesPlayed+ " นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[10].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[10].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[10].losses
-                          ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }, {
-                'title': '12  '+JSON.parse(body)[0].leagueTable[11].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[11].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[11].gamesPlayed+ " นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[11].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[11].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[11].losses
-                          ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }, {
-                'title': '13  '+JSON.parse(body)[0].leagueTable[12].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[12].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[12].gamesPlayed+ " นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[12].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[12].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[12].losses
-                          ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }, {
-                'title': '14  '+JSON.parse(body)[0].leagueTable[13].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[13].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[13].gamesPlayed+ " นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[13].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[13].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[13].losses
-                          ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }, {
-                'title': '15  '+JSON.parse(body)[0].leagueTable[14].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[14].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[14].gamesPlayed+ " นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[14].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[14].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[14].losses
-                          ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }, {
-                'title': '16  '+JSON.parse(body)[0].leagueTable[15].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[15].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[15].gamesPlayed+ " นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[15].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[15].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[15].losses
-                          ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }, {
-                'title': '17  '+JSON.parse(body)[0].leagueTable[16].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[16].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[16].gamesPlayed+ " นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[16].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[16].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[16].losses
-                          ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }, {
-                'title': '18  '+JSON.parse(body)[0].leagueTable[17].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[17].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[17].gamesPlayed+ " นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[17].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[17].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[17].losses
-                          ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }, {
-                'title': '19  '+JSON.parse(body)[0].leagueTable[18].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[18].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[18].gamesPlayed+ " นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[18].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[18].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[18].losses
-                          ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }, {
-                'title': '20  '+JSON.parse(body)[0].leagueTable[19].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[19].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[19].gamesPlayed+ " นัด"
-                          +"\nชนะ "+JSON.parse(body)[0].leagueTable[19].wins
-                          + " เสมอ "+JSON.parse(body)[0].leagueTable[19].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[19].losses
-                          ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }
-*/
-            ]
+              }]
             }
           }
         }
@@ -413,7 +302,142 @@ function premierleaguetable(sender){
     request(options, callback)
 }
 
-
+function premierleaguetable2(sender) {
+  let messageData = {
+    'attachment': {
+      'type': 'template',
+      'payload': {
+        'template_type': 'generic',
+        'elements': [{
+          'title': '11  '+JSON.parse(body)[0].leagueTable[10].name,
+          'subtitle': JSON.parse(body)[0].leagueTable[10].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[10].gamesPlayed+ " นัด"
+                    +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[10].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[10].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[10].goalDiff
+                    +"\nชนะ "+JSON.parse(body)[0].leagueTable[10].wins+ " เสมอ "+JSON.parse(body)[0].leagueTable[10].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[10].losses
+                    ,
+            'buttons': [{
+            'type': 'postback',
+            'title': 'Back',
+            'payload': 'back'
+          }]
+        }, {
+          'title': '12  '+JSON.parse(body)[0].leagueTable[11].name,
+          'subtitle': JSON.parse(body)[0].leagueTable[11].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[11].gamesPlayed+ " นัด"
+                    +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[11].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[11].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[11].goalDiff
+                    +"\nชนะ "+JSON.parse(body)[0].leagueTable[11].wins + " เสมอ "+JSON.parse(body)[0].leagueTable[11].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[11].losses
+                    ,
+            'buttons': [{
+            'type': 'postback',
+            'title': 'Back',
+            'payload': 'back'
+          }]
+        }, {
+          'title': '13  '+JSON.parse(body)[0].leagueTable[12].name,
+          'subtitle': JSON.parse(body)[0].leagueTable[12].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[12].gamesPlayed+ " นัด"
+                    +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[12].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[12].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[12].goalDiff
+                    +"\nชนะ "+JSON.parse(body)[0].leagueTable[12].wins+ " เสมอ "+JSON.parse(body)[0].leagueTable[12].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[12].losses
+                    ,
+            'buttons': [{
+            'type': 'postback',
+            'title': 'Back',
+            'payload': 'back'
+          }]
+        }, {
+          'title': '14  '+JSON.parse(body)[0].leagueTable[13].name,
+          'subtitle': JSON.parse(body)[0].leagueTable[13].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[13].gamesPlayed+ " นัด"
+                    +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[13].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[13].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[13].goalDiff
+                    +"\nชนะ "+JSON.parse(body)[0].leagueTable[13].wins+ " เสมอ "+JSON.parse(body)[0].leagueTable[13].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[13].losses
+                    ,
+            'buttons': [{
+            'type': 'postback',
+            'title': 'Back',
+            'payload': 'back'
+          }]
+        }, {
+          'title': '15  '+JSON.parse(body)[0].leagueTable[14].name,
+          'subtitle': JSON.parse(body)[0].leagueTable[14].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[14].gamesPlayed+ " นัด"
+                    +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[14].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[14].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[14].goalDiff
+                    +"\nชนะ "+JSON.parse(body)[0].leagueTable[14].wins+ " เสมอ "+JSON.parse(body)[0].leagueTable[14].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[14].losses
+                    ,
+            'buttons': [{
+            'type': 'postback',
+            'title': 'Back',
+            'payload': 'back'
+          }]
+        }, {
+          'title': '16  '+JSON.parse(body)[0].leagueTable[15].name,
+          'subtitle': JSON.parse(body)[0].leagueTable[15].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[15].gamesPlayed+ " นัด"
+                    +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[15].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[15].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[15].goalDiff
+                    +"\nชนะ "+JSON.parse(body)[0].leagueTable[15].wins+ " เสมอ "+JSON.parse(body)[0].leagueTable[15].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[15].losses
+                    ,
+            'buttons': [{
+            'type': 'postback',
+            'title': 'Back',
+            'payload': 'back'
+          }]
+        }, {
+          'title': '17  '+JSON.parse(body)[0].leagueTable[16].name,
+          'subtitle': JSON.parse(body)[0].leagueTable[16].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[16].gamesPlayed+ " นัด"
+                    +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[16].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[16].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[16].goalDiff
+                    +"\nชนะ "+JSON.parse(body)[0].leagueTable[16].wins+ " เสมอ "+JSON.parse(body)[0].leagueTable[16].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[16].losses
+                    ,
+            'buttons': [{
+            'type': 'postback',
+            'title': 'Back',
+            'payload': 'back'
+          }]
+        }, {
+          'title': '18  '+JSON.parse(body)[0].leagueTable[17].name,
+          'subtitle': JSON.parse(body)[0].leagueTable[17].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[17].gamesPlayed+ " นัด"
+                    +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[17].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[17].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[17].goalDiff
+                    +"\nชนะ "+JSON.parse(body)[0].leagueTable[17].wins+ " เสมอ "+JSON.parse(body)[0].leagueTable[17].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[17].losses
+                    ,
+            'buttons': [{
+            'type': 'postback',
+            'title': 'Back',
+            'payload': 'back'
+          }]
+        }, {
+          'title': '19  '+JSON.parse(body)[0].leagueTable[18].name,
+          'subtitle': JSON.parse(body)[0].leagueTable[18].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[18].gamesPlayed+ " นัด"
+                    +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[18].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[18].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[18].goalDiff
+                    +"\nชนะ "+JSON.parse(body)[0].leagueTable[18].wins+ " เสมอ "+JSON.parse(body)[0].leagueTable[18].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[18].losses
+                    ,
+            'buttons': [{
+            'type': 'postback',
+            'title': 'Back',
+            'payload': 'back'
+          }]
+        }, {
+          'title': '20  '+JSON.parse(body)[0].leagueTable[19].name,
+          'subtitle': JSON.parse(body)[0].leagueTable[19].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[19].gamesPlayed+ " นัด"
+                    +"\nทำประตู "+ JSON.parse(body)[0].leagueTable[19].goalsFor +"เสียประตู "+ JSON.parse(body)[0].leagueTable[19].goalsAgainst +"ผลต่างประตู "+ JSON.parse(body)[0].leagueTable[19].goalDiff
+                    +"\nชนะ "+JSON.parse(body)[0].leagueTable[19].wins+ " เสมอ "+JSON.parse(body)[0].leagueTable[19].draws+" แพ้ "+ JSON.parse(body)[0].leagueTable[19].losses
+                    ,
+            'buttons': [{
+            'type': 'postback',
+            'title': 'Back',
+            'payload': 'back'
+          }]
+        }]
+      }
+    }
+  }
+  request({
+    url: 'https://graph.facebook.com/v2.6/me/messages',
+    qs: {access_token: token},
+    method: 'POST',
+    json: {
+      recipient: {id: sender},
+      message: messageData
+    }
+  }, function (error, response, body) {
+    if (error) {
+      console.log('Error sending messages: ', error)
+    } else if (response.body.error) {
+      console.log('Error: ', response.body.error)
+    }
+  })
+}
 
 function sendGenericMessage (sender) {
   let messageData = {
@@ -432,7 +456,7 @@ function sendGenericMessage (sender) {
           }, {
             'type': 'postback',
             'title': 'Table',
-            'payload': 'table'
+            'payload': 'table1'
           }]
         }, {
         'title': 'La liga',
