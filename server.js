@@ -44,9 +44,6 @@ app.post('/webhook/', function (req, res) {
       url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
       headers: {  'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'  }
 
-
-
-
       var options = {
        };
       request({url: options,json: true},
@@ -62,38 +59,31 @@ app.post('/webhook/', function (req, res) {
 
     }
 
-
 */
 
+      if (text === 'table') {
+        var options = {
+          url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
+          headers: {
+            'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'
+          }
+        }
 
-if (text === 'table'){
+        function callback (error, response, body) {
+          sendTextMessage(sender, 'เข้าcallbackแล้ว')
+          if (!error && response.statusCode == 200) {
+            // var info = JSON.parse(body)
+            console.log(response.data)
+          }
+        }
 
-  var options = {
-    url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
-    headers: {
-      'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'
-    }
-  };
-
-  function callback(error, response, body) {
-
-      sendTextMessage(sender, "เข้าcallbackแล้ว");
-    if (!error && response.statusCode == 200) {
-      var info = JSON.parse(body);
-      console.log(info.stargazers_count + " Stars");
-      console.log(info.forks_count + " Forks");
-    }
-  }
-
-  request(options, callback);
-}
-
+        request(options, callback)
+      }
 
       if (text === 'Generic') {
         sendGenericMessage(sender)
         continue
       }
-
     }
     if (event.postback) {
       let text = JSON.stringify(event.postback)
