@@ -5,19 +5,19 @@ const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
 const token = 'EAAYzVx44hnYBAEiaPrinabDZBWmwC1rkal50SOWUpTiIt8ZChgu6BhNLQF3R8W2Qj24bNpCLEh3RbB4OBorD29649XGKQtXbgZCxkBdNpU2uvCFAZAXB2FyyMqW6ucKM3ueg0QttOnsWP5tbfGl2iYvfJrZAUNpd2mr1SPPicLQZDZD'
-app.set('port', (process.env.PORT || 5000))
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
-app.get('/', function (req, res) {
+apPtsset('port', (process.env.PORT || 5000))
+apPtsuse(bodyParser.urlencoded({extended: false}))
+apPtsuse(bodyParser.json())
+apPtsget('/', function (req, res) {
   res.send('test test')
 })
-app.get('/webhook/', function (req, res) {
+apPtsget('/webhook/', function (req, res) {
   if (req.query['hub.verify_token'] === 'keypass') {
     res.send(req.query['hub.challenge'])
   }
   res.send('Error, wrong token')
 })
-app.post('/webhook/', function (req, res) {
+apPtspost('/webhook/', function (req, res) {
   let messaging_events = req.body.entry[0].messaging
   for (let i = 0; i < messaging_events.length; i++) {
     let event = req.body.entry[0].messaging[i]
@@ -80,7 +80,7 @@ function leaguetableshow(sender){
 
             for (var i = 0; i < 20; i++) {
               var rank = rank + 1;
-              sendTextMessage(sender, "อันดับที่ "+ rank  +"\n" + JSON.parse(body)[0].leagueTable[i].name +"\n" +JSON.parse(body)[0].leagueTable[i].points +"P.");
+              sendTextMessage(sender, "อันดับที่ "+ rank  +"\n" + JSON.parse(body)[0].leagueTable[i].name +"\n" +JSON.parse(body)[0].leagueTable[i].points +"Pts");
             }
       }
     }
@@ -116,7 +116,7 @@ function premierleaguetable(sender) {
         'template_type': 'generic',
         'elements': [{
           'title': '1  '+JSON.parse(body)[0].leagueTable[0].name,
-          'subtitle':JSON.parse(body)[0].leagueTable[0].points +"P.  W "+JSON.parse(body)[0].leagueTable[0].wins
+          'subtitle':JSON.parse(body)[0].leagueTable[0].points +"Pts   W "+JSON.parse(body)[0].leagueTable[0].wins
                     + " D "+JSON.parse(body)[0].leagueTable[0].draws+" L "+ JSON.parse(body)[0].leagueTable[0].losses ,
           'buttons': [{
             'type': 'postback',
@@ -125,7 +125,7 @@ function premierleaguetable(sender) {
           }]
         }, {
           'title': '2  '+JSON.parse(body)[0].leagueTable[1].name,
-          'subtitle': JSON.parse(body)[0].leagueTable[1].points+ "P.  W "+JSON.parse(body)[0].leagueTable[1].wins
+          'subtitle': JSON.parse(body)[0].leagueTable[1].points+ "Pts   W "+JSON.parse(body)[0].leagueTable[1].wins
                     + " D "+JSON.parse(body)[0].leagueTable[1].draws+" L "+ JSON.parse(body)[0].leagueTable[1].losses ,
             'buttons': [{
             'type': 'postback',
@@ -171,9 +171,9 @@ function premierleaguetable1(sender){
               'template_type': 'generic',
               'elements': [{
                 'title': '1  '+JSON.parse(body)[0].leagueTable[0].name,
-                'subtitle':JSON.parse(body)[0].leagueTable[0].points +" P.\n " + "แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[0].gamesPlayed+ " M."
-                          +"\nGF "+ JSON.parse(body)[0].leagueTable[0].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[0].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[0].goalDiff
-                          +"\nW "+JSON.parse(body)[0].leagueTable[0].wins  + " D "+JSON.parse(body)[0].leagueTable[0].draws+" L "+ JSON.parse(body)[0].leagueTable[0].losses
+                'subtitle':JSON.parse(body)[0].leagueTable[0].points +" Pts   " + "แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[0].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[0].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[0].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[0].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[0].wins  + " D "+JSON.parse(body)[0].leagueTable[0].draws+" L "+ JSON.parse(body)[0].leagueTable[0].losses
                           ,
                 'buttons': [{
                   'type': 'postback',
@@ -182,9 +182,9 @@ function premierleaguetable1(sender){
                 }]
               }, {
                 'title': '2  '+JSON.parse(body)[0].leagueTable[1].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[1].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[1].gamesPlayed +" M."
-                          +"\nGF "+ JSON.parse(body)[0].leagueTable[1].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[1].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[1].goalDiff
-                          +"\nW "+JSON.parse(body)[0].leagueTable[1].wins + " D "+JSON.parse(body)[0].leagueTable[1].draws+" L "+ JSON.parse(body)[0].leagueTable[1].losses
+                'subtitle': JSON.parse(body)[0].leagueTable[1].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[1].gamesPlayed +" M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[1].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[1].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[1].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[1].wins + " D "+JSON.parse(body)[0].leagueTable[1].draws+" L "+ JSON.parse(body)[0].leagueTable[1].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
@@ -193,9 +193,9 @@ function premierleaguetable1(sender){
                 }]
               }, {
                 'title': '3  '+JSON.parse(body)[0].leagueTable[2].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[2].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[2].gamesPlayed +" M."
-                          +"\nGF "+ JSON.parse(body)[0].leagueTable[2].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[2].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[2].goalDiff
-                          +"\nW "+JSON.parse(body)[0].leagueTable[2].wins + " D "+JSON.parse(body)[0].leagueTable[2].draws+" L "+ JSON.parse(body)[0].leagueTable[2].losses
+                'subtitle': JSON.parse(body)[0].leagueTable[2].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[2].gamesPlayed +" M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[2].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[2].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[2].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[2].wins + " D "+JSON.parse(body)[0].leagueTable[2].draws+" L "+ JSON.parse(body)[0].leagueTable[2].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
@@ -204,9 +204,9 @@ function premierleaguetable1(sender){
                 }]
               }, {
                 'title': '4  '+JSON.parse(body)[0].leagueTable[3].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[3].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[3].gamesPlayed +" M."
-                          +"\nGF "+ JSON.parse(body)[0].leagueTable[3].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[3].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[3].goalDiff
-                          +"\nW "+JSON.parse(body)[0].leagueTable[3].wins + " D "+JSON.parse(body)[0].leagueTable[3].draws+" L "+ JSON.parse(body)[0].leagueTable[3].losses
+                'subtitle': JSON.parse(body)[0].leagueTable[3].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[3].gamesPlayed +" M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[3].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[3].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[3].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[3].wins + " D "+JSON.parse(body)[0].leagueTable[3].draws+" L "+ JSON.parse(body)[0].leagueTable[3].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
@@ -215,9 +215,9 @@ function premierleaguetable1(sender){
                 }]
               }, {
                 'title': '5  '+JSON.parse(body)[0].leagueTable[4].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[4].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[4].gamesPlayed+ " M."
-                          +"\nGF "+ JSON.parse(body)[0].leagueTable[4].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[4].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[4].goalDiff
-                          +"\nW "+JSON.parse(body)[0].leagueTable[4].wins + " D "+JSON.parse(body)[0].leagueTable[4].draws+" L "+ JSON.parse(body)[0].leagueTable[4].losses
+                'subtitle': JSON.parse(body)[0].leagueTable[4].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[4].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[4].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[4].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[4].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[4].wins + " D "+JSON.parse(body)[0].leagueTable[4].draws+" L "+ JSON.parse(body)[0].leagueTable[4].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
@@ -226,9 +226,9 @@ function premierleaguetable1(sender){
                 }]
               }, {
                 'title': '6  '+JSON.parse(body)[0].leagueTable[5].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[5].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[5].gamesPlayed+ " M."
-                          +"\nGF "+ JSON.parse(body)[0].leagueTable[5].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[5].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[5].goalDiff
-                          +"\nW "+JSON.parse(body)[0].leagueTable[5].wins + " D "+JSON.parse(body)[0].leagueTable[5].draws+" L "+ JSON.parse(body)[0].leagueTable[5].losses
+                'subtitle': JSON.parse(body)[0].leagueTable[5].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[5].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[5].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[5].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[5].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[5].wins + " D "+JSON.parse(body)[0].leagueTable[5].draws+" L "+ JSON.parse(body)[0].leagueTable[5].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
@@ -237,9 +237,9 @@ function premierleaguetable1(sender){
                 }]
               }, {
                 'title': '7  '+JSON.parse(body)[0].leagueTable[6].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[6].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[6].gamesPlayed+ " M."
-                          +"\nGF "+ JSON.parse(body)[0].leagueTable[6].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[6].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[6].goalDiff
-                          +"\nW "+JSON.parse(body)[0].leagueTable[6].wins+ " D "+JSON.parse(body)[0].leagueTable[6].draws+" L "+ JSON.parse(body)[0].leagueTable[6].losses
+                'subtitle': JSON.parse(body)[0].leagueTable[6].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[6].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[6].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[6].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[6].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[6].wins+ " D "+JSON.parse(body)[0].leagueTable[6].draws+" L "+ JSON.parse(body)[0].leagueTable[6].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
@@ -248,9 +248,9 @@ function premierleaguetable1(sender){
                 }]
               }, {
                 'title': '8  '+JSON.parse(body)[0].leagueTable[7].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[7].points+ " P.\n"+ " แข่งทั\nงหมด "+JSON.parse(body)[0].leagueTable[7].gamesPlayed+ " M."
-                          +"\nGF "+ JSON.parse(body)[0].leagueTable[7].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[7].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[7].goalDiff
-                          +"\nW "+JSON.parse(body)[0].leagueTable[7].wins+ " D "+JSON.parse(body)[0].leagueTable[7].draws+" L "+ JSON.parse(body)[0].leagueTable[7].losses
+                'subtitle': JSON.parse(body)[0].leagueTable[7].points+ " Pts  "+ " แข่งทั\nงหมด "+JSON.parse(body)[0].leagueTable[7].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[7].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[7].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[7].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[7].wins+ " D "+JSON.parse(body)[0].leagueTable[7].draws+" L "+ JSON.parse(body)[0].leagueTable[7].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
@@ -259,9 +259,9 @@ function premierleaguetable1(sender){
                 }]
               }, {
                 'title': '9  '+JSON.parse(body)[0].leagueTable[8].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[8].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[8].gamesPlayed+ " M."
-                          +"\nGF "+ JSON.parse(body)[0].leagueTable[8].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[8].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[8].goalDiff
-                          +"\nW "+JSON.parse(body)[0].leagueTable[8].wins + " D "+JSON.parse(body)[0].leagueTable[8].draws+" L "+ JSON.parse(body)[0].leagueTable[8].losses
+                'subtitle': JSON.parse(body)[0].leagueTable[8].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[8].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[8].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[8].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[8].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[8].wins + " D "+JSON.parse(body)[0].leagueTable[8].draws+" L "+ JSON.parse(body)[0].leagueTable[8].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
@@ -270,9 +270,9 @@ function premierleaguetable1(sender){
                 }]
               }  , {
                 'title': '10  '+JSON.parse(body)[0].leagueTable[9].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[9].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[9].gamesPlayed+ " M."
-                          +"\nGF "+ JSON.parse(body)[0].leagueTable[9].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[9].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[9].goalDiff
-                          +"\nW "+JSON.parse(body)[0].leagueTable[9].wins + " D "+JSON.parse(body)[0].leagueTable[9].draws+" L "+ JSON.parse(body)[0].leagueTable[9].losses
+                'subtitle': JSON.parse(body)[0].leagueTable[9].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[9].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[9].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[9].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[9].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[9].wins + " D "+JSON.parse(body)[0].leagueTable[9].draws+" L "+ JSON.parse(body)[0].leagueTable[9].losses
                           ,
                   'buttons': [{
                   'type': 'postback',
@@ -321,9 +321,9 @@ function premierleaguetable2(sender) {
         'template_type': 'generic',
         'elements': [{
           'title': '11  '+JSON.parse(body)[0].leagueTable[10].name,
-          'subtitle': JSON.parse(body)[0].leagueTable[10].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[10].gamesPlayed+ " M."
-                    +"\nGF "+ JSON.parse(body)[0].leagueTable[10].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[10].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[10].goalDiff
-                    +"\nW "+JSON.parse(body)[0].leagueTable[10].wins+ " D "+JSON.parse(body)[0].leagueTable[10].draws+" L "+ JSON.parse(body)[0].leagueTable[10].losses
+          'subtitle': JSON.parse(body)[0].leagueTable[10].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[10].gamesPlayed+ " M |"
+                    +" GF "+ JSON.parse(body)[0].leagueTable[10].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[10].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[10].goalDiff
+                    +"\n| W "+JSON.parse(body)[0].leagueTable[10].wins+ " D "+JSON.parse(body)[0].leagueTable[10].draws+" L "+ JSON.parse(body)[0].leagueTable[10].losses
                     ,
             'buttons': [{
             'type': 'postback',
@@ -332,9 +332,9 @@ function premierleaguetable2(sender) {
           }]
         }, {
           'title': '12  '+JSON.parse(body)[0].leagueTable[11].name,
-          'subtitle': JSON.parse(body)[0].leagueTable[11].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[11].gamesPlayed+ " M."
-                    +"\nGF "+ JSON.parse(body)[0].leagueTable[11].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[11].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[11].goalDiff
-                    +"\nW "+JSON.parse(body)[0].leagueTable[11].wins + " D "+JSON.parse(body)[0].leagueTable[11].draws+" L "+ JSON.parse(body)[0].leagueTable[11].losses
+          'subtitle': JSON.parse(body)[0].leagueTable[11].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[11].gamesPlayed+ " M |"
+                    +" GF "+ JSON.parse(body)[0].leagueTable[11].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[11].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[11].goalDiff
+                    +"\n| W "+JSON.parse(body)[0].leagueTable[11].wins + " D "+JSON.parse(body)[0].leagueTable[11].draws+" L "+ JSON.parse(body)[0].leagueTable[11].losses
                     ,
             'buttons': [{
             'type': 'postback',
@@ -343,9 +343,9 @@ function premierleaguetable2(sender) {
           }]
         }, {
           'title': '13  '+JSON.parse(body)[0].leagueTable[12].name,
-          'subtitle': JSON.parse(body)[0].leagueTable[12].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[12].gamesPlayed+ " M."
-                    +"\nGF "+ JSON.parse(body)[0].leagueTable[12].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[12].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[12].goalDiff
-                    +"\nW "+JSON.parse(body)[0].leagueTable[12].wins+ " D "+JSON.parse(body)[0].leagueTable[12].draws+" L "+ JSON.parse(body)[0].leagueTable[12].losses
+          'subtitle': JSON.parse(body)[0].leagueTable[12].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[12].gamesPlayed+ " M |"
+                    +" GF "+ JSON.parse(body)[0].leagueTable[12].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[12].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[12].goalDiff
+                    +"\n| W "+JSON.parse(body)[0].leagueTable[12].wins+ " D "+JSON.parse(body)[0].leagueTable[12].draws+" L "+ JSON.parse(body)[0].leagueTable[12].losses
                     ,
             'buttons': [{
             'type': 'postback',
@@ -354,9 +354,9 @@ function premierleaguetable2(sender) {
           }]
         }, {
           'title': '14  '+JSON.parse(body)[0].leagueTable[13].name,
-          'subtitle': JSON.parse(body)[0].leagueTable[13].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[13].gamesPlayed+ " M."
-                    +"\nGF "+ JSON.parse(body)[0].leagueTable[13].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[13].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[13].goalDiff
-                    +"\nW "+JSON.parse(body)[0].leagueTable[13].wins+ " D "+JSON.parse(body)[0].leagueTable[13].draws+" L "+ JSON.parse(body)[0].leagueTable[13].losses
+          'subtitle': JSON.parse(body)[0].leagueTable[13].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[13].gamesPlayed+ " M |"
+                    +" GF "+ JSON.parse(body)[0].leagueTable[13].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[13].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[13].goalDiff
+                    +"\n| W "+JSON.parse(body)[0].leagueTable[13].wins+ " D "+JSON.parse(body)[0].leagueTable[13].draws+" L "+ JSON.parse(body)[0].leagueTable[13].losses
                     ,
             'buttons': [{
             'type': 'postback',
@@ -365,9 +365,9 @@ function premierleaguetable2(sender) {
           }]
         }, {
           'title': '15  '+JSON.parse(body)[0].leagueTable[14].name,
-          'subtitle': JSON.parse(body)[0].leagueTable[14].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[14].gamesPlayed+ " M."
-                    +"\nGF "+ JSON.parse(body)[0].leagueTable[14].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[14].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[14].goalDiff
-                    +"\nW "+JSON.parse(body)[0].leagueTable[14].wins+ " D "+JSON.parse(body)[0].leagueTable[14].draws+" L "+ JSON.parse(body)[0].leagueTable[14].losses
+          'subtitle': JSON.parse(body)[0].leagueTable[14].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[14].gamesPlayed+ " M |"
+                    +" GF "+ JSON.parse(body)[0].leagueTable[14].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[14].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[14].goalDiff
+                    +"\n| W "+JSON.parse(body)[0].leagueTable[14].wins+ " D "+JSON.parse(body)[0].leagueTable[14].draws+" L "+ JSON.parse(body)[0].leagueTable[14].losses
                     ,
             'buttons': [{
             'type': 'postback',
@@ -376,9 +376,9 @@ function premierleaguetable2(sender) {
           }]
         }, {
           'title': '16  '+JSON.parse(body)[0].leagueTable[15].name,
-          'subtitle': JSON.parse(body)[0].leagueTable[15].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[15].gamesPlayed+ " M."
-                    +"\nGF "+ JSON.parse(body)[0].leagueTable[15].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[15].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[15].goalDiff
-                    +"\nW "+JSON.parse(body)[0].leagueTable[15].wins+ " D "+JSON.parse(body)[0].leagueTable[15].draws+" L "+ JSON.parse(body)[0].leagueTable[15].losses
+          'subtitle': JSON.parse(body)[0].leagueTable[15].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[15].gamesPlayed+ " M |"
+                    +" GF "+ JSON.parse(body)[0].leagueTable[15].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[15].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[15].goalDiff
+                    +"\n| W "+JSON.parse(body)[0].leagueTable[15].wins+ " D "+JSON.parse(body)[0].leagueTable[15].draws+" L "+ JSON.parse(body)[0].leagueTable[15].losses
                     ,
             'buttons': [{
             'type': 'postback',
@@ -387,9 +387,9 @@ function premierleaguetable2(sender) {
           }]
         }, {
           'title': '17  '+JSON.parse(body)[0].leagueTable[16].name,
-          'subtitle': JSON.parse(body)[0].leagueTable[16].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[16].gamesPlayed+ " M."
-                    +"\nGF "+ JSON.parse(body)[0].leagueTable[16].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[16].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[16].goalDiff
-                    +"\nW "+JSON.parse(body)[0].leagueTable[16].wins+ " D "+JSON.parse(body)[0].leagueTable[16].draws+" L "+ JSON.parse(body)[0].leagueTable[16].losses
+          'subtitle': JSON.parse(body)[0].leagueTable[16].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[16].gamesPlayed+ " M |"
+                    +" GF "+ JSON.parse(body)[0].leagueTable[16].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[16].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[16].goalDiff
+                    +"\n| W "+JSON.parse(body)[0].leagueTable[16].wins+ " D "+JSON.parse(body)[0].leagueTable[16].draws+" L "+ JSON.parse(body)[0].leagueTable[16].losses
                     ,
             'buttons': [{
             'type': 'postback',
@@ -398,9 +398,9 @@ function premierleaguetable2(sender) {
           }]
         }, {
           'title': '18  '+JSON.parse(body)[0].leagueTable[17].name,
-          'subtitle': JSON.parse(body)[0].leagueTable[17].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[17].gamesPlayed+ " M."
-                    +"\nGF "+ JSON.parse(body)[0].leagueTable[17].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[17].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[17].goalDiff
-                    +"\nW "+JSON.parse(body)[0].leagueTable[17].wins+ " D "+JSON.parse(body)[0].leagueTable[17].draws+" L "+ JSON.parse(body)[0].leagueTable[17].losses
+          'subtitle': JSON.parse(body)[0].leagueTable[17].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[17].gamesPlayed+ " M |"
+                    +" GF "+ JSON.parse(body)[0].leagueTable[17].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[17].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[17].goalDiff
+                    +"\n| W "+JSON.parse(body)[0].leagueTable[17].wins+ " D "+JSON.parse(body)[0].leagueTable[17].draws+" L "+ JSON.parse(body)[0].leagueTable[17].losses
                     ,
             'buttons': [{
             'type': 'postback',
@@ -409,9 +409,9 @@ function premierleaguetable2(sender) {
           }]
         }, {
           'title': '19  '+JSON.parse(body)[0].leagueTable[18].name,
-          'subtitle': JSON.parse(body)[0].leagueTable[18].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[18].gamesPlayed+ " M."
-                    +"\nGF "+ JSON.parse(body)[0].leagueTable[18].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[18].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[18].goalDiff
-                    +"\nW "+JSON.parse(body)[0].leagueTable[18].wins+ " D "+JSON.parse(body)[0].leagueTable[18].draws+" L "+ JSON.parse(body)[0].leagueTable[18].losses
+          'subtitle': JSON.parse(body)[0].leagueTable[18].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[18].gamesPlayed+ " M |"
+                    +" GF "+ JSON.parse(body)[0].leagueTable[18].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[18].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[18].goalDiff
+                    +"\n| W "+JSON.parse(body)[0].leagueTable[18].wins+ " D "+JSON.parse(body)[0].leagueTable[18].draws+" L "+ JSON.parse(body)[0].leagueTable[18].losses
                     ,
             'buttons': [{
             'type': 'postback',
@@ -420,9 +420,9 @@ function premierleaguetable2(sender) {
           }]
         }, {
           'title': '20  '+JSON.parse(body)[0].leagueTable[19].name,
-          'subtitle': JSON.parse(body)[0].leagueTable[19].points+ " P.\n"+ ""+JSON.parse(body)[0].leagueTable[19].gamesPlayed+ " M."
-                    +"\nGF "+ JSON.parse(body)[0].leagueTable[19].goalsFor +"GA "+ JSON.parse(body)[0].leagueTable[19].goalsAgainst +"GD "+ JSON.parse(body)[0].leagueTable[19].goalDiff
-                    +"\nW "+JSON.parse(body)[0].leagueTable[19].wins+ " D "+JSON.parse(body)[0].leagueTable[19].draws+" L "+ JSON.parse(body)[0].leagueTable[19].losses
+          'subtitle': JSON.parse(body)[0].leagueTable[19].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[19].gamesPlayed+ " M |"
+                    +" GF "+ JSON.parse(body)[0].leagueTable[19].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[19].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[19].goalDiff
+                    +"\n| W "+JSON.parse(body)[0].leagueTable[19].wins+ " D "+JSON.parse(body)[0].leagueTable[19].draws+" L "+ JSON.parse(body)[0].leagueTable[19].losses
                     ,
             'buttons': [{
             'type': 'postback',
@@ -476,10 +476,10 @@ function sendGenericMessage (sender) {
         }, {
         'title': 'La liga',
         'subtitle': 'Spain',
-        'image_url': 'http://statics.laliGAes/img/logo-laliga-claim.png',
+        'image_url': 'http://statics.lali GAes/img/logo-laliga-claiM |png',
         'buttons': [{
           'type': 'web_url',
-          'url': 'http://www.laliGAes/en',
+          'url': 'http://www.lali GAes/en',
           'title': 'Web'
         }, {
           'type': 'postback',
@@ -489,10 +489,10 @@ function sendGenericMessage (sender) {
         }, {
         'title': 'Bundesliga',
         'subtitle': 'German',
-        'image_url': 'http://s.bundesliGAcom/2016/img/logo.png',
+        'image_url': 'http://s.bundesli GAcom/2016/img/logo.png',
         'buttons': [{
           'type': 'web_url',
-          'url': 'http://www.bundesliGAcom/en/',
+          'url': 'http://www.bundesli GAcom/en/',
           'title': 'Web'
         }, {
           'type': 'postback',
@@ -608,6 +608,6 @@ function sendGenericMessage (sender) {
   })
 }
 */
-app.listen(app.get('port'), function () {
-  console.log('running on port', app.get('port'))
+apPtslisten(apPtsget('port'), function () {
+  console.log('running on port', apPtsget('port'))
 })
