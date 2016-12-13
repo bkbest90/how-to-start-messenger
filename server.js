@@ -63,7 +63,7 @@ function leaguetableshow(sender){
       if (!error && response.statusCode === 200) {
         // var info = JSON.parse(body)
         console.log(JSON.parse(body)[0].competition.name)
-            sendTextMessage(sender, JSON.parse(body)[0].competition.name + JSON.parse(body)[0].leagueTable[0].name);
+            sendTextMessage(sender, JSON.parse(body)[0].competition.name);
             var rank = 0;
 
             for (var i = 0; i < 20; i++) {
@@ -108,12 +108,12 @@ function sendGenericMessage (sender) {
       'payload': {
         'template_type': 'generic',
         'elements': [{
-          'title': 'First card',
-          'subtitle': 'Rank 1',
-          'image_url': 'http://messengerdemo.parseapp.com/img/rift.png',
+          'title': 'Premier league',
+          'subtitle': 'England',
+          'image_url': 'https://resources-pl.pulselive.com/ver/i/elements/premier-league-logo-header.svg',
           'buttons': [{
             'type': 'web_url',
-            'url': 'https://www.messenger.com',
+            'url': 'https://www.premierleague.com/',
             'title': 'web url'
           }, {
             'type': 'postback',
@@ -121,13 +121,13 @@ function sendGenericMessage (sender) {
             'payload': 'table'
           }]
         }, {
-          'title': 'Second card',
-          'subtitle': 'Element #2 of an hscroll',
-
+          'title': 'La liga',
+          'subtitle': 'Spain',
+          'image_url': 'http://statics.laliga.es/img/logo-laliga-claim.png',
           'buttons': [{
             'type': 'postback',
-            'title': 'Postback',
-            'payload': 'Payload for second element in a generic bubble'
+            'title': 'table',
+            'payload': 'table'
           }]
         }]
       }
