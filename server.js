@@ -608,6 +608,7 @@ function sendGenericMessage (sender) {
   })
 }
 */
-apPtslisten(apPtsget('port'), function () {
-  console.log('running on port', apPtsget('port'))
+
+app.listen(app.get('port'), function () {
+console.log('running on port', app.get('port'))
 })
