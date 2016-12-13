@@ -5,19 +5,19 @@ const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
 const token = 'EAAYzVx44hnYBAEiaPrinabDZBWmwC1rkal50SOWUpTiIt8ZChgu6BhNLQF3R8W2Qj24bNpCLEh3RbB4OBorD29649XGKQtXbgZCxkBdNpU2uvCFAZAXB2FyyMqW6ucKM3ueg0QttOnsWP5tbfGl2iYvfJrZAUNpd2mr1SPPicLQZDZD'
-apPtsset('port', (process.env.PORT || 5000))
-apPtsuse(bodyParser.urlencoded({extended: false}))
-apPtsuse(bodyParser.json())
-apPtsget('/', function (req, res) {
+app.set('port', (process.env.PORT || 5000))
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
+app.get('/', function (req, res) {
   res.send('test test')
 })
-apPtsget('/webhook/', function (req, res) {
+app.get('/webhook/', function (req, res) {
   if (req.query['hub.verify_token'] === 'keypass') {
     res.send(req.query['hub.challenge'])
   }
   res.send('Error, wrong token')
 })
-apPtspost('/webhook/', function (req, res) {
+app.post('/webhook/', function (req, res) {
   let messaging_events = req.body.entry[0].messaging
   for (let i = 0; i < messaging_events.length; i++) {
     let event = req.body.entry[0].messaging[i]
