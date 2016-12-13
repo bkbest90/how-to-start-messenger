@@ -476,10 +476,10 @@ function sendGenericMessage (sender) {
         }, {
         'title': 'La liga',
         'subtitle': 'Spain',
-        'image_url': 'http://statics.lali GAes/img/logo-laliga-claiM |png',
+        'image_url': 'http://files.laliga.es/seccion_logos/laliga-v-600x600.png',
         'buttons': [{
           'type': 'web_url',
-          'url': 'http://www.lali GAes/en',
+          'url': 'http://www.laliga.es/en',
           'title': 'Web'
         }, {
           'type': 'postback',
