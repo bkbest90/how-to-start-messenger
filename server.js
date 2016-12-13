@@ -22,6 +22,43 @@ app.post('/webhook/', function (req, res) {
   for (let i = 0; i < messaging_events.length; i++) {
     let event = req.body.entry[0].messaging[i]
     let sender = event.sender.id
+
+
+    if (data.object == 'page') {
+        // Iterate over each entry
+        // There may be multiple if batched
+        data.entry.forEach(function(pageEntry) {
+          var pageID = pageEntry.id;
+          var timeOfEvent = pageEntry.time;
+
+          // Iterate over each messaging event
+          pageEntry.messaging.forEach(function(messagingEvent) {
+            if (messagingEvent.optin) {
+              receivedAuthentication(messagingEvent);
+            } else if (messagingEvent.message) {
+              receivedMessage(messagingEvent);
+            } else if (messagingEvent.delivery) {
+              receivedDeliveryConfirmation(messagingEvent);
+            } else if (messagingEvent.postback) {
+              receivedPostback(messagingEvent);
+            } else if (messagingEvent.read) {
+              receivedMessageRead(messagingEvent);
+            } else if (messagingEvent.account_linking) {
+              receivedAccountLink(messagingEvent);
+            } else {
+              console.log("Webhook received unknown messagingEvent: ", messagingEvent);
+            }
+          });
+        });
+
+        // Assume all went well.
+        //
+        // You must send back a 200, within 20 seconds, to let us know you've
+        // successfully received the callback. Otherwise, the request will time out.
+        res.sendStatus(200);
+      }
+
+
     if (event.message && event.message.text) {
       var text = event.message.text
 
@@ -88,7 +125,6 @@ app.post('/webhook/', function (req, res) {
     }
     if (event.postback) {
       let text = JSON.stringify(event.postback)
-      receivedPostback(event)
       sendTextMessage(sender, 'สวัสดี')
       sendFirst (sender)
       continue
