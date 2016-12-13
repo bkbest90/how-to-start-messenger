@@ -265,7 +265,7 @@ function premierleaguetable(sender){
                   'title': 'Back',
                   'payload': 'back'
                 }]
-              }, {
+              }  /*, {
                 'title': '10  '+JSON.parse(body)[0].leagueTable[9].name,
                 'subtitle': JSON.parse(body)[0].leagueTable[9].points+ " คะแนน\n"+ " แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[9].gamesPlayed+ " นัด"
                           +"\nชนะ "+JSON.parse(body)[0].leagueTable[9].wins
@@ -386,7 +386,9 @@ function premierleaguetable(sender){
                   'title': 'Back',
                   'payload': 'back'
                 }]
-              }]
+              }
+*/
+            ]
             }
           }
         }
