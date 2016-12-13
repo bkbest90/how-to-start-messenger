@@ -39,7 +39,6 @@ app.post('/webhook/', function (req, res) {
       var payloadt = event.postback.payload;
       if (payloadt == 'USER_DEFINED_PAYLOAD') {
         sendTextMessage(sender, 'Hello')
-
       }
 
       continue
@@ -112,13 +111,13 @@ function sendGenericMessage (sender) {
             'title': 'web url'
           }, {
             'type': 'postback',
-            'title': 'Postback',
+            'title': 'table',
             'payload': 'table'
           }]
         }, {
           'title': 'Second card',
           'subtitle': 'Element #2 of an hscroll',
-          'image_url': 'http://messengerdemo.parseapp.com/img/gearvr.png',
+          
           'buttons': [{
             'type': 'postback',
             'title': 'Postback',
