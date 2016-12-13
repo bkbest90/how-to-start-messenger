@@ -43,8 +43,8 @@ app.post('/webhook/', function (req, res) {
         sendTextMessage(sender, 'สามารถพิมพ์เพื่อแนะนำหรือพูดคุยกับผู้พัฒนาได้นะครับ ^_^')
       }
       if (payloadt === 'table1') {
-        premierleaguetable1(sender)
-        
+    /*    premierleaguetable1(sender)*/
+
         premierleaguetable2(sender)
       }
       if (payloadt === 'back') {
