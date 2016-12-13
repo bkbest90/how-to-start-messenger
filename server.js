@@ -131,7 +131,7 @@ function sendFirst (sender) {
           }, {
             'type': 'postback',
             'title': 'table',
-            'payload': 'Payload for first element in a generic bubble'
+            'payload': 'table'
           }]
         }]
       }
