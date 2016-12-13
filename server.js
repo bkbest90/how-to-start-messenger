@@ -42,8 +42,8 @@ app.post('/webhook/', function (req, res) {
         sendGenericMessage (sender)
       }
       if (payloadt === 'table1') {
-        setTimeout(premierleaguetable1(sender), 50);
-        setTimeout(premierleaguetable2(sender), 100);
+        premierleaguetable1(sender)
+        premierleaguetable2(sender)
       }
       if (payloadt === 'back') {
         sendGenericMessage (sender)
