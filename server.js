@@ -93,7 +93,7 @@ function competition(sender){
         // var info = JSON.parse(body)
         console.log(JSON.parse(body)[0].competition.name)
             sendTextMessage(sender, JSON.parse(body)[0].competition.name + JSON.parse(body)[0].leagueTable[0].name);
-            for (i = 0; i < 20; i++) {
+            for (var i = 0; i < 20; i++) {
               sendTextMessage(sender, "อันดับที่" + i+1 +" " + JSON.parse(body)[0].leagueTable[i].name +" " +JSON.parse(body)[0].leagueTable[i].points +"คะแนน");
             }
 
