@@ -70,10 +70,11 @@ app.post('/webhook/', function (req, res) {
         }
 
         function callback (error, response, body) {
-          sendTextMessage(sender, 'เข้าcallbackแล้ว')
+          // sendTextMessage(sender, 'เข้าcallbackแล้ว')
           if (!error && response.statusCode === 200) {
             // var info = JSON.parse(body)
             console.log(JSON.parse(body)[0].competition.name)
+            sendTextMessage(sender, JSON.parse(body)[0].competition.name)
           }
         }
 
