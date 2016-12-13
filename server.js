@@ -142,9 +142,7 @@ function sendGreetMessage(recipientId, messageText) {
       }
     }
   };
-
-  callSendAPI(messageData);
-}
+  }
 
 function sendGenericMessage (sender) {
   let messageData = {
