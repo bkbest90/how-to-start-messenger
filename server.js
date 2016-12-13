@@ -62,23 +62,7 @@ app.post('/webhook/', function (req, res) {
 */
 
       if (text === 'table') {
-        var options = {
-          url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
-          headers: {
-            'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'
-          }
-        }
-
-        function callback (error, response, body) {
-          // sendTextMessage(sender, 'เข้าcallbackแล้ว')
-          if (!error && response.statusCode === 200) {
-            // var info = JSON.parse(body)
-            console.log(JSON.parse(body)[0].competition.name)
-            sendTextMessage(sender, JSON.parse(body)[0].competition.name)
-          }
-        }
-
-        request(options, callback)
+        function competition(sender)
       }
 
       if (text === 'Generic') {
@@ -94,6 +78,26 @@ app.post('/webhook/', function (req, res) {
   }
   res.sendStatus(200)
 })
+function competition(sender){
+
+    var options = {
+      url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
+      headers: {
+        'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'
+      }
+    }
+
+    function callback (error, response, body) {
+      // sendTextMessage(sender, 'เข้าcallbackแล้ว')
+      if (!error && response.statusCode === 200) {
+        // var info = JSON.parse(body)
+        console.log(JSON.parse(body)[0].competition.name)
+        sendTextMessage(sender, JSON.parse(body)[0].competition.name)
+      }
+    }
+
+    request(options, callback)
+}
 
 function sendTextMessage (sender, text) {
   let messageData = { text: text }
