@@ -72,9 +72,8 @@ app.post('/webhook/', function (req, res) {
     }
     if (event.postback) {
       let text = JSON.stringify(event.postback)
-      if (text == "USER_DEFINED_PAYLOAD"){
+
       sendTextMessage(sender, 'สวัสดี')
-    }
       continue
     }
   }
