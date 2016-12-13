@@ -92,9 +92,9 @@ function competition(sender){
       if (!error && response.statusCode === 200) {
         // var info = JSON.parse(body)
         console.log(JSON.parse(body)[0].competition.name)
-            sendTextMessage(sender, JSON.parse(body)[0].competition.name + JSON.parse(body)[0].leagueTable[0].name)
+            sendTextMessage(sender, JSON.parse(body)[0].competition.name + JSON.parse(body)[0].leagueTable[0].name);
             for (i = 0; i < 20; i++) {
-              sendTextMessage(sender, "อันดับที่" + i+1 +" " + JSON.parse(body)[0].leagueTable[i].name +" " +JSON.parse(body)[0].leagueTable[i].points +"คะแนน")
+              sendTextMessage(sender, "อันดับที่" + i+1 +" " + JSON.parse(body)[0].leagueTable[i].name +" " +JSON.parse(body)[0].leagueTable[i].points +"คะแนน");
             }
 
             /* for (i = 0; i < 20; i++) {
