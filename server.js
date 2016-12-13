@@ -39,6 +39,7 @@ app.post('/webhook/', function (req, res) {
       var payloadt = event.postback.payload;
       if (payloadt === 'USER_DEFINED_PAYLOAD') {
         sendTextMessage(sender, 'สวัสดีครับ')
+        sendGenericMessage (sender)
       }
       if (payloadt === 'table') {
         premierleaguetable(sender)
@@ -104,7 +105,7 @@ function premierleaguetable(sender) {
         'template_type': 'generic',
         'elements': [{
           'title': '1  '+JSON.parse(body)[0].leagueTable[0].name,
-          'subtitle':JSON.parse(body)[0].leagueTable[0].points "คะแนน  W "+JSON.parse(body)[0].leagueTable[0].wins
+          'subtitle':JSON.parse(body)[0].leagueTable[0].points +"คะแนน  W "+JSON.parse(body)[0].leagueTable[0].wins
                     + " D "+JSON.parse(body)[0].leagueTable[0].draws+" L "+ JSON.parse(body)[0].leagueTable[0].losses ,
           'buttons': [{
             'type': 'postback',
@@ -113,7 +114,7 @@ function premierleaguetable(sender) {
           }]
         }, {
           'title': '2  '+JSON.parse(body)[0].leagueTable[1].name,
-          'subtitle': JSON.parse(body)[0].leagueTable[1].points "คะแนน  W "+JSON.parse(body)[0].leagueTable[1].wins
+          'subtitle': JSON.parse(body)[0].leagueTable[1].points+ "คะแนน  W "+JSON.parse(body)[0].leagueTable[1].wins
                     + " D "+JSON.parse(body)[0].leagueTable[1].draws+" L "+ JSON.parse(body)[0].leagueTable[1].losses ,
             'buttons': [{
             'type': 'postback',
