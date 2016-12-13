@@ -62,7 +62,7 @@ app.post('/webhook/', function (req, res) {
 */
 
       if (text === 'table') {
-        function competition(sender)
+        competition(sender)
       }
 
       if (text === 'Generic') {
