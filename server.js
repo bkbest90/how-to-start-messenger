@@ -25,42 +25,6 @@ app.post('/webhook/', function (req, res) {
     if (event.message && event.message.text) {
       var text = event.message.text
 
-    /*  var location = event.message.text
-            var weatherEndpoint = 'http://api.openweathermap.org/data/2.5/weather?q=' +location+ '&units=metric&appid=ea5272e74853f242bc0efa9fef3dd9f3'
-            request({url: weatherEndpoint,json: true},
-            function(error, response, body) {
-              try {
-                var condition = body.main;
-                var cloud = body.clouds.all;
-                var realname = body.name;
-                var weathe = body.weather;
-                sendTextMessage(sender, realname + "   อุณหภูมิวันนี้คือ " + condition.temp + " องศาเซลเซียส " + " \nอุณหภูมิต่ำสุดคือ " + condition.temp_min +" \nอุณหภูมิสูงสุดคือ " + condition.temp_max +" \nเมฆ "+ cloud + " % "+" \nค่าความชื้น "+ condition.humidity);
-              } catch(err) {
-                console.error('error caught', err);
-                sendTextMessage(sender, "เราหาเมืองนี้ไม่เจอ. กรุณาใส่ชื่อเมืองใหม่อีกครั้ง. Ex. Huahin");
-              }
-      })
-
-      url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
-      headers: {  'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'  }
-
-      var options = {
-       };
-      request({url: options,json: true},
-    function (error, response, body) {
-      try {
-
-         var table = body.competition;
-        sendTextMessage(sender, table.name);
-      } catch(err) {
-        console.error('error caught', err);
-        sendTextMessage(sender, "Error");
-      }
-
-    }
-
-*/
-
       if (text === 'table') {
         competition(sender)
       }
@@ -72,12 +36,12 @@ app.post('/webhook/', function (req, res) {
     }
     if (event.postback) {
       let text = JSON.stringify(event.postback)
-      if (payload == 'table') {
-        competition(sender)
+      var payload = event.postback.payload;
+      if (payload == "USER_DEFINED_PAYLOAD") {
+        sendTextMessage(sender, 'Hello')
 
       }
-      sendTextMessage(sender, 'Hello')
-
+      
       continue
     }
   }
