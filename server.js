@@ -89,12 +89,15 @@ app.post('/webhook/', function (req, res) {
     if (event.postback) {
       let text = JSON.stringify(event.postback)
       sendTextMessage(sender, 'สวัสดี')
-      sendFirst (sender)
+      sendGreetMessage(recipientId, messageText)
       continue
     }
   }
   res.sendStatus(200)
 })
+
+
+
 
 function sendTextMessage (sender, text) {
   let messageData = { text: text }
@@ -114,22 +117,19 @@ function sendTextMessage (sender, text) {
     }
   })
 }
-function sendFirst (sender) {
-  let messageData = {
-    'attachment': {
-      'type': 'template',
-      'payload': {
-        'template_type': 'generic',
-      /*  'elements': [{
-          'title': 'First card',
-          'subtitle': 'Element #1 of an hscroll',
-          'image_url': 'https://resources-pl.pulselive.com/ver/i/elements/premier-league-logo-header.svg',
-          'buttons': [{
-            'type': 'web_url',
-            'url': 'https://www.messenger.com',
-            'title': 'web url'
-          },*/
-          buttons: [{
+
+function sendGreetMessage(recipientId, messageText) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "button",
+          text : "นี้คือคู่มือร้านอาหารของคุณในปราจีนบุรี ผมจะช่วยคุณได้อย่างไร",
+            buttons: [{
               type: "postback",
               title: "🍣 ค้นหาร้านอาหาร",
               payload: "findRestaurant"
@@ -137,28 +137,14 @@ function sendFirst (sender) {
               type: "postback",
               title: "❌ ไม่เป็นไร ขอบคุณ",
               payload: "noThank"
-
-        }]
+            }]
+        }
       }
     }
-  }
-  request({
-    url: 'https://graph.facebook.com/v2.6/me/messages',
-    qs: {access_token: token},
-    method: 'POST',
-    json: {
-      recipient: {id: sender},
-      message: messageData
-    }
-  }, function (error, response, body) {
-    if (error) {
-      console.log('Error sending messages: ', error)
-    } else if (response.body.error) {
-      console.log('Error: ', response.body.error)
-    }
-  })
-}
+  };
 
+  callSendAPI(messageData);
+}
 
 function sendGenericMessage (sender) {
   let messageData = {
