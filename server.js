@@ -120,7 +120,7 @@ function sendFirst (sender) {
       'type': 'template',
       'payload': {
         'template_type': 'generic',
-        'elements': [{
+      /*  'elements': [{
           'title': 'First card',
           'subtitle': 'Element #1 of an hscroll',
           'image_url': 'https://resources-pl.pulselive.com/ver/i/elements/premier-league-logo-header.svg',
@@ -128,11 +128,16 @@ function sendFirst (sender) {
             'type': 'web_url',
             'url': 'https://www.messenger.com',
             'title': 'web url'
-          }, {
-            'type': 'buttons',
-            'title': 'table',
-            'payload': 'table'
-          }]
+          },*/
+          buttons: [{
+              type: "postback",
+              title: "🍣 ค้นหาร้านอาหาร",
+              payload: "findRestaurant"
+            }, {
+              type: "postback",
+              title: "❌ ไม่เป็นไร ขอบคุณ",
+              payload: "noThank"
+
         }]
       }
     }
