@@ -40,6 +40,9 @@ app.post('/webhook/', function (req, res) {
       if (payloadt === 'USER_DEFINED_PAYLOAD') {
         sendTextMessage(sender, 'Hello')
       }
+      if (payloadt === 'table') {
+        leaguetableshow(sender)
+      }
 
       continue
     }
@@ -62,8 +65,9 @@ function leaguetableshow(sender){
         console.log(JSON.parse(body)[0].competition.name)
             sendTextMessage(sender, JSON.parse(body)[0].competition.name + JSON.parse(body)[0].leagueTable[0].name);
             var rank = 0;
-            var rank = rank + 1;
+
             for (var i = 0; i < 20; i++) {
+              var rank = rank + 1;
               sendTextMessage(sender, "อันดับที่"+ rank  +"\n" + JSON.parse(body)[0].leagueTable[i].name +"\n" +JSON.parse(body)[0].leagueTable[i].points +"คะแนน");
             }
 
