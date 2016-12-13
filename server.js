@@ -38,9 +38,9 @@ app.post('/webhook/', function (req, res) {
       let text = JSON.stringify(event.postback)
       var payloadt = event.postback.payload;
       if (payloadt === 'USER_DEFINED_PAYLOAD') {
-        sendTextMessage(sender, 'สวัสดีครับ')
-        sendGenericMessage (sender)
-        sendTextMessage(sender, 'สามารถพิมพ์เพื่อแนะนำหรือพูดคุยกับผู้พัฒนาได้นะครับ ^_^')
+        sendTextMessage(sender, 'สวัสดีครับ');
+        sendGenericMessage (sender);
+        sendTextMessage(sender, 'สามารถพิมพ์เพื่อแนะนำหรือพูดคุยกับผู้พัฒนาได้นะครับ ^_^');
       }
       if (payloadt === 'table1') {
     /*    premierleaguetable1(sender)*/
@@ -305,6 +305,15 @@ function premierleaguetable1(sender){
 }
 
 function premierleaguetable2(sender) {
+  var options = {
+    url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
+    headers: {
+      'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'
+    }
+  }
+
+  function callback (error, response, body) {
+    if (!error && response.statusCode === 200) {
   let messageData = {
     'attachment': {
       'type': 'template',
@@ -439,6 +448,10 @@ function premierleaguetable2(sender) {
       console.log('Error: ', response.body.error)
     }
   })
+}
+}
+
+request(options, callback)
 }
 
 function sendGenericMessage (sender) {
