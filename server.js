@@ -72,8 +72,11 @@ app.post('/webhook/', function (req, res) {
     }
     if (event.postback) {
       let text = JSON.stringify(event.postback)
-      console.log(event.postback)
-      sendTextMessage(sender, event.postback)
+      if (payload == 'table') {
+        competition(sender)
+
+      }
+      sendTextMessage(sender, 'Hello')
 
       continue
     }
@@ -146,7 +149,7 @@ function sendGenericMessage (sender) {
           }, {
             'type': 'postback',
             'title': 'Postback',
-            'payload': 'Payload for first element in a generic bubble'
+            'payload': 'table'
           }]
         }, {
           'title': 'Second card',
