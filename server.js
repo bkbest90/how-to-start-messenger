@@ -114,20 +114,76 @@ function sendGenericMessage (sender) {
           'buttons': [{
             'type': 'web_url',
             'url': 'https://www.premierleague.com/',
-            'title': 'web url'
+            'title': 'Web'
           }, {
             'type': 'postback',
-            'title': 'table',
+            'title': 'Table',
             'payload': 'table'
           }]
         }, {
-          'title': 'La liga',
-          'subtitle': 'Spain',
-          'image_url': 'http://statics.laliga.es/img/logo-laliga-claim.png',
-          'buttons': [{
-            'type': 'postback',
-            'title': 'table',
-            'payload': 'table'
+        'title': 'La liga',
+        'subtitle': 'Spain',
+        'image_url': 'http://statics.laliga.es/img/logo-laliga-claim.png',
+        'buttons': [{
+          'type': 'web_url',
+          'url': 'http://www.laliga.es/en',
+          'title': 'Web'
+        }, {
+          'type': 'postback',
+          'title': 'Table',
+          'payload': 'table'
+          }]
+        }, {
+        'title': 'Bundesliga',
+        'subtitle': 'German',
+        'image_url': 'http://s.bundesliga.com/2016/img/logo.png',
+        'buttons': [{
+          'type': 'web_url',
+          'url': 'http://www.bundesliga.com/en/',
+          'title': 'Web'
+        }, {
+          'type': 'postback',
+          'title': 'Table',
+          'payload': 'table'
+          }]
+        }, {
+        'title': 'Serie A',
+        'subtitle': 'Italy',
+        'image_url': 'http://www.legaseriea.it/assets/legaseriea/images/logo.png?v=2016',
+        'buttons': [{
+          'type': 'web_url',
+          'url': 'http://www.legaseriea.it/en/',
+          'title': 'Web'
+        }, {
+          'type': 'postback',
+          'title': 'Table',
+          'payload': 'table'
+          }]
+        }, {
+        'title': 'ligue 1',
+        'subtitle': 'France',
+        'image_url': 'http://vignette1.wikia.nocookie.net/fifa/images/f/f6/Ligue_1_Logo.png/revision/latest?cb=20161117184717',
+        'buttons': [{
+          'type': 'web_url',
+          'url': 'http://www.ligue1.com/',
+          'title': 'Web'
+        }, {
+          'type': 'postback',
+          'title': 'Table',
+          'payload': 'table'
+          }]
+        }, {
+        'title': 'Premier League Thailand',
+        'subtitle': 'Thailand',
+        'image_url': 'http://www.thaileague.co.th/official/plt_html/images/plt_logo.png',
+        'buttons': [{
+          'type': 'web_url',
+          'url': 'http://www.thaileague.co.th/official/',
+          'title': 'Web'
+        }, {
+          'type': 'postback',
+          'title': 'Table',
+          'payload': 'table'
           }]
         }]
       }
@@ -149,7 +205,56 @@ function sendGenericMessage (sender) {
     }
   })
 }
+/*
+function sendGenericMessage (sender) {
+  let messageData = {
+    'attachment': {
+      'type': 'template',
+      'payload': {
+        'template_type': 'generic',
+        'elements': [{
+          'title': 'Premier league',
+          'subtitle': 'Rank 1',
+          'image_url': 'https://resources-pl.pulselive.com/ver/i/elements/premier-league-logo-header.svg',
+          'buttons': [{
+            'type': 'web_url',
+            'url': 'https://www.messenger.com',
+            'title': 'web url'
+          }, {
+            'type': 'postback',
+            'title': 'table',
+            'payload': 'table'
+          }]
+        }, {
+          'title': 'Second card',
+          'subtitle': 'Element #2 of an hscroll',
 
+          'buttons': [{
+            'type': 'postback',
+            'title': 'Postback',
+            'payload': 'Payload for second element in a generic bubble'
+          }]
+        }]
+      }
+    }
+  }
+  request({
+    url: 'https://graph.facebook.com/v2.6/me/messages',
+    qs: {access_token: token},
+    method: 'POST',
+    json: {
+      recipient: {id: sender},
+      message: messageData
+    }
+  }, function (error, response, body) {
+    if (error) {
+      console.log('Error sending messages: ', error)
+    } else if (response.body.error) {
+      console.log('Error: ', response.body.error)
+    }
+  })
+}
+*/
 app.listen(app.get('port'), function () {
   console.log('running on port', app.get('port'))
 })
