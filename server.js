@@ -22,43 +22,6 @@ app.post('/webhook/', function (req, res) {
   for (let i = 0; i < messaging_events.length; i++) {
     let event = req.body.entry[0].messaging[i]
     let sender = event.sender.id
-
-
-    if (data.object == 'page') {
-        // Iterate over each entry
-        // There may be multiple if batched
-        data.entry.forEach(function(pageEntry) {
-          var pageID = pageEntry.id;
-          var timeOfEvent = pageEntry.time;
-
-          // Iterate over each messaging event
-          pageEntry.messaging.forEach(function(messagingEvent) {
-            if (messagingEvent.optin) {
-              receivedAuthentication(messagingEvent);
-            } else if (messagingEvent.message) {
-              receivedMessage(messagingEvent);
-            } else if (messagingEvent.delivery) {
-              receivedDeliveryConfirmation(messagingEvent);
-            } else if (messagingEvent.postback) {
-              receivedPostback(messagingEvent);
-            } else if (messagingEvent.read) {
-              receivedMessageRead(messagingEvent);
-            } else if (messagingEvent.account_linking) {
-              receivedAccountLink(messagingEvent);
-            } else {
-              console.log("Webhook received unknown messagingEvent: ", messagingEvent);
-            }
-          });
-        });
-
-        // Assume all went well.
-        //
-        // You must send back a 200, within 20 seconds, to let us know you've
-        // successfully received the callback. Otherwise, the request will time out.
-        res.sendStatus(200);
-      }
-
-
     if (event.message && event.message.text) {
       var text = event.message.text
 
@@ -126,28 +89,11 @@ app.post('/webhook/', function (req, res) {
     if (event.postback) {
       let text = JSON.stringify(event.postback)
       sendTextMessage(sender, 'สวัสดี')
-      sendFirst (sender)
       continue
     }
   }
   res.sendStatus(200)
 })
-function receivedPostback(event) {
-  var senderID = event.sender.id;
-  var recipientID = event.recipient.id;
-  var timeOfPostback = event.timestamp;
-
-  // The 'payload' param is a developer-defined field which is set in a postback
-  // button for Structured Messages.
-  var payload = event.postback.payload;
-
-  console.log("Received postback for user %d and page %d with payload '%s' " +
-    "at %d", senderID, recipientID, payload, timeOfPostback);
-
-  // When a postback is called, we'll send a message back to the sender to
-  // let them know it was successful
-  sendTextMessage(senderID, "Postback called");
-}
 
 function sendTextMessage (sender, text) {
   let messageData = { text: text }
@@ -167,45 +113,6 @@ function sendTextMessage (sender, text) {
     }
   })
 }
-
-function sendFirst (sender) {
-  let messageData = {
-    'attachment': {
-      'type': 'template',
-      'payload': {
-
-          'buttons': [{
-            'type': 'web_url',
-            'url': 'https://www.messenger.com',
-            'title': 'web url'
-          }, {
-            'type': 'postback',
-            'title': 'table',
-            'payload': "table"
-          }]
-        }]
-      }
-    }
-  }
-  request({
-    url: 'https://graph.facebook.com/v2.6/me/messages',
-    qs: {access_token: token},
-    method: 'POST',
-    json: {
-      recipient: {id: sender},
-      message: messageData
-    }
-  }, function (error, response, body) {
-    if (error) {
-      console.log('Error sending messages: ', error)
-    } else if (response.body.error) {
-      console.log('Error: ', response.body.error)
-    }
-  })
-}
-
-
-
 
 function sendGenericMessage (sender) {
   let messageData = {
