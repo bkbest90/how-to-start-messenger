@@ -44,9 +44,7 @@ app.post('/webhook/', function (req, res) {
       if (payloadt === 'table') {
         premierleaguetable(sender)
       }
-      if (payloadt === 'back') {
-        sendGenericMessage (sender)
-      }
+      
 
       continue
     }
