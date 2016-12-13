@@ -89,15 +89,11 @@ app.post('/webhook/', function (req, res) {
     if (event.postback) {
       let text = JSON.stringify(event.postback)
       sendTextMessage(sender, 'สวัสดี')
-      sendGreetMessage(recipientId, messageText)
       continue
     }
   }
   res.sendStatus(200)
 })
-
-
-
 
 function sendTextMessage (sender, text) {
   let messageData = { text: text }
@@ -117,32 +113,6 @@ function sendTextMessage (sender, text) {
     }
   })
 }
-
-function sendGreetMessage(recipientId, messageText) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      attachment: {
-        type: "template",
-        payload: {
-          template_type: "button",
-          text : "นี้คือคู่มือร้านอาหารของคุณในปราจีนบุรี ผมจะช่วยคุณได้อย่างไร",
-            buttons: [{
-              type: "postback",
-              title: "🍣 ค้นหาร้านอาหาร",
-              payload: "findRestaurant"
-            }, {
-              type: "postback",
-              title: "❌ ไม่เป็นไร ขอบคุณ",
-              payload: "noThank"
-            }]
-        }
-      }
-    }
-  };
-  }
 
 function sendGenericMessage (sender) {
   let messageData = {
