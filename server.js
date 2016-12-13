@@ -88,6 +88,7 @@ app.post('/webhook/', function (req, res) {
     }
     if (event.postback) {
       let text = JSON.stringify(event.postback)
+      receivedPostback(event)
       sendTextMessage(sender, 'สวัสดี')
       sendFirst (sender)
       continue
