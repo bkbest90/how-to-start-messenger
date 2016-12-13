@@ -64,8 +64,10 @@ function leaguetableshow(sender){
         // var info = JSON.parse(body)
         console.log(JSON.parse(body)[0].competition.name)
             sendTextMessage(sender, JSON.parse(body)[0].competition.name + JSON.parse(body)[0].leagueTable[0].name);
+            var rank = 0;
+            var rank += 1;
             for (var i = 0; i < 20; i++) {
-              sendTextMessage(sender, "อันดับที่"  +"\n" + JSON.parse(body)[0].leagueTable[i].name +"\n" +JSON.parse(body)[0].leagueTable[i].points +"คะแนน");
+              sendTextMessage(sender, "อันดับที่"+ rank  +"\n" + JSON.parse(body)[0].leagueTable[i].name +"\n" +JSON.parse(body)[0].leagueTable[i].points +"คะแนน");
             }
 
             /* for (i = 0; i < 20; i++) {
