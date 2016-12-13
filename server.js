@@ -50,6 +50,9 @@ app.post('/webhook/', function (req, res) {
   }
   res.sendStatus(200)
 })
+
+
+/*
 function leaguetableshow(sender){
 
     var options = {
@@ -76,7 +79,7 @@ function leaguetableshow(sender){
 
     request(options, callback)
 }
-
+*/
 function sendTextMessage (sender, text) {
   let messageData = { text: text }
   request({
@@ -96,7 +99,7 @@ function sendTextMessage (sender, text) {
   })
 }
 
-
+/*
 function premierleaguetable(sender) {
   let messageData = {
     'attachment': {
@@ -141,7 +144,65 @@ function premierleaguetable(sender) {
     }
   })
 }
+*/
+function premierleaguetable(sender){
 
+    var options = {
+      url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
+      headers: {
+        'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'
+      }
+    }
+
+    function callback (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        let messageData = {
+          'attachment': {
+            'type': 'template',
+            'payload': {
+              'template_type': 'generic',
+              'elements': [{
+                'title': '1  '+JSON.parse(body)[0].leagueTable[0].name,
+                'subtitle':JSON.parse(body)[0].leagueTable[0].points +"คะแนน  W "+JSON.parse(body)[0].leagueTable[0].wins
+                          + " D "+JSON.parse(body)[0].leagueTable[0].draws+" L "+ JSON.parse(body)[0].leagueTable[0].losses ,
+                'buttons': [{
+                  'type': 'postback',
+                  'title': 'table',
+                  'payload': 'table'
+                }]
+              }, {
+                'title': '2  '+JSON.parse(body)[0].leagueTable[1].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[1].points+ "คะแนน  W "+JSON.parse(body)[0].leagueTable[1].wins
+                          + " D "+JSON.parse(body)[0].leagueTable[1].draws+" L "+ JSON.parse(body)[0].leagueTable[1].losses ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'table',
+                  'payload': 'table'
+                }]
+              }]
+            }
+          }
+        }
+        request({
+          url: 'https://graph.facebook.com/v2.6/me/messages',
+          qs: {access_token: token},
+          method: 'POST',
+          json: {
+            recipient: {id: sender},
+            message: messageData
+          }
+        }, function (error, response, body) {
+          if (error) {
+            console.log('Error sending messages: ', error)
+          } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+          }
+        })
+      }
+    }
+
+    request(options, callback)
+}
 
 
 
