@@ -73,7 +73,7 @@ app.post('/webhook/', function (req, res) {
     if (event.postback) {
       let text = JSON.stringify(event.postback)
       console.log(event.postback)
-      if (text == "{"payload":"USER_DEFINED_PAYLOAD"}") {
+      if (payload==='USER_DEFINED_PAYLOAD'}) {
         sendTextMessage(sender, Hello)
       }
 
