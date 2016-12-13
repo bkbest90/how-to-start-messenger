@@ -38,10 +38,11 @@ app.post('/webhook/', function (req, res) {
       let text = JSON.stringify(event.postback)
       var payloadt = event.postback.payload;
       if (payloadt === 'USER_DEFINED_PAYLOAD') {
-        sendTextMessage(sender, 'Hello')
+        sendTextMessage(sender, 'สวัสดีครับ')
+        sendGenericMessage (sender)
       }
       if (payloadt === 'table') {
-        leaguetableshow(sender)
+        premierleaguetable(sender)
       }
 
       continue
@@ -68,14 +69,8 @@ function leaguetableshow(sender){
 
             for (var i = 0; i < 20; i++) {
               var rank = rank + 1;
-              sendTextMessage(sender, "อันดับที่"+ rank  +"\n" + JSON.parse(body)[0].leagueTable[i].name +"\n" +JSON.parse(body)[0].leagueTable[i].points +"คะแนน");
+              sendTextMessage(sender, "อันดับที่ "+ rank  +"\n" + JSON.parse(body)[0].leagueTable[i].name +"\n" +JSON.parse(body)[0].leagueTable[i].points +"คะแนน");
             }
-
-            /* for (i = 0; i < 20; i++) {
-              "อันดับที่" + i+1 + JSON.parse(body)[0].leagueTable.name +" " +JSON.parse(body)[0].leagueTable.points +"คะแนน" ;
-           }
-
-         */
       }
     }
 
@@ -101,6 +96,55 @@ function sendTextMessage (sender, text) {
   })
 }
 
+
+function premierleaguetable(sender) {
+  let messageData = {
+    'attachment': {
+      'type': 'template',
+      'payload': {
+        'template_type': 'generic',
+        'elements': [{
+          'title': '1  '+JSON.parse(body)[0].leagueTable[0].name,
+          'subtitle':JSON.parse(body)[0].leagueTable[0].points "คะแนน  W "+JSON.parse(body)[0].leagueTable[0].wins
+                    + " D "+JSON.parse(body)[0].leagueTable[0].draws+" L "+ JSON.parse(body)[0].leagueTable[0].losses ,
+          'buttons': [{
+            'type': 'postback',
+            'title': 'table',
+            'payload': 'table'
+          }]
+        }, {
+          'title': '2  '+JSON.parse(body)[0].leagueTable[1].name,
+          'subtitle': JSON.parse(body)[0].leagueTable[1].points "คะแนน  W "+JSON.parse(body)[0].leagueTable[1].wins
+                    + " D "+JSON.parse(body)[0].leagueTable[1].draws+" L "+ JSON.parse(body)[0].leagueTable[1].losses ,
+            'buttons': [{
+            'type': 'postback',
+            'title': 'table',
+            'payload': 'table'
+          }]
+        }]
+      }
+    }
+  }
+  request({
+    url: 'https://graph.facebook.com/v2.6/me/messages',
+    qs: {access_token: token},
+    method: 'POST',
+    json: {
+      recipient: {id: sender},
+      message: messageData
+    }
+  }, function (error, response, body) {
+    if (error) {
+      console.log('Error sending messages: ', error)
+    } else if (response.body.error) {
+      console.log('Error: ', response.body.error)
+    }
+  })
+}
+
+
+
+
 function sendGenericMessage (sender) {
   let messageData = {
     'attachment': {
@@ -113,7 +157,7 @@ function sendGenericMessage (sender) {
           'image_url': 'https://resources-pl.pulselive.com/ver/i/elements/premier-league-logo-header.svg',
           'buttons': [{
             'type': 'web_url',
-            'url': 'https://www.premierleague.com/',
+            'url': 'https://www.premierleague.com',
             'title': 'Web'
           }, {
             'type': 'postback',
