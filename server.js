@@ -72,7 +72,10 @@ app.post('/webhook/', function (req, res) {
     }
     if (event.postback) {
       let text = JSON.stringify(event.postback)
+      var payload = event.postback.payload;
+      if(payload == "USER_DEFINED_PAYLOAD" ){
       sendTextMessage(sender, 'สวัสดี')
+    }
       continue
     }
   }
@@ -98,9 +101,16 @@ function competition(sender){
               sendTextMessage(sender, "อันดับที่ " + rank +"\n" + JSON.parse(body)[0].leagueTable[i].name +"\n" +JSON.parse(body)[0].leagueTable[i].points +"คะแนน");
             }
 
-            /* for (i = 0; i < 20; i++) {
-              "อันดับที่" + i+1 + JSON.parse(body)[0].leagueTable.name +" " +JSON.parse(body)[0].leagueTable.points +"คะแนน" ;
-           }
+            /* setTimeout(function() {
+        sendTextMessage(senderID, "1");
+      }, 500)
+      setTimeout(function() {
+        sendTextMessage(senderID, "2");
+      }, 1000)
+      setTimeout(function() {
+
+        sendTextMessage(senderID, "3");
+      }, 1500)
 
          */
       }
