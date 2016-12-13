@@ -41,7 +41,7 @@ app.post('/webhook/', function (req, res) {
         sendTextMessage(sender, 'สวัสดีครับ')
         sendGenericMessage (sender)
       }
-      if (payloadt === 'table1') {
+      if (payloadt === 'table') {
         premierleaguetable(sender)
       }
       if (payloadt === 'back') {
@@ -430,7 +430,7 @@ function sendGenericMessage (sender) {
           }, {
             'type': 'postback',
             'title': 'Table',
-            'payload': 'table1'
+            'payload': 'table'
           }]
         }, {
         'title': 'La liga',
@@ -443,7 +443,7 @@ function sendGenericMessage (sender) {
         }, {
           'type': 'postback',
           'title': 'Table',
-          'payload': 'table2'
+          'payload': 'table'
           }]
         }, {
         'title': 'Bundesliga',
@@ -456,7 +456,7 @@ function sendGenericMessage (sender) {
         }, {
           'type': 'postback',
           'title': 'Table',
-          'payload': 'table3'
+          'payload': 'table'
           }]
         }, {
         'title': 'Serie A',
@@ -469,7 +469,7 @@ function sendGenericMessage (sender) {
         }, {
           'type': 'postback',
           'title': 'Table',
-          'payload': 'table4'
+          'payload': 'table'
           }]
         }, {
         'title': 'ligue 1',
@@ -482,7 +482,7 @@ function sendGenericMessage (sender) {
         }, {
           'type': 'postback',
           'title': 'Table',
-          'payload': 'table5'
+          'payload': 'table'
           }]
         }, {
         'title': 'Premier League Thailand',
@@ -495,7 +495,7 @@ function sendGenericMessage (sender) {
         }, {
           'type': 'postback',
           'title': 'Table',
-          'payload': 'table6'
+          'payload': 'table'
           }]
         }]
       }
