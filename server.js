@@ -4,7 +4,6 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
-const axios = require('axios')
 const token = 'EAAYzVx44hnYBAEiaPrinabDZBWmwC1rkal50SOWUpTiIt8ZChgu6BhNLQF3R8W2Qj24bNpCLEh3RbB4OBorD29649XGKQtXbgZCxkBdNpU2uvCFAZAXB2FyyMqW6ucKM3ueg0QttOnsWP5tbfGl2iYvfJrZAUNpd2mr1SPPicLQZDZD'
 app.set('port', (process.env.PORT || 5000))
 app.use(bodyParser.urlencoded({extended: false}))
@@ -74,7 +73,7 @@ app.post('/webhook/', function (req, res) {
           sendTextMessage(sender, 'เข้าcallbackแล้ว')
           if (!error && response.statusCode == 200) {
             // var info = JSON.parse(body)
-            console.log(response.body)
+            console.log(response)
           }
         }
 
