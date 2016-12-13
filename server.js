@@ -39,7 +39,6 @@ app.post('/webhook/', function (req, res) {
       var payloadt = event.postback.payload;
       if (payloadt === 'USER_DEFINED_PAYLOAD') {
         sendTextMessage(sender, 'สวัสดีครับ')
-        sendGenericMessage (sender)
       }
       if (payloadt === 'table') {
         premierleaguetable(sender)
