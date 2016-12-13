@@ -73,7 +73,7 @@ app.post('/webhook/', function (req, res) {
           sendTextMessage(sender, 'เข้าcallbackแล้ว')
           if (!error && response.statusCode == 200) {
             // var info = JSON.parse(body)
-            console.log(response.data)
+            console.log(response)
           }
         }
 
