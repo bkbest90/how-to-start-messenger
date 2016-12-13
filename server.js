@@ -463,7 +463,7 @@ function sendGenericMessage (sender) {
         'elements': [{
           'title': 'Premier league',
           'subtitle': 'England',
-          'image_url': 'https://resources-pl.pulselive.com/ver/i/elements/premier-league-logo-header.svg',
+          'image_url': 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/02/09/09/premier-league.jpg',
           'buttons': [{
             'type': 'web_url',
             'url': 'https://www.premierleague.com',
