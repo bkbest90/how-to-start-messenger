@@ -26,7 +26,7 @@ app.post('/webhook/', function (req, res) {
       var text = event.message.text
 
       if (text === 'table') {
-        competition(sender)
+        leaguetableshow(sender)
       }
 
       if (text === 'Generic') {
@@ -40,13 +40,16 @@ app.post('/webhook/', function (req, res) {
       if (payloadt == 'USER_DEFINED_PAYLOAD') {
         sendTextMessage(sender, 'Hello')
       }
+      if (payloadt == 'table') {
+        leaguetableshow(sender)
+      }
 
       continue
     }
   }
   res.sendStatus(200)
 })
-function competition(sender){
+function leaguetableshow(sender){
 
     var options = {
       url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
@@ -103,7 +106,7 @@ function sendGenericMessage (sender) {
         'template_type': 'generic',
         'elements': [{
           'title': 'First card',
-          'subtitle': 'Element #1 of an hscroll',
+          'subtitle': 'Rank 1',
           'image_url': 'http://messengerdemo.parseapp.com/img/rift.png',
           'buttons': [{
             'type': 'web_url',
@@ -117,7 +120,7 @@ function sendGenericMessage (sender) {
         }, {
           'title': 'Second card',
           'subtitle': 'Element #2 of an hscroll',
-          
+
           'buttons': [{
             'type': 'postback',
             'title': 'Postback',
