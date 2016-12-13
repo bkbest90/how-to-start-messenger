@@ -92,7 +92,12 @@ function competition(sender){
       if (!error && response.statusCode === 200) {
         // var info = JSON.parse(body)
         console.log(JSON.parse(body)[0].competition.name)
-        sendTextMessage(sender, JSON.parse(body)[0].competition.name)
+            sendTextMessage(sender, JSON.parse(body)[0].competition.name +
+             for (i = 0; i < 19; i++) {
+              "อันดับที่" + i+1 + JSON.parse(body)[0].leagueTable.name +" " +JSON.parse(body)[0].leagueTable.points +"คะแนน" ;
+           }
+
+         )
       }
     }
 
