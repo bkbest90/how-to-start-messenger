@@ -72,7 +72,6 @@ app.post('/webhook/', function (req, res) {
     }
     if (event.postback) {
       let text = JSON.stringify(event.postback)
-
       sendTextMessage(sender, 'สวัสดี')
       continue
     }
@@ -94,10 +93,8 @@ function competition(sender){
         // var info = JSON.parse(body)
         console.log(JSON.parse(body)[0].competition.name)
             sendTextMessage(sender, JSON.parse(body)[0].competition.name + JSON.parse(body)[0].leagueTable[0].name);
-              var rank = 1;
             for (var i = 0; i < 20; i++) {
-              sendTextMessage(sender, "อันดับที่ " + rank +"\n" + JSON.parse(body)[0].leagueTable[i].name +"\n" +JSON.parse(body)[0].leagueTable[i].points +"คะแนน");
-            var rank += 1;
+              sendTextMessage(sender, "อันดับที่"  +" " + JSON.parse(body)[0].leagueTable[i].name +" " +JSON.parse(body)[0].leagueTable[i].points +"คะแนน");
             }
 
             /* for (i = 0; i < 20; i++) {
