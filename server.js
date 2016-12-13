@@ -37,10 +37,8 @@ app.post('/webhook/', function (req, res) {
     if (event.postback) {
       let text = JSON.stringify(event.postback)
       var payloadt = event.postback.payload;
-      if (payloadt == 'USER_DEFINED_PAYLOAD') {
+      if (payloadt === 'USER_DEFINED_PAYLOAD') {
         sendTextMessage(sender, 'Hello')
-      } else if (payloadt == 'table') {
-        leaguetableshow(sender)
       }
 
       continue
