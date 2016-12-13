@@ -129,7 +129,7 @@ function sendFirst (sender) {
             'url': 'https://www.messenger.com',
             'title': 'web url'
           }, {
-            'type': 'postback',
+            'type': 'buttons',
             'title': 'table',
             'payload': 'table'
           }]
