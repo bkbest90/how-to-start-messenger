@@ -198,7 +198,7 @@ function matches(sender){
 
   setTimeout(function() {
     var str = "1495389600000";
-    var num = parseInt(str.replace(/[^0-9]/g, "1495389600000");
+    var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
     var date = new Date(num).toString();
 
     if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
