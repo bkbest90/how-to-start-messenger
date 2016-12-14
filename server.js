@@ -192,7 +192,7 @@ function matches(sender){
    }
 */
             //  sendTextMessage(sender, JSON.parse(body)[0].outcome)
-          let outcome = JSON.stringify((body)[0].outcome.winner)
+          let outcome = JSON.stringify(JSON.parse(body)[0].outcome.winner)
 
             sendTextMessage(sender, outcome)
 
