@@ -174,9 +174,6 @@ function sendTextMessage (sender, text) {
 
 function matches(sender){
 
-  var str = "1495389600000";
-  var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
-  var date = new Date(num).toString();
 
   console.log(date+"(GMT + 0)")
 
@@ -197,18 +194,22 @@ function matches(sender){
             doSetTimeout(i);
   }
             function doSetTimeout(i) {
+              var str = JSON.parse(body)[i].start
+              var num = parseInt(str.replace(/[^0-9]/g, JSON.parse(body)[i].start));
+              var date = new Date(num).toString();
+
   setTimeout(function() {
     if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-      +JSON.parse(body)[i].awayTeam.name   )
+      +JSON.parse(body)[i].awayTeam.name + " "+ date )
     }
 
   }
   if (JSON.parse(body)[i].awayTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-      +JSON.parse(body)[i].awayTeam.name    )
+      +JSON.parse(body)[i].awayTeam.name + " "+date   )
     }
 
     }
