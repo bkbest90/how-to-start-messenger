@@ -25,7 +25,7 @@ app.post('/webhook/', function (req, res) {
     if (event.message && event.message.text) {
       var text = event.message.text
 
-
+/* ห้ามลบ
 
       if (text === 'table') {
         var options = {
@@ -37,7 +37,7 @@ app.post('/webhook/', function (req, res) {
 
           function callback (error, response, body) {
 
-            sendTextMessage(sender, 'เข้าcallbackแล้ว')
+            //sendTextMessage(sender, 'เข้าcallbackแล้ว')
              if (!error && response.statusCode === 200) {
             // var info = JSON.parse(body)
                console.log(JSON.parse(body)[0].competition.name)
@@ -47,7 +47,7 @@ app.post('/webhook/', function (req, res) {
 
         request(options, callback)
       }
-
+*/
 
 
       if (text === 'premier league table') {
@@ -169,6 +169,35 @@ function sendTextMessage (sender, text) {
     }
   })
 }
+
+
+function matches(sender){
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+
+   if (JSON.parse(body)[0].outcome === null ) ) {
+     sendTextMessage(sender, JSON.parse(body)[0].competition.name)
+
+   }
+
+            sendTextMessage(sender, JSON.parse(body)[0].competition.name)
+    }
+  }
+
+  request(options, callback)
+
+}
+
 
 function premierleaguetable1(sender){
 
