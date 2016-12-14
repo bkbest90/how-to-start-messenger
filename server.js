@@ -196,7 +196,7 @@ function matches(sender){
           let name = JSON.stringify(JSON.parse(body)[0].homeTeam.name)
             for (var i = 0; i < array.length; i++) {
               if (outcome === null) {
-                if (name === "Barcelona")) {
+                if (name === "Barcelona") {
 
                   sendTextMessage(sender, JSON.parse(body)[0].homeTeam.name+" "+JSON.parse(body)[0].homeTeam.shirtUrl +" vs "
                   +JSON.parse(body)[0].awayTeam.name+" "+JSON.parse(body)[0].awayTeam.shirtUrl)
