@@ -202,14 +202,14 @@ function matches(sender){
     if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-      +JSON.parse(body)[i].awayTeam.name + date   )
+      +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date   )
     }
 
   }
   if (JSON.parse(body)[i].awayTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-      +JSON.parse(body)[i].awayTeam.name + date   )
+      +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+  date   )
     }
 
     }
