@@ -194,7 +194,7 @@ function matches(sender){
             //  sendTextMessage(sender, JSON.parse(body)[0].outcome)
 
 
-            sendTextMessage(sender, JSON.parse(body)[0].outcome[0].winner)
+            sendTextMessage(sender, JSON.parse(body)[0].outcome.winner)
 
     }
   }
