@@ -24,6 +24,32 @@ app.post('/webhook/', function (req, res) {
     let sender = event.sender.id
     if (event.message && event.message.text) {
       var text = event.message.text
+
+
+
+      if (text === 'table') {
+        var options = {
+          url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
+          headers: {
+            'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'
+          }
+        }
+
+          function callback (error, response, body) {
+
+            sendTextMessage(sender, 'เข้าcallbackแล้ว')
+             if (!error && response.statusCode === 200) {
+            // var info = JSON.parse(body)
+               console.log(JSON.parse(body)[0].competition.name)
+                  sendTextMessage(sender, JSON.parse(body)[0].competition.name)
+          }
+        }
+
+        request(options, callback)
+      }
+
+
+
       if (text === 'premier league table') {
         premierleaguetable1(sender)
 
@@ -66,7 +92,7 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'matches') {
-        
+
       }
     }
     if (event.postback) {
@@ -117,6 +143,12 @@ app.post('/webhook/', function (req, res) {
   }
   res.sendStatus(200)
 })
+
+
+
+
+
+
 
 
 function sendTextMessage (sender, text) {
@@ -439,6 +471,8 @@ function premierleaguetable2(sender) {
 request(options, callback)
 
 }
+
+
 
 
 function laligatable1(sender){
