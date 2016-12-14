@@ -206,7 +206,10 @@ function matches(sender){
 
               }
             }*/
-            sendTextMessage(sender, JSON.parse(body)[350].homeTeam.name)
+            if (JSON.parse(body)[350].homeTeam.name == "Valencia") {
+              sendTextMessage(sender, JSON.parse(body)[350].homeTeam.name)
+            }
+
 
             sendTextMessage(sender, "ออก for loop แล้ว")
 
