@@ -174,7 +174,7 @@ function sendTextMessage (sender, text) {
 
 function matches(sender){
 
-  
+  var str = "1495389600000";
   var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
   var date = new Date(num);
   console.log(date)
