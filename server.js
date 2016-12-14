@@ -92,7 +92,7 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'matches') {
-        matches(sender)
+        premierleagueteam(sender)
 
       }
     }
@@ -1994,6 +1994,133 @@ function thaileaguetable2(sender){
     request(options, callback)
 }
 
+function premierleagueteam(sender){
+
+    var options = {
+      url: 'https://api.crowdscores.com/v1/teams?competition_ids=2',
+      headers: {
+        'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+      }
+    }
+
+    function callback (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        let messageData = {
+          'attachment': {
+            'type': 'template',
+            'payload': {
+              'template_type': 'generic',
+              'elements': [{
+                'title': '1  '+JSON.parse(body)[0].name,
+                'image_url':  JSON.parse(body)[0].flagUrl,
+                'subtitle':"Stadium : "+JSON.parse(body)[0].defaultHomeVenue.name
+                          ,
+                'buttons': [{
+                  'type': 'postback',
+                  'title': 'Next match',
+                  'payload': 'next1'
+                },{
+                  'type': 'postback',
+                  'title': 'All matches',
+                  'payload': 'all1'
+                }]
+              }, {
+                'title': '2  '+JSON.parse(body)[1].name,
+                'subtitle': JSON.parse(body)[1].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '3  '+JSON.parse(body)[2].name,
+                'subtitle': JSON.parse(body)[2].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '4  '+JSON.parse(body)[3].name,
+                'subtitle': JSON.parse(body)[3].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '5  '+JSON.parse(body)[4].name,
+                'subtitle': JSON.parse(body)[4].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '6  '+JSON.parse(body)[5].name,
+                'subtitle': JSON.parse(body)[5].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '7  '+JSON.parse(body)[6].name,
+                'subtitle': JSON.parse(body)[6].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '8  '+JSON.parse(body)[7].name,
+                'subtitle': JSON.parse(body)[7].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '9  '+JSON.parse(body)[8].name,
+                'subtitle': JSON.parse(body)[8].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }  , {
+                'title': '10  '+JSON.parse(body)[9].name,
+                'subtitle': JSON.parse(body)[9].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }]
+            }
+          }
+        }
+        request({
+          url: 'https://graph.facebook.com/v2.6/me/messages',
+          qs: {access_token: token},
+          method: 'POST',
+          json: {
+            recipient: {id: sender},
+            message: messageData
+          }
+        }, function (error, response, body) {
+          if (error) {
+            console.log('Error sending messages: ', error)
+          } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+          }
+        })
+      }
+    }
+
+    request(options, callback)
+}
+
 
 function sendGenericMessage (sender) {
   let messageData = {
@@ -2013,6 +2140,10 @@ function sendGenericMessage (sender) {
             'type': 'postback',
             'title': 'Table',
             'payload': 'table1'
+          }, {
+            'type': 'postback',
+            'title': 'Team',
+            'payload': 'team1'
           }]
         }, {
         'title': 'La liga',
@@ -2026,7 +2157,11 @@ function sendGenericMessage (sender) {
           'type': 'postback',
           'title': 'Table',
           'payload': 'table2'
-          }]
+          }, {
+            'type': 'postback',
+            'title': 'Team',
+            'payload': 'team2'
+            }]
         }, {
         'title': 'Bundesliga',
         'subtitle': 'German',
@@ -2039,7 +2174,11 @@ function sendGenericMessage (sender) {
           'type': 'postback',
           'title': 'Table',
           'payload': 'table3'
-          }]
+          }, {
+            'type': 'postback',
+            'title': 'Team',
+            'payload': 'team3'
+            }]
         }, {
         'title': 'Serie A',
         'subtitle': 'Italy',
@@ -2052,7 +2191,11 @@ function sendGenericMessage (sender) {
           'type': 'postback',
           'title': 'Table',
           'payload': 'table4'
-          }]
+          }, {
+            'type': 'postback',
+            'title': 'Team',
+            'payload': 'team4'
+            }]
         }, {
         'title': 'ligue 1',
         'subtitle': 'France',
@@ -2065,7 +2208,11 @@ function sendGenericMessage (sender) {
           'type': 'postback',
           'title': 'Table',
           'payload': 'table5'
-          }]
+          }, {
+            'type': 'postback',
+            'title': 'Team',
+            'payload': 'team5'
+            }]
         }, {
         'title': 'Premier League Thailand',
         'subtitle': 'Thailand',
@@ -2078,7 +2225,11 @@ function sendGenericMessage (sender) {
           'type': 'postback',
           'title': 'Table',
           'payload': 'table6'
-          }]
+          }, {
+            'type': 'postback',
+            'title': 'Team',
+            'payload': 'team6'
+            }]
         }]
       }
     }
