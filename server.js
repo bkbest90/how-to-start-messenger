@@ -193,16 +193,16 @@ function matches(sender){
   }
             function doSetTimeout(i) {
   setTimeout(function() {
-
-    var str = JSON.parse(body)[i].start.name;
-    var num = parseInt(str.replace(/[^0-9]/g, JSON.parse(body)[i].start.name));
+    let time = JSON.stringify(JSON.parse(body)[i].start)
+    var str = "1495389600000";
+    var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
     var date = new Date(num);
 
 
     if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-      +JSON.parse(body)[i].awayTeam.name   )
+      +JSON.parse(body)[i].awayTeam.name + time   )
       console.log(date)
     }
 
@@ -211,7 +211,6 @@ function matches(sender){
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
       +JSON.parse(body)[i].awayTeam.name    )
-      console.log(date)
     }
 
     }
