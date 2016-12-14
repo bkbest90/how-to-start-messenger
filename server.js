@@ -173,6 +173,7 @@ function sendTextMessage (sender, text) {
 
 
 function matches(sender){
+
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
     headers: {
@@ -180,35 +181,50 @@ function matches(sender){
     }
   }
 
-    function callback (error, response, body) {
+  let messaging_events = req.body.entry[0].messaging
+  for (let i = 0; i < messaging_events.length; i++) {
+    let event = req.body.entry[0].messaging[i]
+    let sender = event.sender.id
+    if (event.message && event.message.text) {
+      var text = event.message.text
 
 
-       if (!error && response.statusCode === 200) {
 
-         for (var i = 0; i < JSON.parse(body).length; i++) {
+      function callback (error, response, body) {
 
-            doSetTimeout(i);
+
+         if (!error && response.statusCode === 200) {
+
+           for (var i = 0; i < JSON.parse(body).length; i++) {
+
+              doSetTimeout(i);
+    }
+              function doSetTimeout(i) {
+    setTimeout(function() {
+      if (JSON.parse(body)[i].homeTeam.name == text ) {
+        if (JSON.parse(body)[i].outcome === null) {
+          sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
+        +JSON.parse(body)[i].awayTeam.name   )
+      }
+
+    }
+    if (JSON.parse(body)[i].awayTeam.name == "text" ) {
+        if (JSON.parse(body)[i].outcome === null) {
+          sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
+        +JSON.parse(body)[i].awayTeam.name    )
+      }
+
+      }
+   }, i*110);
+                          }
+      }
+    }
+
+    }
   }
-            function doSetTimeout(i) {
-  setTimeout(function() {
-    if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
-      if (JSON.parse(body)[i].outcome === null) {
-        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-      +JSON.parse(body)[i].awayTeam.name   )
-    }
 
-  }
-  if (JSON.parse(body)[i].awayTeam.name == "Barcelona" ) {
-      if (JSON.parse(body)[i].outcome === null) {
-        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-      +JSON.parse(body)[i].awayTeam.name    )
-    }
 
-    }
- }, i*110);
-                        }
-    }
-  }
+
 
   request(options, callback)
 
