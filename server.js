@@ -192,11 +192,13 @@ function matches(sender){
    }
 */
             //  sendTextMessage(sender, JSON.parse(body)[0].outcome)
-          let outcome = JSON.stringify(JSON.parse(body)[0].outcome)
-          let name = JSON.stringify(JSON.parse(body)[0].homeTeam.name)
+
             for (var i = 0; i < JSON.parse(body).length; i++) {
-              if (outcome === null) {
-                if (name === "Barcelona") {
+              let outcome = JSON.stringify(JSON.parse(body)[i].outcome)
+              let namehome = JSON.stringify(JSON.parse(body)[i].homeTeam.name)
+              let nameaway = JSON.stringify(JSON.parse(body)[i].awayTeam.name)
+              if (namehome === "Barcelona" || nameaway === "Barcelona" ) {
+                  if (outcome === null) {
 
                   sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name+" "+JSON.parse(body)[i].homeTeam.shirtUrl +" vs "
                   +JSON.parse(body)[i].awayTeam.name+" "+JSON.parse(body)[i].awayTeam.shirtUrl)
