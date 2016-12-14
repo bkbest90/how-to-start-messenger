@@ -176,9 +176,11 @@ function matches(sender){
 
   var str = "1495389600000";
   var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
-  var date = new Date(num).toString();
+  var date = new Date(num).toGMTString();
+  var strDateTime = date;
+  var myDate = new Date(strDateTime);
 
-  console.log(date)
+  console.log(myDate.toLocaleString())
 
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
