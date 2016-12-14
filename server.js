@@ -66,7 +66,7 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'matches') {
-        matches(sender)
+        
       }
     }
     if (event.postback) {
@@ -137,43 +137,6 @@ function sendTextMessage (sender, text) {
     }
   })
 }
-
-function matches(sender){
-
-    var options = {
-      url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
-      headers: {
-        'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
-      }
-    }
-
-    function callback (error, response, body) {
-      if (!error && response.statusCode === 200) {
-        let messageData = {
-          sendTextMessage(sender, 'Premier League Thailand table')
-
-        }
-        request({
-          url: 'https://graph.facebook.com/v2.6/me/messages',
-          qs: {access_token: token},
-          method: 'POST',
-          json: {
-            recipient: {id: sender},
-            message: messageData
-          }
-        }, function (error, response, body) {
-          if (error) {
-            console.log('Error sending messages: ', error)
-          } else if (response.body.error) {
-            console.log('Error: ', response.body.error)
-          }
-        })
-      }
-    }
-
-    request(options, callback)
-}
-
 
 function premierleaguetable1(sender){
 
@@ -476,6 +439,7 @@ function premierleaguetable2(sender) {
 request(options, callback)
 
 }
+
 
 function laligatable1(sender){
 
