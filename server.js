@@ -194,8 +194,8 @@ function matches(sender){
             function doSetTimeout(i) {
   setTimeout(function() {
     let time = JSON.stringify(JSON.parse(body)[i].start)
-    var str = "1495389600000";
-    var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
+    var str = time;
+    var num = parseInt(str.replace(/[^0-9]/g, time));
     var date = new Date(num);
 
 
