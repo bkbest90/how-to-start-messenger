@@ -193,7 +193,7 @@ function matches(sender){
 */
             //  sendTextMessage(sender, JSON.parse(body)[0].outcome)
 
-            for (var i = 0; i < JSON.parse(body).length; i++) {
+        /*    for (var i = 0; i < JSON.parse(body).length; i++) {
               let outcome = JSON.stringify(JSON.parse(body)[i].outcome)
               let namehome = JSON.parse(body)[i].homeTeam.name
               let nameaway = JSON.parse(body)[i].awayTeam.name
@@ -205,8 +205,8 @@ function matches(sender){
                 }
 
               }
-            }
-
+            }*/
+            sendTextMessage(sender, JSON.parse(body)[350].homeTeam.name)
 
             sendTextMessage(sender, "ออก for loop แล้ว")
 
