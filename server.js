@@ -1023,28 +1023,6 @@ function bundesligatable2(sender){
                   'title': 'Back',
                   'payload': 'back'
                 }]
-              }, {
-                'title': '19  '+JSON.parse(body)[0].leagueTable[18].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[18].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[18].gamesPlayed+ " M |"
-                          +" GF "+ JSON.parse(body)[0].leagueTable[18].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[18].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[18].goalDiff
-                          +"\n| W "+JSON.parse(body)[0].leagueTable[18].wins+ " D "+JSON.parse(body)[0].leagueTable[18].draws+" L "+ JSON.parse(body)[0].leagueTable[18].losses
-                          ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }, {
-                'title': '20  '+JSON.parse(body)[0].leagueTable[19].name,
-                'subtitle': JSON.parse(body)[0].leagueTable[19].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[19].gamesPlayed+ " M |"
-                          +" GF "+ JSON.parse(body)[0].leagueTable[19].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[19].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[19].goalDiff
-                          +"\n| W "+JSON.parse(body)[0].leagueTable[19].wins+ " D "+JSON.parse(body)[0].leagueTable[19].draws+" L "+ JSON.parse(body)[0].leagueTable[19].losses
-                          ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
               }]
             }
           }
