@@ -193,22 +193,21 @@ function matches(sender){
 */
             //  sendTextMessage(sender, JSON.parse(body)[0].outcome)
 
-        /*    for (var i = 0; i < JSON.parse(body).length; i++) {
+           for (var i = 0; i < JSON.parse(body).length; i++) {
               let outcome = JSON.stringify(JSON.parse(body)[i].outcome)
-              let namehome = JSON.parse(body)[i].homeTeam.name
-              let nameaway = JSON.parse(body)[i].awayTeam.name
-              if (namehome == "Barcelona" ) {
-                  if (outcome === null) {
+
+              if (JSON.parse(body)[350].homeTeam.name == "Barcelona" ) {
+                  if (JSON.parse(body)[0].outcome === null) {
 
                   sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name+" "+JSON.parse(body)[i].homeTeam.shirtUrl +" vs "
                   +JSON.parse(body)[i].awayTeam.name+" "+JSON.parse(body)[i].awayTeam.shirtUrl)
                 }
 
               }
-            }*/
-            if (JSON.parse(body)[350].homeTeam.name == "Valencia") {
-              sendTextMessage(sender, JSON.parse(body)[350].homeTeam.name)
             }
+          /*  if (JSON.parse(body)[350].homeTeam.name == "Valencia") {
+              sendTextMessage(sender, JSON.parse(body)[350].homeTeam.name)
+            }*/
 
 
             sendTextMessage(sender, "ออก for loop แล้ว")
