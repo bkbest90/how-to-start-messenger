@@ -47,6 +47,11 @@ app.post('/webhook/', function (req, res) {
 
         premierleaguetable2(sender)
       }
+      if (payloadt === 'table1') {
+        laligatable1(sender)
+
+        laligatable2(sender)
+      }
       if (payloadt === 'back') {
         sendGenericMessage (sender)
       }
@@ -171,7 +176,7 @@ function premierleaguetable1(sender){
               'template_type': 'generic',
               'elements': [{
                 'title': '1  '+JSON.parse(body)[0].leagueTable[0].name,
-                'subtitle':JSON.parse(body)[0].leagueTable[0].points +" Pts   " + "แข่งทั้งหมด "+JSON.parse(body)[0].leagueTable[0].gamesPlayed+ " M |"
+                'subtitle':JSON.parse(body)[0].leagueTable[0].points +" Pts   " + ""+JSON.parse(body)[0].leagueTable[0].gamesPlayed+ " M |"
                           +" GF "+ JSON.parse(body)[0].leagueTable[0].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[0].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[0].goalDiff
                           +"\n| W "+JSON.parse(body)[0].leagueTable[0].wins  + " D "+JSON.parse(body)[0].leagueTable[0].draws+" L "+ JSON.parse(body)[0].leagueTable[0].losses
                           ,
@@ -446,13 +451,317 @@ function premierleaguetable2(sender) {
       console.log('Error sending messages: ', error)
     } else if (response.body.error) {
       console.log('Error: ', response.body.error)
+     }
+      })
     }
-  })
-}
-}
+  }
 
 request(options, callback)
+
 }
+
+function laligatable1(sender){
+
+    var options = {
+      url: 'https://api.crowdscores.com/v1/league-tables?competition_id=46',
+      headers: {
+        'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'
+      }
+    }
+
+    function callback (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        let messageData = {
+          'attachment': {
+            'type': 'template',
+            'payload': {
+              'template_type': 'generic',
+              'elements': [{
+                'title': '1  '+JSON.parse(body)[0].leagueTable[0].name,
+                'subtitle':JSON.parse(body)[0].leagueTable[0].points +" Pts   " + ""+JSON.parse(body)[0].leagueTable[0].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[0].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[0].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[0].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[0].wins  + " D "+JSON.parse(body)[0].leagueTable[0].draws+" L "+ JSON.parse(body)[0].leagueTable[0].losses
+                          ,
+                'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '2  '+JSON.parse(body)[0].leagueTable[1].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[1].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[1].gamesPlayed +" M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[1].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[1].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[1].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[1].wins + " D "+JSON.parse(body)[0].leagueTable[1].draws+" L "+ JSON.parse(body)[0].leagueTable[1].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '3  '+JSON.parse(body)[0].leagueTable[2].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[2].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[2].gamesPlayed +" M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[2].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[2].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[2].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[2].wins + " D "+JSON.parse(body)[0].leagueTable[2].draws+" L "+ JSON.parse(body)[0].leagueTable[2].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '4  '+JSON.parse(body)[0].leagueTable[3].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[3].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[3].gamesPlayed +" M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[3].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[3].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[3].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[3].wins + " D "+JSON.parse(body)[0].leagueTable[3].draws+" L "+ JSON.parse(body)[0].leagueTable[3].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '5  '+JSON.parse(body)[0].leagueTable[4].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[4].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[4].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[4].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[4].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[4].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[4].wins + " D "+JSON.parse(body)[0].leagueTable[4].draws+" L "+ JSON.parse(body)[0].leagueTable[4].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '6  '+JSON.parse(body)[0].leagueTable[5].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[5].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[5].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[5].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[5].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[5].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[5].wins + " D "+JSON.parse(body)[0].leagueTable[5].draws+" L "+ JSON.parse(body)[0].leagueTable[5].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '7  '+JSON.parse(body)[0].leagueTable[6].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[6].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[6].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[6].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[6].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[6].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[6].wins+ " D "+JSON.parse(body)[0].leagueTable[6].draws+" L "+ JSON.parse(body)[0].leagueTable[6].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '8  '+JSON.parse(body)[0].leagueTable[7].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[7].points+ " Pts  "+ " แข่งทั\nงหมด "+JSON.parse(body)[0].leagueTable[7].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[7].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[7].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[7].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[7].wins+ " D "+JSON.parse(body)[0].leagueTable[7].draws+" L "+ JSON.parse(body)[0].leagueTable[7].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '9  '+JSON.parse(body)[0].leagueTable[8].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[8].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[8].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[8].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[8].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[8].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[8].wins + " D "+JSON.parse(body)[0].leagueTable[8].draws+" L "+ JSON.parse(body)[0].leagueTable[8].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }  , {
+                'title': '10  '+JSON.parse(body)[0].leagueTable[9].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[9].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[9].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[9].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[9].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[9].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[9].wins + " D "+JSON.parse(body)[0].leagueTable[9].draws+" L "+ JSON.parse(body)[0].leagueTable[9].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }]
+            }
+          }
+        }
+        request({
+          url: 'https://graph.facebook.com/v2.6/me/messages',
+          qs: {access_token: token},
+          method: 'POST',
+          json: {
+            recipient: {id: sender},
+            message: messageData
+          }
+        }, function (error, response, body) {
+          if (error) {
+            console.log('Error sending messages: ', error)
+          } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+          }
+        })
+      }
+    }
+
+    request(options, callback)
+}
+
+function laligatable2(sender){
+
+    var options = {
+      url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
+      headers: {
+        'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'
+      }
+    }
+
+    function callback (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        let messageData = {
+          'attachment': {
+            'type': 'template',
+            'payload': {
+              'template_type': 'generic',
+              'elements': [{
+                'title': '1  '+JSON.parse(body)[0].leagueTable[0].name,
+                'subtitle':JSON.parse(body)[0].leagueTable[0].points +" Pts   " + ""+JSON.parse(body)[0].leagueTable[0].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[0].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[0].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[0].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[0].wins  + " D "+JSON.parse(body)[0].leagueTable[0].draws+" L "+ JSON.parse(body)[0].leagueTable[0].losses
+                          ,
+                'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '2  '+JSON.parse(body)[0].leagueTable[1].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[1].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[1].gamesPlayed +" M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[1].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[1].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[1].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[1].wins + " D "+JSON.parse(body)[0].leagueTable[1].draws+" L "+ JSON.parse(body)[0].leagueTable[1].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '3  '+JSON.parse(body)[0].leagueTable[2].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[2].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[2].gamesPlayed +" M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[2].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[2].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[2].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[2].wins + " D "+JSON.parse(body)[0].leagueTable[2].draws+" L "+ JSON.parse(body)[0].leagueTable[2].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '4  '+JSON.parse(body)[0].leagueTable[3].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[3].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[3].gamesPlayed +" M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[3].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[3].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[3].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[3].wins + " D "+JSON.parse(body)[0].leagueTable[3].draws+" L "+ JSON.parse(body)[0].leagueTable[3].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '5  '+JSON.parse(body)[0].leagueTable[4].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[4].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[4].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[4].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[4].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[4].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[4].wins + " D "+JSON.parse(body)[0].leagueTable[4].draws+" L "+ JSON.parse(body)[0].leagueTable[4].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '6  '+JSON.parse(body)[0].leagueTable[5].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[5].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[5].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[5].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[5].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[5].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[5].wins + " D "+JSON.parse(body)[0].leagueTable[5].draws+" L "+ JSON.parse(body)[0].leagueTable[5].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '7  '+JSON.parse(body)[0].leagueTable[6].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[6].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[6].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[6].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[6].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[6].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[6].wins+ " D "+JSON.parse(body)[0].leagueTable[6].draws+" L "+ JSON.parse(body)[0].leagueTable[6].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '8  '+JSON.parse(body)[0].leagueTable[7].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[7].points+ " Pts  "+ " แข่งทั\nงหมด "+JSON.parse(body)[0].leagueTable[7].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[7].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[7].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[7].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[7].wins+ " D "+JSON.parse(body)[0].leagueTable[7].draws+" L "+ JSON.parse(body)[0].leagueTable[7].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '9  '+JSON.parse(body)[0].leagueTable[8].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[8].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[8].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[8].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[8].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[8].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[8].wins + " D "+JSON.parse(body)[0].leagueTable[8].draws+" L "+ JSON.parse(body)[0].leagueTable[8].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }  , {
+                'title': '10  '+JSON.parse(body)[0].leagueTable[9].name,
+                'subtitle': JSON.parse(body)[0].leagueTable[9].points+ " Pts  "+ ""+JSON.parse(body)[0].leagueTable[9].gamesPlayed+ " M |"
+                          +" GF "+ JSON.parse(body)[0].leagueTable[9].goalsFor +" GA "+ JSON.parse(body)[0].leagueTable[9].goalsAgainst +" GD "+ JSON.parse(body)[0].leagueTable[9].goalDiff
+                          +"\n| W "+JSON.parse(body)[0].leagueTable[9].wins + " D "+JSON.parse(body)[0].leagueTable[9].draws+" L "+ JSON.parse(body)[0].leagueTable[9].losses
+                          ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }]
+            }
+          }
+        }
+        request({
+          url: 'https://graph.facebook.com/v2.6/me/messages',
+          qs: {access_token: token},
+          method: 'POST',
+          json: {
+            recipient: {id: sender},
+            message: messageData
+          }
+        }, function (error, response, body) {
+          if (error) {
+            console.log('Error sending messages: ', error)
+          } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+          }
+        })
+      }
+    }
+
+    request(options, callback)
+}
+
 
 function sendGenericMessage (sender) {
   let messageData = {
@@ -484,7 +793,7 @@ function sendGenericMessage (sender) {
         }, {
           'type': 'postback',
           'title': 'Table',
-          'payload': 'table'
+          'payload': 'table2'
           }]
         }, {
         'title': 'Bundesliga',
