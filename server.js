@@ -204,10 +204,10 @@ function matches(sender){
 
         var str = "1495389600000";
         var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
-        var date = new Date(num).toString();
+        var realdate = new Date(num).toString();
 
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-      +JSON.parse(body)[i].awayTeam.name + date  )
+      +JSON.parse(body)[i].awayTeam.name + realdate  )
     }
 
   }
@@ -216,10 +216,10 @@ function matches(sender){
 
         var str = "1495389600000";
         var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
-        var date = new Date(num).toString();
+        var realdate = new Date(num).toString();
 
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-      +JSON.parse(body)[i].awayTeam.name  +date  )
+      +JSON.parse(body)[i].awayTeam.name  +realdate  )
     }
 
     }
