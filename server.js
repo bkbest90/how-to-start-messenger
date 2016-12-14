@@ -192,7 +192,7 @@ function matches(sender){
    }
 */
             //  sendTextMessage(sender, JSON.parse(body)[0].outcome)
-            if(  JSON.parse(body)[0].outcom[] !== null ){
+            if(  JSON.parse(body)[0].outcom[0] !=== null ){
             sendTextMessage(sender, JSON.parse(body)[0].competition.name)
           }
     }
