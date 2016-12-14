@@ -4,7 +4,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
-const token = 'EAAYzVx44hnYBAEiaPrinabDZBWmwC1rkal50SOWUpTiIt8ZChgu6BhNLQF3R8W2Qj24bNpCLEh3RbB4OBorD29649XGKQtXbgZCxkBdNpU2uvCFAZAXB2FyyMqW6ucKM3ueg0QttOnsWP5tbfGl2iYvfJrZAUNpd2mr1SPPicLQZDZD'
+const token = 'EAADYG82xZAOEBAGuCVLipofvUbKHq3xFrfzT7ELfUuAkWzAeVIvENd7OLwVFD3G0NAOaRT13kbE5pDugGM9E8ei6mZBtS7xfXU8jYhaw2yXOHa5QVZAO6MsQ9CgpFS9ny2GEyQbt86P028XpZAqwgXwLEywctHQ9oTBzrXo4OgZDZD'
 app.set('port', (process.env.PORT || 5000))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
@@ -24,11 +24,43 @@ app.post('/webhook/', function (req, res) {
     let sender = event.sender.id
     if (event.message && event.message.text) {
       var text = event.message.text
+      if (text === 'premier league table') {
+        premierleaguetable1(sender)
 
-      if (text === 'table') {
-        leaguetableshow(sender)
+        premierleaguetable2(sender)
+        sendTextMessage(sender, 'Premier League table')
+
       }
+      if (text === 'laliga table') {
+        laligatable1(sender)
 
+        laligatable2(sender)
+        sendTextMessage(sender, 'La liga table')
+      }
+      if (text === 'bundesliga table') {
+        bundesligatable1(sender)
+
+        bundesligatable2(sender)
+        sendTextMessage(sender, 'Bundesliga table')
+      }
+      if (text === 'serie a table') {
+        serieatable1(sender)
+
+        serieatable2(sender)
+        sendTextMessage(sender, 'Serie A table')
+      }
+      if (text === 'ligue 1 table') {
+        ligue1table1(sender)
+
+        ligue1table2(sender)
+        sendTextMessage(sender, 'Ligue 1 table')
+      }
+      if (text === 'premier league thailand table') {
+        thaileaguetable1(sender)
+
+        thaileaguetable2(sender)
+        sendTextMessage(sender, 'Premier League Thailand table')
+      }
       if (text === 'Generic') {
         sendGenericMessage(sender)
         continue
@@ -44,7 +76,7 @@ app.post('/webhook/', function (req, res) {
       }
       if (payloadt === 'table1') {
         premierleaguetable1(sender)
-       
+
         premierleaguetable2(sender)
       }
       if (payloadt === 'table2') {
@@ -84,35 +116,6 @@ app.post('/webhook/', function (req, res) {
 })
 
 
-/*
-
-function leaguetableshow(sender){
-
-    var options = {
-      url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
-      headers: {
-        'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'
-      }
-    }
-
-    function callback (error, response, body) {
-      // sendTextMessage(sender, 'เข้าcallbackแล้ว')
-      if (!error && response.statusCode === 200) {
-        // var info = JSON.parse(body)
-        console.log(JSON.parse(body)[0].competition.name)
-            sendTextMessage(sender, JSON.parse(body)[0].competition.name);
-            var rank = 0;
-
-            for (var i = 0; i < 20; i++) {
-              var rank = rank + 1;
-              sendTextMessage(sender, "อันดับที่ "+ rank  +"\n" + JSON.parse(body)[0].leagueTable[i].name +"\n" +JSON.parse(body)[0].leagueTable[i].points +"Pts");
-            }
-      }
-    }
-
-    request(options, callback)
-}
-*/
 function sendTextMessage (sender, text) {
   let messageData = { text: text }
   request({
@@ -132,52 +135,6 @@ function sendTextMessage (sender, text) {
   })
 }
 
-/*
-function premierleaguetable(sender) {
-  let messageData = {
-    'attachment': {
-      'type': 'template',
-      'payload': {
-        'template_type': 'generic',
-        'elements': [{
-          'title': '1  '+JSON.parse(body)[0].leagueTable[0].name,
-          'subtitle':JSON.parse(body)[0].leagueTable[0].points +"Pts   W "+JSON.parse(body)[0].leagueTable[0].wins
-                    + " D "+JSON.parse(body)[0].leagueTable[0].draws+" L "+ JSON.parse(body)[0].leagueTable[0].losses ,
-          'buttons': [{
-            'type': 'postback',
-            'title': 'table',
-            'payload': 'table'
-          }]
-        }, {
-          'title': '2  '+JSON.parse(body)[0].leagueTable[1].name,
-          'subtitle': JSON.parse(body)[0].leagueTable[1].points+ "Pts   W "+JSON.parse(body)[0].leagueTable[1].wins
-                    + " D "+JSON.parse(body)[0].leagueTable[1].draws+" L "+ JSON.parse(body)[0].leagueTable[1].losses ,
-            'buttons': [{
-            'type': 'postback',
-            'title': 'table',
-            'payload': 'table'
-          }]
-        }]
-      }
-    }
-  }
-  request({
-    url: 'https://graph.facebook.com/v2.6/me/messages',
-    qs: {access_token: token},
-    method: 'POST',
-    json: {
-      recipient: {id: sender},
-      message: messageData
-    }
-  }, function (error, response, body) {
-    if (error) {
-      console.log('Error sending messages: ', error)
-    } else if (response.body.error) {
-      console.log('Error: ', response.body.error)
-    }
-  })
-}
-*/
 function premierleaguetable1(sender){
 
     var options = {
@@ -2051,56 +2008,7 @@ function sendGenericMessage (sender) {
     }
   })
 }
-/*
-function sendGenericMessage (sender) {
-  let messageData = {
-    'attachment': {
-      'type': 'template',
-      'payload': {
-        'template_type': 'generic',
-        'elements': [{
-          'title': 'Premier league',
-          'subtitle': 'Rank 1',
-          'image_url': 'https://resources-pl.pulselive.com/ver/i/elements/premier-league-logo-header.svg',
-          'buttons': [{
-            'type': 'web_url',
-            'url': 'https://www.messenger.com',
-            'title': 'web url'
-          }, {
-            'type': 'postback',
-            'title': 'table',
-            'payload': 'table'
-          }]
-        }, {
-          'title': 'Second card',
-          'subtitle': 'Element #2 of an hscroll',
 
-          'buttons': [{
-            'type': 'postback',
-            'title': 'Postback',
-            'payload': 'Payload for second element in a generic bubble'
-          }]
-        }]
-      }
-    }
-  }
-  request({
-    url: 'https://graph.facebook.com/v2.6/me/messages',
-    qs: {access_token: token},
-    method: 'POST',
-    json: {
-      recipient: {id: sender},
-      message: messageData
-    }
-  }, function (error, response, body) {
-    if (error) {
-      console.log('Error sending messages: ', error)
-    } else if (response.body.error) {
-      console.log('Error: ', response.body.error)
-    }
-  })
-}
-*/
 
 app.listen(app.get('port'), function () {
 console.log('running on port', app.get('port'))
