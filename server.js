@@ -201,12 +201,12 @@ function matches(sender){
                   sendTextMessage(sender, JSON.parse(body)[0].homeTeam.name+" "+JSON.parse(body)[0].homeTeam.shirtUrl +" vs "
                   +JSON.parse(body)[0].awayTeam.name+" "+JSON.parse(body)[0].awayTeam.shirtUrl)
                 }
-                JSON.parse(body)[0].outcome
+
               }
             }
 
 
-            sendTextMessage(sender, outcome)
+            sendTextMessage(sender, "ออก for loop แล้ว")
 
     }
   }
