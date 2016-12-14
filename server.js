@@ -190,12 +190,10 @@ function matches(sender){
        if (!error && response.statusCode === 200) {
 
          for (var i = 0; i < JSON.parse(body).length; i++) {
-           var str = "1495389600000";
-           var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
-           var date = new Date(num).toString();
-            doSetTimeout(i,date);
+
+            doSetTimeout(i);
   }
-            function doSetTimeout(i,date) {
+            function doSetTimeout(i) {
 
 
   setTimeout(function() {
@@ -203,6 +201,11 @@ function matches(sender){
 
     if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
+
+        var str = "1495389600000";
+        var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
+        var date = new Date(num).toString();
+
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
       +JSON.parse(body)[i].awayTeam.name + date  )
     }
@@ -210,6 +213,11 @@ function matches(sender){
   }
   if (JSON.parse(body)[i].awayTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
+
+        var str = "1495389600000";
+        var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
+        var date = new Date(num).toString();
+
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
       +JSON.parse(body)[i].awayTeam.name  +date  )
     }
