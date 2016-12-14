@@ -47,7 +47,7 @@ app.post('/webhook/', function (req, res) {
 
         premierleaguetable2(sender)
       }
-      if (payloadt === 'table1') {
+      if (payloadt === 'table2') {
         laligatable1(sender)
 
         laligatable2(sender)
