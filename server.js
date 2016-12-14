@@ -198,7 +198,7 @@ function matches(sender){
 
               if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
                   if (JSON.parse(body)[i].outcome === null) {
-                  var imgElement = document.getElementById(JSON.parse(body)[i].homeTeam.shirtUrl);
+                  var imgElement = JSON.parse(body)[i].homeTeam.shirtUrl;
                   sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name+" "+imgElement/* +" vs "
                   +JSON.parse(body)[i].awayTeam.name+" "+JSON.parse(body)[i].awayTeam.shirtUrl   */  )
                 }
