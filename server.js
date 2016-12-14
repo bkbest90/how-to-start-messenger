@@ -190,16 +190,16 @@ function matches(sender){
        if (!error && response.statusCode === 200) {
 
          for (var i = 0; i < JSON.parse(body).length; i++) {
-
-            doSetTimeout(i);
+           var str = "1495389600000";
+           var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
+           var date = new Date(num).toString();
+            doSetTimeout(i,date);
   }
-            function doSetTimeout(i) {
+            function doSetTimeout(i,date) {
 
 
   setTimeout(function() {
-    var str = "1495389600000";
-    var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
-    var date = new Date(num).toString();
+
 
     if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
