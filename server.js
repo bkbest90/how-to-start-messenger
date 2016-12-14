@@ -214,7 +214,7 @@ function matches(sender){
             }
                         }, i * 5000);
                           }
-
+             doScaledTimeout(i)
 
             }
           /*  if (JSON.parse(body)[350].homeTeam.name == "Valencia") {
