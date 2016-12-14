@@ -202,7 +202,7 @@ function matches(sender){
     if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-      +JSON.parse(body)[i].awayTeam.name+" "+JSON.parse(body)[i].awayTeam.shirtUrl     )
+      +JSON.parse(body)[i].awayTeam.name   )
     }
 
   }
