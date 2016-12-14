@@ -196,21 +196,20 @@ function matches(sender){
     let time = JSON.stringify(JSON.parse(body)[i].start)
     var str = time;
     var num = parseInt(str.replace(/[^0-9]/g, time));
-    var date = new Date(num);
+    var date = new Date(num).toString();
 
 
     if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-      +JSON.parse(body)[i].awayTeam.name + time   )
-      console.log(date)
+      +JSON.parse(body)[i].awayTeam.name + date   )
     }
 
   }
   if (JSON.parse(body)[i].awayTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-      +JSON.parse(body)[i].awayTeam.name    )
+      +JSON.parse(body)[i].awayTeam.name + date   )
     }
 
     }
