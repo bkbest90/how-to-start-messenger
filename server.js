@@ -196,7 +196,7 @@ function matches(sender){
     let time = JSON.stringify(JSON.parse(body)[i].start)
     var str = time;
     var num = parseInt(str.replace(/[^0-9]/g, time));
-    var date = new Date(num).toString();
+    var date = new Date(num).toGMTString();
 
 
     if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
