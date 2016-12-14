@@ -175,10 +175,9 @@ function sendTextMessage (sender, text) {
 function matches(sender){
 
   var str = "1495389600000";
-var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
-var date = new Date(num);
-alert(date);
-
+  var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
+  var date = new Date(num);
+  console.log(date)
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
     headers: {
