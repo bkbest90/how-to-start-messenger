@@ -174,10 +174,7 @@ function sendTextMessage (sender, text) {
 
 function matches(sender){
 
-  var str = "1495389600000";
-  var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
-  var date = new Date(num);
-     console.log(date)
+
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
     headers: {
@@ -196,10 +193,17 @@ function matches(sender){
   }
             function doSetTimeout(i) {
   setTimeout(function() {
+
+    var str = "1495389600000";
+    var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
+    var date = new Date(num);
+
+
     if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
       +JSON.parse(body)[i].awayTeam.name   )
+      console.log(date)
     }
 
   }
