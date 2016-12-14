@@ -194,8 +194,8 @@ function matches(sender){
             function doSetTimeout(i) {
   setTimeout(function() {
 
-    var str = "1495389600000";
-    var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
+    var str = JSON.parse(body)[i].start.name;
+    var num = parseInt(str.replace(/[^0-9]/g, JSON.parse(body)[i].start.name));
     var date = new Date(num);
 
 
@@ -211,6 +211,7 @@ function matches(sender){
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
       +JSON.parse(body)[i].awayTeam.name    )
+      console.log(date)
     }
 
     }
