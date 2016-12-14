@@ -176,10 +176,9 @@ function matches(sender){
 
   var str = "1495389600000";
   var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
-  var now = new Date(num).toString();
+  var date = new Date(num).toString();
 
-  var now_utc = new Date(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
-  console.log(now_utc)
+  console.log(date+"(GMT + 0)")
 
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
