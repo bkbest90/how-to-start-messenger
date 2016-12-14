@@ -43,9 +43,9 @@ app.post('/webhook/', function (req, res) {
 
       }
       if (payloadt === 'table1') {
-        premierleaguetable1(sender)
 
-        premierleaguetable2(sender)
+       setTimeout(function () {premierleaguetable1(sender) }, 10);
+       setTimeout(function () {premierleaguetable2(sender) }, 50);
       }
       if (payloadt === 'table2') {
         laligatable1(sender)
