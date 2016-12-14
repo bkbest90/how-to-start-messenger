@@ -614,7 +614,7 @@ function laligatable1(sender){
 function laligatable2(sender){
 
     var options = {
-      url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
+      url: 'https://api.crowdscores.com/v1/league-tables?competition_id=46',
       headers: {
         'x-crowdscores-api-key': '128fdd0e78d249bd8d744ff7fd66deea'
       }
