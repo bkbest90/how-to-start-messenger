@@ -65,6 +65,9 @@ app.post('/webhook/', function (req, res) {
         sendGenericMessage(sender)
         continue
       }
+      if (text === 'matches') {
+        matches(sender)
+      }
     }
     if (event.postback) {
       let text = JSON.stringify(event.postback)
@@ -146,7 +149,7 @@ function matches(sender){
 
     function callback (error, response, body) {
       if (!error && response.statusCode === 200) {
-
+         sendTextMessage(sender, 'Premier League Thailand table')
 
         request({
           url: 'https://graph.facebook.com/v2.6/me/messages',
