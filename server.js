@@ -149,8 +149,10 @@ function matches(sender){
 
     function callback (error, response, body) {
       if (!error && response.statusCode === 200) {
-         sendTextMessage(sender, 'Premier League Thailand table')
+        let messageData = {
+          sendTextMessage(sender, 'Premier League Thailand table')
 
+        }
         request({
           url: 'https://graph.facebook.com/v2.6/me/messages',
           qs: {access_token: token},
