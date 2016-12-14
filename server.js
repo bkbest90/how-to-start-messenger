@@ -92,8 +92,7 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'matches') {
-        text = "Celtic"
-        matches(sender, text)
+        matches(sender)
 
       }
     }
@@ -173,8 +172,7 @@ function sendTextMessage (sender, text) {
 }
 
 
-function matches(sender, text){
-  let teamtext = { text: text }
+function matches(sender){
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
     headers: {
@@ -193,14 +191,14 @@ function matches(sender, text){
   }
             function doSetTimeout(i) {
   setTimeout(function() {
-    if (JSON.parse(body)[i].homeTeam.name == teamtext ) {
+    if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
       +JSON.parse(body)[i].awayTeam.name   )
     }
 
   }
-  if (JSON.parse(body)[i].awayTeam.name == teamtext ) {
+  if (JSON.parse(body)[i].awayTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
       +JSON.parse(body)[i].awayTeam.name    )
