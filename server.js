@@ -38,12 +38,12 @@ app.post('/webhook/', function (req, res) {
       let text = JSON.stringify(event.postback)
       var payloadt = event.postback.payload;
       if (payloadt === 'USER_DEFINED_PAYLOAD') {
-        sendTextMessage(sender, 'สวัสดีครับ');
-        sendGenericMessage (sender);
-        sendTextMessage(sender, 'สามารถพิมพ์เพื่อแนะนำหรือพูดคุยกับผู้พัฒนาได้นะครับ ^_^');
+        sendTextMessage(sender, 'สวัสดีครับ')
+        sendGenericMessage (sender)
+
       }
       if (payloadt === 'table1') {
-    /*    premierleaguetable1(sender)*/
+        premierleaguetable1(sender)
 
         premierleaguetable2(sender)
       }
@@ -489,10 +489,10 @@ function sendGenericMessage (sender) {
         }, {
         'title': 'Bundesliga',
         'subtitle': 'German',
-        'image_url': 'http://s.bundesli GAcom/2016/img/logo.png',
+        'image_url': 'http://www.teslabet.com/wp-content/uploads/2014/08/Bundesliga-Logo.jpg',
         'buttons': [{
           'type': 'web_url',
-          'url': 'http://www.bundesli GAcom/en/',
+          'url': 'http://www.bundesliga.com/en/',
           'title': 'Web'
         }, {
           'type': 'postback',
