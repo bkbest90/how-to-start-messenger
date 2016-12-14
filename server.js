@@ -205,7 +205,7 @@ function matches(sender){
     }
 
     }
- }, i*25);
+ }, i*100);
                         }
     }
   }
