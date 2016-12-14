@@ -195,26 +195,29 @@ function matches(sender){
 
            for (var i = 0; i < JSON.parse(body).length; i++) {
             //  let outcome = JSON.stringify(JSON.parse(body)[i].outcome)
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+  setTimeout(function() {
+    if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
+      if (JSON.parse(body)[i].outcome === null) {
+        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
+      +JSON.parse(body)[i].awayTeam.name+" "+JSON.parse(body)[i].awayTeam.shirtUrl     )
+    }
 
-            setTimeout(function(i) {
-              if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
-                  if (JSON.parse(body)[i].outcome === null) {
-                    sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-                  +JSON.parse(body)[i].awayTeam.name+" "+JSON.parse(body)[i].awayTeam.shirtUrl     )
-                }
+  }
+  if (JSON.parse(body)[i].awayTeam.name == "Barcelona" ) {
+      if (JSON.parse(body)[i].outcome === null) {
+        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
+      +JSON.parse(body)[i].awayTeam.name+" "+JSON.parse(body)[i].awayTeam.shirtUrl     )
+    }
 
-              }
-              if (JSON.parse(body)[i].awayTeam.name == "Barcelona" ) {
-                  if (JSON.parse(body)[i].outcome === null) {
-                    sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-                  +JSON.parse(body)[i].awayTeam.name+" "+JSON.parse(body)[i].awayTeam.shirtUrl     )
-                }
-
-              }
-      }, i*500)
+    }
+ }, i*150);
+                        }
 
 
-            }
+
           /*  if (JSON.parse(body)[350].homeTeam.name == "Valencia") {
               sendTextMessage(sender, JSON.parse(body)[350].homeTeam.name)
             }*/
