@@ -186,11 +186,12 @@ function matches(sender){
        if (!error && response.statusCode === 200) {
 
 
-   if (JSON.parse(body)[0].outcome === null ) ) {
-     sendTextMessage(sender, JSON.parse(body)[0].competition.name)
+/*if (JSON.parse(body)[0].outcome === null ) ) {
+   sendTextMessage(sender, JSON.parse(body)[0].competition.name)
 
    }
-
+*/
+              sendTextMessage(sender, JSON.parse(body)[0].outcome)
             sendTextMessage(sender, JSON.parse(body)[0].competition.name)
     }
   }
