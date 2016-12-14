@@ -185,16 +185,8 @@ function matches(sender){
 
        if (!error && response.statusCode === 200) {
 
+         for (var i = 0; i < JSON.parse(body).length; i++) {
 
-/*if (JSON.parse(body)[0].outcome === null ) ) {
-   sendTextMessage(sender, JSON.parse(body)[0].competition.name)
-
-   }
-*/
-            //  sendTextMessage(sender, JSON.parse(body)[0].outcome)
-
-           for (var i = 0; i < JSON.parse(body).length; i++) {
-            //  let outcome = JSON.stringify(JSON.parse(body)[i].outcome)
             doSetTimeout(i);
   }
             function doSetTimeout(i) {
@@ -213,17 +205,8 @@ function matches(sender){
     }
 
     }
- }, i*150);
+ }, i*25);
                         }
-
-
-
-          /*  if (JSON.parse(body)[350].homeTeam.name == "Valencia") {
-              sendTextMessage(sender, JSON.parse(body)[350].homeTeam.name)
-            }*/
-
-
-
     }
   }
 
