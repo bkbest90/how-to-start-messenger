@@ -177,10 +177,15 @@ function matches(sender){
   var str = "1495389600000";
   var num = parseInt(str.replace(/[^0-9]/g, "1495389600000"));
   var date = new Date(num).toGMTString();
-  var strDateTime = date;
-  var myDate = new Date(strDateTime);
 
-  console.log(myDate.toLocaleString())
+
+
+var dt = new Date(date.replace(' ', 'T') + "Z");
+var hours = dt.getHours(); // Will be local time
+var minutes = dt.getMinutes(); // Will be local time
+  console.log(dt)
+  console.log(hours)
+  console.log(minutes)
 
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
