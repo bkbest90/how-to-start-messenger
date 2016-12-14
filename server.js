@@ -175,7 +175,7 @@ function sendTextMessage (sender, text) {
 function matches(sender){
 
 
-
+  console.log(date+"(GMT + 0)")
 
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
@@ -194,22 +194,24 @@ function matches(sender){
             doSetTimeout(i);
   }
             function doSetTimeout(i) {
-              var str = JSON.parse(body)[i].start
-              var num = parseInt(str.replace(/[^0-9]/g, JSON.parse(body)[i].start));
-              var date = new Date(num).toString();
+
 
   setTimeout(function() {
+    var str = JSON.parse(body)[i].start
+    var num = parseInt(str.replace(/[^0-9]/g, JSON.parse(body)[i].start));
+    var date = new Date(num).toString();
+
     if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-      +JSON.parse(body)[i].awayTeam.name + " "+ date+" (GTM +0)" )
+      +JSON.parse(body)[i].awayTeam.name +  )
     }
 
   }
   if (JSON.parse(body)[i].awayTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-      +JSON.parse(body)[i].awayTeam.name + " "+date+" (GTM +0)"   )
+      +JSON.parse(body)[i].awayTeam.name    )
     }
 
     }
