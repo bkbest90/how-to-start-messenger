@@ -192,10 +192,10 @@ function matches(sender){
    }
 */
             //  sendTextMessage(sender, JSON.parse(body)[0].outcome)
-            var outcome = JSON.parse(body)[0].outcom[0];
-            if(  outcome !=== null ){
-            sendTextMessage(sender, JSON.parse(body)[0].competition.name)
-          }
+            var outcome = JSON.parse(body)[0].outcom[0].winner;
+
+            sendTextMessage(sender, JSON.parse(body)[0].outcom[0].winner)
+
     }
   }
 
