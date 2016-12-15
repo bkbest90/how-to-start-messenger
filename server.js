@@ -201,7 +201,7 @@ function premierleagueNextmatches(sender, text){
                 }
                     i++;
                      }
-                   while (B != 5);
+                   while (b != 5);
 
         /*    function doSetTimeout(i) {
      setTimeout(function() {
