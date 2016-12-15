@@ -213,9 +213,9 @@ function premierleagueNextmatches(sender, text){
       +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+  date +" +0"  )
 
     }
-
+   i = JSON.parse(body).length;
     }
-      i = JSON.parse(body).length;
+
  }, i*110);
                         }
     }
