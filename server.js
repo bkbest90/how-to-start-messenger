@@ -192,15 +192,15 @@ function premierleagueNextmatches(sender, text){
                   doSetTimeout(i);
                     i++;
                      }
-                   while (JSON.parse(body)[i].outcome === null);
+                   while (JSON.parse(body)[i].outcome !== null);
 
             function doSetTimeout(i) {
-  setTimeout(function() {
+     setTimeout(function() {
 
-    let time = JSON.stringify(JSON.parse(body)[i].start)
-    var str = time;
-    var num = parseInt(str.replace(/[^0-9]/g, time));
-    var date = new Date(num).toUTCString();
+             let time = JSON.stringify(JSON.parse(body)[i].start)
+               var str = time;
+             var num = parseInt(str.replace(/[^0-9]/g, time));
+              var date = new Date(num).toUTCString();
 
 
     if (JSON.parse(body)[i].homeTeam.name == text  ) {
