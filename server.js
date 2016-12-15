@@ -92,8 +92,8 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'matches') {
-        bundesligateam1(sender)
-        bundesligateam2(sender)
+        serieateam1(sender)
+        serieateam2(sender)
       }
     }
     if (event.postback) {
@@ -2760,6 +2760,279 @@ function bundesligateam2(sender){
                 'title': '18  '+JSON.parse(body)[17].name,
                 'image_url': 'https://upload.wikimedia.org/wikipedia/en/7/71/Fc_cologne.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[17].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }]
+            }
+          }
+        }
+        request({
+          url: 'https://graph.facebook.com/v2.6/me/messages',
+          qs: {access_token: token},
+          method: 'POST',
+          json: {
+            recipient: {id: sender},
+            message: messageData
+          }
+        }, function (error, response, body) {
+          if (error) {
+            console.log('Error sending messages: ', error)
+          } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+          }
+        })
+      }
+    }
+
+    request(options, callback)
+}
+
+function serieateam1(sender){
+
+    var options = {
+      url: 'https://api.crowdscores.com/v1/teams?competition_ids=49',
+      headers: {
+        'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+      }
+    }
+
+    function callback (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        let messageData = {
+          'attachment': {
+            'type': 'template',
+            'payload': {
+              'template_type': 'generic',
+              'elements': [{
+                'title': '1  '+JSON.parse(body)[0].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/en/2/2e/Torino_FC_Logo.svg',
+
+                'subtitle':"Stadium: "+JSON.parse(body)[0].defaultHomeVenue.name
+                          ,
+                'buttons': [{
+                  'type': 'postback',
+                  'title': 'Next match',
+                  'payload': 'next1'
+                },{
+                  'type': 'postback',
+                  'title': 'All matches',
+                  'payload': 'all1'
+                }]
+              }, {
+                'title': '2  '+JSON.parse(body)[1].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/SS_Lazio.svg/1280px-SS_Lazio.svg.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[1].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '3  '+JSON.parse(body)[2].name,
+                'image_url':  'http://3.bp.blogspot.com/-SZySxCLKp1c/U-7zEB6mHGI/AAAAAAAADZk/PccHLgTsRi8/s1600/Logo%2BBologna%2BFC.png',
+                'subtitle': "Stadium: "+JSON.parse(body)[2].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '4  '+JSON.parse(body)[3].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/US_Sassuolo_Calcio_logo.svg/941px-US_Sassuolo_Calcio_logo.svg.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[3].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '5  '+JSON.parse(body)[4].name,
+                'image_url':  'http://logodatabases.com/wp-content/uploads/2012/05/SSC-Napoli-Logo.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[4].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '6  '+JSON.parse(body)[5].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/US_Citt%C3%A0_di_Palermo_Logo.svg/742px-US_Citt%C3%A0_di_Palermo_Logo.svg.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[5].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '7  '+JSON.parse(body)[6].name,
+                'image_url':  'http://vignette4.wikia.nocookie.net/logopedia/images/e/eb/Udinese@2.-other-logo.png/revision/latest?cb=20120308193929',
+                'subtitle':"Stadium: "+ JSON.parse(body)[6].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '8  '+JSON.parse(body)[7].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/ACF_Fiorentina_2.svg/700px-ACF_Fiorentina_2.svg.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[7].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '9  '+JSON.parse(body)[8].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/en/4/4e/Genoa_cfc.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[8].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }  , {
+                'title': '10  '+JSON.parse(body)[9].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/en/2/27/FC_Crotone_Logo.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[9].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }]
+            }
+          }
+        }
+        request({
+          url: 'https://graph.facebook.com/v2.6/me/messages',
+          qs: {access_token: token},
+          method: 'POST',
+          json: {
+            recipient: {id: sender},
+            message: messageData
+          }
+        }, function (error, response, body) {
+          if (error) {
+            console.log('Error sending messages: ', error)
+          } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+          }
+        })
+      }
+    }
+
+    request(options, callback)
+}
+
+function serieateam2(sender){
+
+    var options = {
+      url: 'https://api.crowdscores.com/v1/teams?competition_ids=49',
+      headers: {
+        'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+      }
+    }
+
+    function callback (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        let messageData = {
+          'attachment': {
+            'type': 'template',
+            'payload': {
+              'template_type': 'generic',
+              'elements': [{
+                'title': '11  '+JSON.parse(body)[10].name,
+                'image_url': 'https://qph.ec.quoracdn.net/main-qimg-f7ddae6b6eb4c37793e4c85152a31b99?convert_to_webp=true',
+                'subtitle':"Stadium: "+JSON.parse(body)[10].defaultHomeVenue.name
+                          ,
+                'buttons': [{
+                  'type': 'postback',
+                  'title': 'Next match',
+                  'payload': 'next1'
+                },{
+                  'type': 'postback',
+                  'title': 'All matches',
+                  'payload': 'all1'
+                }]
+              }, {
+                'title': '12  '+JSON.parse(body)[11].name,
+                'image_url': 'http://upload.wikimedia.org/wikipedia/it/7/72/Pescarastemma.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[11].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '13  '+JSON.parse(body)[12].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/f/f7/Sampdoria_badge.png',
+                'subtitle': "Stadium: "+JSON.parse(body)[12].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '14  '+JSON.parse(body)[13].name,
+                'image_url': 'http://vignette3.wikia.nocookie.net/fifa/images/c/c3/Empoli_FC_logo.png/revision/latest?cb=20140709074233',
+                'subtitle':"Stadium: "+ JSON.parse(body)[13].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '15  '+JSON.parse(body)[14].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/a/a8/Cagliari_Calcio_1920.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[14].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '16  '+JSON.parse(body)[15].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/thumb/6/66/AtalantaBC.svg/657px-AtalantaBC.svg.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[15].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '17  '+JSON.parse(body)[16].name,
+                'image_url': 'http://logodatabases.com/wp-content/uploads/2012/05/chievoverona-logo.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[16].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '18  '+JSON.parse(body)[17].name,
+                'image_url': 'https://s-media-cache-ak0.pinimg.com/originals/75/97/51/759751cb23d9067091237d3f3762b158.jpg',
+                'subtitle':"Stadium: "+ JSON.parse(body)[17].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '19  '+JSON.parse(body)[18].name,
+                'image_url': 'http://2.bp.blogspot.com/-2ZUsQFs0LBo/U3OyCWeIkWI/AAAAAAAAIC4/cgC3UhSJimk/s1600/Logo+AS_Roma.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[18].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }  , {
+                'title': '20  '+JSON.parse(body)[19].name,
+                'image_url': 'http://www.99sportslogos.com/wp-content/uploads/2013/07/Inter-Milan-Logo.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[19].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
                   'title': 'Back',
