@@ -172,8 +172,7 @@ function sendTextMessage (sender, text) {
 }
 
 //nextmatches
-
-function premierleagueNextmatches(sender, text){
+function premierleaguematchesYet(sender, text){
 
 
   var options = {
@@ -204,7 +203,7 @@ function premierleagueNextmatches(sender, text){
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
       +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
-     i = JSON.parse(body).length;
+      i = JSON.parse(body).length;
     }
 
   }
@@ -212,7 +211,7 @@ function premierleagueNextmatches(sender, text){
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
       +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+  date +" +0"  )
-        i = JSON.parse(body).length;
+      i = JSON.parse(body).length;
     }
 
     }
@@ -224,6 +223,7 @@ function premierleagueNextmatches(sender, text){
   request(options, callback)
 
 }
+
 
 
 //matches played
