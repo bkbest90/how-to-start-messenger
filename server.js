@@ -92,8 +92,8 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'matches') {
-        serieateam1(sender)
-        serieateam2(sender)
+        ligue1team1(sender)
+        ligue1team2(sender)
       }
     }
     if (event.postback) {
@@ -3032,6 +3032,279 @@ function serieateam2(sender){
               }  , {
                 'title': '20  '+JSON.parse(body)[19].name,
                 'image_url': 'http://www.99sportslogos.com/wp-content/uploads/2013/07/Inter-Milan-Logo.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[19].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }]
+            }
+          }
+        }
+        request({
+          url: 'https://graph.facebook.com/v2.6/me/messages',
+          qs: {access_token: token},
+          method: 'POST',
+          json: {
+            recipient: {id: sender},
+            message: messageData
+          }
+        }, function (error, response, body) {
+          if (error) {
+            console.log('Error sending messages: ', error)
+          } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+          }
+        })
+      }
+    }
+
+    request(options, callback)
+}
+
+function ligue1team1(sender){
+
+    var options = {
+      url: 'https://api.crowdscores.com/v1/teams?competition_ids=47',
+      headers: {
+        'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+      }
+    }
+
+    function callback (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        let messageData = {
+          'attachment': {
+            'type': 'template',
+            'payload': {
+              'template_type': 'generic',
+              'elements': [{
+                'title': '1  '+JSON.parse(body)[0].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Olympique_Lyonnais.svg/883px-Olympique_Lyonnais.svg.png',
+
+                'subtitle':"Stadium: "+JSON.parse(body)[0].defaultHomeVenue.name
+                          ,
+                'buttons': [{
+                  'type': 'postback',
+                  'title': 'Next match',
+                  'payload': 'next1'
+                },{
+                  'type': 'postback',
+                  'title': 'All matches',
+                  'payload': 'all1'
+                }]
+              }, {
+                'title': '2  '+JSON.parse(body)[1].name,
+                'image_url':  'https://www.fotbollsresoronline.se/content/uploads/2015/11/Fotbollsresa_Montpellier.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[1].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '3  '+JSON.parse(body)[2].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/Dijon_FCO_logo.svg/949px-Dijon_FCO_logo.svg.png',
+                'subtitle': "Stadium: "+JSON.parse(body)[2].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '4  '+JSON.parse(body)[3].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/en/e/e4/Paris_Saint-Germain_F.C..png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[3].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '5  '+JSON.parse(body)[4].name,
+                'image_url':  'https://yt3.ggpht.com/-T9KPAvHqpv0/AAAAAAAAAAI/AAAAAAAAAAA/v-bKQJvMc2w/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
+                'subtitle':"Stadium: "+ JSON.parse(body)[4].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '6  '+JSON.parse(body)[5].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/8/88/Olympique_de_Marseille_logo.svg/791px-Olympique_de_Marseille_logo.svg.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[5].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '7  '+JSON.parse(body)[6].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/a/ab/Lille_OSC_logo.svg/590px-Lille_OSC_logo.svg.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[6].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '8  '+JSON.parse(body)[7].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Stade_Rennais_FC.svg/927px-Stade_Rennais_FC.svg.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[7].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '9  '+JSON.parse(body)[8].name,
+                'image_url':  'https://hdlogo.files.wordpress.com/2014/01/as-monaco-fc-hd-logo.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[8].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }  , {
+                'title': '10  '+JSON.parse(body)[9].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/en/1/11/FC_Girondins_de_Bordeaux_logo.svg',
+                'subtitle':"Stadium: "+ JSON.parse(body)[9].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }]
+            }
+          }
+        }
+        request({
+          url: 'https://graph.facebook.com/v2.6/me/messages',
+          qs: {access_token: token},
+          method: 'POST',
+          json: {
+            recipient: {id: sender},
+            message: messageData
+          }
+        }, function (error, response, body) {
+          if (error) {
+            console.log('Error sending messages: ', error)
+          } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+          }
+        })
+      }
+    }
+
+    request(options, callback)
+}
+
+function ligue1team2(sender){
+
+    var options = {
+      url: 'https://api.crowdscores.com/v1/teams?competition_ids=47',
+      headers: {
+        'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+      }
+    }
+
+    function callback (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        let messageData = {
+          'attachment': {
+            'type': 'template',
+            'payload': {
+              'template_type': 'generic',
+              'elements': [{
+                'title': '11  '+JSON.parse(body)[10].name,
+                'image_url': 'http://www.logo-world.net/wp-content/uploads/France/Ligue%201/SM-Caen-2016-877.png',
+                'subtitle':"Stadium: "+JSON.parse(body)[10].defaultHomeVenue.name
+                          ,
+                'buttons': [{
+                  'type': 'postback',
+                  'title': 'Next match',
+                  'payload': 'next1'
+                },{
+                  'type': 'postback',
+                  'title': 'All matches',
+                  'payload': 'all1'
+                }]
+              }, {
+                'title': '12  '+JSON.parse(body)[11].name,
+                'image_url': 'http://www.hotscoreth.com/2016/wp-content/uploads/2016/09/FC_Metz_logo.svg.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[11].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '13  '+JSON.parse(body)[12].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/thumb/5/5d/Toulouse_FC_logo.svg/1024px-Toulouse_FC_logo.svg.png',
+                'subtitle': "Stadium: "+JSON.parse(body)[12].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '14  '+JSON.parse(body)[13].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/FC_Nantes_logo.svg/415px-FC_Nantes_logo.svg.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[13].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '15  '+JSON.parse(body)[14].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Logo_AS_Saint-%C3%89tienne.svg/749px-Logo_AS_Saint-%C3%89tienne.svg.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[14].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '16  '+JSON.parse(body)[15].name,
+                'image_url': 'https://hdlogo.files.wordpress.com/2014/01/ogc-nice-hd-logo.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[15].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '17  '+JSON.parse(body)[16].name,
+                'image_url': 'http://www.99sportslogos.com/wp-content/uploads/2013/04/Angers-SCO-Logo.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[16].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '18  '+JSON.parse(body)[17].name,
+                'image_url': 'https://pbs.twimg.com/media/COzc_tdWsAAmv7U.png:large',
+                'subtitle':"Stadium: "+ JSON.parse(body)[17].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '19  '+JSON.parse(body)[18].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/commons/2/24/En-Avant-Guingamp-840.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[18].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }  , {
+                'title': '20  '+JSON.parse(body)[19].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/FC_Lorient_logo.svg/717px-FC_Lorient_logo.svg.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[19].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
