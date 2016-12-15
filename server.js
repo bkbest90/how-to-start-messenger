@@ -203,22 +203,22 @@ function premierleagueNextmatches(sender, text){
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
       +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
-     i = JSON.parse(body).length;
-     return i;
+     break;
+
     }
 
   }
-    if (i != JSON.parse(body).length) {
+
 
       if (JSON.parse(body)[i].awayTeam.name == text ) {
         if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
       +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+  date +" +0"  )
-        i = JSON.parse(body).length;
+        break;
        }
 
        }
-     }
+
 
  }, i*110);
                         }
