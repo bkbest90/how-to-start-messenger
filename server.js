@@ -92,8 +92,8 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'matches') {
-        thaileagueteam1(sender)
-        thaileagueteam2(sender)
+       let text = "Barcelona";
+        matches(sender, text)
       }
     }
     if (event.postback) {
@@ -172,7 +172,7 @@ function sendTextMessage (sender, text) {
 }
 
 
-function matches(sender){
+function matches(sender, text){
 
 
   var options = {
@@ -199,14 +199,14 @@ function matches(sender){
     var date = new Date(num).toUTCString();
 
 
-    if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
+    if (JSON.parse(body)[i].homeTeam.name == text ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
       +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
     }
 
   }
-  if (JSON.parse(body)[i].awayTeam.name == "Barcelona" ) {
+  if (JSON.parse(body)[i].awayTeam.name == text ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
       +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+  date +" +0"  )
@@ -3618,7 +3618,7 @@ function sendGenericMessage (sender) {
         }, {
         'title': 'La liga',
         'subtitle': 'Spain',
-        'image_url': 'http://files.laliga.es/seccion_logos/laliga-v-600x600.png',
+        'image_url': 'https://www.360nobs.com/wp-content/uploads/2015/05/wpid-la-liga-club-logo.jpg',
         'buttons': [{
           'type': 'web_url',
           'url': 'http://www.laliga.es/en',
@@ -3635,7 +3635,7 @@ function sendGenericMessage (sender) {
         }, {
         'title': 'Bundesliga',
         'subtitle': 'German',
-        'image_url': 'http://www.teslabet.com/wp-content/uploads/2014/08/Bundesliga-Logo.jpg',
+        'image_url': 'http://2.bp.blogspot.com/-1DSQUPYLIEI/Tfuiy8MMq9I/AAAAAAAAW0c/AGs0P4JDHoA/s1600/Bundesliga_Logo.png',
         'buttons': [{
           'type': 'web_url',
           'url': 'http://www.bundesliga.com/en/',
@@ -3652,7 +3652,7 @@ function sendGenericMessage (sender) {
         }, {
         'title': 'Serie A',
         'subtitle': 'Italy',
-        'image_url': 'http://www.legaseriea.it/assets/legaseriea/images/logo.png?v=2016',
+        'image_url': 'http://2.bp.blogspot.com/-3En8qZGQ2AE/U_YVLBoL0jI/AAAAAAAADrk/kpSpfnbTOgw/s1600/Logo%2BSerie-A%2BItaly.png',
         'buttons': [{
           'type': 'web_url',
           'url': 'http://www.legaseriea.it/en/',
@@ -3669,7 +3669,7 @@ function sendGenericMessage (sender) {
         }, {
         'title': 'Ligue 1',
         'subtitle': 'France',
-        'image_url': 'http://vignette1.wikia.nocookie.net/fifa/images/f/f6/Ligue_1_Logo.png/revision/latest?cb=20161117184717',
+        'image_url': 'http://www.calcioefinanza.it/wp-content/uploads/2015/04/Ligue-13.jpg',
         'buttons': [{
           'type': 'web_url',
           'url': 'http://www.ligue1.com/',
@@ -3686,7 +3686,7 @@ function sendGenericMessage (sender) {
         }, {
         'title': 'Premier League Thailand',
         'subtitle': 'Thailand',
-        'image_url': 'http://www.thaileague.co.th/official/plt_html/images/plt_logo.png',
+        'image_url': 'http://www.teamthailand.in.th/wp-content/uploads/2016/03/Premier-League-Thailand-1-696x464.png',
         'buttons': [{
           'type': 'web_url',
           'url': 'http://www.thaileague.co.th/official/',
