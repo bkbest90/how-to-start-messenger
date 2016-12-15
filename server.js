@@ -92,8 +92,8 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'matches') {
-        premierleagueteam(sender)
-
+        premierleagueteam1(sender)
+        premierleagueteam2(sender)
       }
     }
     if (event.postback) {
@@ -202,14 +202,14 @@ function matches(sender){
     if (JSON.parse(body)[i].homeTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-      +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date   )
+      +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
     }
 
   }
   if (JSON.parse(body)[i].awayTeam.name == "Barcelona" ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
-      +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+  date   )
+      +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+  date +" +0"  )
     }
 
     }
@@ -1994,7 +1994,7 @@ function thaileaguetable2(sender){
     request(options, callback)
 }
 
-function premierleagueteam(sender){
+function premierleagueteam1(sender){
 
     var options = {
       url: 'https://api.crowdscores.com/v1/teams?competition_ids=2',
@@ -2012,8 +2012,8 @@ function premierleagueteam(sender){
               'template_type': 'generic',
               'elements': [{
                 'title': '1  '+JSON.parse(body)[0].name,
-                'image_url':  JSON.parse(body)[0].flagUrl,
-                'subtitle':"Stadium : "+JSON.parse(body)[0].defaultHomeVenue.name
+                'image_url':  JSON.stringify(JSON.parse(body)[0].flagUrl),
+                'subtitle':"Stadium: "+JSON.parse(body)[0].defaultHomeVenue.name
                           ,
                 'buttons': [{
                   'type': 'postback',
@@ -2026,7 +2026,7 @@ function premierleagueteam(sender){
                 }]
               }, {
                 'title': '2  '+JSON.parse(body)[1].name,
-                'subtitle': JSON.parse(body)[1].defaultHomeVenue.name ,
+                'subtitle':"Stadium: "+ JSON.parse(body)[1].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
                   'title': 'Back',
@@ -2034,7 +2034,7 @@ function premierleagueteam(sender){
                 }]
               }, {
                 'title': '3  '+JSON.parse(body)[2].name,
-                'subtitle': JSON.parse(body)[2].defaultHomeVenue.name ,
+                'subtitle': "Stadium: "+JSON.parse(body)[2].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
                   'title': 'Back',
@@ -2042,7 +2042,7 @@ function premierleagueteam(sender){
                 }]
               }, {
                 'title': '4  '+JSON.parse(body)[3].name,
-                'subtitle': JSON.parse(body)[3].defaultHomeVenue.name ,
+                'subtitle':"Stadium: "+ JSON.parse(body)[3].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
                   'title': 'Back',
@@ -2050,7 +2050,7 @@ function premierleagueteam(sender){
                 }]
               }, {
                 'title': '5  '+JSON.parse(body)[4].name,
-                'subtitle': JSON.parse(body)[4].defaultHomeVenue.name ,
+                'subtitle':"Stadium: "+ JSON.parse(body)[4].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
                   'title': 'Back',
@@ -2058,7 +2058,7 @@ function premierleagueteam(sender){
                 }]
               }, {
                 'title': '6  '+JSON.parse(body)[5].name,
-                'subtitle': JSON.parse(body)[5].defaultHomeVenue.name ,
+                'subtitle':"Stadium: "+ JSON.parse(body)[5].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
                   'title': 'Back',
@@ -2066,7 +2066,7 @@ function premierleagueteam(sender){
                 }]
               }, {
                 'title': '7  '+JSON.parse(body)[6].name,
-                'subtitle': JSON.parse(body)[6].defaultHomeVenue.name ,
+                'subtitle':"Stadium: "+ JSON.parse(body)[6].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
                   'title': 'Back',
@@ -2074,7 +2074,7 @@ function premierleagueteam(sender){
                 }]
               }, {
                 'title': '8  '+JSON.parse(body)[7].name,
-                'subtitle': JSON.parse(body)[7].defaultHomeVenue.name ,
+                'subtitle':"Stadium: "+ JSON.parse(body)[7].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
                   'title': 'Back',
@@ -2082,7 +2082,7 @@ function premierleagueteam(sender){
                 }]
               }, {
                 'title': '9  '+JSON.parse(body)[8].name,
-                'subtitle': JSON.parse(body)[8].defaultHomeVenue.name ,
+                'subtitle':"Stadium: "+ JSON.parse(body)[8].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
                   'title': 'Back',
@@ -2090,7 +2090,133 @@ function premierleagueteam(sender){
                 }]
               }  , {
                 'title': '10  '+JSON.parse(body)[9].name,
-                'subtitle': JSON.parse(body)[9].defaultHomeVenue.name ,
+                'subtitle':"Stadium: "+ JSON.parse(body)[9].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }]
+            }
+          }
+        }
+        request({
+          url: 'https://graph.facebook.com/v2.6/me/messages',
+          qs: {access_token: token},
+          method: 'POST',
+          json: {
+            recipient: {id: sender},
+            message: messageData
+          }
+        }, function (error, response, body) {
+          if (error) {
+            console.log('Error sending messages: ', error)
+          } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+          }
+        })
+      }
+    }
+
+    request(options, callback)
+}
+function premierleagueteam2(sender){
+
+    var options = {
+      url: 'https://api.crowdscores.com/v1/teams?competition_ids=2',
+      headers: {
+        'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+      }
+    }
+
+    function callback (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        let messageData = {
+          'attachment': {
+            'type': 'template',
+            'payload': {
+              'template_type': 'generic',
+              'elements': [{
+                'title': '11  '+JSON.parse(body)[10].name,
+                'image_url': JSON.stringify(JSON.parse(body)[10].flagUrl),
+                'subtitle':"Stadium: "+JSON.parse(body)[10].defaultHomeVenue.name
+                          ,
+                'buttons': [{
+                  'type': 'postback',
+                  'title': 'Next match',
+                  'payload': 'next1'
+                },{
+                  'type': 'postback',
+                  'title': 'All matches',
+                  'payload': 'all1'
+                }]
+              }, {
+                'title': '12  '+JSON.parse(body)[11].name,
+                'subtitle':"Stadium: "+ JSON.parse(body)[11].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '13  '+JSON.parse(body)[12].name,
+                'subtitle': "Stadium: "+JSON.parse(body)[12].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '14  '+JSON.parse(body)[13].name,
+                'subtitle':"Stadium: "+ JSON.parse(body)[13].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '15  '+JSON.parse(body)[14].name,
+                'subtitle':"Stadium: "+ JSON.parse(body)[14].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '16  '+JSON.parse(body)[15].name,
+                'subtitle':"Stadium: "+ JSON.parse(body)[15].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '17  '+JSON.parse(body)[16].name,
+                'subtitle':"Stadium: "+ JSON.parse(body)[16].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '18  '+JSON.parse(body)[17].name,
+                'subtitle':"Stadium: "+ JSON.parse(body)[17].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '19  '+JSON.parse(body)[18].name,
+                'subtitle':"Stadium: "+ JSON.parse(body)[18].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }  , {
+                'title': '20  '+JSON.parse(body)[19].name,
+                'subtitle':"Stadium: "+ JSON.parse(body)[19].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
                   'title': 'Back',
