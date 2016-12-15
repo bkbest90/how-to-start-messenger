@@ -87,12 +87,12 @@ app.post('/webhook/', function (req, res) {
         thaileaguetable2(sender)
         sendTextMessage(sender, 'Premier League Thailand table')
       }
-      if (text === 'Generic') {
+      if (text === 'mainmenu' || text === 'หน้าหลัก') {
         sendGenericMessage(sender)
         continue
       }
       if (text === 'matches') {
-       let text = "Arsenal";
+       let text = "Liverpool";
         premierleaguematchesAlready(sender, text)
       }
     }
