@@ -92,8 +92,8 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'matches') {
-        premierleagueteam1(sender)
-        premierleagueteam2(sender)
+        laligateam1(sender)
+        laligateam2(sender)
       }
     }
     if (event.postback) {
@@ -2399,10 +2399,10 @@ function laligateam1(sender){
     request(options, callback)
 }
 
-function premierleagueteam2(sender){
+function laligateam2(sender){
 
     var options = {
-      url: 'https://api.crowdscores.com/v1/teams?competition_ids=2',
+      url: 'https://api.crowdscores.com/v1/teams?competition_ids=46',
       headers: {
         'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
       }
