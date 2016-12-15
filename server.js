@@ -92,8 +92,8 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'matches') {
-        laligateam1(sender)
-        laligateam2(sender)
+        bundesligateam1(sender)
+        bundesligateam2(sender)
       }
     }
     if (event.postback) {
@@ -2535,6 +2535,261 @@ function laligateam2(sender){
     request(options, callback)
 }
 
+function bundesligateam1(sender){
+
+    var options = {
+      url: 'https://api.crowdscores.com/v1/teams?competition_ids=48',
+      headers: {
+        'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+      }
+    }
+
+    function callback (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        let messageData = {
+          'attachment': {
+            'type': 'template',
+            'payload': {
+              'template_type': 'generic',
+              'elements': [{
+                'title': '1  '+JSON.parse(body)[0].name,
+                'image_url':  'http://vignette1.wikia.nocookie.net/logopedia/images/c/cc/Bayern-M%C3%BCnchen-old-logo.png/revision/latest?cb=20120212092217',
+
+                'subtitle':"Stadium: "+JSON.parse(body)[0].defaultHomeVenue.name
+                          ,
+                'buttons': [{
+                  'type': 'postback',
+                  'title': 'Next match',
+                  'payload': 'next1'
+                },{
+                  'type': 'postback',
+                  'title': 'All matches',
+                  'payload': 'all1'
+                }]
+              }, {
+                'title': '2  '+JSON.parse(body)[1].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Eintracht_Frankfurt_Logo.svg/2000px-Eintracht_Frankfurt_Logo.svg.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[1].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '3  '+JSON.parse(body)[2].name,
+                'image_url':  'https://i.ytimg.com/vi/yQvva7WXCLo/maxresdefault.jpg',
+                'subtitle': "Stadium: "+JSON.parse(body)[2].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '4  '+JSON.parse(body)[3].name,
+                'image_url':  'http://logodatabases.com/wp-content/uploads/2012/05/fc-schalke-04-logo.jpg',
+                'subtitle':"Stadium: "+ JSON.parse(body)[3].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '5  '+JSON.parse(body)[4].name,
+                'image_url':  'http://www.logotypes101.com/free_vector_logo_png/112709/935B37CEF3DE6948D90803DD28997E6E/Mainz_05',
+                'subtitle':"Stadium: "+ JSON.parse(body)[4].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '6  '+JSON.parse(body)[5].name,
+                'image_url':  'http://logosvector.net/wp-content/uploads/2013/03/hamburg-vector-logo.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[5].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '7  '+JSON.parse(body)[6].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Logo_TSG_Hoffenheim.svg/929px-Logo_TSG_Hoffenheim.svg.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[6].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '8  '+JSON.parse(body)[7].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/SV-Werder-Bremen-Logo.svg/2000px-SV-Werder-Bremen-Logo.svg.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[7].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '9  '+JSON.parse(body)[8].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/FC_Augsburg_logo.svg/785px-FC_Augsburg_logo.svg.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[8].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }  , {
+                'title': '10  '+JSON.parse(body)[9].name,
+                'image_url':  'http://www.footballticketnet.com/files/images/logos/SV-Darmstadt-98-Logo-FootballTicketNet.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[9].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }]
+            }
+          }
+        }
+        request({
+          url: 'https://graph.facebook.com/v2.6/me/messages',
+          qs: {access_token: token},
+          method: 'POST',
+          json: {
+            recipient: {id: sender},
+            message: messageData
+          }
+        }, function (error, response, body) {
+          if (error) {
+            console.log('Error sending messages: ', error)
+          } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+          }
+        })
+      }
+    }
+
+    request(options, callback)
+}
+
+function bundesligateam2(sender){
+
+    var options = {
+      url: 'https://api.crowdscores.com/v1/teams?competition_ids=48',
+      headers: {
+        'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+      }
+    }
+
+    function callback (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        let messageData = {
+          'attachment': {
+            'type': 'template',
+            'payload': {
+              'template_type': 'generic',
+              'elements': [{
+                'title': '11  '+JSON.parse(body)[10].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Hertha_BSC_Logo_2012.svg/1107px-Hertha_BSC_Logo_2012.svg.png',
+                'subtitle':"Stadium: "+JSON.parse(body)[10].defaultHomeVenue.name
+                          ,
+                'buttons': [{
+                  'type': 'postback',
+                  'title': 'Next match',
+                  'payload': 'next1'
+                },{
+                  'type': 'postback',
+                  'title': 'All matches',
+                  'payload': 'all1'
+                }]
+              }, {
+                'title': '12  '+JSON.parse(body)[11].name,
+                'image_url': 'https://s-media-cache-ak0.pinimg.com/originals/3c/e0/92/3ce092cb1e0c3f777bae25c9d65b0911.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[11].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '13  '+JSON.parse(body)[12].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Borussia_M%C3%B6nchengladbach_logo.svg/2000px-Borussia_M%C3%B6nchengladbach_logo.svg.png',
+                'subtitle': "Stadium: "+JSON.parse(body)[12].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '14  '+JSON.parse(body)[13].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/5/59/Bayer_04_Leverkusen_logo.svg',
+                'subtitle':"Stadium: "+ JSON.parse(body)[13].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '15  '+JSON.parse(body)[14].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/thumb/0/0b/FC_Ingolstadt_04_logo.svg/926px-FC_Ingolstadt_04_logo.svg.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[14].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '16  '+JSON.parse(body)[15].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/de/d/d4/RB_Leipzig_2010_logo.svg',
+                'subtitle':"Stadium: "+ JSON.parse(body)[15].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '17  '+JSON.parse(body)[16].name,
+                'image_url': 'http://www.vectorportal.com/img_novi/scfreiburg_4316.jpg',
+                'subtitle':"Stadium: "+ JSON.parse(body)[16].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '18  '+JSON.parse(body)[17].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/7/71/Fc_cologne.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[17].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }]
+            }
+          }
+        }
+        request({
+          url: 'https://graph.facebook.com/v2.6/me/messages',
+          qs: {access_token: token},
+          method: 'POST',
+          json: {
+            recipient: {id: sender},
+            message: messageData
+          }
+        }, function (error, response, body) {
+          if (error) {
+            console.log('Error sending messages: ', error)
+          } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+          }
+        })
+      }
+    }
+
+    request(options, callback)
+}
+
 
 function sendGenericMessage (sender) {
   let messageData = {
@@ -2611,7 +2866,7 @@ function sendGenericMessage (sender) {
             'payload': 'team4'
             }]
         }, {
-        'title': 'ligue 1',
+        'title': 'Ligue 1',
         'subtitle': 'France',
         'image_url': 'http://vignette1.wikia.nocookie.net/fifa/images/f/f6/Ligue_1_Logo.png/revision/latest?cb=20161117184717',
         'buttons': [{
