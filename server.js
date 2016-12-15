@@ -93,7 +93,7 @@ app.post('/webhook/', function (req, res) {
       }
       if (text === 'matches') {
        let text = "Paris Saint Germain";
-        premierleaguematchesAlready(sender, text)
+        ligue1matchesAlready(sender, text)
       }
     }
     if (event.postback) {
