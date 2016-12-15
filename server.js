@@ -93,7 +93,7 @@ app.post('/webhook/', function (req, res) {
       }
       if (text === 'matches') {
        let text = "Chelsea";
-        premierleaguematchesAlready(sender, text)
+        premierleagueNextmatches(sender, text)
       }
     }
     if (event.postback) {
@@ -170,6 +170,61 @@ function sendTextMessage (sender, text) {
     }
   })
 }
+
+//nextmatches
+
+function premierleagueNextmatches(sender, text){
+
+
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=2',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+  setTimeout(function() {
+    let time = JSON.stringify(JSON.parse(body)[i].start)
+    var str = time;
+    var num = parseInt(str.replace(/[^0-9]/g, time));
+    var date = new Date(num).toUTCString();
+
+
+    if (JSON.parse(body)[i].homeTeam.name == text ) {
+      if (JSON.parse(body)[i].outcome === null) {
+        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+      +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+     i = JSON.parse(body).length;
+    }
+
+  }
+  if (JSON.parse(body)[i].awayTeam.name == text ) {
+      if (JSON.parse(body)[i].outcome === null) {
+        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+      +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+  date +" +0"  )
+        i = JSON.parse(body).length;
+    }
+
+    }
+ }, i*110);
+                        }
+    }
+  }
+
+  request(options, callback)
+
+}
+
 
 //matches played
 function premierleaguematchesAlready(sender, text){
@@ -588,7 +643,7 @@ function thaileaguematchesAlready(sender, text){
 
 
 //matches not start yet
-function premierleaguematchesyet(sender, text){
+function premierleaguematchesYet(sender, text){
 
 
   var options = {
@@ -638,7 +693,7 @@ function premierleaguematchesyet(sender, text){
 
 }
 
-function laligamatchesyet(sender, text){
+function laligamatchesYet(sender, text){
 
 
   var options = {
@@ -688,7 +743,7 @@ function laligamatchesyet(sender, text){
 
 }
 
-function bundesligamatchesyet(sender, text){
+function bundesligamatchesYet(sender, text){
 
 
   var options = {
@@ -738,7 +793,7 @@ function bundesligamatchesyet(sender, text){
 
 }
 
-function serieamatchesyet(sender, text){
+function serieamatchesYet(sender, text){
 
 
   var options = {
@@ -788,7 +843,7 @@ function serieamatchesyet(sender, text){
 
 }
 
-function ligue1matchesyet(sender, text){
+function ligue1matchesYet(sender, text){
 
 
   var options = {
@@ -838,7 +893,7 @@ function ligue1matchesyet(sender, text){
 
 }
 
-function thaileaguematchesyet(sender, text){
+function thaileaguematchesYet(sender, text){
 
 
   var options = {
