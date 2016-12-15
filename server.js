@@ -199,15 +199,15 @@ function premierleaguematchesAlready(sender, text){
         if (JSON.parse(body)[i].homeTeam.name == text ) {
              if (JSON.parse(body)[i].outcome.winner == "home") {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
-                +JSON.parse(body)[i].homeGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+                +JSON.parse(body)[i].awayTeam+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
                  }
                if (JSON.parse(body)[i].outcome.winner == "draw") {
               sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
-                  +JSON.parse(body)[i].homeGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+                  +JSON.parse(body)[i].awayTeam+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
                      }
                    if (JSON.parse(body)[i].outcome.winner == "away") {
                   sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
-                     +JSON.parse(body)[i].homeGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+                     +JSON.parse(body)[i].awayTeam+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
               }
               if (JSON.parse(body)[i].outcome === null) {
                 i = JSON.parse(body).length;
@@ -217,15 +217,15 @@ function premierleaguematchesAlready(sender, text){
            if (JSON.parse(body)[i].awayTeam.name == text ) {
                 if (JSON.parse(body)[i].outcome.winner == "home") {
                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
-                   +JSON.parse(body)[i].homeGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+                   +JSON.parse(body)[i].awayTeam+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
                   }
                if (JSON.parse(body)[i].outcome.winner == "draw") {
                 sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
-                 +JSON.parse(body)[i].homeGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+                 +JSON.parse(body)[i].awayTeam+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
             }
                 if (JSON.parse(body)[i].outcome.winner == "away") {
                 sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
-               +JSON.parse(body)[i].homeGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+               +JSON.parse(body)[i].awayTeam+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
                  }
                  if (JSON.parse(body)[i].outcome === null) {
                    i = JSON.parse(body).length;
