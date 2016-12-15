@@ -186,15 +186,24 @@ function premierleagueNextmatches(sender, text){
 
 
        if (!error && response.statusCode === 200) {
-
+      var b = 0;
       var i = 0 ;
          do {
-                  doSetTimeout(i);
+
+                  if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
+                    if (JSON.parse(body)[i].outcome === null) {
+                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+                    +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+
+
+                  }
+                  b = 5;
+                }
                     i++;
                      }
-                   while (JSON.parse(body)[i].outcome != null);
+                   while (B != 5);
 
-            function doSetTimeout(i) {
+        /*    function doSetTimeout(i) {
      setTimeout(function() {
 
              let time = JSON.stringify(JSON.parse(body)[i].start)
@@ -225,7 +234,7 @@ function premierleagueNextmatches(sender, text){
 
 
  }, i*110);
-                        }
+                        }*/
     }
   }
 
