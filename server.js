@@ -2147,7 +2147,7 @@ function premierleagueteam2(sender){
               'template_type': 'generic',
               'elements': [{
                 'title': '11  '+JSON.parse(body)[10].name,
-                'image_url': JSON.parse(body)[10].flagUrl,
+                'image_url': 'http://www.evertonfc.com/content/history/d2qsy1h1438jt3.cloudfront.net///d2qsy1h1438jt3.cloudfront.net/~/media/6e7d10673424491d9439e6cc208f7882.jpg?la=en',
                 'subtitle':"Stadium: "+JSON.parse(body)[10].defaultHomeVenue.name
                           ,
                 'buttons': [{
@@ -2161,6 +2161,7 @@ function premierleagueteam2(sender){
                 }]
               }, {
                 'title': '12  '+JSON.parse(body)[11].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Tottenham_Hotspur.svg/519px-Tottenham_Hotspur.svg.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[11].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
@@ -2169,6 +2170,7 @@ function premierleagueteam2(sender){
                 }]
               }, {
                 'title': '13  '+JSON.parse(body)[12].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/AFC_Bournemouth.svg/908px-AFC_Bournemouth.svg.png',
                 'subtitle': "Stadium: "+JSON.parse(body)[12].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
@@ -2177,6 +2179,7 @@ function premierleagueteam2(sender){
                 }]
               }, {
                 'title': '14  '+JSON.parse(body)[13].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Swansea_City_AFC_logo.svg/634px-Swansea_City_AFC_logo.svg.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[13].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
@@ -2185,6 +2188,7 @@ function premierleagueteam2(sender){
                 }]
               }, {
                 'title': '15  '+JSON.parse(body)[14].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Crystal_Palace_FC_logo.svg/821px-Crystal_Palace_FC_logo.svg.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[14].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
@@ -2193,6 +2197,7 @@ function premierleagueteam2(sender){
                 }]
               }, {
                 'title': '16  '+JSON.parse(body)[15].name,
+                'image_url': 'http://logonoid.com/images/arsenal-logo.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[15].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
@@ -2201,6 +2206,7 @@ function premierleagueteam2(sender){
                 }]
               }, {
                 'title': '17  '+JSON.parse(body)[16].name,
+                'image_url': 'http://vignette4.wikia.nocookie.net/logopedia/images/3/36/Manchester_City_2016.png/revision/latest?cb=20151229013856',
                 'subtitle':"Stadium: "+ JSON.parse(body)[16].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
@@ -2209,6 +2215,7 @@ function premierleagueteam2(sender){
                 }]
               }, {
                 'title': '18  '+JSON.parse(body)[17].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Hull_City.svg/1128px-Hull_City.svg.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[17].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
@@ -2217,6 +2224,7 @@ function premierleagueteam2(sender){
                 }]
               }, {
                 'title': '19  '+JSON.parse(body)[18].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/thumb/7/77/Logo_Sunderland.svg/1229px-Logo_Sunderland.svg.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[18].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
@@ -2225,6 +2233,7 @@ function premierleagueteam2(sender){
                 }]
               }  , {
                 'title': '20  '+JSON.parse(body)[19].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/West_Ham_United_FC.svg/1063px-West_Ham_United_FC.svg.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[19].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
