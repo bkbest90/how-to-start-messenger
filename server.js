@@ -92,7 +92,7 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'matches') {
-       let text = "Liverpool";
+       let text = "Arsenal";
         premierleaguematchesAlready(sender, text)
       }
     }
@@ -4010,7 +4010,7 @@ function sendGenericMessage (sender) {
         }, {
         'title': 'La liga',
         'subtitle': 'Spain',
-        'image_url': 'https://www.360nobs.com/wp-content/uploads/2015/05/wpid-la-liga-club-logo.jpg',
+        'image_url': 'https://www.bbva.com/en/data/8663082015/logo-liga-bbva-azul.jpg',
         'buttons': [{
           'type': 'web_url',
           'url': 'http://www.laliga.es/en',
@@ -4027,7 +4027,7 @@ function sendGenericMessage (sender) {
         }, {
         'title': 'Bundesliga',
         'subtitle': 'German',
-        'image_url': 'http://2.bp.blogspot.com/-1DSQUPYLIEI/Tfuiy8MMq9I/AAAAAAAAW0c/AGs0P4JDHoA/s1600/Bundesliga_Logo.png',
+        'image_url': 'http://4.bp.blogspot.com/-wumnC-FeJN0/U87Ng9BAWEI/AAAAAAAAC6I/07HkbDi3V9c/s1600/Logo+Bundesliga.png',
         'buttons': [{
           'type': 'web_url',
           'url': 'http://www.bundesliga.com/en/',
