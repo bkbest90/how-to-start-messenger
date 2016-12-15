@@ -175,12 +175,12 @@ function sendTextMessage (sender, text) {
 function premierleagueNextmatches(sender, text){
 
 
-      var options = {
-        url: 'https://api.crowdscores.com/v1/matches?competition_id=2',
-        headers: {
-          'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
-        }
-     }
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=2',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
 
     function callback (error, response, body) {
 
@@ -190,64 +190,37 @@ function premierleagueNextmatches(sender, text){
          for (var i = 0; i < JSON.parse(body).length; i++) {
 
             doSetTimeout(i);
-            doSetTimeout2(i);
-       }
+  }
             function doSetTimeout(i) {
-      setTimeout(function() {
-        let time = JSON.stringify(JSON.parse(body)[i].start)
-        var str = time;
-        var num = parseInt(str.replace(/[^0-9]/g, time));
-        var date = new Date(num).toUTCString();
+  setTimeout(function() {
+    let time = JSON.stringify(JSON.parse(body)[i].start)
+    var str = time;
+    var num = parseInt(str.replace(/[^0-9]/g, time));
+    var date = new Date(num).toUTCString();
 
 
-        if (JSON.parse(body)[i].homeTeam.name == text ) {
-          if (JSON.parse(body)[i].outcome === null) {
-            sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-          +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
-             i = JSON.parse(body).length;
-             }
+    if (JSON.parse(body)[i].homeTeam.name == text ) {
+      if (JSON.parse(body)[i].outcome === null) {
+        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+      +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+     i = JSON.parse(body).length;
+    }
 
-           }
-        /*  if (JSON.parse(body)[i].awayTeam.name == text ) {
-          if (JSON.parse(body)[i].outcome === null) {
-            sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-          +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+  date +" +0"  )
+  }
+    if (i < JSON.parse(body).length) {
 
-        }
+      if (JSON.parse(body)[i].awayTeam.name == text ) {
+        if (JSON.parse(body)[i].outcome === null) {
+        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+      +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+  date +" +0"  )
+        i = JSON.parse(body).length;
+       }
 
-      }*/
+       }
+       }
 
-             }, i*110);
+ }, i*110);
                         }
-                        function doSetTimeout2(i) {
-                        setTimeout(function() {
-                        let time = JSON.stringify(JSON.parse(body)[i].start)
-                        var str = time;
-                        var num = parseInt(str.replace(/[^0-9]/g, time));
-                        var date = new Date(num).toUTCString();
-
-
-                  /*      if (JSON.parse(body)[i].homeTeam.name == text ) {
-                        if (JSON.parse(body)[i].outcome === null) {
-                        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-                        +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
-
-                        }
-
-                      }*/
-                         if (JSON.parse(body)[i].awayTeam.name == text ) {
-                        if (JSON.parse(body)[i].outcome === null) {
-                        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-                        +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+  date +" +0"  )
-                          i = JSON.parse(body).length;
-                        }
-
-                        }
-
-                        }, i*110);
-                                    }
-
-
     }
   }
 
