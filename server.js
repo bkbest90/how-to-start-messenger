@@ -192,7 +192,7 @@ function premierleagueNextmatches(sender, text){
                   doSetTimeout(i);
                     i++;
                      }
-                   while (JSON.parse(body)[i].outcome !== null);
+                   while (JSON.parse(body)[i].outcome != null);
 
             function doSetTimeout(i) {
      setTimeout(function() {
