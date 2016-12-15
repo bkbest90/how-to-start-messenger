@@ -87,7 +87,7 @@ app.post('/webhook/', function (req, res) {
         thaileaguetable2(sender)
         sendTextMessage(sender, 'Premier League Thailand table')
       }
-      if (text === 'mainmenu' || text === 'หน้าหลัก') {
+      if (text === 'mainmenu' || text === 'เมนูหลัก') {
         sendGenericMessage(sender)
         continue
       }
@@ -241,7 +241,7 @@ function premierleaguematchesAlready(sender, text){
 
 }
 
-function laligamatchesyetAlready(sender, text){
+function laligamatchesAlready(sender, text){
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
     headers: {
@@ -310,7 +310,7 @@ function laligamatchesyetAlready(sender, text){
 
 }
 
-function bundesligamatchesyetAlready(sender, text){
+function bundesligamatchesAlready(sender, text){
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=48',
     headers: {
@@ -379,7 +379,7 @@ function bundesligamatchesyetAlready(sender, text){
 
 }
 
-function serieamatchesyetAlready(sender, text){
+function serieamatchesAlready(sender, text){
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=49',
     headers: {
@@ -448,7 +448,7 @@ function serieamatchesyetAlready(sender, text){
 
 }
 
-function ligue1matchesyetAlready(sender, text){
+function ligue1matchesAlready(sender, text){
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=47',
     headers: {
@@ -517,7 +517,7 @@ function ligue1matchesyetAlready(sender, text){
 
 }
 
-function thaileaguematchesyetAlready(sender, text){
+function thaileaguematchesAlready(sender, text){
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=151',
     headers: {
