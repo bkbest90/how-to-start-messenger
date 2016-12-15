@@ -92,8 +92,8 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'matches') {
-       let text = "Barcelona";
-        matches(sender, text)
+       let text = "Liverpool";
+        premierleaguematchesAlready(sender, text)
       }
     }
     if (event.postback) {
@@ -171,8 +171,199 @@ function sendTextMessage (sender, text) {
   })
 }
 
+//matches played
+function premierleaguematchesAlready(sender, text){
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=2',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+    function callback (error, response, body) {
 
-function matches(sender, text){
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+             setTimeout(function() {
+
+              let time = JSON.stringify(JSON.parse(body)[i].start)
+              var str = time;
+              var num = parseInt(str.replace(/[^0-9]/g, time));
+              var date = new Date(num).toUTCString();
+
+        if (JSON.parse(body)[i].homeTeam.name == text ) {
+             if (JSON.parse(body)[i].outcome.winner == "home") {
+               sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                +JSON.parse(body)[i].homeGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+                 }
+               if (JSON.parse(body)[i].outcome.winner == "draw") {
+              sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                  +JSON.parse(body)[i].homeGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+                     }
+                   if (JSON.parse(body)[i].outcome.winner == "away") {
+                  sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                     +JSON.parse(body)[i].homeGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+              }
+              if (JSON.parse(body)[i].outcome === null) {
+                i = JSON.parse(body).length;
+              }
+
+             }
+           if (JSON.parse(body)[i].awayTeam.name == text ) {
+                if (JSON.parse(body)[i].outcome.winner == "home") {
+                     sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                   +JSON.parse(body)[i].homeGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+                  }
+               if (JSON.parse(body)[i].outcome.winner == "draw") {
+                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                 +JSON.parse(body)[i].homeGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+            }
+                if (JSON.parse(body)[i].outcome.winner == "away") {
+                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+               +JSON.parse(body)[i].homeGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+                 }
+                 if (JSON.parse(body)[i].outcome === null) {
+                   i = JSON.parse(body).length;
+                 }
+
+         }
+            }, i*110);
+                          }
+                 }
+            }
+
+  request(options, callback)
+
+}
+
+function laligamatchesyetAlready(sender, text){
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+             setTimeout(function() {
+
+              let time = JSON.stringify(JSON.parse(body)[i].start)
+              var str = time;
+              var num = parseInt(str.replace(/[^0-9]/g, time));
+              var date = new Date(num).toUTCString();
+
+        if (JSON.parse(body)[i].homeTeam.name == text ) {
+             if (JSON.parse(body)[i].outcome.winner == "home") {
+               sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+                 }
+               if (JSON.parse(body)[i].outcome.winner == "draw") {
+              sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                  +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+                     }
+                   if (JSON.parse(body)[i].outcome.winner == "away") {
+                  sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                     +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+              }
+              if (JSON.parse(body)[i].outcome === null) {
+                i = JSON.parse(body).length;
+              }
+
+             }
+           if (JSON.parse(body)[i].awayTeam.name == text ) {
+                if (JSON.parse(body)[i].outcome.winner == "home") {
+                     sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                   +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+                  }
+               if (JSON.parse(body)[i].outcome.winner == "draw") {
+                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                 +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+            }
+                if (JSON.parse(body)[i].outcome.winner == "away") {
+                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+               +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+                 }
+                 if (JSON.parse(body)[i].outcome === null) {
+                   i = JSON.parse(body).length;
+                 }
+
+         }
+            }, i*110);
+                          }
+                 }
+            }
+
+  request(options, callback)
+
+}
+
+
+
+//matches not start yet
+function premierleaguematchesyet(sender, text){
+
+
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=2',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+  setTimeout(function() {
+    let time = JSON.stringify(JSON.parse(body)[i].start)
+    var str = time;
+    var num = parseInt(str.replace(/[^0-9]/g, time));
+    var date = new Date(num).toUTCString();
+
+
+    if (JSON.parse(body)[i].homeTeam.name == text ) {
+      if (JSON.parse(body)[i].outcome === null) {
+        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
+      +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+    }
+
+  }
+  if (JSON.parse(body)[i].awayTeam.name == text ) {
+      if (JSON.parse(body)[i].outcome === null) {
+        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
+      +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+  date +" +0"  )
+    }
+
+    }
+ }, i*110);
+                        }
+    }
+  }
+
+  request(options, callback)
+
+}
+
+function laligamatchesyet(sender, text){
 
 
   var options = {
@@ -221,6 +412,207 @@ function matches(sender, text){
   request(options, callback)
 
 }
+
+function bundesligamatchesyet(sender, text){
+
+
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=48',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+  setTimeout(function() {
+    let time = JSON.stringify(JSON.parse(body)[i].start)
+    var str = time;
+    var num = parseInt(str.replace(/[^0-9]/g, time));
+    var date = new Date(num).toUTCString();
+
+
+    if (JSON.parse(body)[i].homeTeam.name == text ) {
+      if (JSON.parse(body)[i].outcome === null) {
+        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
+      +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+    }
+
+  }
+  if (JSON.parse(body)[i].awayTeam.name == text ) {
+      if (JSON.parse(body)[i].outcome === null) {
+        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
+      +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+  date +" +0"  )
+    }
+
+    }
+ }, i*110);
+                        }
+    }
+  }
+
+  request(options, callback)
+
+}
+
+function serieamatchesyet(sender, text){
+
+
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=49',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+  setTimeout(function() {
+    let time = JSON.stringify(JSON.parse(body)[i].start)
+    var str = time;
+    var num = parseInt(str.replace(/[^0-9]/g, time));
+    var date = new Date(num).toUTCString();
+
+
+    if (JSON.parse(body)[i].homeTeam.name == text ) {
+      if (JSON.parse(body)[i].outcome === null) {
+        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
+      +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+    }
+
+  }
+  if (JSON.parse(body)[i].awayTeam.name == text ) {
+      if (JSON.parse(body)[i].outcome === null) {
+        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
+      +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+  date +" +0"  )
+    }
+
+    }
+ }, i*110);
+                        }
+    }
+  }
+
+  request(options, callback)
+
+}
+
+function ligue1matchesyet(sender, text){
+
+
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=47',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+  setTimeout(function() {
+    let time = JSON.stringify(JSON.parse(body)[i].start)
+    var str = time;
+    var num = parseInt(str.replace(/[^0-9]/g, time));
+    var date = new Date(num).toUTCString();
+
+
+    if (JSON.parse(body)[i].homeTeam.name == text ) {
+      if (JSON.parse(body)[i].outcome === null) {
+        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
+      +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+    }
+
+  }
+  if (JSON.parse(body)[i].awayTeam.name == text ) {
+      if (JSON.parse(body)[i].outcome === null) {
+        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
+      +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+  date +" +0"  )
+    }
+
+    }
+ }, i*110);
+                        }
+    }
+  }
+
+  request(options, callback)
+
+}
+
+function thaileaguematchesyet(sender, text){
+
+
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=151',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+  setTimeout(function() {
+    let time = JSON.stringify(JSON.parse(body)[i].start)
+    var str = time;
+    var num = parseInt(str.replace(/[^0-9]/g, time));
+    var date = new Date(num).toUTCString();
+
+
+    if (JSON.parse(body)[i].homeTeam.name == text ) {
+      if (JSON.parse(body)[i].outcome === null) {
+        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
+      +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+ date +" +0"  )
+    }
+
+  }
+  if (JSON.parse(body)[i].awayTeam.name == text ) {
+      if (JSON.parse(body)[i].outcome === null) {
+        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +" vs "
+      +JSON.parse(body)[i].awayTeam.name +"\nเวลา\n"+  date +" +0"  )
+    }
+
+    }
+ }, i*110);
+                        }
+    }
+  }
+
+  request(options, callback)
+
+}
+
 
 //tables
 function premierleaguetable1(sender){
