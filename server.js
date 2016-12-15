@@ -207,7 +207,7 @@ function premierleagueNextmatches(sender, text){
     }
 
   }
-    if (i < JSON.parse(body).length) {
+  /*  if (i != JSON.parse(body).length) {
 
       if (JSON.parse(body)[i].awayTeam.name == text ) {
         if (JSON.parse(body)[i].outcome === null) {
@@ -217,7 +217,7 @@ function premierleagueNextmatches(sender, text){
        }
 
        }
-       }
+     }*/
 
  }, i*110);
                         }
