@@ -187,37 +187,41 @@ function premierleagueNextmatches(sender, text){
 
        if (!error && response.statusCode === 200) {
 
-         for (var i = 0; i < JSON.parse(body).length; i++) {
+      var i = 0 ;
+         do {
+                  doSetTimeout(i);
+                    i++;
+                     }
+                   while (JSON.parse(body)[i].outcome === null);
 
-            doSetTimeout(i);
-  }
             function doSetTimeout(i) {
   setTimeout(function() {
+
     let time = JSON.stringify(JSON.parse(body)[i].start)
     var str = time;
     var num = parseInt(str.replace(/[^0-9]/g, time));
     var date = new Date(num).toUTCString();
 
 
-    if (JSON.parse(body)[i].homeTeam.name == text || JSON.parse(body)[i].awayTeam.name == text) {
+    if (JSON.parse(body)[i].homeTeam.name == text  ) {
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
       +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
-       i = JSON.parse(body).length;
+
 
     }
 
   }
 
 
-    /*  if (JSON.parse(body)[i].awayTeam.name == text ) {
+      if (JSON.parse(body)[i].awayTeam.name == text ) {
         if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
       +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+  date +" +0"  )
-        i = JSON.parse(body).length;
+
        }
 
-     }*/
+       }
 
 
  }, i*110);
