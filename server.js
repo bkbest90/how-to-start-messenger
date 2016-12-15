@@ -92,8 +92,8 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'matches') {
-        ligue1team1(sender)
-        ligue1team2(sender)
+        thaileagueteam1(sender)
+        thaileagueteam2(sender)
       }
     }
     if (event.postback) {
@@ -3306,6 +3306,261 @@ function ligue1team2(sender){
                 'title': '20  '+JSON.parse(body)[19].name,
                 'image_url': 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/FC_Lorient_logo.svg/717px-FC_Lorient_logo.svg.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[19].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }]
+            }
+          }
+        }
+        request({
+          url: 'https://graph.facebook.com/v2.6/me/messages',
+          qs: {access_token: token},
+          method: 'POST',
+          json: {
+            recipient: {id: sender},
+            message: messageData
+          }
+        }, function (error, response, body) {
+          if (error) {
+            console.log('Error sending messages: ', error)
+          } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+          }
+        })
+      }
+    }
+
+    request(options, callback)
+}
+
+function thaileagueteam1(sender){
+
+    var options = {
+      url: 'https://api.crowdscores.com/v1/teams?competition_ids=151',
+      headers: {
+        'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+      }
+    }
+
+    function callback (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        let messageData = {
+          'attachment': {
+            'type': 'template',
+            'payload': {
+              'template_type': 'generic',
+              'elements': [{
+                'title': '1  '+JSON.parse(body)[0].name,
+                'image_url':  'http://3.bp.blogspot.com/-YNcFtCZ4dvc/VmF1O52uviI/AAAAAAAAAFo/RRxRHhcS0zI/s1600/Chiangrai-Utd.png',
+
+                'subtitle':"Stadium: "+JSON.parse(body)[0].defaultHomeVenue.name
+                          ,
+                'buttons': [{
+                  'type': 'postback',
+                  'title': 'Next match',
+                  'payload': 'next1'
+                },{
+                  'type': 'postback',
+                  'title': 'All matches',
+                  'payload': 'all1'
+                }]
+              }, {
+                'title': '2  '+JSON.parse(body)[1].name,
+                'image_url':  'http://www.chonburifootballclub.com/images/CHONBURI/logo%20team/chonburi.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[1].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '3  '+JSON.parse(body)[2].name,
+                'image_url':  'http://3.bp.blogspot.com/-b1sfQ0J-tzI/VmFwTNzuBJI/AAAAAAAAAEg/-tglxK35dy4/s1600/MTUTD.png',
+                'subtitle': "Stadium: "+JSON.parse(body)[2].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '4  '+JSON.parse(body)[3].name,
+                'image_url':  'http://1.bp.blogspot.com/-k7ifdlZ7Y80/VmF17IO5dhI/AAAAAAAAAFw/4aJFU85-BiI/s1600/Nakhonratchasima-FC.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[3].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '5  '+JSON.parse(body)[4].name,
+                'image_url':  'http://www.mediafire.com/convkey/b985/526udjyxj8k6f34zg.jpg',
+                'subtitle':"Stadium: "+ JSON.parse(body)[4].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '6  '+JSON.parse(body)[5].name,
+                'image_url':  'http://1.bp.blogspot.com/-Q7aYFXfnv7M/VmF3XX9fOlI/AAAAAAAAAGA/jzNlaRXknY4/s1600/Osotspa.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[5].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '7  '+JSON.parse(body)[6].name,
+                'image_url':  'http://www.ratchaburifc.com/images/logo_ratchaburi2012.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[6].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '8  '+JSON.parse(body)[7].name,
+                'image_url':  'https://koyababymand.files.wordpress.com/2010/08/1250950353.jpg',
+                'subtitle':"Stadium: "+ JSON.parse(body)[7].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '9  '+JSON.parse(body)[8].name,
+                'image_url':  'http://www.bahiscipro.com/takimlogo/8/8064.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[8].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }  , {
+                'title': '10  '+JSON.parse(body)[9].name,
+                'image_url':  'https://upload.wikimedia.org/wikipedia/en/4/4f/Pattaya_United_F.C..png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[9].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }]
+            }
+          }
+        }
+        request({
+          url: 'https://graph.facebook.com/v2.6/me/messages',
+          qs: {access_token: token},
+          method: 'POST',
+          json: {
+            recipient: {id: sender},
+            message: messageData
+          }
+        }, function (error, response, body) {
+          if (error) {
+            console.log('Error sending messages: ', error)
+          } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+          }
+        })
+      }
+    }
+
+    request(options, callback)
+}
+
+function thaileagueteam2(sender){
+
+    var options = {
+      url: 'https://api.crowdscores.com/v1/teams?competition_ids=151',
+      headers: {
+        'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+      }
+    }
+
+    function callback (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        let messageData = {
+          'attachment': {
+            'type': 'template',
+            'payload': {
+              'template_type': 'generic',
+              'elements': [{
+                'title': '11  '+JSON.parse(body)[10].name,
+                'image_url': 'http://football.kapook.com/uploads/logo/BBCU.png',
+                'subtitle':"Stadium: "+JSON.parse(body)[10].defaultHomeVenue.name
+                          ,
+                'buttons': [{
+                  'type': 'postback',
+                  'title': 'Next match',
+                  'payload': 'next1'
+                },{
+                  'type': 'postback',
+                  'title': 'All matches',
+                  'payload': 'all1'
+                }]
+              }, {
+                'title': '12  '+JSON.parse(body)[11].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Army_United_F.C._logo.svg/1093px-Army_United_F.C._logo.svg.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[11].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '13  '+JSON.parse(body)[12].name,
+                'image_url': 'http://img.tarad.com/shop/l/logothailand/img-lib/spd_20120722221657_b.jpg',
+                'subtitle': "Stadium: "+JSON.parse(body)[12].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '14  '+JSON.parse(body)[13].name,
+                'image_url': 'http://3.bp.blogspot.com/-OkNAy9T4Jgo/VgqOiTI35sI/AAAAAAAAYJw/nOr1SQ_YLOI/s1600/Bangkok-United-FC-Logo-eps-vector-image.jpg',
+                'subtitle':"Stadium: "+ JSON.parse(body)[13].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '15  '+JSON.parse(body)[14].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/8/87/BEC-Tero_Sasana.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[14].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '16  '+JSON.parse(body)[15].name,
+                'image_url': 'http://www.thaisportslive.net/Thailogo/SukhothaiFC.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[15].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '17  '+JSON.parse(body)[16].name,
+                'image_url': 'http://upic.me/i/1m/buriramunited.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[16].defaultHomeVenue.name ,
+                  'buttons': [{
+                  'type': 'postback',
+                  'title': 'Back',
+                  'payload': 'back'
+                }]
+              }, {
+                'title': '18  '+JSON.parse(body)[17].name,
+                'image_url': 'https://upload.wikimedia.org/wikipedia/en/d/de/ChainatFC-logo2013.png',
+                'subtitle':"Stadium: "+ JSON.parse(body)[17].defaultHomeVenue.name ,
                   'buttons': [{
                   'type': 'postback',
                   'title': 'Back',
