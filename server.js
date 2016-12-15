@@ -203,7 +203,7 @@ function premierleagueNextmatches(sender, text){
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
       +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
-      i = JSON.parse(body).length;
+
     }
 
   }
@@ -211,10 +211,11 @@ function premierleagueNextmatches(sender, text){
       if (JSON.parse(body)[i].outcome === null) {
         sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
       +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+  date +" +0"  )
-      i = JSON.parse(body).length;
+
     }
 
     }
+      i = JSON.parse(body).length;
  }, i*110);
                         }
     }
@@ -4407,7 +4408,7 @@ function sendGenericMessage (sender) {
             }]
         }, {
         'title': 'Premier League Thailand',
-        'subtitle': 'Thailand',
+        'subtitle': 'Thai',
         'image_url': 'http://www.teamthailand.in.th/wp-content/uploads/2016/03/Premier-League-Thailand-1-696x464.png',
         'buttons': [{
           'type': 'web_url',
