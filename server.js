@@ -162,8 +162,7 @@ app.post('/webhook/', function (req, res) {
       if (payloadtext === 'matchallBurnley') {
         let text = "Burnley";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
-        setTimeout(function() {  premierleaguematchesPlayed(sender, text) }, 100);
-        setTimeout(function() {  premierleaguematchesYet(sender, text)}, 5000);
+        setTimeout(function() {  premierleaguematchesYet(sender, text)}, 100);
         setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
       }
 
@@ -182,8 +181,8 @@ app.post('/webhook/', function (req, res) {
       if (payloadtext === 'matchallLeicester City') {
         let text = "Leicester City";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
-        setTimeout(function() {  premierleaguematchesPlayed(sender, text) }, 100);
-        setTimeout(function() {  premierleaguematchesYet(sender, text)}, 1400);
+
+        setTimeout(function() {  premierleaguematchesYet(sender, text)}, 100);
         setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
       }
 
