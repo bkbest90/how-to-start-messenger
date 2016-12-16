@@ -891,49 +891,6 @@ function bundesligamatchesAll(sender, text){
 
 
          }
-
-
-              let time = JSON.stringify(JSON.parse(body)[i].start)
-              var str = time;
-              var num = parseInt(str.replace(/[^0-9]/g, time));
-              var date = new Date(num).toUTCString();
-
-        if (JSON.parse(body)[i].homeTeam.name == text ) {
-             if (JSON.parse(body)[i].outcome.winner == "home") {
-               sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
-                +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
-                 }
-               if (JSON.parse(body)[i].outcome.winner == "draw") {
-              sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
-                  +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
-                     }
-                   if (JSON.parse(body)[i].outcome.winner == "away") {
-                  sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
-                     +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
-              }
-              if (JSON.parse(body)[i].outcome === null) {
-                i = JSON.parse(body).length;
-              }
-
-             }
-           if (JSON.parse(body)[i].awayTeam.name == text ) {
-                if (JSON.parse(body)[i].outcome.winner == "home") {
-                     sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
-                   +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
-                  }
-               if (JSON.parse(body)[i].outcome.winner == "draw") {
-                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
-                 +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
-            }
-                if (JSON.parse(body)[i].outcome.winner == "away") {
-                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
-               +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
-                 }
-                 if (JSON.parse(body)[i].outcome === null) {
-                   i = JSON.parse(body).length;
-                 }
-
-         }
             }, i*110);
                           }
                  }
