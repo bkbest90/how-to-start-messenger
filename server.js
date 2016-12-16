@@ -93,7 +93,7 @@ app.post('/webhook/', function (req, res) {
       }
       if (text === 'matches') {
        let text = "Barcelona";
-        laligaPreviousmatches(sender, text)
+        laligaNextmatches(sender, text)
       }
     }
     if (event.postback) {
@@ -242,7 +242,7 @@ function premierleaguePreviousmatches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      let i = 379 ;
+      var i = 379 ;
          do {
            let time = JSON.stringify(JSON.parse(body)[i].start)
            var str = time;
@@ -283,7 +283,7 @@ function laligaPreviousmatches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      let i = 379 ;
+      var i = 379 ;
          do {
            let time = JSON.stringify(JSON.parse(body)[i].start)
            var str = time;
