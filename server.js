@@ -124,6 +124,27 @@ app.post('/webhook/', function (req, res) {
       if (payloadtext === 'thaileaguetable') {
         thaileaguetable(sender)
       }
+      if (payloadtext === 'premierleagueteam') {
+        premierleagueteam(sender)
+
+
+      }
+      if (payloadtext === 'laligateam') {
+        laligateam(sender)
+      }
+      if (payloadtext === 'bundesligateam') {
+        bundesligateam(sender)
+      }
+      if (payloadtext === 'serieateam') {
+        serieateam(sender)
+      }
+      if (payloadtext === 'ligue1team') {
+        ligue1team(sender)
+      }
+      if (payloadtext === 'thaileagueteam') {
+        thaileagueteam(sender)
+      }
+
       if (payloadtext === 'back') {
         sendGenericMessage (sender)
       }
@@ -1408,7 +1429,7 @@ function premierleaguetable(sender, text){
               )
 
 
-            }, i*110+10);
+            }, i*110+40);
                         }
                 }
              }
@@ -1447,7 +1468,7 @@ function laligatable(sender, text){
               )
 
 
-            }, i*110+10);
+            }, i*110+40);
                         }
                 }
              }
@@ -1486,7 +1507,7 @@ function bundesligatable(sender, text){
               )
 
 
-            }, i*110+10);
+            }, i*110+40);
                         }
                 }
              }
@@ -1525,7 +1546,7 @@ function serieatable(sender, text){
               )
 
 
-            }, i*110+10);
+            }, i*110+40);
                         }
                 }
              }
@@ -1564,7 +1585,7 @@ function ligue1table(sender, text){
               )
 
 
-            }, i*110+10);
+            }, i*110+40);
                         }
                 }
              }
@@ -1603,7 +1624,7 @@ function thaileaguetable(sender, text){
               )
 
 
-            }, i*110+10);
+            }, i*110+40);
                         }
                 }
              }
