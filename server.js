@@ -1659,10 +1659,6 @@ function premierleagueteam1(sender){
                           ,
                 'buttons': [{
                   'type': 'postback',
-                  'title': 'แมตช์ที่แข่งไปแล้ว',
-                  'payload': 'matchesplayed'
-                },{
-                  'type': 'postback',
                   'title': 'แมตช์ล่าสุด',
                   'payload': 'matchprevious'
                 },{
@@ -1671,7 +1667,7 @@ function premierleagueteam1(sender){
                   'payload': 'matchnext'
                 },{
                   'type': 'postback',
-                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'title': 'แมตช์ทั้งหมด',
                   'payload': 'matchnext'
                 }]
               }, {
@@ -1680,10 +1676,6 @@ function premierleagueteam1(sender){
                 'subtitle':"Stadium: "+ JSON.parse(body)[1].defaultHomeVenue.name ,
                 'buttons': [{
                   'type': 'postback',
-                  'title': 'แมตช์ที่แข่งไปแล้ว',
-                  'payload': 'matchesplayed'
-                },{
-                  'type': 'postback',
                   'title': 'แมตช์ล่าสุด',
                   'payload': 'matchprevious'
                 },{
@@ -1692,7 +1684,7 @@ function premierleagueteam1(sender){
                   'payload': 'matchnext'
                 },{
                   'type': 'postback',
-                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'title': 'แมตช์ทั้งหมด',
                   'payload': 'matchnext'
                 }]
               }, {
@@ -1701,10 +1693,6 @@ function premierleagueteam1(sender){
                 'subtitle': "Stadium: "+JSON.parse(body)[2].defaultHomeVenue.name ,
                 'buttons': [{
                   'type': 'postback',
-                  'title': 'แมตช์ที่แข่งไปแล้ว',
-                  'payload': 'matchesplayed'
-                },{
-                  'type': 'postback',
                   'title': 'แมตช์ล่าสุด',
                   'payload': 'matchprevious'
                 },{
@@ -1713,7 +1701,7 @@ function premierleagueteam1(sender){
                   'payload': 'matchnext'
                 },{
                   'type': 'postback',
-                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'title': 'แมตช์ทั้งหมด',
                   'payload': 'matchnext'
                 }]
               }, {
@@ -1722,10 +1710,6 @@ function premierleagueteam1(sender){
                 'subtitle':"Stadium: "+ JSON.parse(body)[3].defaultHomeVenue.name ,
                 'buttons': [{
                   'type': 'postback',
-                  'title': 'แมตช์ที่แข่งไปแล้ว',
-                  'payload': 'matchesplayed'
-                },{
-                  'type': 'postback',
                   'title': 'แมตช์ล่าสุด',
                   'payload': 'matchprevious'
                 },{
@@ -1734,7 +1718,7 @@ function premierleagueteam1(sender){
                   'payload': 'matchnext'
                 },{
                   'type': 'postback',
-                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'title': 'แมตช์ทั้งหมด',
                   'payload': 'matchnext'
                 }]
               }, {
@@ -1743,10 +1727,6 @@ function premierleagueteam1(sender){
                 'subtitle':"Stadium: "+ JSON.parse(body)[4].defaultHomeVenue.name ,
                 'buttons': [{
                   'type': 'postback',
-                  'title': 'แมตช์ที่แข่งไปแล้ว',
-                  'payload': 'matchesplayed'
-                },{
-                  'type': 'postback',
                   'title': 'แมตช์ล่าสุด',
                   'payload': 'matchprevious'
                 },{
@@ -1755,7 +1735,7 @@ function premierleagueteam1(sender){
                   'payload': 'matchnext'
                 },{
                   'type': 'postback',
-                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'title': 'แมตช์ทั้งหมด',
                   'payload': 'matchnext'
                 }]
               }, {
@@ -1764,10 +1744,6 @@ function premierleagueteam1(sender){
                 'subtitle':"Stadium: "+ JSON.parse(body)[5].defaultHomeVenue.name ,
                 'buttons': [{
                   'type': 'postback',
-                  'title': 'แมตช์ที่แข่งไปแล้ว',
-                  'payload': 'matchesplayed'
-                },{
-                  'type': 'postback',
                   'title': 'แมตช์ล่าสุด',
                   'payload': 'matchprevious'
                 },{
@@ -1776,7 +1752,7 @@ function premierleagueteam1(sender){
                   'payload': 'matchnext'
                 },{
                   'type': 'postback',
-                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'title': 'แมตช์ทั้งหมด',
                   'payload': 'matchnext'
                 }]
               }, {
@@ -1785,10 +1761,6 @@ function premierleagueteam1(sender){
                 'subtitle':"Stadium: "+ JSON.parse(body)[6].defaultHomeVenue.name ,
                 'buttons': [{
                   'type': 'postback',
-                  'title': 'แมตช์ที่แข่งไปแล้ว',
-                  'payload': 'matchesplayed'
-                },{
-                  'type': 'postback',
                   'title': 'แมตช์ล่าสุด',
                   'payload': 'matchprevious'
                 },{
@@ -1797,7 +1769,7 @@ function premierleagueteam1(sender){
                   'payload': 'matchnext'
                 },{
                   'type': 'postback',
-                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'title': 'แมตช์ทั้งหมด',
                   'payload': 'matchnext'
                 }]
               }, {
@@ -1806,10 +1778,6 @@ function premierleagueteam1(sender){
                 'subtitle':"Stadium: "+ JSON.parse(body)[7].defaultHomeVenue.name ,
                 'buttons': [{
                   'type': 'postback',
-                  'title': 'แมตช์ที่แข่งไปแล้ว',
-                  'payload': 'matchesplayed'
-                },{
-                  'type': 'postback',
                   'title': 'แมตช์ล่าสุด',
                   'payload': 'matchprevious'
                 },{
@@ -1818,7 +1786,7 @@ function premierleagueteam1(sender){
                   'payload': 'matchnext'
                 },{
                   'type': 'postback',
-                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'title': 'แมตช์ทั้งหมด',
                   'payload': 'matchnext'
                 }]
               }, {
@@ -1827,10 +1795,6 @@ function premierleagueteam1(sender){
                 'subtitle':"Stadium: "+ JSON.parse(body)[8].defaultHomeVenue.name ,
                 'buttons': [{
                   'type': 'postback',
-                  'title': 'แมตช์ที่แข่งไปแล้ว',
-                  'payload': 'matchesplayed'
-                },{
-                  'type': 'postback',
                   'title': 'แมตช์ล่าสุด',
                   'payload': 'matchprevious'
                 },{
@@ -1839,7 +1803,7 @@ function premierleagueteam1(sender){
                   'payload': 'matchnext'
                 },{
                   'type': 'postback',
-                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'title': 'แมตช์ทั้งหมด',
                   'payload': 'matchnext'
                 }]
               }  , {
@@ -1848,10 +1812,6 @@ function premierleagueteam1(sender){
                 'subtitle':"Stadium: "+ JSON.parse(body)[9].defaultHomeVenue.name ,
                 'buttons': [{
                   'type': 'postback',
-                  'title': 'แมตช์ที่แข่งไปแล้ว',
-                  'payload': 'matchesplayed'
-                },{
-                  'type': 'postback',
                   'title': 'แมตช์ล่าสุด',
                   'payload': 'matchprevious'
                 },{
@@ -1860,7 +1820,7 @@ function premierleagueteam1(sender){
                   'payload': 'matchnext'
                 },{
                   'type': 'postback',
-                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'title': 'แมตช์ทั้งหมด',
                   'payload': 'matchnext'
                 }]
               }]
