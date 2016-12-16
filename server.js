@@ -125,24 +125,30 @@ app.post('/webhook/', function (req, res) {
         thaileaguetable(sender)
       }
       if (payloadtext === 'premierleagueteam') {
-        premierleagueteam(sender)
+      setTimeout(function() {  premierleagueteam1(sender)}, 0);
+      setTimeout(function() {  premierleagueteam2(sender)}, 100);
 
 
       }
       if (payloadtext === 'laligateam') {
-        laligateam(sender)
+      setTimeout(function() {  laligateam1(sender)}, 0);
+      setTimeout(function() {  laligateam2(sender)}, 100);
       }
       if (payloadtext === 'bundesligateam') {
-        bundesligateam(sender)
+      setTimeout(function() {  bundesligateam1(sender)}, 0);
+      setTimeout(function() {  bundesligateam2(sender)}, 100);
       }
       if (payloadtext === 'serieateam') {
-        serieateam(sender)
+      setTimeout(function() {  serieateam1(sender)}, 0);
+      setTimeout(function() {  serieateam2(sender)}, 100);
       }
       if (payloadtext === 'ligue1team') {
-        ligue1team(sender)
+      setTimeout(function() {  ligue1team1(sender)}, 0);
+      setTimeout(function() {  ligue1team2(sender)}, 100);
       }
       if (payloadtext === 'thaileagueteam') {
-        thaileagueteam(sender)
+      setTimeout(function() {    thaileagueteam1(sender)}, 0);
+      setTimeout(function() {    thaileagueteam2(sender)}, 100);
       }
 
       if (payloadtext === 'back') {
