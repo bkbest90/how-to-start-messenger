@@ -66,7 +66,7 @@ app.post('/webhook/', function (req, res) {
         sendGenericMessage(sender)
         continue
       }
-      if (text === 'matches') {
+      if (text === 'asdf') {
        let text = "Athletic Bilbao";
         laligaPrematches(sender, text)
       }
@@ -76,8 +76,12 @@ app.post('/webhook/', function (req, res) {
       var payloadtext = event.postback.payload;
       if (payloadtext === 'USER_DEFINED_PAYLOAD') {
 
-        sendGenericMessage (sender)
-        sendTextMessage(sender, '***พิมพ์ เมนูหลัก เพื่อกลับมาที่เมนูนี้')
+        setTimeout(function () {
+          sendGenericMessage (sender)
+        }, 10);
+        setTimeout(function () {
+          sendTextMessage(sender, '***พิมพ์ เมนูหลัก เพื่อกลับมาที่เมนูนี้')
+        }, 150);
       }
       if (payloadtext === 'premierleaguetable') {
         premierleaguetable(sender)
@@ -2641,8 +2645,8 @@ function premierleagueNextmatches(sender, text){
            var date = new Date(num).toUTCString();
                   if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
                     if (JSON.parse(body)[i].outcome === null) {
-                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-                    +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name+" "+JSON.parse(body)[i].homeTeam.shirtUrl +"\nvs\n"
+                    +JSON.parse(body)[i].awayTeam.name+" "+JSON.parse(body)[i].awayTeam.shirtUrl +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
                     b = 5;
 
                   }
@@ -4465,7 +4469,7 @@ function laligateam2(sender){
                 }]
               }, {
                 'title': '14  '+JSON.parse(body)[13].name,
-                'image_url': 'http://www.joma-sport.com/ka/apps/joma_com_media/assets/sponsor/svg/129.svg',
+                'image_url': 'http://www.footballlogosandkits.com/images_esc3/ESPA/MADRID/escudos_jpg/logo-c.d.%20leganes.jpg',
                 'subtitle':"Stadium: "+ JSON.parse(body)[13].defaultHomeVenue.name ,
                 'buttons': [{
                   'type': 'postback',
@@ -5014,7 +5018,7 @@ function serieateam1(sender){
               'template_type': 'generic',
               'elements': [{
                 'title': '1  '+JSON.parse(body)[0].name,
-                'image_url':  'https://upload.wikimedia.org/wikipedia/en/2/2e/Torino_FC_Logo.svg',
+                'image_url':  'https://serieanewsig.files.wordpress.com/2015/09/img_7944.png',
 
                 'subtitle':"Stadium: "+JSON.parse(body)[0].defaultHomeVenue.name ,
                 'buttons': [{
