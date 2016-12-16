@@ -2453,6 +2453,7 @@ function laligaPrematches(sender, text){
       var b = 0;
       var ai = JSON.parse(body).length; ;
          do {
+           console.log(ai);
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
