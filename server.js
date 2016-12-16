@@ -175,7 +175,7 @@ app.post('/webhook/', function (req, res) {
       if (payloadtext === 'matchnextLeicester City') {
         let text = "Leicester City";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
-        premierleagueNextmatches(sender, text)
+         premierleagueNextmatches(sender, text)
         setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
       }
       if (payloadtext === 'matchallLeicester City') {
@@ -189,19 +189,341 @@ app.post('/webhook/', function (req, res) {
       if (payloadtext === 'matchpreviousManchester United') {
         let text = "Manchester United";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
-        premierleaguePreviousmatches(sender, text)
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
         setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
       }
       if (payloadtext === 'matchnextManchester United') {
         let text = "Manchester United";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
-        premierleagueNextmatches(sender, text)
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
         setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
       }
       if (payloadtext === 'matchallManchester United') {
         let text = "Manchester United";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
 
+      if (payloadtext === 'matchpreviousWatford') {
+        let text = "Watford";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextWatford') {
+        let text = "Watford";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallWatford') {
+        let text = "Watford";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousLiverpool') {
+        let text = "Liverpool";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextLiverpool') {
+        let text = "Liverpool";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallLiverpool') {
+        let text = "Liverpool";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousSouthampton') {
+        let text = "Southampton";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextSouthampton') {
+        let text = "Southampton";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallSouthampton') {
+        let text = "Southampton";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousChelsea') {
+        let text = "Chelsea";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextChelsea') {
+        let text = "Chelsea";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallChelsea') {
+        let text = "Chelsea";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousStoke City') {
+        let text = "Stoke City";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextStoke City') {
+        let text = "Stoke City";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallStoke City') {
+        let text = "Stoke City";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousMiddlesbrough') {
+        let text = "Middlesbrough";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextMiddlesbrough') {
+        let text = "Middlesbrough";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallMiddlesbrough') {
+        let text = "Middlesbrough";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousWest Bromwich Albion') {
+        let text = "West Bromwich Albion";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextWest Bromwich Albion') {
+        let text = "West Bromwich Albion";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallWest Bromwich Albion') {
+        let text = "West Bromwich Albion";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousEverton') {
+        let text = "Everton";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextEverton') {
+        let text = "Everton";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallEverton') {
+        let text = "Everton";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousTottenham Hotspur') {
+        let text = "Tottenham Hotspur";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextTottenham Hotspur') {
+        let text = "Tottenham Hotspur";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallTottenham Hotspur') {
+        let text = "Tottenham Hotspur";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousBournemouth') {
+        let text = "Bournemouth";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextBournemouth') {
+        let text = "Bournemouth";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallBournemouth') {
+        let text = "Bournemouth";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousSwansea City') {
+        let text = "Swansea City";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextSwansea City') {
+        let text = "Swansea City";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallSwansea City') {
+        let text = "Swansea City";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousCrystal Palace') {
+        let text = "Crystal Palace";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextCrystal Palace') {
+        let text = "Crystal Palace";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallCrystal Palace') {
+        let text = "Crystal Palace";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousArsenal') {
+        let text = "Arsenal";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextArsenal') {
+        let text = "Arsenal";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallArsenal') {
+        let text = "Arsenal";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousManchester City') {
+        let text = "Manchester City";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextManchester City') {
+        let text = "Manchester City";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallManchester City') {
+        let text = "Manchester City";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousHull City') {
+        let text = "Hull City";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextHull City') {
+        let text = "Hull City";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallHull City') {
+        let text = "Hull City";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousSunderland') {
+        let text = "Sunderland";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextSunderland') {
+        let text = "Sunderland";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallSunderland') {
+        let text = "Sunderland";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousWest Ham United') {
+        let text = "West Ham United";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextWest Ham United') {
+        let text = "West Ham United";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallWest Ham United') {
+        let text = "West Ham United";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
         setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
       }
