@@ -242,7 +242,7 @@ function premierleaguePreviousmatches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var i = 379 ;
+      let i = 379 ;
          do {
            let time = JSON.stringify(JSON.parse(body)[i].start)
            var str = time;
@@ -283,7 +283,7 @@ function laligaPreviousmatches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var i = 379 ;
+      let i = 379 ;
          do {
            let time = JSON.stringify(JSON.parse(body)[i].start)
            var str = time;
