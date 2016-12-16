@@ -92,8 +92,8 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'matches') {
-       let text = "Liverpool";
-        premierleaguematchesPlayed(sender, text)
+       let text = "Athletic Bilbao";
+        laligaePreviousmatches(sender, text)
       }
     }
     if (event.postback) {
@@ -1473,6 +1473,25 @@ app.post('/webhook/', function (req, res) {
       }
       if (payloadtext === 'matchallPescara') {
         let text = "Pescara";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousSampdoria') {
+        let text = "Sampdoria";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaPreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextSampdoria') {
+        let text = "Sampdoria";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallSampdoria') {
+        let text = "Sampdoria";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
         setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
