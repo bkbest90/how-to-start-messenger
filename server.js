@@ -167,20 +167,20 @@ app.post('/webhook/', function (req, res) {
         setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
       }
 
-      if (payloadtext === 'matchpreviousLeicester city') {
-        let text = "Leicester city";
+      if (payloadtext === 'matchpreviousLeicester City') {
+        let text = "Leicester City";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         premierleaguePreviousmatches(sender, text)
         setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
       }
-      if (payloadtext === 'matchnextLeicester city') {
-        let text = "Leicester city";
+      if (payloadtext === 'matchnextLeicester City') {
+        let text = "Leicester City";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         premierleagueNextmatches(sender, text)
         setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
       }
-      if (payloadtext === 'matchallLeicester city') {
-        let text = "Leicester city";
+      if (payloadtext === 'matchallLeicester City') {
+        let text = "Leicester City";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesPlayed(sender, text) }, 100);
         setTimeout(function() {  premierleaguematchesYet(sender, text)}, 1400);
@@ -1718,15 +1718,15 @@ function premierleagueteam1(sender){
                 'buttons': [{
                   'type': 'postback',
                   'title': 'แมตช์ล่าสุด',
-                  'payload': 'matchpreviousLeicester city'
+                  'payload': 'matchpreviousLeicester City'
                 },{
                   'type': 'postback',
                   'title': 'แมตช์หน้า',
-                  'payload': 'matchnextLeicester city'
+                  'payload': 'matchnextLeicester City'
                 },{
                   'type': 'postback',
                   'title': 'แมตช์ทั้งหมด',
-                  'payload': 'matchallLeicester city'
+                  'payload': 'matchallLeicester City'
                 }]
               }, {
                 'title': '3  '+JSON.parse(body)[2].name,
