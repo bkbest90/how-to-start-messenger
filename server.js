@@ -163,7 +163,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Burnley";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2550);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
       }
 
       if (payloadtext === 'matchpreviousLeicester City') {
@@ -183,8 +183,29 @@ app.post('/webhook/', function (req, res) {
         sendTextMessage(sender, 'กรุณารอสักครู่..')
 
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2550);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
       }
+
+      if (payloadtext === 'matchpreviousManchester United') {
+        let text = "Manchester United";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        premierleaguePreviousmatches(sender, text)
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextManchester United') {
+        let text = "Manchester United";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        premierleagueNextmatches(sender, text)
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallManchester United') {
+        let text = "Manchester United";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
 
 
       if (payloadtext === 'back') {
