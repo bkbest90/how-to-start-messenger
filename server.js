@@ -186,8 +186,8 @@ function premierleaguePreviousmatches(sender, text){
 
 
        if (!error && response.statusCode === 200) {
-         sendTextMessage(sender, JSON.parse(body)[375].outcome)
-         console.log( JSON.parse(body)[375].outcome );
+
+         console.log( JSON.stringify(JSON.parse(body)[375].outcome) );
     /* var b = 0;
          do {
 
