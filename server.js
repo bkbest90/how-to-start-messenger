@@ -195,8 +195,9 @@ function premierleaguePreviousmatches(sender, text){
            var date = new Date(num).toUTCString();
                   if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
                     if (JSON.parse(body)[i].outcome === null) {
-                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-                    +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                      var pre = i-1;
+                      sendTextMessage(sender, JSON.parse(body)[pre].homeTeam.name +"\n" +JSON.parse(body)[pre].homeGoals +" - "
+                       +JSON.parse(body)[pre].awayGoals+"\n"+JSON.parse(body)[pre].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
                     b = 5;
 
                   }
@@ -239,9 +240,8 @@ function premierleagueNextmatches(sender, text){
            var date = new Date(num).toUTCString();
                   if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
                     if (JSON.parse(body)[i].outcome === null) {
-                      var pre = i-1;
-                      sendTextMessage(sender, JSON.parse(body)[pre].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
-                      +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[pre].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+                    +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
                     b = 5;
 
                   }
