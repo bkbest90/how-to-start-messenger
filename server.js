@@ -194,7 +194,7 @@ function premierleaguePreviousmatches(sender, text){
            var num = parseInt(str.replace(/[^0-9]/g, time));
            var date = new Date(num).toUTCString();
                   if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
-                    if (JSON.parse(body)[i].outcome !== null) {
+                    if (JSON.parse(body)[i].outcome.winner == "home" || JSON.parse(body)[i].outcome.winner == "draw" || JSON.parse(body)[i].outcome.winner == "away") {
 
                       sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
                        +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
