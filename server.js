@@ -92,8 +92,8 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'matches') {
-       let text = "Barcelona";
-        laligaPreviousmatches(sender, text)
+       let text = "Leicester city";
+        premierleaguePreviousmatches(sender, text)
       }
     }
     if (event.postback) {
