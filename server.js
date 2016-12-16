@@ -721,7 +721,7 @@ app.post('/webhook/', function (req, res) {
       if (payloadtext === 'matchpreviousVillarreal') {
         let text = "Villarreal";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
-        setTimeout(function () {laligaePreviousmatches(sender, text)}, 100);
+        setTimeout(function () {laligaPreviousmatches(sender, text)}, 100);
         setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
       }
       if (payloadtext === 'matchnextVillarreal') {
@@ -1583,7 +1583,7 @@ function laligaPreviousmatches(sender, text){
 
 
   var options = {
-    url: 'https://api.crowdscores.com/v1/matches?competition_id=2',
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
     headers: {
       'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
     }
@@ -1596,7 +1596,7 @@ function laligaPreviousmatches(sender, text){
       var b = 0;
       var ai = 379 ;
          do {
-           let time = JSON.stringify(JSON.parse(body)[350].start)
+           let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
            var date = new Date(num).toUTCString();
