@@ -188,7 +188,7 @@ function premierleaguePreviousmatches(sender, text){
        if (!error && response.statusCode === 200) {
 
          console.log( JSON.stringify(JSON.parse(body)[375].outcome) );
-    /* var b = 0;
+     var b = 0;
          do {
 
            var i = JSON.parse(body).length ;
@@ -197,10 +197,11 @@ function premierleaguePreviousmatches(sender, text){
            var num = parseInt(str.replace(/[^0-9]/g, time));
            var date = new Date(num).toUTCString();
                   if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
-                    if (JSON.parse(body)[i].outcome.winner == "home" || JSON.parse(body)[i].outcome.winner == "draw" || JSON.parse(body)[i].outcome.winner == "away") {
-
-                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
-                       +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                    var prec = JSON.stringify(JSON.parse(body)[375].outcome)
+                    if ( prec !== "null") {
+                       sendTextMessage(sender, 'ได้เล่า')
+                    /*  sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                       +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )*/
                     b = 5;
 
                   }
@@ -209,7 +210,7 @@ function premierleaguePreviousmatches(sender, text){
                     i--;
                      }
                    while (b != 5);
-*/
+
     }
   }
 
