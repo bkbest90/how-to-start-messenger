@@ -93,7 +93,7 @@ app.post('/webhook/', function (req, res) {
       }
       if (text === 'matches') {
        let text = "Liverpool";
-        premierleagueNextmatches(sender, text)
+        premierleaguePreviousmatches(sender, text)
       }
     }
     if (event.postback) {
@@ -195,9 +195,9 @@ function premierleaguePreviousmatches(sender, text){
            var date = new Date(num).toUTCString();
                   if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
                     if (JSON.parse(body)[i].outcome === null) {
-                      let previous = i-1;
-                      sendTextMessage(sender, JSON.parse(body)[previous].homeTeam.name +"\n" +JSON.parse(body)[previous].homeGoals +" - "
-                       +JSON.parse(body)[previous].awayGoals+"\n"+JSON.parse(body)[previous].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+                    +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                    b = 5;
 
                   }
 
