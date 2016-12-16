@@ -760,9 +760,11 @@ function premierleaguematchesPlayed(sender, text){
                   sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
                      +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
               }
+            setTimeout(function () {
               if (JSON.parse(body)[i].outcome === null) {
-                i = JSON.parse(body).length;
-              }
+                  i = JSON.parse(body).length;
+                }
+            }, 100000);
 
              }
            if (JSON.parse(body)[i].awayTeam.name == text ) {
@@ -778,9 +780,11 @@ function premierleaguematchesPlayed(sender, text){
                 sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
                +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
                  }
-                 if (JSON.parse(body)[i].outcome === null) {
-                   i = JSON.parse(body).length;
-                 }
+            setTimeout(function () {
+              if (JSON.parse(body)[i].outcome === null) {
+                    i = JSON.parse(body).length;
+                  }
+            }, 100000);    
 
          }
             }, i*110);
