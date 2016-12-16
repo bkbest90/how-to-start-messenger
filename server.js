@@ -2410,7 +2410,7 @@ function premierleaguePrematches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var ai = JSON.parse(body).length; ;
+      var ai = (JSON.parse(body).length)-1;
          do {
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
@@ -2451,7 +2451,7 @@ function laligaPrematches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var ai = (JSON.parse(body).length)-1; 
+      var ai = (JSON.parse(body).length)-1;
          do {
            console.log(ai);
            let time = JSON.stringify(JSON.parse(body)[ai].start)
@@ -2493,7 +2493,7 @@ function bundesligaPrematches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var ai = JSON.parse(body).length; ;
+      var ai = (JSON.parse(body).length)-1;
          do {
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
@@ -2534,7 +2534,7 @@ function serieaPrematches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var ai = JSON.parse(body).length; ;
+      var ai = (JSON.parse(body).length)-1;
          do {
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
@@ -2575,7 +2575,7 @@ function ligue1Prematches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var ai = JSON.parse(body).length; ;
+      var ai = (JSON.parse(body).length)-1;
          do {
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
@@ -2616,7 +2616,7 @@ function thaileaguePrematches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var ai = JSON.parse(body).length; ;
+      var ai = (JSON.parse(body).length)-1; 
          do {
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
