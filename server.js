@@ -1562,7 +1562,7 @@ function premierleaguetable(sender, text){
             function doSetTimeout(i) {
            setTimeout(function() {
 
-               sendTextMessage(sender,"---- " (i+1) +" "+ JSON.parse(body)[0].leagueTable[i].name+" ----\n"
+               sendTextMessage(sender,".... " (i+1) +" "+ JSON.parse(body)[0].leagueTable[i].name+" ....\n"
                +JSON.parse(body)[0].leagueTable[i].points +" คะแนน  แข่ง "+JSON.parse(body)[0].leagueTable[i].gamesPlayed +" แมตช์"
                +"\nชนะ "+JSON.parse(body)[0].leagueTable[i].wins+" เสมอ "+JSON.parse(body)[0].leagueTable[i].draws+" แพ้ "+JSON.parse(body)[0].leagueTable[i].losses
                +"\nทำประตู "+JSON.parse(body)[0].leagueTable[i].goalsFor+" เสียประตู "+JSON.parse(body)[0].leagueTable[i].goalsAgainst+" ผลต่างประตู "+JSON.parse(body)[0].leagueTable[i].goalDiff
