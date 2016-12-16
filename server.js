@@ -1117,6 +1117,44 @@ app.post('/webhook/', function (req, res) {
         setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
       }
 
+      if (payloadtext === 'matchpreviousWolfsburg') {
+        let text = "Wolfsburg";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextWolfsburg') {
+        let text = "Wolfsburg";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallWolfsburg') {
+        let text = "Wolfsburg";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousBorussia Mönchengladbach') {
+        let text = "Borussia Mönchengladbach";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextBorussia Mönchengladbach') {
+        let text = "Borussia Mönchengladbach";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallBorussia Mönchengladbach') {
+        let text = "Borussia Mönchengladbach";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
 
 
       if (payloadtext === 'back') {
