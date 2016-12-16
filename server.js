@@ -93,7 +93,7 @@ app.post('/webhook/', function (req, res) {
       }
       if (text === 'matches') {
        let text = "Athletic Bilbao";
-        laligaePreviousmatches(sender, text)
+        laligaPreviousmatches(sender, text)
       }
     }
     if (event.postback) {
