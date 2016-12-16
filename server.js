@@ -2453,7 +2453,6 @@ function laligaPrematches(sender, text){
       var b = 0;
       var ai = (JSON.parse(body).length)-1;
          do {
-           console.log(ai);
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
@@ -2616,7 +2615,7 @@ function thaileaguePrematches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var ai = (JSON.parse(body).length)-1; 
+      var ai = (JSON.parse(body).length)-1;
          do {
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
