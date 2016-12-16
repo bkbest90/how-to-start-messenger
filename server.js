@@ -2617,7 +2617,11 @@ function thaileaguePrematches(sender, text){
       var b = 0;
       var ai = 305 ;
          do {
-           let time = JSON.stringify(JSON.parse(body)[ai].start)
+           console.log(ai);
+           var tt = JSON.stringify(JSON.parse(body)[ai])
+        //   let time = JSON.stringify(JSON.parse(body)[ai].start)
+      var x  = tt.star
+      console.log(x);
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
            var date = new Date(num).toUTCString();
