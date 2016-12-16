@@ -1554,7 +1554,7 @@ function premierleaguetable(sender, text){
 
        if (!error && response.statusCode === 200) {
 
-              sendTextMessage(sender, JSON.parse(body)[0].leagueTable[i].name)
+              sendTextMessage(sender, JSON.parse(body)[0].competition.name)
          for (var i = 0; i < JSON.parse(body).length; i++) {
 
             doSetTimeout(i);
