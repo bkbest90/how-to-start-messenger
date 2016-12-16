@@ -93,7 +93,7 @@ app.post('/webhook/', function (req, res) {
       }
       if (text === 'matches') {
        let text = "Paris Saint Germain";
-        premierleagueNextmatches(sender, text)
+        ligue1Nextmatches(sender, text)
       }
     }
     if (event.postback) {
@@ -172,6 +172,46 @@ function sendTextMessage (sender, text) {
 }
 
 //previous matches
+function premierleaguePreviousmatches(sender, text){
+
+
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=2',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+      var b = 0;
+      var i = 0 ;
+         do {
+           let time = JSON.stringify(JSON.parse(body)[i].start)
+           var str = time;
+           var num = parseInt(str.replace(/[^0-9]/g, time));
+           var date = new Date(num).toUTCString();
+                  if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
+                    if (JSON.parse(body)[i].outcome === null) {
+                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+                    +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                    b = 5;
+
+                  }
+
+                }
+                    i++;
+                     }
+                   while (b != 5);
+
+    }
+  }
+
+  request(options, callback)
+
+}
 
 
 
