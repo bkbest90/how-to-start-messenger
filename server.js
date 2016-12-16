@@ -147,6 +147,23 @@ app.post('/webhook/', function (req, res) {
        setTimeout(function() {    thaileagueteam2(sender)}, 500);
       }
 
+      if (payloadtext === 'matchpreviousBurnley') {
+        let text = "Burnley";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        premierleaguePreviousmatches(sender, text)
+      }
+      if (payloadtext === 'matchnextBurnley') {
+        let text = "Burnley";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        premierleagueNextmatches(sender, text)
+      }
+      if (payloadtext === 'matchallBurnley') {
+        let text = "Burnley";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesPlayed(sender, text) }, 100);
+        setTimeout(function() {  premierleaguematchesYet(sender, text)}, 1400);
+      }
+
       if (payloadtext === 'back') {
         sendGenericMessage (sender)
       }
