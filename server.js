@@ -2645,8 +2645,8 @@ function premierleagueNextmatches(sender, text){
            var date = new Date(num).toUTCString();
                   if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
                     if (JSON.parse(body)[i].outcome === null) {
-                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name+" "+JSON.parse(body)[i].homeTeam.shirtUrl +"\nvs\n"
-                    +JSON.parse(body)[i].awayTeam.name+" "+JSON.parse(body)[i].awayTeam.shirtUrl +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name+" "+'image_url':JSON.parse(body)[i].homeTeam.shirtUrl +"\nvs\n"
+                    +JSON.parse(body)[i].awayTeam.name+" "+'image_url':JSON.parse(body)[i].awayTeam.shirtUrl +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
                     b = 5;
 
                   }
