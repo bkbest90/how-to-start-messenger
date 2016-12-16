@@ -92,7 +92,7 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'matches') {
-       let text = "Crystal Palace";
+       let text = "Manchester City";
         premierleagueNextmatches(sender, text)
       }
     }
