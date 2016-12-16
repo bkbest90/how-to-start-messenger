@@ -2410,9 +2410,8 @@ function premierleaguePrematches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var ai = JSON.parse(body)[0].outcome.length ;
+      var ai = JSON.parse(body).length; ;
          do {
-           console.log(ai);
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
@@ -2452,7 +2451,7 @@ function laligaPrematches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var ai = 379 ;
+      var ai = JSON.parse(body).length; ;
          do {
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
@@ -2493,7 +2492,7 @@ function bundesligaPrematches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var ai = 305 ;
+      var ai = JSON.parse(body).length; ;
          do {
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
@@ -2534,7 +2533,7 @@ function serieaPrematches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var ai = 379 ;
+      var ai = JSON.parse(body).length; ;
          do {
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
@@ -2575,7 +2574,7 @@ function ligue1Prematches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var ai = 379 ;
+      var ai = JSON.parse(body).length; ;
          do {
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
@@ -2616,17 +2615,16 @@ function thaileaguePrematches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var i = 304 ;
+      var ai = JSON.parse(body).length; ;
          do {
-
-           let time = JSON.stringify(JSON.parse(body)[i].start)
+           let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
            var date = new Date(num).toUTCString();
-                  if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
-                    if (JSON.parse(body)[i].outcome !== null) {
-                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
-                       +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                  if (JSON.parse(body)[ai].homeTeam.name == text ||JSON.parse(body)[ai].awayTeam.name == text ) {
+                    if (JSON.parse(body)[ai].outcome !== null) {
+                      sendTextMessage(sender, JSON.parse(body)[ai].homeTeam.name +"\n" +JSON.parse(body)[ai].homeGoals +" - "
+                       +JSON.parse(body)[ai].awayGoals+"\n"+JSON.parse(body)[ai].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
                     b = 5;
 
                   }
