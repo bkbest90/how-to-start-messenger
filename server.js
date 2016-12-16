@@ -1596,7 +1596,7 @@ function laligaPreviousmatches(sender, text){
       var b = 0;
       var ai = 379 ;
          do {
-           let time = JSON.stringify(JSON.parse(body)[ai].start)
+           let time = JSON.stringify(JSON.parse(body)[350].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
            var date = new Date(num).toUTCString();
