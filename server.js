@@ -194,10 +194,10 @@ function premierleagueNextmatches(sender, text){
                     if (JSON.parse(body)[i].outcome === null) {
                       sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
                     +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
-
+                    b = 5;
 
                   }
-                  b = 5;
+
                 }
                     i++;
                      }
