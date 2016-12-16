@@ -2410,7 +2410,7 @@ function premierleaguePrematches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var ai = JSON.parse(body).outcome.length ;
+      var ai = JSON.parse(body)[0].outcome.length ;
          do {
            console.log(ai);
            let time = JSON.stringify(JSON.parse(body)[ai].start)
