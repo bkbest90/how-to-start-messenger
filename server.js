@@ -93,7 +93,7 @@ app.post('/webhook/', function (req, res) {
       }
       if (text === 'matches') {
        let text = "Liverpool";
-        premierleaguePreviousmatches(sender, text)
+        premierleagueNextmatches(sender, text)
       }
     }
     if (event.postback) {
