@@ -257,7 +257,7 @@ function premierleaguePreviousmatches(sender, text){
                   }
 
                 }
-                    i--;
+                    ai--;
                      }
                    while (b != 5);
 
