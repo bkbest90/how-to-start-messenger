@@ -2395,7 +2395,7 @@ function sendTextMessage (sender, text) {
 
 //previous matches
 
-function premierleaguePreviousmatches(sender, text){
+function premierleaguePrematches(sender, text){
 
 
   var options = {
@@ -2436,7 +2436,7 @@ function premierleaguePreviousmatches(sender, text){
 
 }
 
-function laligaPreviousmatches(sender, text){
+function laligaPrematches(sender, text){
 
 
   var options = {
@@ -2477,7 +2477,7 @@ function laligaPreviousmatches(sender, text){
 
 }
 
-function bundesligaPreviousmatches(sender, text){
+function bundesligaPrematches(sender, text){
 
 
   var options = {
@@ -2518,7 +2518,7 @@ function bundesligaPreviousmatches(sender, text){
 
 }
 
-function serieaPreviousmatches(sender, text){
+function serieaPrematches(sender, text){
 
 
   var options = {
@@ -2559,7 +2559,7 @@ function serieaPreviousmatches(sender, text){
 
 }
 
-function ligue1Previousmatches(sender, text){
+function ligue1Prematches(sender, text){
 
 
   var options = {
@@ -2600,7 +2600,7 @@ function ligue1Previousmatches(sender, text){
 
 }
 
-function thaileaguePreviousmatches(sender, text){
+function thaileaguePrematches(sender, text){
 
 
   var options = {
