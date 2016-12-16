@@ -1155,6 +1155,44 @@ app.post('/webhook/', function (req, res) {
         setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
       }
 
+      if (payloadtext === 'matchpreviousBayer Leverkusen') {
+        let text = "Bayer Leverkusen";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextBayer Leverkusen') {
+        let text = "Bayer Leverkusen";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallBayer Leverkusen') {
+        let text = "Bayer Leverkusen";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousWolfsburg') {
+        let text = "Wolfsburg";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextWolfsburg') {
+        let text = "Wolfsburg";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {premierleagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallWolfsburg') {
+        let text = "Wolfsburg";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
 
 
       if (payloadtext === 'back') {
@@ -1252,22 +1290,22 @@ function laligaPreviousmatches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var ai = 379 ;
+      var bi = 379 ;
          do {
-           let time = JSON.stringify(JSON.parse(body)[ai].start)
+           let time = JSON.stringify(JSON.parse(body)[bi].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
            var date = new Date(num).toUTCString();
-                  if (JSON.parse(body)[ai].homeTeam.name == text ||JSON.parse(body)[ai].awayTeam.name == text ) {
-                    if (JSON.parse(body)[ai].outcome !== null) {
-                      sendTextMessage(sender, JSON.parse(body)[ai].homeTeam.name +"\n" +JSON.parse(body)[ai].homeGoals +" - "
-                       +JSON.parse(body)[ai].awayGoals+"\n"+JSON.parse(body)[ai].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                  if (JSON.parse(body)[bi].homeTeam.name == text ||JSON.parse(body)[bi].awayTeam.name == text ) {
+                    if (JSON.parse(body)[bi].outcome !== null) {
+                      sendTextMessage(sender, JSON.parse(body)[bi].homeTeam.name +"\n" +JSON.parse(body)[bi].homeGoals +" - "
+                       +JSON.parse(body)[bi].awayGoals+"\n"+JSON.parse(body)[bi].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
                     b = 5;
 
                   }
 
                 }
-                    ai--;
+                    bi--;
                      }
                    while (b != 5);
 
