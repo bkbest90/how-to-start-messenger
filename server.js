@@ -4815,7 +4815,7 @@ function sendGenericMessage (sender) {
           }, {
             'type': 'postback',
             'title': 'Table',
-            'payload': 'table1'
+            'payload': 'premierleaguetable'
           }, {
             'type': 'postback',
             'title': 'Team',
