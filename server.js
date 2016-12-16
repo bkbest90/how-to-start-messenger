@@ -1250,6 +1250,234 @@ app.post('/webhook/', function (req, res) {
         setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
       }
 
+      if (payloadtext === 'matchpreviousTorino') {
+        let text = "Torino";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaPreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextTorino') {
+        let text = "Torino";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallTorino') {
+        let text = "Torino";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousLazio') {
+        let text = "Lazio";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaPreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextLazio') {
+        let text = "Lazio";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallLazio') {
+        let text = "Lazio";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousBologna') {
+        let text = "Bologna";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaPreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextBologna') {
+        let text = "Bologna";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallBologna') {
+        let text = "Bologna";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousSassuolo') {
+        let text = "Sassuolo";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaPreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextSassuolo') {
+        let text = "Sassuolo";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallSassuolo') {
+        let text = "Sassuolo";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousNapoli') {
+        let text = "Napoli";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaPreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextNapoli') {
+        let text = "Napoli";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallNapoli') {
+        let text = "Napoli";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousPalermo') {
+        let text = "Palermo";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaPreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextPalermo') {
+        let text = "Palermo";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallPalermo') {
+        let text = "Palermo";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousUdinese') {
+        let text = "Udinese";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaPreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextUdinese') {
+        let text = "Udinese";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallUdinese') {
+        let text = "Udinese";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousFiorentina') {
+        let text = "Fiorentina";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaPreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextFiorentina') {
+        let text = "Fiorentina";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallFiorentina') {
+        let text = "Fiorentina";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousGenoa') {
+        let text = "Genoa";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaPreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextGenoa') {
+        let text = "Genoa";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallGenoa') {
+        let text = "Genoa";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousCrotone') {
+        let text = "Crotone";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaPreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextCrotone') {
+        let text = "Crotone";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallCrotone') {
+        let text = "Crotone";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousMilan') {
+        let text = "Milan";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaPreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextMilan') {
+        let text = "Milan";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallMilan') {
+        let text = "Milan";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousPescara') {
+        let text = "Pescara";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaPreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextPescara') {
+        let text = "Pescara";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {serieaNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallPescara') {
+        let text = "Pescara";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
 
 
       if (payloadtext === 'back') {
@@ -1336,7 +1564,7 @@ function laligaPreviousmatches(sender, text){
 
 
   var options = {
-    url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=2',
     headers: {
       'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
     }
@@ -1347,22 +1575,22 @@ function laligaPreviousmatches(sender, text){
 
        if (!error && response.statusCode === 200) {
       var b = 0;
-      var bi = 379 ;
+      var ai = 379 ;
          do {
-           let time = JSON.stringify(JSON.parse(body)[bi].start)
+           let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
            var date = new Date(num).toUTCString();
-                  if (JSON.parse(body)[bi].homeTeam.name == text ||JSON.parse(body)[bi].awayTeam.name == text ) {
-                    if (JSON.parse(body)[bi].outcome !== null) {
-                      sendTextMessage(sender, JSON.parse(body)[bi].homeTeam.name +"\n" +JSON.parse(body)[bi].homeGoals +" - "
-                       +JSON.parse(body)[bi].awayGoals+"\n"+JSON.parse(body)[bi].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                  if (JSON.parse(body)[ai].homeTeam.name == text ||JSON.parse(body)[ai].awayTeam.name == text ) {
+                    if (JSON.parse(body)[ai].outcome !== null) {
+                      sendTextMessage(sender, JSON.parse(body)[ai].homeTeam.name +"\n" +JSON.parse(body)[ai].homeGoals +" - "
+                       +JSON.parse(body)[ai].awayGoals+"\n"+JSON.parse(body)[ai].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
                     b = 5;
 
                   }
 
                 }
-                    bi--;
+                    ai--;
                      }
                    while (b != 5);
 
