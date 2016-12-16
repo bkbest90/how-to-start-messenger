@@ -151,18 +151,42 @@ app.post('/webhook/', function (req, res) {
         let text = "Burnley";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         premierleaguePreviousmatches(sender, text)
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
       }
       if (payloadtext === 'matchnextBurnley') {
         let text = "Burnley";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         premierleagueNextmatches(sender, text)
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
       }
       if (payloadtext === 'matchallBurnley') {
         let text = "Burnley";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesPlayed(sender, text) }, 100);
         setTimeout(function() {  premierleaguematchesYet(sender, text)}, 1400);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
       }
+
+      if (payloadtext === 'matchpreviousLeicester city') {
+        let text = "Leicester city";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        premierleaguePreviousmatches(sender, text)
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextLeicester city') {
+        let text = "Leicester city";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        premierleagueNextmatches(sender, text)
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallLeicester city') {
+        let text = "Leicester city";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  premierleaguematchesPlayed(sender, text) }, 100);
+        setTimeout(function() {  premierleaguematchesYet(sender, text)}, 1400);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+
 
       if (payloadtext === 'back') {
         sendGenericMessage (sender)
