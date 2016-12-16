@@ -1588,7 +1588,7 @@ function thaileaguetable(sender, text){
 
        if (!error && response.statusCode === 200) {
 
-              sendTextMessage(sender, JSON.parse(body)[0].competition.name)
+            setTimeout(function() {  sendTextMessage(sender, JSON.parse(body)[0].competition.name)}, 0);
          for (var i = 0; i < JSON.parse(body)[0].leagueTable.length; i++) {
 
             doSetTimeout(i);
@@ -1603,7 +1603,7 @@ function thaileaguetable(sender, text){
               )
 
 
-              }, i*110);
+            }, i*110+10);
                         }
                 }
              }
