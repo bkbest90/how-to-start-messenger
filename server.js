@@ -106,8 +106,6 @@ app.post('/webhook/', function (req, res) {
       }
       if (payloadtext === 'premierleaguetable') {
         premierleaguetable(sender)
-
-
       }
       if (payloadtext === 'laligatable') {
         laligatable(sender)
@@ -125,28 +123,28 @@ app.post('/webhook/', function (req, res) {
         thaileaguetable(sender)
       }
       if (payloadtext === 'premierleagueteam') {
-      setTimeout(function() {  premierleagueteam1(sender)}, 100);
-      setTimeout(function() {  premierleagueteam2(sender)}, 500);
+       setTimeout(function() {  premierleagueteam1(sender)}, 100);
+       setTimeout(function() {  premierleagueteam2(sender)}, 500);
       }
       if (payloadtext === 'laligateam') {
-      setTimeout(function() {  laligateam1(sender)}, 100);
-      setTimeout(function() {  laligateam2(sender)}, 500);
+       setTimeout(function() {  laligateam1(sender)}, 100);
+       setTimeout(function() {  laligateam2(sender)}, 500);
       }
       if (payloadtext === 'bundesligateam') {
-      setTimeout(function() {  bundesligateam1(sender)}, 100);
-      setTimeout(function() {  bundesligateam2(sender)}, 500);
+       setTimeout(function() {  bundesligateam1(sender)}, 100);
+       setTimeout(function() {  bundesligateam2(sender)}, 500);
       }
       if (payloadtext === 'serieateam') {
-      setTimeout(function() {  serieateam1(sender)}, 100);
-      setTimeout(function() {  serieateam2(sender)}, 500);
+       setTimeout(function() {  serieateam1(sender)}, 100);
+       setTimeout(function() {  serieateam2(sender)}, 500);
       }
       if (payloadtext === 'ligue1team') {
-      setTimeout(function() {  ligue1team1(sender)}, 100);
-      setTimeout(function() {  ligue1team2(sender)}, 500);
+       setTimeout(function() {  ligue1team1(sender)}, 100);
+       setTimeout(function() {  ligue1team2(sender)}, 500);
       }
       if (payloadtext === 'thaileagueteam') {
-      setTimeout(function() {    thaileagueteam1(sender)}, 100);
-      setTimeout(function() {    thaileagueteam2(sender)}, 500);
+       setTimeout(function() {    thaileagueteam1(sender)}, 100);
+       setTimeout(function() {    thaileagueteam2(sender)}, 500);
       }
 
       if (payloadtext === 'back') {
@@ -1661,93 +1659,209 @@ function premierleagueteam1(sender){
                           ,
                 'buttons': [{
                   'type': 'postback',
-                  'title': 'Next match',
-                  'payload': 'next1'
+                  'title': 'แมตช์ที่แข่งไปแล้ว',
+                  'payload': 'matchesplayed'
                 },{
                   'type': 'postback',
-                  'title': 'All matches',
-                  'payload': 'all1'
+                  'title': 'แมตช์ล่าสุด',
+                  'payload': 'matchprevious'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์หน้า',
+                  'payload': 'matchnext'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'payload': 'matchnext'
                 }]
               }, {
                 'title': '2  '+JSON.parse(body)[1].name,
                 'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/b/b6/Leicester_City.svg/1024px-Leicester_City.svg.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[1].defaultHomeVenue.name ,
-                  'buttons': [{
+                'buttons': [{
                   'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
+                  'title': 'แมตช์ที่แข่งไปแล้ว',
+                  'payload': 'matchesplayed'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ล่าสุด',
+                  'payload': 'matchprevious'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์หน้า',
+                  'payload': 'matchnext'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'payload': 'matchnext'
                 }]
               }, {
                 'title': '3  '+JSON.parse(body)[2].name,
                 'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/758px-Manchester_United_FC_crest.svg.png',
                 'subtitle': "Stadium: "+JSON.parse(body)[2].defaultHomeVenue.name ,
-                  'buttons': [{
+                'buttons': [{
                   'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
+                  'title': 'แมตช์ที่แข่งไปแล้ว',
+                  'payload': 'matchesplayed'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ล่าสุด',
+                  'payload': 'matchprevious'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์หน้า',
+                  'payload': 'matchnext'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'payload': 'matchnext'
                 }]
               }, {
                 'title': '4  '+JSON.parse(body)[3].name,
                 'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/Watford.svg/918px-Watford.svg.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[3].defaultHomeVenue.name ,
-                  'buttons': [{
+                'buttons': [{
                   'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
+                  'title': 'แมตช์ที่แข่งไปแล้ว',
+                  'payload': 'matchesplayed'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ล่าสุด',
+                  'payload': 'matchprevious'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์หน้า',
+                  'payload': 'matchnext'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'payload': 'matchnext'
                 }]
               }, {
                 'title': '5  '+JSON.parse(body)[4].name,
                 'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/758px-Liverpool_FC.svg.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[4].defaultHomeVenue.name ,
-                  'buttons': [{
+                'buttons': [{
                   'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
+                  'title': 'แมตช์ที่แข่งไปแล้ว',
+                  'payload': 'matchesplayed'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ล่าสุด',
+                  'payload': 'matchprevious'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์หน้า',
+                  'payload': 'matchnext'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'payload': 'matchnext'
                 }]
               }, {
                 'title': '6  '+JSON.parse(body)[5].name,
                 'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/c/c9/FC_Southampton.svg/898px-FC_Southampton.svg.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[5].defaultHomeVenue.name ,
-                  'buttons': [{
+                'buttons': [{
                   'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
+                  'title': 'แมตช์ที่แข่งไปแล้ว',
+                  'payload': 'matchesplayed'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ล่าสุด',
+                  'payload': 'matchprevious'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์หน้า',
+                  'payload': 'matchnext'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'payload': 'matchnext'
                 }]
               }, {
                 'title': '7  '+JSON.parse(body)[6].name,
                 'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/768px-Chelsea_FC.svg.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[6].defaultHomeVenue.name ,
-                  'buttons': [{
+                'buttons': [{
                   'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
+                  'title': 'แมตช์ที่แข่งไปแล้ว',
+                  'payload': 'matchesplayed'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ล่าสุด',
+                  'payload': 'matchprevious'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์หน้า',
+                  'payload': 'matchnext'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'payload': 'matchnext'
                 }]
               }, {
                 'title': '8  '+JSON.parse(body)[7].name,
                 'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Stoke_City_FC.svg/885px-Stoke_City_FC.svg.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[7].defaultHomeVenue.name ,
-                  'buttons': [{
+                'buttons': [{
                   'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
+                  'title': 'แมตช์ที่แข่งไปแล้ว',
+                  'payload': 'matchesplayed'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ล่าสุด',
+                  'payload': 'matchprevious'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์หน้า',
+                  'payload': 'matchnext'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'payload': 'matchnext'
                 }]
               }, {
                 'title': '9  '+JSON.parse(body)[8].name,
                 'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/2/2c/Middlesbrough_FC_crest.svg/983px-Middlesbrough_FC_crest.svg.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[8].defaultHomeVenue.name ,
-                  'buttons': [{
+                'buttons': [{
                   'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
+                  'title': 'แมตช์ที่แข่งไปแล้ว',
+                  'payload': 'matchesplayed'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ล่าสุด',
+                  'payload': 'matchprevious'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์หน้า',
+                  'payload': 'matchnext'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'payload': 'matchnext'
                 }]
               }  , {
                 'title': '10  '+JSON.parse(body)[9].name,
                 'image_url':  'https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/West_Bromwich_Albion.svg/856px-West_Bromwich_Albion.svg.png',
                 'subtitle':"Stadium: "+ JSON.parse(body)[9].defaultHomeVenue.name ,
-                  'buttons': [{
+                'buttons': [{
                   'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
+                  'title': 'แมตช์ที่แข่งไปแล้ว',
+                  'payload': 'matchesplayed'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ล่าสุด',
+                  'payload': 'matchprevious'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์หน้า',
+                  'payload': 'matchnext'
+                },{
+                  'type': 'postback',
+                  'title': 'แมตช์ที่ยังไม่ได้แข่ง',
+                  'payload': 'matchnext'
                 }]
               }]
             }
