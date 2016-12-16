@@ -98,43 +98,43 @@ app.post('/webhook/', function (req, res) {
     }
     if (event.postback) {
       let text = JSON.stringify(event.postback)
-      var payloadt = event.postback.payload;
-      if (payloadt === 'USER_DEFINED_PAYLOAD') {
+      var payloadtext = event.postback.payload;
+      if (payloadtext === 'USER_DEFINED_PAYLOAD') {
         sendTextMessage(sender, 'สวัสดีครับ')
         sendGenericMessage (sender)
 
       }
-      if (payloadt === 'table1') {
-        premierleaguetable1(sender)
+      if (payloadtext === 'premierleaguetable') {
+        premierleaguetable(sender)
 
-        premierleaguetable2(sender)
+
       }
-      if (payloadt === 'table2') {
+      if (payloadtext === 'table2') {
         laligatable1(sender)
 
         laligatable2(sender)
       }
-      if (payloadt === 'table3') {
+      if (payloadtext === 'table3') {
         bundesligatable1(sender)
 
         bundesligatable2(sender)
       }
-      if (payloadt === 'table4') {
+      if (payloadtext === 'table4') {
         serieatable1(sender)
 
         serieatable2(sender)
       }
-      if (payloadt === 'table5') {
+      if (payloadtext === 'table5') {
         ligue1table1(sender)
 
         ligue1table2(sender)
       }
-      if (payloadt === 'table6') {
+      if (payloadtext === 'table6') {
         thaileaguetable1(sender)
 
         thaileaguetable2(sender)
       }
-      if (payloadt === 'back') {
+      if (payloadtext === 'back') {
         sendGenericMessage (sender)
       }
 
@@ -1537,6 +1537,48 @@ function premierleaguetable1(sender){
 
     request(options, callback)
 }
+
+
+function premierleaguetable(sender, text){
+
+
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=2',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+              sendTextMessage(sender, JSON.parse(body)[0].leagueTable[i].name)
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+           }
+            function doSetTimeout(i) {
+           setTimeout(function() {
+
+               sendTextMessage(sender, (i+1) +" "+ JSON.parse(body)[0].leagueTable[i].name+"\n"
+               +JSON.parse(body)[0].leagueTable[i].points +" คะแนน  แข่ง "+JSON.parse(body)[0].leagueTable[i].gamesPlayed +" แมตช์"
+               +"\nชนะ "+JSON.parse(body)[0].leagueTable[i].wins+" เสมอ "+JSON.parse(body)[0].leagueTable[i].draws+" แพ้ "+JSON.parse(body)[0].leagueTable[i].losses
+               +"\nทำประตู "+JSON.parse(body)[0].leagueTable[i].goalsFor+" เสียประตู "+JSON.parse(body)[0].leagueTable[i].goalsAgainst+" ผลต่างประตู "+JSON.parse(body)[0].leagueTable[i].goalDiff
+              )
+
+
+              }, i*110);
+                        }
+                }
+             }
+
+             request(options, callback)
+
+}
+
+
 
 function premierleaguetable2(sender) {
   var options = {
@@ -4777,7 +4819,7 @@ function sendGenericMessage (sender) {
           }, {
             'type': 'postback',
             'title': 'Team',
-            'payload': 'team1'
+            'payload': 'premierleaguetable'
           }]
         }, {
         'title': 'La liga',
