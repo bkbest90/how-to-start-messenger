@@ -1543,7 +1543,7 @@ function premierleaguetable(sender, text){
 
 
   var options = {
-    url: 'https://api.crowdscores.com/v1/matches?competition_id=2',
+    url: 'https://api.crowdscores.com/v1/league-tables?competition_id=2',
     headers: {
       'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
     }
