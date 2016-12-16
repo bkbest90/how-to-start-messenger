@@ -1630,6 +1630,538 @@ app.post('/webhook/', function (req, res) {
         setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
       }
 
+      if (payloadtext === 'matchpreviousLyon') {
+        let text = "Lyon";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextLyon') {
+        let text = "Lyon";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallLyon') {
+        let text = "Lyon";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousMontpellier') {
+        let text = "Montpellier";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextMontpellier') {
+        let text = "Montpellier";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallMontpellier') {
+        let text = "Montpellier";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousDijon') {
+        let text = "Dijon";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextDijon') {
+        let text = "Dijon";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallDijon') {
+        let text = "Dijon";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousParis Saint Germain') {
+        let text = "Paris Saint Germain";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextParis Saint Germain') {
+        let text = "Paris Saint Germain";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallParis Saint Germain') {
+        let text = "Paris Saint Germain";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousNancy') {
+        let text = "Nancy";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextNancy') {
+        let text = "Nancy";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallNancy') {
+        let text = "Nancy";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousMarseille') {
+        let text = "Marseille";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextMarseille') {
+        let text = "Marseille";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallMarseille') {
+        let text = "Marseille";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousLille') {
+        let text = "Lille";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextLille') {
+        let text = "Lille";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallLille') {
+        let text = "Lille";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousStade Rennais') {
+        let text = "Stade Rennais";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextStade Rennais') {
+        let text = "Stade Rennais";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallStade Rennais') {
+        let text = "Stade Rennais";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousMonaco') {
+        let text = "Monaco";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextMonaco') {
+        let text = "Monaco";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallMonaco') {
+        let text = "Monaco";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousBordeaux') {
+        let text = "Bordeaux";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextBordeaux') {
+        let text = "Bordeaux";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallBordeaux') {
+        let text = "Bordeaux";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousStade Malherbe Caen') {
+        let text = "Stade Malherbe Caen";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextStade Malherbe Caen') {
+        let text = "Stade Malherbe Caen";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallStade Malherbe Caen') {
+        let text = "Stade Malherbe Caen";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousMetz') {
+        let text = "Metz";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextMetz') {
+        let text = "Metz";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallMetz') {
+        let text = "Metz";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousToulouse') {
+        let text = "Toulouse";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextToulouse') {
+        let text = "Toulouse";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallToulouse') {
+        let text = "Toulouse";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousNantes') {
+        let text = "Nantes";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextNantes') {
+        let text = "Nantes";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallNantes') {
+        let text = "Nantes";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousSaint Étienne') {
+        let text = "Saint Étienne";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextSaint Étienne') {
+        let text = "Saint Étienne";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallSaint Étienne') {
+        let text = "Saint Étienne";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousNice') {
+        let text = "Nice";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextNice') {
+        let text = "Nice";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallNice') {
+        let text = "Nice";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousAngers') {
+        let text = "Angers";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextAngers') {
+        let text = "Angers";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallAngers') {
+        let text = "Angers";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousBastia') {
+        let text = "Bastia";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextBastia') {
+        let text = "Bastia";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallBastia') {
+        let text = "Bastia";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousGuingamp') {
+        let text = "Guingamp";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextGuingamp') {
+        let text = "Guingamp";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallGuingamp') {
+        let text = "Guingamp";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousLorient') {
+        let text = "Lorient";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextLorient') {
+        let text = "Lorient";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallLorient') {
+        let text = "Lorient";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousChiangrai United') {
+        let text = "Chiangrai United";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {thaileaguePreviousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextChiangrai United') {
+        let text = "Chiangrai United";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {thaileagueNextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallChiangrai United') {
+        let text = "Chiangrai United";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousChonburi') {
+        let text = "Chonburi";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextChonburi') {
+        let text = "Chonburi";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallChonburi') {
+        let text = "Chonburi";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousMuangthong United') {
+        let text = "Muangthong United";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextMuangthong United') {
+        let text = "Muangthong United";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallMuangthong United') {
+        let text = "Muangthong United";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousNakhon Ratchasima') {
+        let text = "Nakhon Ratchasima";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextNakhon Ratchasima') {
+        let text = "Nakhon Ratchasima";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallNakhon Ratchasima') {
+        let text = "Nakhon Ratchasima";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousRoyal Thai Navy') {
+        let text = "Royal Thai Navy";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextRoyal Thai Navy') {
+        let text = "Royal Thai Navy";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallRoyal Thai Navy') {
+        let text = "Royal Thai Navy";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousOsotspa Saraburi') {
+        let text = "Osotspa Saraburi";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextOsotspa Saraburi') {
+        let text = "Osotspa Saraburi";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallOsotspa Saraburi') {
+        let text = "Osotspa Saraburi";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousRatchaburi Mitr Phol') {
+        let text = "Ratchaburi Mitr Phol";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextRatchaburi Mitr Phol') {
+        let text = "Ratchaburi Mitr Phol";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallRatchaburi Mitr Phol') {
+        let text = "Ratchaburi Mitr Phol";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
+      if (payloadtext === 'matchpreviousRatchaburi Mitr Phol') {
+        let text = "Ratchaburi Mitr Phol";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Previousmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchnextRatchaburi Mitr Phol') {
+        let text = "Ratchaburi Mitr Phol";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function () {ligue1Nextmatches(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 2000);
+      }
+      if (payloadtext === 'matchallRatchaburi Mitr Phol') {
+        let text = "Osotspa Saraburi";
+        sendTextMessage(sender, 'กรุณารอสักครู่..')
+        setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+      }
+
 
 
       if (payloadtext === 'back') {
