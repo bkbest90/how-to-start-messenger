@@ -735,19 +735,58 @@ function premierleaguematchesPlayed(sender, text){
 
        if (!error && response.statusCode === 200) {
 
-         for (var i = 0; i < JSON.parse(body).length; i++) {
 
-            doSetTimeout(i);
-  }
-            function doSetTimeout(i) {
-             setTimeout(function() {
+          var i = 0;
+  do {
 
-              let time = JSON.stringify(JSON.parse(body)[i].start)
-              var str = time;
-              var num = parseInt(str.replace(/[^0-9]/g, time));
-              var date = new Date(num).toUTCString();
+    let time = JSON.stringify(JSON.parse(body)[i].start)
+    var str = time;
+    var num = parseInt(str.replace(/[^0-9]/g, time));
+    var date = new Date(num).toUTCString();
 
-        if (JSON.parse(body)[i].homeTeam.name == text ) {
+  setTimeout(function () {
+    if (JSON.parse(body)[i].homeTeam.name == text ) {
+           if (JSON.parse(body)[i].outcome.winner == "home") {
+             sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+              +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+               }
+             if (JSON.parse(body)[i].outcome.winner == "draw") {
+            sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                   }
+                 if (JSON.parse(body)[i].outcome.winner == "away") {
+                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                   +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+            }
+
+           }
+
+  }, i*150);
+
+         setTimeout(function () {
+           if (JSON.parse(body)[i].awayTeam.name == text ) {
+                if (JSON.parse(body)[i].outcome.winner == "home") {
+                     sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                   +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                  }
+               if (JSON.parse(body)[i].outcome.winner == "draw") {
+                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                 +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+            }
+                if (JSON.parse(body)[i].outcome.winner == "away") {
+                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+               +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                 }
+
+         }
+
+       }, i*150);
+       i++;
+
+
+  } while (JSON.parse(body)[i].outcome !== null);
+
+    /*    if (JSON.parse(body)[i].homeTeam.name == text ) {
              if (JSON.parse(body)[i].outcome.winner == "home") {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
                 +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
@@ -760,11 +799,11 @@ function premierleaguematchesPlayed(sender, text){
                   sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
                      +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
               }
-            setTimeout(function () {
+
               if (JSON.parse(body)[i].outcome === null) {
                   i = JSON.parse(body).length;
                 }
-            }, 100000);
+
 
              }
            if (JSON.parse(body)[i].awayTeam.name == text ) {
@@ -784,12 +823,12 @@ function premierleaguematchesPlayed(sender, text){
               if (JSON.parse(body)[i].outcome === null) {
                     i = JSON.parse(body).length;
                   }
-            }, 100000);    
+            }, 100000);
 
-         }
-            }, i*110);
+         }*/
+
                           }
-                 }
+
             }
 
   request(options, callback)
