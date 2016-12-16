@@ -92,8 +92,8 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'matches') {
-       let text = "Liverpool";
-        premierleaguePreviousmatches(sender, text)
+       let text = "Barcelona";
+        laligaPreviousmatches(sender, text)
       }
     }
     if (event.postback) {
@@ -172,6 +172,7 @@ function sendTextMessage (sender, text) {
 }
 
 //previous matches
+
 function premierleaguePreviousmatches(sender, text){
 
 
@@ -213,7 +214,210 @@ function premierleaguePreviousmatches(sender, text){
 
 }
 
+function laligaPreviousmatches(sender, text){
 
+
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+      var b = 0;
+      var i = 379 ;
+         do {
+           let time = JSON.stringify(JSON.parse(body)[i].start)
+           var str = time;
+           var num = parseInt(str.replace(/[^0-9]/g, time));
+           var date = new Date(num).toUTCString();
+                  if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
+                    if (JSON.parse(body)[i].outcome !== null) {
+                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                       +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                    b = 5;
+
+                  }
+
+                }
+                    i--;
+                     }
+                   while (b != 5);
+
+    }
+  }
+
+  request(options, callback)
+
+}
+
+function bundesligaPreviousmatches(sender, text){
+
+
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=48',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+      var b = 0;
+      var i = 305 ;
+         do {
+           let time = JSON.stringify(JSON.parse(body)[i].start)
+           var str = time;
+           var num = parseInt(str.replace(/[^0-9]/g, time));
+           var date = new Date(num).toUTCString();
+                  if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
+                    if (JSON.parse(body)[i].outcome !== null) {
+                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                       +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                    b = 5;
+
+                  }
+
+                }
+                    i--;
+                     }
+                   while (b != 5);
+
+    }
+  }
+
+  request(options, callback)
+
+}
+
+function serieaPreviousmatches(sender, text){
+
+
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=49',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+      var b = 0;
+      var i = 379 ;
+         do {
+           let time = JSON.stringify(JSON.parse(body)[i].start)
+           var str = time;
+           var num = parseInt(str.replace(/[^0-9]/g, time));
+           var date = new Date(num).toUTCString();
+                  if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
+                    if (JSON.parse(body)[i].outcome !== null) {
+                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                       +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                    b = 5;
+
+                  }
+
+                }
+                    i--;
+                     }
+                   while (b != 5);
+
+    }
+  }
+
+  request(options, callback)
+
+}
+
+function ligue1Previousmatches(sender, text){
+
+
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=47',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+      var b = 0;
+      var i = 379 ;
+         do {
+           let time = JSON.stringify(JSON.parse(body)[i].start)
+           var str = time;
+           var num = parseInt(str.replace(/[^0-9]/g, time));
+           var date = new Date(num).toUTCString();
+                  if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
+                    if (JSON.parse(body)[i].outcome !== null) {
+                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                       +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                    b = 5;
+
+                  }
+
+                }
+                    i--;
+                     }
+                   while (b != 5);
+
+    }
+  }
+
+  request(options, callback)
+
+}
+
+function thaileaguePreviousmatches(sender, text){
+
+
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=151',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+      var b = 0;
+      var i = 305 ;
+         do {
+           let time = JSON.stringify(JSON.parse(body)[i].start)
+           var str = time;
+           var num = parseInt(str.replace(/[^0-9]/g, time));
+           var date = new Date(num).toUTCString();
+                  if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
+                    if (JSON.parse(body)[i].outcome !== null) {
+                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                       +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
+                    b = 5;
+
+                  }
+
+                }
+                    i--;
+                     }
+                   while (b != 5);
+
+    }
+  }
+
+  request(options, callback)
+
+}
 
 
 //next matches
@@ -465,7 +669,7 @@ function thaileagueNextmatches(sender, text){
 
 
 //matches played
-function premierleaguematchesAlready(sender, text){
+function premierleaguematchesPlayed(sender, text){
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=2',
     headers: {
@@ -534,7 +738,7 @@ function premierleaguematchesAlready(sender, text){
 
 }
 
-function laligamatchesAlready(sender, text){
+function laligamatchesPlayed(sender, text){
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
     headers: {
@@ -603,7 +807,7 @@ function laligamatchesAlready(sender, text){
 
 }
 
-function bundesligamatchesAlready(sender, text){
+function bundesligamatchesPlayed(sender, text){
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=48',
     headers: {
@@ -672,7 +876,7 @@ function bundesligamatchesAlready(sender, text){
 
 }
 
-function serieamatchesAlready(sender, text){
+function serieamatchesPlayed(sender, text){
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=49',
     headers: {
@@ -741,7 +945,7 @@ function serieamatchesAlready(sender, text){
 
 }
 
-function ligue1matchesAlready(sender, text){
+function ligue1matchesPlayed(sender, text){
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=47',
     headers: {
@@ -810,7 +1014,7 @@ function ligue1matchesAlready(sender, text){
 
 }
 
-function thaileaguematchesAlready(sender, text){
+function thaileaguematchesPlayed(sender, text){
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=151',
     headers: {
