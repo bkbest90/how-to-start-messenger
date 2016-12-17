@@ -25,46 +25,17 @@ app.post('/webhook/', function (req, res) {
     if (event.message && event.message.text) {
       var text = event.message.text
 
-      if (text === 'premier league table') {
-        premierleaguetable1(sender)
-
-        premierleaguetable2(sender)
-        sendTextMessage(sender, 'Premier League table')
-
-      }
-      if (text === 'laliga table') {
-        laligatable1(sender)
-
-        laligatable2(sender)
-        sendTextMessage(sender, 'La liga table')
-      }
-      if (text === 'bundesliga table') {
-        bundesligatable1(sender)
-
-        bundesligatable2(sender)
-        sendTextMessage(sender, 'Bundesliga table')
-      }
-      if (text === 'serie a table') {
-        serieatable1(sender)
-
-        serieatable2(sender)
-        sendTextMessage(sender, 'Serie A table')
-      }
-      if (text === 'ligue 1 table') {
-        ligue1table1(sender)
-
-        ligue1table2(sender)
-        sendTextMessage(sender, 'Ligue 1 table')
-      }
-      if (text === 'premier league thailand table') {
-        thaileaguetable1(sender)
-
-        thaileaguetable2(sender)
-        sendTextMessage(sender, 'Premier League Thailand table')
-      }
       if (text === 'mainmenu' || text === 'เมนูหลัก') {
         sendGenericMessage(sender)
         continue
+      }
+      if (text === 'บอลวันนี้'){
+        setTimeout(function () {  premierleagueToday(sender)  }, 10);
+        setTimeout(function () {  laligaToday(sender)  }, 10*1000);
+        setTimeout(function () {  bundesligaToday(sender)  }, 15*1000);
+        setTimeout(function () {  serieaToday(sender)  }, 20*1000);
+        setTimeout(function () {  ligue1Today(sender)  }, 25*1000);
+        setTimeout(function () {  thaileagueToday(sender)  }, 30*1000);
       }
       if (text === 'asdf') {
 /*        var today = new Date();
@@ -92,7 +63,7 @@ app.post('/webhook/', function (req, res) {
       var payloadtext = event.postback.payload;
       if (payloadtext === 'USER_DEFINED_PAYLOAD') {
 
-         sendTextMessage(sender, '**คำสั่งทั้งหมดของเรา**\nบอลวันนี้ = จะแสดงการแข่งขันของวันนี้\nบอลพรุ่งนี้ = จะแสดงการแข่งขันของวันพรุ่งนี้\nคำสั่ง = แสดงคำสั่งทั้งหมดอีกครั้ง')
+   sendTextMessage(sender, '**คำสั่งทั้งหมดของเรา**\nเมนูหลัก = กลับมาที่เมนูหลัก\nบอลวันนี้ = จะแสดงการแข่งขันของวันนี้\nบอลพรุ่งนี้ = จะแสดงการแข่งขันของวันพรุ่งนี้\nคำสั่ง = แสดงคำสั่งทั้งหมดอีกครั้ง')
 
         setTimeout(function () {
           sendGenericMessage (sender)
@@ -2401,7 +2372,7 @@ function premierleagueToday(sender, text){
 
 
        if (!error && response.statusCode === 200) {
-           sendTextMessage (sender, 'Premier league')
+           
          for (var i = 0; i < JSON.parse(body).length; i++) {
 
             doSetTimeout(i);
