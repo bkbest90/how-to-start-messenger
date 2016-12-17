@@ -38,14 +38,24 @@ app.post('/webhook/', function (req, res) {
         setTimeout(function () {  ligue1Today(sender)  }, 4000);
         setTimeout(function () {  thaileagueToday(sender)  }, 5000);
       }
+      if (text === 'บอลวันนี้'){
+        sendTextMessage(sender,'กรุณารอสักครู่.....')
+        setTimeout(function () {  premierleagueTomorrow(sender)  }, 0);
+        setTimeout(function () {  laligaTomorrow(sender)  }, 1000);
+        setTimeout(function () {  bundesligaTomorrow(sender)  }, 2000);
+        setTimeout(function () {  serieaTomorrow(sender)  }, 3000);
+        setTimeout(function () {  ligue1Tomorrow(sender)  }, 4000);
+        setTimeout(function () {  thaileagueTomorrow(sender)  }, 5000);
+      }
+
       if (text === 'คำสั่ง'){
         sendTextMessage(sender, '**คำสั่งทั้งหมดของเรา**\nเมนูหลัก = กลับมาที่เมนูหลัก\nบอลวันนี้ = จะแสดงการแข่งขันของวันนี้\nบอลพรุ่งนี้ = จะแสดงการแข่งขันของวันพรุ่งนี้\nคำสั่ง = แสดงคำสั่งทั้งหมดอีกครั้ง')
       }
       if (text === 'asdf') {
-
+/*
        premierleagueTomorrow(sender)
 
-
+*/
 
       }
     }
@@ -2390,12 +2400,10 @@ function premierleagueTomorrow(sender){
                var month = dateObj.getUTCMonth() + 1; //months from 1-12
               var day = dateObj.getUTCDate();
                var year = dateObj.getUTCFullYear();
-              var newdate = year + "/" + month + "/" + day;
+              var newdate = year + "/" + month + "/" + (day+1);
 
-                   var newdate1 = year + "/" + month + "/" + (day+1);
 
-              console.log(newdate1 +" tomorrow -  today "+ newdate);
-  /*   if (dateapi === newdate) {
+          if (dateapi === newdate) {
 
 
 
@@ -2409,7 +2417,7 @@ function premierleagueTomorrow(sender){
                      }
 
 
-         }*/
+         }
        }, i*500);
                           }
                  }
@@ -2419,6 +2427,332 @@ function premierleagueTomorrow(sender){
 
 }
 
+function laligaTomorrow(sender){
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+             setTimeout(function() {
+
+              let time = JSON.stringify(JSON.parse(body)[i].start)
+              var str = time;
+              var num = parseInt(str.replace(/[^0-9]/g, time));
+              var realdate = new Date(num);
+              realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
+              var cdate = new Date(realdate);
+
+              var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+              var dayapi = cdate.getUTCDate();
+              var yearapi = cdate.getUTCFullYear();
+              var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+
+
+
+              var dateObj = new Date();
+               var month = dateObj.getUTCMonth() + 1; //months from 1-12
+              var day = dateObj.getUTCDate();
+               var year = dateObj.getUTCFullYear();
+              var newdate = year + "/" + month + "/" + day;
+
+
+
+
+     if (dateapi === newdate) {
+
+             if (JSON.parse(body)[i].outcome !== null) {
+               sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                 }
+               if (JSON.parse(body)[i].outcome == null) {
+              sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+                  +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                     }
+
+
+         }
+       }, i*500);
+                          }
+                 }
+            }
+
+  request(options, callback)
+
+}
+
+function bundesligaTomorrow(sender){
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=48',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+             setTimeout(function() {
+
+              let time = JSON.stringify(JSON.parse(body)[i].start)
+              var str = time;
+              var num = parseInt(str.replace(/[^0-9]/g, time));
+              var realdate = new Date(num);
+              realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
+              var cdate = new Date(realdate);
+
+              var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+              var dayapi = cdate.getUTCDate();
+              var yearapi = cdate.getUTCFullYear();
+              var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+
+
+
+              var dateObj = new Date();
+               var month = dateObj.getUTCMonth() + 1; //months from 1-12
+              var day = dateObj.getUTCDate();
+               var year = dateObj.getUTCFullYear();
+              var newdate = year + "/" + month + "/" + (day+1);
+
+
+
+
+     if (dateapi === newdate) {
+
+             if (JSON.parse(body)[i].outcome !== null) {
+               sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                 }
+               if (JSON.parse(body)[i].outcome == null) {
+              sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+                  +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                     }
+
+
+         }
+       }, i*500);
+                          }
+                 }
+            }
+
+  request(options, callback)
+
+}
+
+function serieaTomorrow(sender){
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=49',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+             setTimeout(function() {
+
+              let time = JSON.stringify(JSON.parse(body)[i].start)
+              var str = time;
+              var num = parseInt(str.replace(/[^0-9]/g, time));
+              var realdate = new Date(num);
+              realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
+              var cdate = new Date(realdate);
+
+              var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+              var dayapi = cdate.getUTCDate();
+              var yearapi = cdate.getUTCFullYear();
+              var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+
+
+
+              var dateObj = new Date();
+               var month = dateObj.getUTCMonth() + 1; //months from 1-12
+              var day = dateObj.getUTCDate();
+               var year = dateObj.getUTCFullYear();
+              var newdate = year + "/" + month + "/" + (day+1);
+
+
+
+
+     if (dateapi === newdate) {
+
+             if (JSON.parse(body)[i].outcome !== null) {
+               sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                 }
+               if (JSON.parse(body)[i].outcome == null) {
+              sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+                  +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                     }
+
+
+         }
+       }, i*500);
+                          }
+                 }
+            }
+
+  request(options, callback)
+
+}
+
+function ligue1Tomorrow(sender){
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=47',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+             setTimeout(function() {
+
+              let time = JSON.stringify(JSON.parse(body)[i].start)
+              var str = time;
+              var num = parseInt(str.replace(/[^0-9]/g, time));
+              var realdate = new Date(num);
+              realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
+              var cdate = new Date(realdate);
+
+              var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+              var dayapi = cdate.getUTCDate();
+              var yearapi = cdate.getUTCFullYear();
+              var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+
+
+
+              var dateObj = new Date();
+               var month = dateObj.getUTCMonth() + 1; //months from 1-12
+              var day = dateObj.getUTCDate();
+               var year = dateObj.getUTCFullYear();
+              var newdate = year + "/" + month + "/" + (day+1);
+
+
+
+
+     if (dateapi === newdate) {
+
+                 if (JSON.parse(body)[i].outcome !== null) {
+               sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                 }
+               if (JSON.parse(body)[i].outcome == null) {
+              sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+                  +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                     }
+
+
+         }
+       }, i*500);
+                          }
+                 }
+            }
+
+  request(options, callback)
+
+}
+
+function thaileagueTomorrow(sender){
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=151',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+             setTimeout(function() {
+
+              let time = JSON.stringify(JSON.parse(body)[i].start)
+              var str = time;
+              var num = parseInt(str.replace(/[^0-9]/g, time));
+              var realdate = new Date(num);
+              realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
+              var cdate = new Date(realdate);
+
+              var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+              var dayapi = cdate.getUTCDate();
+              var yearapi = cdate.getUTCFullYear();
+              var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+
+
+
+              var dateObj = new Date();
+               var month = dateObj.getUTCMonth() + 1; //months from 1-12
+              var day = dateObj.getUTCDate();
+               var year = dateObj.getUTCFullYear();
+              var newdate = year + "/" + month + "/" + (day+1);
+
+
+
+
+     if (dateapi === newdate) {
+
+        console.log(dateapi +" api -  today "+ newdate);
+
+             if (JSON.parse(body)[i].outcome !== null) {
+               sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                 }
+               if (JSON.parse(body)[i].outcome == null) {
+              sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+                  +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                     }
+
+
+         }
+       }, i*500);
+                          }
+                 }
+            }
+
+  request(options, callback)
+
+}
 
 
 
