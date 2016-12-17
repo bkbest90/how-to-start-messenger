@@ -2392,7 +2392,7 @@ function premierleagueTomorrow(sender){
                var year = dateObj.getUTCFullYear();
               var newdate = year + "/" + month + "/" + day;
 
-                   var newdate1 = year + "/" + month + "/" + day+1;
+                   var newdate1 = year + "/" + month + "/" + (day+1);
 
               console.log(newdate1 +" tomorrow -  today "+ newdate);
   /*   if (dateapi === newdate) {
@@ -2435,7 +2435,7 @@ function premierleagueToday(sender){
 
 
        if (!error && response.statusCode === 200) {
-           sendTextMessage (sender, 'Premier league')
+
          for (var i = 0; i < JSON.parse(body).length; i++) {
 
             doSetTimeout(i);
@@ -2499,7 +2499,7 @@ function laligaToday(sender){
 
 
        if (!error && response.statusCode === 200) {
-             sendTextMessage (sender, 'La liga')
+
          for (var i = 0; i < JSON.parse(body).length; i++) {
 
             doSetTimeout(i);
@@ -2564,7 +2564,7 @@ function bundesligaToday(sender){
 
 
        if (!error && response.statusCode === 200) {
-            sendTextMessage (sender, 'Bundesliga')
+
          for (var i = 0; i < JSON.parse(body).length; i++) {
 
             doSetTimeout(i);
@@ -2629,7 +2629,7 @@ function serieaToday(sender){
 
 
        if (!error && response.statusCode === 200) {
-                    sendTextMessage (sender, 'Serie A')
+
          for (var i = 0; i < JSON.parse(body).length; i++) {
 
             doSetTimeout(i);
@@ -2694,7 +2694,7 @@ function ligue1Today(sender){
 
 
        if (!error && response.statusCode === 200) {
-             sendTextMessage (sender, 'Ligue 1')
+
          for (var i = 0; i < JSON.parse(body).length; i++) {
 
             doSetTimeout(i);
@@ -2759,7 +2759,7 @@ function thaileagueToday(sender){
 
 
        if (!error && response.statusCode === 200) {
-              sendTextMessage (sender, 'Premier league Thailand')
+
          for (var i = 0; i < JSON.parse(body).length; i++) {
 
             doSetTimeout(i);
