@@ -38,7 +38,7 @@ app.post('/webhook/', function (req, res) {
         setTimeout(function () {  ligue1Today(sender)  }, 4000);
         setTimeout(function () {  thaileagueToday(sender)  }, 5000);
       }
-      if (text === 'บอลวันนี้'){
+      if (text === 'บอลพรุ่งนี้'){
         sendTextMessage(sender,'กรุณารอสักครู่.....')
         setTimeout(function () {  premierleagueTomorrow(sender)  }, 0);
         setTimeout(function () {  laligaTomorrow(sender)  }, 1000);
