@@ -78,7 +78,7 @@ app.post('/webhook/', function (req, res) {
      var day = dateObj.getUTCDate();
       var year = dateObj.getUTCFullYear();
 
-       newdate = year + "/" + month + "/" + day;
+    var newdate = year + "/" + month + "/" + day;
        console.log(newdate);
       }
     }
