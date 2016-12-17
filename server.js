@@ -2443,12 +2443,12 @@ function premierleagueToday(sender, text){
                var year = dateObj.getUTCFullYear();
               var newdate = year + "/" + month + "/" + day;
 
-console.log(dateapi +" api -  today "+ newdate);
 
 
-     if (dateapi == newdate) {
 
+     if (dateapi === newdate) {
 
+        console.log(dateapi +" api -  today "+ newdate);
         if (JSON.parse(body)[i].homeTeam.name == text ) {
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
