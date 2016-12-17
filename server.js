@@ -2439,7 +2439,9 @@ function laligaPrematches(sender, text){
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
-           var date = new Date(num).toUTCString();
+           var realdate = new Date(num);
+           realdate.setHours(realdate.getHours() +7);
+           var date = new Date(realdate).toUTCString();
                   if (JSON.parse(body)[ai].homeTeam.name == text ||JSON.parse(body)[ai].awayTeam.name == text ) {
                     if (JSON.parse(body)[ai].outcome !== null) {
                       sendTextMessage(sender, JSON.parse(body)[ai].homeTeam.name +"\n" +JSON.parse(body)[ai].homeGoals +" - "
@@ -2480,7 +2482,9 @@ function bundesligaPrematches(sender, text){
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
-           var date = new Date(num).toUTCString();
+           var realdate = new Date(num);
+           realdate.setHours(realdate.getHours() +7);
+           var date = new Date(realdate).toUTCString();
                   if (JSON.parse(body)[ai].homeTeam.name == text ||JSON.parse(body)[ai].awayTeam.name == text ) {
                     if (JSON.parse(body)[ai].outcome !== null) {
                       sendTextMessage(sender, JSON.parse(body)[ai].homeTeam.name +"\n" +JSON.parse(body)[ai].homeGoals +" - "
@@ -2521,7 +2525,9 @@ function serieaPrematches(sender, text){
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
-           var date = new Date(num).toUTCString();
+           var realdate = new Date(num);
+           realdate.setHours(realdate.getHours() +7);
+           var date = new Date(realdate).toUTCString();
                   if (JSON.parse(body)[ai].homeTeam.name == text ||JSON.parse(body)[ai].awayTeam.name == text ) {
                     if (JSON.parse(body)[ai].outcome !== null) {
                       sendTextMessage(sender, JSON.parse(body)[ai].homeTeam.name +"\n" +JSON.parse(body)[ai].homeGoals +" - "
@@ -2562,7 +2568,9 @@ function ligue1Prematches(sender, text){
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
-           var date = new Date(num).toUTCString();
+           var realdate = new Date(num);
+           realdate.setHours(realdate.getHours() +7);
+           var date = new Date(realdate).toUTCString();
                   if (JSON.parse(body)[ai].homeTeam.name == text ||JSON.parse(body)[ai].awayTeam.name == text ) {
                     if (JSON.parse(body)[ai].outcome !== null) {
                       sendTextMessage(sender, JSON.parse(body)[ai].homeTeam.name +"\n" +JSON.parse(body)[ai].homeGoals +" - "
@@ -2603,7 +2611,9 @@ function thaileaguePrematches(sender, text){
            let time = JSON.stringify(JSON.parse(body)[ai].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
-           var date = new Date(num).toUTCString();
+           var realdate = new Date(num);
+           realdate.setHours(realdate.getHours() +7);
+           var date = new Date(realdate).toUTCString();
                   if (JSON.parse(body)[ai].homeTeam.name == text ||JSON.parse(body)[ai].awayTeam.name == text ) {
                     if (JSON.parse(body)[ai].outcome !== null) {
                       sendTextMessage(sender, JSON.parse(body)[ai].homeTeam.name +"\n" +JSON.parse(body)[ai].homeGoals +" - "
@@ -2646,7 +2656,9 @@ function premierleagueNextmatches(sender, text){
            let time = JSON.stringify(JSON.parse(body)[i].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
-           var date = new Date(num).toUTCString();
+           var realdate = new Date(num);
+           realdate.setHours(realdate.getHours() +7);
+           var date = new Date(realdate).toUTCString();
                   if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
                     if (JSON.parse(body)[i].outcome === null) {
                       sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
@@ -2687,7 +2699,9 @@ function laligaNextmatches(sender, text){
            let time = JSON.stringify(JSON.parse(body)[i].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
-           var date = new Date(num).toUTCString();
+           var realdate = new Date(num);
+           realdate.setHours(realdate.getHours() +7);
+           var date = new Date(realdate).toUTCString();
                   if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
                     if (JSON.parse(body)[i].outcome === null) {
                       sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
@@ -2728,7 +2742,9 @@ function bundesligaNextmatches(sender, text){
            let time = JSON.stringify(JSON.parse(body)[i].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
-           var date = new Date(num).toUTCString();
+           var realdate = new Date(num);
+           realdate.setHours(realdate.getHours() +7);
+           var date = new Date(realdate).toUTCString();
                   if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
                     if (JSON.parse(body)[i].outcome === null) {
                       sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
@@ -2769,7 +2785,9 @@ function serieaNextmatches(sender, text){
            let time = JSON.stringify(JSON.parse(body)[i].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
-           var date = new Date(num).toUTCString();
+           var realdate = new Date(num);
+           realdate.setHours(realdate.getHours() +7);
+           var date = new Date(realdate).toUTCString();
                   if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
                     if (JSON.parse(body)[i].outcome === null) {
                       sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
@@ -2810,7 +2828,9 @@ function ligue1Nextmatches(sender, text){
            let time = JSON.stringify(JSON.parse(body)[i].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
-           var date = new Date(num).toUTCString();
+           var realdate = new Date(num);
+           realdate.setHours(realdate.getHours() +7);
+           var date = new Date(realdate).toUTCString();
                   if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
                     if (JSON.parse(body)[i].outcome === null) {
                       sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
@@ -2851,7 +2871,9 @@ function thaileagueNextmatches(sender, text){
            let time = JSON.stringify(JSON.parse(body)[i].start)
            var str = time;
            var num = parseInt(str.replace(/[^0-9]/g, time));
-           var date = new Date(num).toUTCString();
+           var realdate = new Date(num);
+           realdate.setHours(realdate.getHours() +7);
+           var date = new Date(realdate).toUTCString();
                   if (JSON.parse(body)[i].homeTeam.name == text ||JSON.parse(body)[i].awayTeam.name == text ) {
                     if (JSON.parse(body)[i].outcome === null) {
                       sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
@@ -2897,7 +2919,9 @@ function premierleaguematchesAll(sender, text){
               let time = JSON.stringify(JSON.parse(body)[i].start)
               var str = time;
               var num = parseInt(str.replace(/[^0-9]/g, time));
-              var date = new Date(num).toUTCString();
+              var realdate = new Date(num);
+              realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
 
         if (JSON.parse(body)[i].homeTeam.name == text ) {
              if (JSON.parse(body)[i].outcome !== null) {
@@ -2956,7 +2980,9 @@ function laligamatchesAll(sender, text){
               let time = JSON.stringify(JSON.parse(body)[i].start)
               var str = time;
               var num = parseInt(str.replace(/[^0-9]/g, time));
-              var date = new Date(num).toUTCString();
+              var realdate = new Date(num);
+              realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
 
         if (JSON.parse(body)[i].homeTeam.name == text ) {
              if (JSON.parse(body)[i].outcome !== null) {
@@ -3015,7 +3041,9 @@ function bundesligamatchesAll(sender, text){
               let time = JSON.stringify(JSON.parse(body)[i].start)
               var str = time;
               var num = parseInt(str.replace(/[^0-9]/g, time));
-              var date = new Date(num).toUTCString();
+              var realdate = new Date(num);
+              realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
 
         if (JSON.parse(body)[i].homeTeam.name == text ) {
              if (JSON.parse(body)[i].outcome !== null) {
@@ -3074,7 +3102,9 @@ function serieamatchesAll(sender, text){
               let time = JSON.stringify(JSON.parse(body)[i].start)
               var str = time;
               var num = parseInt(str.replace(/[^0-9]/g, time));
-              var date = new Date(num).toUTCString();
+              var realdate = new Date(num);
+              realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
 
         if (JSON.parse(body)[i].homeTeam.name == text ) {
              if (JSON.parse(body)[i].outcome !== null) {
@@ -3133,7 +3163,9 @@ function ligue1matchesAll(sender, text){
               let time = JSON.stringify(JSON.parse(body)[i].start)
               var str = time;
               var num = parseInt(str.replace(/[^0-9]/g, time));
-              var date = new Date(num).toUTCString();
+              var realdate = new Date(num);
+              realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
 
         if (JSON.parse(body)[i].homeTeam.name == text ) {
              if (JSON.parse(body)[i].outcome !== null) {
@@ -3192,7 +3224,9 @@ function thaileaguematchesAll(sender, text){
               let time = JSON.stringify(JSON.parse(body)[i].start)
               var str = time;
               var num = parseInt(str.replace(/[^0-9]/g, time));
-              var date = new Date(num).toUTCString();
+              var realdate = new Date(num);
+              realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
 
         if (JSON.parse(body)[i].homeTeam.name == text ) {
              if (JSON.parse(body)[i].outcome !== null) {
@@ -3230,306 +3264,6 @@ function thaileaguematchesAll(sender, text){
 }
 
 
-//matches not start yet
-function premierleaguematchesYet(sender, text){
-
-
-  var options = {
-    url: 'https://api.crowdscores.com/v1/matches?competition_id=2',
-    headers: {
-      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
-    }
-  }
-
-    function callback (error, response, body) {
-
-
-       if (!error && response.statusCode === 200) {
-
-         for (var i = 0; i < JSON.parse(body).length; i++) {
-
-            doSetTimeout(i);
-  }
-            function doSetTimeout(i) {
-  setTimeout(function() {
-    let time = JSON.stringify(JSON.parse(body)[i].start)
-    var str = time;
-    var num = parseInt(str.replace(/[^0-9]/g, time));
-    var date = new Date(num).toUTCString();
-
-
-    if (JSON.parse(body)[i].homeTeam.name == text ) {
-      if (JSON.parse(body)[i].outcome === null) {
-        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-      +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
-    }
-
-  }
-  if (JSON.parse(body)[i].awayTeam.name == text ) {
-      if (JSON.parse(body)[i].outcome === null) {
-        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-      +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+  date +" +7"  )
-    }
-
-    }
- }, i*110);
-                        }
-    }
-  }
-
-  request(options, callback)
-
-}
-
-function laligamatchesYet(sender, text){
-
-
-  var options = {
-    url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
-    headers: {
-      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
-    }
-  }
-
-    function callback (error, response, body) {
-
-
-       if (!error && response.statusCode === 200) {
-
-         for (var i = 0; i < JSON.parse(body).length; i++) {
-
-            doSetTimeout(i);
-  }
-            function doSetTimeout(i) {
-  setTimeout(function() {
-    let time = JSON.stringify(JSON.parse(body)[i].start)
-    var str = time;
-    var num = parseInt(str.replace(/[^0-9]/g, time));
-    var date = new Date(num).toUTCString();
-
-
-    if (JSON.parse(body)[i].homeTeam.name == text ) {
-      if (JSON.parse(body)[i].outcome === null) {
-        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-      +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
-    }
-
-  }
-  if (JSON.parse(body)[i].awayTeam.name == text ) {
-      if (JSON.parse(body)[i].outcome === null) {
-        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-      +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+  date +" +7"  )
-    }
-
-    }
- }, i*110);
-                        }
-    }
-  }
-
-  request(options, callback)
-
-}
-
-function bundesligamatchesYet(sender, text){
-
-
-  var options = {
-    url: 'https://api.crowdscores.com/v1/matches?competition_id=48',
-    headers: {
-      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
-    }
-  }
-
-    function callback (error, response, body) {
-
-
-       if (!error && response.statusCode === 200) {
-
-         for (var i = 0; i < JSON.parse(body).length; i++) {
-
-            doSetTimeout(i);
-  }
-            function doSetTimeout(i) {
-  setTimeout(function() {
-    let time = JSON.stringify(JSON.parse(body)[i].start)
-    var str = time;
-    var num = parseInt(str.replace(/[^0-9]/g, time));
-    var date = new Date(num).toUTCString();
-
-
-    if (JSON.parse(body)[i].homeTeam.name == text ) {
-      if (JSON.parse(body)[i].outcome === null) {
-        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-      +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
-    }
-
-  }
-  if (JSON.parse(body)[i].awayTeam.name == text ) {
-      if (JSON.parse(body)[i].outcome === null) {
-        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-      +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+  date +" +7"  )
-    }
-
-    }
- }, i*110);
-                        }
-    }
-  }
-
-  request(options, callback)
-
-}
-
-function serieamatchesYet(sender, text){
-
-
-  var options = {
-    url: 'https://api.crowdscores.com/v1/matches?competition_id=49',
-    headers: {
-      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
-    }
-  }
-
-    function callback (error, response, body) {
-
-
-       if (!error && response.statusCode === 200) {
-
-         for (var i = 0; i < JSON.parse(body).length; i++) {
-
-            doSetTimeout(i);
-  }
-            function doSetTimeout(i) {
-  setTimeout(function() {
-    let time = JSON.stringify(JSON.parse(body)[i].start)
-    var str = time;
-    var num = parseInt(str.replace(/[^0-9]/g, time));
-    var date = new Date(num).toUTCString();
-
-
-    if (JSON.parse(body)[i].homeTeam.name == text ) {
-      if (JSON.parse(body)[i].outcome === null) {
-        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-      +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
-    }
-
-  }
-  if (JSON.parse(body)[i].awayTeam.name == text ) {
-      if (JSON.parse(body)[i].outcome === null) {
-        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-      +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+  date +" +7"  )
-    }
-
-    }
- }, i*110);
-                        }
-    }
-  }
-
-  request(options, callback)
-
-}
-
-function ligue1matchesYet(sender, text){
-
-
-  var options = {
-    url: 'https://api.crowdscores.com/v1/matches?competition_id=47',
-    headers: {
-      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
-    }
-  }
-
-    function callback (error, response, body) {
-
-
-       if (!error && response.statusCode === 200) {
-
-         for (var i = 0; i < JSON.parse(body).length; i++) {
-
-            doSetTimeout(i);
-  }
-            function doSetTimeout(i) {
-  setTimeout(function() {
-    let time = JSON.stringify(JSON.parse(body)[i].start)
-    var str = time;
-    var num = parseInt(str.replace(/[^0-9]/g, time));
-    var date = new Date(num).toUTCString();
-
-
-    if (JSON.parse(body)[i].homeTeam.name == text ) {
-      if (JSON.parse(body)[i].outcome === null) {
-        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-      +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
-    }
-
-  }
-  if (JSON.parse(body)[i].awayTeam.name == text ) {
-      if (JSON.parse(body)[i].outcome === null) {
-        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-      +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+  date +" +7"  )
-    }
-
-    }
- }, i*110);
-                        }
-    }
-  }
-
-  request(options, callback)
-
-}
-
-function thaileaguematchesYet(sender, text){
-
-
-  var options = {
-    url: 'https://api.crowdscores.com/v1/matches?competition_id=151',
-    headers: {
-      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
-    }
-  }
-
-    function callback (error, response, body) {
-
-
-       if (!error && response.statusCode === 200) {
-
-         for (var i = 0; i < JSON.parse(body).length; i++) {
-
-            doSetTimeout(i);
-  }
-            function doSetTimeout(i) {
-  setTimeout(function() {
-    let time = JSON.stringify(JSON.parse(body)[i].start)
-    var str = time;
-    var num = parseInt(str.replace(/[^0-9]/g, time));
-    var date = new Date(num).toUTCString();
-
-
-    if (JSON.parse(body)[i].homeTeam.name == text ) {
-      if (JSON.parse(body)[i].outcome === null) {
-        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-      +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
-    }
-
-  }
-  if (JSON.parse(body)[i].awayTeam.name == text ) {
-      if (JSON.parse(body)[i].outcome === null) {
-        sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-      +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+  date +" +7"  )
-    }
-
-    }
- }, i*110);
-                        }
-    }
-  }
-
-  request(options, callback)
-
-}
 
 
 //tables
