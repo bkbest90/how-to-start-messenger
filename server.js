@@ -64,11 +64,13 @@ app.post('/webhook/', function (req, res) {
       var payloadtext = event.postback.payload;
       if (payloadtext === 'USER_DEFINED_PAYLOAD') {
 
-   sendTextMessage(sender, '**คำสั่งทั้งหมดของเรา**\nเมนูหลัก = กลับมาที่เมนูหลัก\nบอลวันนี้ = จะแสดงการแข่งขันของวันนี้\nบอลพรุ่งนี้ = จะแสดงการแข่งขันของวันพรุ่งนี้\nคำสั่ง = แสดงคำสั่งทั้งหมดอีกครั้ง')
-
+    setTimeout(function () {
+        sendGenericMessage (sender)
+       }, 10);
         setTimeout(function () {
-          sendGenericMessage (sender)
-        }, 10);
+          sendTextMessage(sender, '**คำสั่งทั้งหมดของเรา**\nเมนูหลัก = กลับมาที่เมนูหลัก\nบอลวันนี้ = จะแสดงการแข่งขันของวันนี้\nบอลพรุ่งนี้ = จะแสดงการแข่งขันของวันพรุ่งนี้\nคำสั่ง = แสดงคำสั่งทั้งหมดอีกครั้ง')
+
+        }, 1000);
 
       }
       if (payloadtext === 'premierleaguetable') {
