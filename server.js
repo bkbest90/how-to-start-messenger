@@ -68,7 +68,7 @@ app.post('/webhook/', function (req, res) {
       }
       if (text === 'asdf') {
         var today = new Date();
-  today.setHours(today.getHours() );
+  today.setHours(today.getHours() +7);
     console.log(today);
       }
     }
