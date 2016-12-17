@@ -2427,7 +2427,15 @@ function premierleagueToday(sender, text){
               var num = parseInt(str.replace(/[^0-9]/g, time));
               var realdate = new Date(num);
               realdate.setHours(realdate.getHours() +7);
-              var date = new Date(realdate).toUTCString();
+
+              var date = new Date(realdate);
+
+              var monthapi = date.getUTCMonth(); //months from 1-12
+              var dayapi = date.getUTCDate();
+              var yearapi = date.getUTCFullYear();
+              var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+
+
 
               var dateObj = new Date();
                var month = dateObj.getUTCMonth() + 1; //months from 1-12
@@ -2435,10 +2443,6 @@ function premierleagueToday(sender, text){
                var year = dateObj.getUTCFullYear();
               var newdate = year + "/" + month + "/" + day;
 
-              var monthapi = date.getUTCMonth(); //months from 1-12
-              var dayapi = date.getUTCDate();
-              var yearapi = date.getUTCFullYear();
-              var dateapi = year + "/" + month + "/" + day;
 
      if (dateapi == newdate) {
 
