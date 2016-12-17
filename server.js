@@ -69,7 +69,7 @@ app.post('/webhook/', function (req, res) {
       if (text === 'asdf') {
         var today = new Date();
   today.setHours(today.getHours() +7);
-  dateFormat(today , "dddd, mmmm dS, yyyy, h:MM:ss TT");
+  dateFormat(new Date(today), "dddd, mmmm dS, yyyy, h:MM:ss TT");
     console.log(today);
       }
     }
