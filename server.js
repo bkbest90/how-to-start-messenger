@@ -2449,7 +2449,7 @@ function premierleagueToday(sender, text){
      if (dateapi === newdate) {
 
         console.log(dateapi +" api -  today "+ newdate);
-        if (JSON.parse(body)[i].homeTeam.name == text ) {
+
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
                 +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
@@ -2460,21 +2460,6 @@ function premierleagueToday(sender, text){
                      }
 
 
-
-             }
-           if (JSON.parse(body)[i].awayTeam.name == text ) {
-                if (JSON.parse(body)[i].outcome !== null) {
-                     sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
-                   +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
-                  }
-               if (JSON.parse(body)[i].outcome == null ) {
-                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
-                 +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
-            }
-
-
-
-         }
          }
             }, i*110);
                           }
