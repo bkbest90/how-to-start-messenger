@@ -96,8 +96,8 @@ app.post('/webhook/', function (req, res) {
           sendGenericMessage (sender)
         }, 10);
         setTimeout(function () {
-          sendTextMessage(sender, '***พิมพ์ เมนูหลัก หรือ mainmenu เพื่อกลับมาที่เมนูนี้')
-        }, 150);
+          sendTextMessage(sender, '***พิมพ์ "คำสั่ง"  เพื่อดูคำสั่งทั้งหมด***')
+        }, 600);
       }
       if (payloadtext === 'premierleaguetable') {
         premierleaguetable(sender)
@@ -2435,7 +2435,7 @@ function premierleagueToday(sender, text){
                var year = dateObj.getUTCFullYear();
               var newdate = year + "/" + month + "/" + day;
 
-              var monthapi = date.getUTCMonth() + 1; //months from 1-12
+              var monthapi = date.getUTCMonth(); //months from 1-12
               var dayapi = date.getUTCDate();
               var yearapi = date.getUTCFullYear();
               var dateapi = year + "/" + month + "/" + day;
