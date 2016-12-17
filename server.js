@@ -80,7 +80,7 @@ app.post('/webhook/', function (req, res) {
           sendGenericMessage (sender)
         }, 10);
         setTimeout(function () {
-          sendTextMessage(sender, '***พิมพ์ เมนูหลัก เพื่อกลับมาที่เมนูนี้')
+          sendTextMessage(sender, '***พิมพ์ เมนูหลัก หรือ mainmenu เพื่อกลับมาที่เมนูนี้')
         }, 150);
       }
       if (payloadtext === 'premierleaguetable') {
@@ -142,7 +142,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Burnley";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousLeicester City') {
@@ -162,7 +162,7 @@ app.post('/webhook/', function (req, res) {
         sendTextMessage(sender, 'กรุณารอสักครู่..')
 
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousManchester United') {
@@ -181,7 +181,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Manchester United";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousWatford') {
@@ -200,7 +200,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Watford";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousLiverpool') {
@@ -219,7 +219,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Liverpool";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousSouthampton') {
@@ -238,7 +238,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Southampton";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousChelsea') {
@@ -257,7 +257,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Chelsea";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousStoke City') {
@@ -276,7 +276,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Stoke City";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousMiddlesbrough') {
@@ -295,7 +295,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Middlesbrough";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousWest Bromwich Albion') {
@@ -314,7 +314,7 @@ app.post('/webhook/', function (req, res) {
         let text = "West Bromwich Albion";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousEverton') {
@@ -333,7 +333,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Everton";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousTottenham Hotspur') {
@@ -352,7 +352,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Tottenham Hotspur";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousBournemouth') {
@@ -371,7 +371,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Bournemouth";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousSwansea City') {
@@ -390,7 +390,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Swansea City";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousCrystal Palace') {
@@ -409,7 +409,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Crystal Palace";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousArsenal') {
@@ -428,7 +428,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Arsenal";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousManchester City') {
@@ -447,7 +447,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Manchester City";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousHull City') {
@@ -466,7 +466,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Hull City";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousSunderland') {
@@ -485,7 +485,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Sunderland";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousWest Ham United') {
@@ -504,7 +504,7 @@ app.post('/webhook/', function (req, res) {
         let text = "West Ham United";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  premierleaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousAthletic Bilbao') {
@@ -523,7 +523,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Athletic Bilbao";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousReal Betis') {
@@ -542,7 +542,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Real Betis";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousValencia') {
@@ -561,7 +561,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Valencia";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousReal Sociedad') {
@@ -580,7 +580,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Real Sociedad";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousDeportivo Alavés') {
@@ -599,7 +599,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Deportivo Alavés";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousCelta de Vigo') {
@@ -618,7 +618,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Celta de Vigo";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousMálaga') {
@@ -637,7 +637,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Málaga";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousOsasuna') {
@@ -656,7 +656,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Osasuna";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousGranada') {
@@ -675,7 +675,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Granada";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousSevilla') {
@@ -694,7 +694,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Sevilla";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousVillarreal') {
@@ -713,7 +713,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Villarreal";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousSporting Gijón') {
@@ -732,7 +732,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Sporting Gijón";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousLas Palmas') {
@@ -751,7 +751,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Las Palmas";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousLeganés') {
@@ -770,7 +770,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Leganés";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousEspanyol') {
@@ -789,7 +789,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Espanyol";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousEibar') {
@@ -808,7 +808,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Eibar";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousReal Madrid') {
@@ -827,7 +827,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Real Madrid";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousDeportivo de La Coruña') {
@@ -846,7 +846,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Deportivo de La Coruña";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousBarcelona') {
@@ -865,7 +865,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Barcelona";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousAtlético Madrid') {
@@ -884,7 +884,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Atlético Madrid";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  laligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousBayern Munich') {
@@ -903,7 +903,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Bayern Munich";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousEintracht Frankfurt') {
@@ -922,7 +922,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Eintracht Frankfurt";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousBorussia Dortmund') {
@@ -941,7 +941,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Borussia Dortmund";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousSchalke 04') {
@@ -960,7 +960,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Schalke 04";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousMainz 05') {
@@ -979,7 +979,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Mainz 05";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousHamburg') {
@@ -998,7 +998,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Hamburg";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousHoffenheim') {
@@ -1017,7 +1017,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Hoffenheim";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() { bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousWerder Bremen') {
@@ -1036,7 +1036,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Werder Bremen";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousAugsburg') {
@@ -1055,7 +1055,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Augsburg";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousDarmstadt 98') {
@@ -1074,7 +1074,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Darmstadt 98";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousHertha Berlin') {
@@ -1093,7 +1093,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Hertha Berlin";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousWolfsburg') {
@@ -1112,7 +1112,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Wolfsburg";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousBorussia Mönchengladbach') {
@@ -1131,7 +1131,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Borussia Mönchengladbach";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousBayer Leverkusen') {
@@ -1150,7 +1150,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Bayer Leverkusen";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousIngolstadt 04') {
@@ -1169,7 +1169,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Ingolstadt 04";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousLeipzig') {
@@ -1188,7 +1188,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Leipzig";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousFreiburg') {
@@ -1207,7 +1207,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Freiburg";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousCologne') {
@@ -1226,7 +1226,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Cologne";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  bundesligamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousTorino') {
@@ -1245,7 +1245,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Torino";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousLazio') {
@@ -1264,7 +1264,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Lazio";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousBologna') {
@@ -1283,7 +1283,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Bologna";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousSassuolo') {
@@ -1302,7 +1302,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Sassuolo";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousNapoli') {
@@ -1321,7 +1321,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Napoli";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousPalermo') {
@@ -1340,7 +1340,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Palermo";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousUdinese') {
@@ -1359,7 +1359,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Udinese";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousFiorentina') {
@@ -1378,7 +1378,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Fiorentina";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousGenoa') {
@@ -1397,7 +1397,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Genoa";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousCrotone') {
@@ -1416,7 +1416,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Crotone";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousMilan') {
@@ -1435,7 +1435,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Milan";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousPescara') {
@@ -1454,7 +1454,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Pescara";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousSampdoria') {
@@ -1473,7 +1473,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Sampdoria";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousEmpoli') {
@@ -1492,7 +1492,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Empoli";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousCagliari') {
@@ -1511,7 +1511,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Cagliari";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousAtalanta') {
@@ -1530,7 +1530,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Atalanta";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousChievoVerona') {
@@ -1549,7 +1549,7 @@ app.post('/webhook/', function (req, res) {
         let text = "ChievoVerona";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousJuventus') {
@@ -1568,7 +1568,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Juventus";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousRoma') {
@@ -1587,7 +1587,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Roma";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousInter Milan') {
@@ -1606,7 +1606,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Inter Milan";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  serieamatchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousLyon') {
@@ -1625,7 +1625,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Lyon";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousMontpellier') {
@@ -1644,7 +1644,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Montpellier";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousDijon') {
@@ -1663,7 +1663,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Dijon";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousParis Saint Germain') {
@@ -1682,7 +1682,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Paris Saint Germain";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousNancy') {
@@ -1701,7 +1701,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Nancy";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousMarseille') {
@@ -1720,7 +1720,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Marseille";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousLille') {
@@ -1739,7 +1739,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Lille";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousStade Rennais') {
@@ -1758,7 +1758,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Stade Rennais";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousMonaco') {
@@ -1777,7 +1777,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Monaco";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousBordeaux') {
@@ -1796,7 +1796,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Bordeaux";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousStade Malherbe Caen') {
@@ -1815,7 +1815,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Stade Malherbe Caen";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousMetz') {
@@ -1834,7 +1834,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Metz";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousToulouse') {
@@ -1853,7 +1853,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Toulouse";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousNantes') {
@@ -1872,7 +1872,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Nantes";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousSaint Étienne') {
@@ -1891,7 +1891,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Saint Étienne";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousNice') {
@@ -1910,7 +1910,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Nice";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousAngers') {
@@ -1929,7 +1929,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Angers";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousBastia') {
@@ -1948,7 +1948,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Bastia";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousGuingamp') {
@@ -1967,7 +1967,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Guingamp";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousLorient') {
@@ -1986,7 +1986,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Lorient";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  ligue1matchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousChiangrai United') {
@@ -2005,7 +2005,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Chiangrai United";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousChonburi') {
@@ -2024,7 +2024,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Chonburi";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousMuangthong United') {
@@ -2043,7 +2043,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Muangthong United";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousNakhon Ratchasima') {
@@ -2062,7 +2062,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Nakhon Ratchasima";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousRoyal Thai Navy') {
@@ -2081,7 +2081,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Royal Thai Navy";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousOsotspa Saraburi') {
@@ -2100,7 +2100,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Osotspa Saraburi";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousRatchaburi Mitr Phol') {
@@ -2119,7 +2119,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Ratchaburi Mitr Phol";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousSisaket') {
@@ -2138,7 +2138,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Sisaket";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousSuphanburi') {
@@ -2157,7 +2157,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Suphanburi";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousPattaya United') {
@@ -2176,7 +2176,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Pattaya United";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousBBCU') {
@@ -2195,7 +2195,7 @@ app.post('/webhook/', function (req, res) {
         let text = "BBCU";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousArmy United') {
@@ -2214,7 +2214,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Army United";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousBangkok Glass') {
@@ -2233,7 +2233,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Bangkok Glass";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousBangkok United') {
@@ -2252,7 +2252,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Bangkok United";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousBEC Tero Sasana') {
@@ -2271,7 +2271,7 @@ app.post('/webhook/', function (req, res) {
         let text = "BEC Tero Sasana";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousSukhothai') {
@@ -2290,7 +2290,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Sukhothai";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousBuriram United') {
@@ -2309,7 +2309,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Buriram United";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
       if (payloadtext === 'matchpreviousChainat Hornbill') {
@@ -2328,7 +2328,7 @@ app.post('/webhook/', function (req, res) {
         let text = "Chainat Hornbill";
         sendTextMessage(sender, 'กรุณารอสักครู่..')
         setTimeout(function() {  thaileaguematchesAll(sender, text)}, 100);
-        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 6000);
+        setTimeout(function() {  sendTextMessage(sender, 'หมายเหตุ** วันเวลานี้ GMT+0 ต้องบวกอีก 7 ชม.จึงจะเป็นเวลาไทย ')}, 0);
       }
 
 
@@ -2561,7 +2561,7 @@ function ligue1Prematches(sender, text){
            var date = new Date(num).toUTCString();
                   if (JSON.parse(body)[ai].homeTeam.name == text ||JSON.parse(body)[ai].awayTeam.name == text ) {
                     if (JSON.parse(body)[ai].outcome !== null) {
-                      sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[ai].homeGoals +" - "
+                      sendTextMessage(sender, JSON.parse(body)[ai].homeTeam.name +"\n" +JSON.parse(body)[ai].homeGoals +" - "
                        +JSON.parse(body)[ai].awayGoals+"\n"+JSON.parse(body)[ai].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +0"  )
                     b = 5;
 
@@ -5653,7 +5653,7 @@ function ligue1team2(sender){
               'template_type': 'generic',
               'elements': [{
                 'title': '11  '+JSON.parse(body)[10].name,
-                'image_url': 'http://www.logo-world.net/wp-content/uploads/France/Ligue%201/SM-Caen-2016-877.png',
+                'image_url': 'http://cdn.playbuzz.com/cdn/25498500-8054-410a-82bf-b68a2447ce6e/8a223544-5f0c-40b0-8271-946769e3d514.jpg',
                 'subtitle':"Stadium: "+JSON.parse(body)[10].defaultHomeVenue.name ,
                 'buttons': [{
                   'type': 'postback',
@@ -6236,6 +6236,7 @@ function thaileagueteam2(sender){
 }
 
 
+
 function sendGenericMessage (sender) {
   let messageData = {
     'attachment': {
@@ -6245,35 +6246,35 @@ function sendGenericMessage (sender) {
         'elements': [{
           'title': 'Premier league',
           'subtitle': 'England',
-          'image_url': 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/02/09/09/premier-league.jpg',
+          'image_url': 'https://lh3.googleusercontent.com/-EQPiqGtIjK0/WCdAucVWzLI/AAAAAAAAITg/vIAkCtWB5nQ0DPGrFJTQ_8EmT0TReQWCQCJoC/w800-h800/Premier_League_Rebrands_DesignStudio_02.jpg',
           'buttons': [{
             'type': 'web_url',
             'url': 'https://www.premierleague.com',
-            'title': 'Web'
+            'title': 'เว็บไซต์'
           }, {
             'type': 'postback',
-            'title': 'Table',
+            'title': 'ตารางคะแนน',
             'payload': 'premierleaguetable'
           }, {
             'type': 'postback',
-            'title': 'Team',
+            'title': 'ทีม',
             'payload': 'premierleagueteam'
           }]
         }, {
         'title': 'La liga',
         'subtitle': 'Spain',
-        'image_url': 'https://www.bbva.com/en/data/8663082015/logo-liga-bbva-azul.jpg',
+        'image_url': 'http://worldsoccertalk.com/wp-content/uploads/2015/06/la-liga.jpg',
         'buttons': [{
           'type': 'web_url',
           'url': 'http://www.laliga.es/en',
-          'title': 'Web'
+          'title': 'เว็บไซต์'
         }, {
           'type': 'postback',
-          'title': 'Table',
+          'title': 'ตารางคะแนน',
           'payload': 'laligatable'
           }, {
             'type': 'postback',
-            'title': 'Team',
+            'title': 'ทีม',
             'payload': 'laligateam'
             }]
         }, {
@@ -6283,14 +6284,14 @@ function sendGenericMessage (sender) {
         'buttons': [{
           'type': 'web_url',
           'url': 'http://www.bundesliga.com/en/',
-          'title': 'Web'
+          'title': 'เว็บไซต์'
         }, {
           'type': 'postback',
-          'title': 'Table',
+          'title': 'ตารางคะแนน',
           'payload': 'bundesligatable'
           }, {
             'type': 'postback',
-            'title': 'Team',
+            'title': 'ทีม',
             'payload': 'bundesligateam'
             }]
         }, {
@@ -6300,14 +6301,14 @@ function sendGenericMessage (sender) {
         'buttons': [{
           'type': 'web_url',
           'url': 'http://www.legaseriea.it/en/',
-          'title': 'Web'
+          'title': 'เว็บไซต์'
         }, {
           'type': 'postback',
-          'title': 'Table',
+          'title': 'ตารางคะแนน',
           'payload': 'serieatable'
           }, {
             'type': 'postback',
-            'title': 'Team',
+            'title': 'ทีม',
             'payload': 'serieateam'
             }]
         }, {
@@ -6317,14 +6318,14 @@ function sendGenericMessage (sender) {
         'buttons': [{
           'type': 'web_url',
           'url': 'http://www.ligue1.com/',
-          'title': 'Web'
+          'title': 'เว็บไซต์'
         }, {
           'type': 'postback',
-          'title': 'Table',
+          'title': 'ตารางคะแนน',
           'payload': 'ligue1table'
           }, {
             'type': 'postback',
-            'title': 'Team',
+            'title': 'ทีม',
             'payload': 'ligue1team'
             }]
         }, {
@@ -6334,14 +6335,14 @@ function sendGenericMessage (sender) {
         'buttons': [{
           'type': 'web_url',
           'url': 'http://www.thaileague.co.th/official/',
-          'title': 'Web'
+          'title': 'เว็บไซต์'
         }, {
           'type': 'postback',
-          'title': 'Table',
+          'title': 'ตารางคะแนน',
           'payload': 'thaileaguetable'
           }, {
             'type': 'postback',
-            'title': 'Team',
+            'title': 'ทีม',
             'payload': 'thaileagueteam'
             }]
         }]
