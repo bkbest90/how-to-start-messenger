@@ -2430,7 +2430,7 @@ function premierleagueToday(sender, text){
 
               var date = new Date(realdate);
 
-              var monthapi = date.getUTCMonth(); //months from 1-12
+              var monthapi = date.getUTCMonth()+1; //months from 1-12
               var dayapi = date.getUTCDate();
               var yearapi = date.getUTCFullYear();
               var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
