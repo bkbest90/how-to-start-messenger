@@ -92,12 +92,12 @@ app.post('/webhook/', function (req, res) {
       var payloadtext = event.postback.payload;
       if (payloadtext === 'USER_DEFINED_PAYLOAD') {
 
+         sendTextMessage(sender, '**คำสั่งทั้งหมดของเรา**\nบอลวันนี้ = จะแสดงการแข่งขันของวันนี้\nบอลพรุ่งนี้ = จะแสดงการแข่งขันของวันพรุ่งนี้\nคำสั่ง = แสดงคำสั่งทั้งหมดอีกครั้ง')
+
         setTimeout(function () {
           sendGenericMessage (sender)
         }, 10);
-        setTimeout(function () {
-          sendTextMessage(sender, '***พิมพ์ "คำสั่ง"  เพื่อดูคำสั่งทั้งหมด***')
-        }, 600);
+
       }
       if (payloadtext === 'premierleaguetable') {
         premierleaguetable(sender)
@@ -2390,19 +2390,6 @@ function sendTextMessage (sender, text) {
 
 //today
 
-/*
-var dateObj = new Date();
- var month = dateObj.getUTCMonth() + 1; //months from 1-12
-var day = dateObj.getUTCDate();
- var year = dateObj.getUTCFullYear();
-
-var newdate = year + "/" + month + "/" + day;
-
-var monthapi = date.getUTCMonth() + 1; //months from 1-12
-var dayapi = date.getUTCDate();
-var yearapi = date.getUTCFullYear();*/
-
-
 function premierleagueToday(sender, text){
   var options = {
     url: 'https://api.crowdscores.com/v1/matches?competition_id=2',
@@ -2414,7 +2401,7 @@ function premierleagueToday(sender, text){
 
 
        if (!error && response.statusCode === 200) {
-
+           sendTextMessage (sender, 'Premier league')
          for (var i = 0; i < JSON.parse(body).length; i++) {
 
             doSetTimeout(i);
@@ -2427,12 +2414,12 @@ function premierleagueToday(sender, text){
               var num = parseInt(str.replace(/[^0-9]/g, time));
               var realdate = new Date(num);
               realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
+              var cdate = new Date(realdate);
 
-              var date = new Date(realdate);
-
-              var monthapi = date.getUTCMonth()+1; //months from 1-12
-              var dayapi = date.getUTCDate();
-              var yearapi = date.getUTCFullYear();
+              var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+              var dayapi = cdate.getUTCDate();
+              var yearapi = cdate.getUTCFullYear();
               var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
 
 
@@ -2461,7 +2448,7 @@ function premierleagueToday(sender, text){
 
 
          }
-            }, i*110);
+       }, i*500);
                           }
                  }
             }
@@ -2470,8 +2457,340 @@ function premierleagueToday(sender, text){
 
 }
 
+function laligaToday(sender, text){
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=46',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+    function callback (error, response, body) {
 
 
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+             setTimeout(function() {
+
+              let time = JSON.stringify(JSON.parse(body)[i].start)
+              var str = time;
+              var num = parseInt(str.replace(/[^0-9]/g, time));
+              var realdate = new Date(num);
+              realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
+              var cdate = new Date(realdate);
+
+              var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+              var dayapi = cdate.getUTCDate();
+              var yearapi = cdate.getUTCFullYear();
+              var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+
+
+
+              var dateObj = new Date();
+               var month = dateObj.getUTCMonth() + 1; //months from 1-12
+              var day = dateObj.getUTCDate();
+               var year = dateObj.getUTCFullYear();
+              var newdate = year + "/" + month + "/" + day;
+
+
+
+
+     if (dateapi === newdate) {
+
+        console.log(dateapi +" api -  today "+ newdate);
+
+             if (JSON.parse(body)[i].outcome !== null) {
+               sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                 }
+               if (JSON.parse(body)[i].outcome == null) {
+              sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+                  +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                     }
+
+
+         }
+       }, i*500);
+                          }
+                 }
+            }
+
+  request(options, callback)
+
+}
+
+function bundesligaToday(sender, text){
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=48',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+             setTimeout(function() {
+
+              let time = JSON.stringify(JSON.parse(body)[i].start)
+              var str = time;
+              var num = parseInt(str.replace(/[^0-9]/g, time));
+              var realdate = new Date(num);
+              realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
+              var cdate = new Date(realdate);
+
+              var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+              var dayapi = cdate.getUTCDate();
+              var yearapi = cdate.getUTCFullYear();
+              var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+
+
+
+              var dateObj = new Date();
+               var month = dateObj.getUTCMonth() + 1; //months from 1-12
+              var day = dateObj.getUTCDate();
+               var year = dateObj.getUTCFullYear();
+              var newdate = year + "/" + month + "/" + day;
+
+
+
+
+     if (dateapi === newdate) {
+
+        console.log(dateapi +" api -  today "+ newdate);
+
+             if (JSON.parse(body)[i].outcome !== null) {
+               sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                 }
+               if (JSON.parse(body)[i].outcome == null) {
+              sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+                  +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                     }
+
+
+         }
+       }, i*500);
+                          }
+                 }
+            }
+
+  request(options, callback)
+
+}
+
+function serieaToday(sender, text){
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=49',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+             setTimeout(function() {
+
+              let time = JSON.stringify(JSON.parse(body)[i].start)
+              var str = time;
+              var num = parseInt(str.replace(/[^0-9]/g, time));
+              var realdate = new Date(num);
+              realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
+              var cdate = new Date(realdate);
+
+              var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+              var dayapi = cdate.getUTCDate();
+              var yearapi = cdate.getUTCFullYear();
+              var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+
+
+
+              var dateObj = new Date();
+               var month = dateObj.getUTCMonth() + 1; //months from 1-12
+              var day = dateObj.getUTCDate();
+               var year = dateObj.getUTCFullYear();
+              var newdate = year + "/" + month + "/" + day;
+
+
+
+
+     if (dateapi === newdate) {
+
+        console.log(dateapi +" api -  today "+ newdate);
+
+             if (JSON.parse(body)[i].outcome !== null) {
+               sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                 }
+               if (JSON.parse(body)[i].outcome == null) {
+              sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+                  +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                     }
+
+
+         }
+       }, i*500);
+                          }
+                 }
+            }
+
+  request(options, callback)
+
+}
+
+function ligue1Today(sender, text){
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=47',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+             setTimeout(function() {
+
+              let time = JSON.stringify(JSON.parse(body)[i].start)
+              var str = time;
+              var num = parseInt(str.replace(/[^0-9]/g, time));
+              var realdate = new Date(num);
+              realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
+              var cdate = new Date(realdate);
+
+              var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+              var dayapi = cdate.getUTCDate();
+              var yearapi = cdate.getUTCFullYear();
+              var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+
+
+
+              var dateObj = new Date();
+               var month = dateObj.getUTCMonth() + 1; //months from 1-12
+              var day = dateObj.getUTCDate();
+               var year = dateObj.getUTCFullYear();
+              var newdate = year + "/" + month + "/" + day;
+
+
+
+
+     if (dateapi === newdate) {
+
+        console.log(dateapi +" api -  today "+ newdate);
+
+             if (JSON.parse(body)[i].outcome !== null) {
+               sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                 }
+               if (JSON.parse(body)[i].outcome == null) {
+              sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+                  +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                     }
+
+
+         }
+       }, i*500);
+                          }
+                 }
+            }
+
+  request(options, callback)
+
+}
+
+function thaileagueToday(sender, text){
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=151',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+             setTimeout(function() {
+
+              let time = JSON.stringify(JSON.parse(body)[i].start)
+              var str = time;
+              var num = parseInt(str.replace(/[^0-9]/g, time));
+              var realdate = new Date(num);
+              realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
+              var cdate = new Date(realdate);
+
+              var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+              var dayapi = cdate.getUTCDate();
+              var yearapi = cdate.getUTCFullYear();
+              var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+
+
+
+              var dateObj = new Date();
+               var month = dateObj.getUTCMonth() + 1; //months from 1-12
+              var day = dateObj.getUTCDate();
+               var year = dateObj.getUTCFullYear();
+              var newdate = year + "/" + month + "/" + day;
+
+
+
+
+     if (dateapi === newdate) {
+
+        console.log(dateapi +" api -  today "+ newdate);
+
+             if (JSON.parse(body)[i].outcome !== null) {
+               sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                 }
+               if (JSON.parse(body)[i].outcome == null) {
+              sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+                  +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                     }
+
+
+         }
+       }, i*500);
+                          }
+                 }
+            }
+
+  request(options, callback)
+
+}
 
 
 
