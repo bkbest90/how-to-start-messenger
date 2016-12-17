@@ -67,7 +67,7 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'asdf') {
-        var today = new Date();
+/*        var today = new Date();
   today.setHours(today.getHours() +7);
    var realdate = new Date(today).toUTCString();
 
@@ -80,6 +80,11 @@ app.post('/webhook/', function (req, res) {
 
     var newdate = year + "/" + month + "/" + day;
        console.log(newdate);
+       */
+       premierleagueToday(sender)
+
+
+
       }
     }
     if (event.postback) {
@@ -2382,6 +2387,105 @@ function sendTextMessage (sender, text) {
     }
   })
 }
+
+//today
+
+/*
+var dateObj = new Date();
+ var month = dateObj.getUTCMonth() + 1; //months from 1-12
+var day = dateObj.getUTCDate();
+ var year = dateObj.getUTCFullYear();
+
+var newdate = year + "/" + month + "/" + day;
+
+var monthapi = date.getUTCMonth() + 1; //months from 1-12
+var dayapi = date.getUTCDate();
+var yearapi = date.getUTCFullYear();*/
+
+
+function premierleagueToday(sender, text){
+  var options = {
+    url: 'https://api.crowdscores.com/v1/matches?competition_id=2',
+    headers: {
+      'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
+    }
+  }
+    function callback (error, response, body) {
+
+
+       if (!error && response.statusCode === 200) {
+
+         for (var i = 0; i < JSON.parse(body).length; i++) {
+
+            doSetTimeout(i);
+  }
+            function doSetTimeout(i) {
+             setTimeout(function() {
+
+              let time = JSON.stringify(JSON.parse(body)[i].start)
+              var str = time;
+              var num = parseInt(str.replace(/[^0-9]/g, time));
+              var realdate = new Date(num);
+              realdate.setHours(realdate.getHours() +7);
+              var date = new Date(realdate).toUTCString();
+
+              var dateObj = new Date();
+               var month = dateObj.getUTCMonth() + 1; //months from 1-12
+              var day = dateObj.getUTCDate();
+               var year = dateObj.getUTCFullYear();
+              var newdate = year + "/" + month + "/" + day;
+
+              var monthapi = date.getUTCMonth() + 1; //months from 1-12
+              var dayapi = date.getUTCDate();
+              var yearapi = date.getUTCFullYear();
+              var dateapi = year + "/" + month + "/" + day;
+
+     if (dateapi == newdate) {
+
+
+        if (JSON.parse(body)[i].homeTeam.name == text ) {
+             if (JSON.parse(body)[i].outcome !== null) {
+               sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                 }
+               if (JSON.parse(body)[i].outcome == null) {
+              sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+                  +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                     }
+
+
+
+             }
+           if (JSON.parse(body)[i].awayTeam.name == text ) {
+                if (JSON.parse(body)[i].outcome !== null) {
+                     sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
+                   +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+                  }
+               if (JSON.parse(body)[i].outcome == null ) {
+                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
+                 +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
+            }
+
+
+
+         }
+         }
+            }, i*110);
+                          }
+                 }
+            }
+
+  request(options, callback)
+
+}
+
+
+
+
+
+
+
+
 
 //previous matches
 
