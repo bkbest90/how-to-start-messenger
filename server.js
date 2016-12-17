@@ -67,8 +67,9 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'asdf') {
-       let text = "Athletic Bilbao";
-        laligaPrematches(sender, text)
+        var today = new Date();
+  today.setHours(today.getHours() );
+    console.log(today);
       }
     }
     if (event.postback) {
