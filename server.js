@@ -2443,6 +2443,8 @@ function premierleagueToday(sender, text){
                var year = dateObj.getUTCFullYear();
               var newdate = year + "/" + month + "/" + day;
 
+console.log(dateapi +" api -  today "+ newdate);
+
 
      if (dateapi == newdate) {
 
