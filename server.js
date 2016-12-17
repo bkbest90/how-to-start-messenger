@@ -69,8 +69,8 @@ app.post('/webhook/', function (req, res) {
       if (text === 'asdf') {
         var today = new Date();
   today.setHours(today.getHours() +7);
-  dateFormat(new Date(today), "dddd, mmmm dS, yyyy, h:MM:ss TT");
-    console.log(today);
+   var realdate = new Date(today).toUTCString();
+    console.log(realdate);
       }
     }
     if (event.postback) {
