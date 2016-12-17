@@ -70,7 +70,16 @@ app.post('/webhook/', function (req, res) {
         var today = new Date();
   today.setHours(today.getHours() +7);
    var realdate = new Date(today).toUTCString();
-    console.log(realdate);
+
+
+
+     var dateObj = new Date();
+      var month = dateObj.getUTCMonth() + 1; //months from 1-12
+     var day = dateObj.getUTCDate();
+      var year = dateObj.getUTCFullYear();
+
+       newdate = year + "/" + month + "/" + day;
+       console.log(newdate);
       }
     }
     if (event.postback) {
