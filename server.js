@@ -30,13 +30,13 @@ app.post('/webhook/', function (req, res) {
         continue
       }
       if (text === 'บอลวันนี้'){
-        sendTextMessage(sender,'กรุณารอสักครู่...')
-        setTimeout(function () {  premierleagueToday(sender)  }, 10);
-        setTimeout(function () {  laligaToday(sender)  }, 10*1000);
-        setTimeout(function () {  bundesligaToday(sender)  }, 15*1000);
-        setTimeout(function () {  serieaToday(sender)  }, 20*1000);
-        setTimeout(function () {  ligue1Today(sender)  }, 25*1000);
-        setTimeout(function () {  thaileagueToday(sender)  }, 30*1000);
+        sendTextMessage(sender,'กรุณารอสักครู่.....')
+        setTimeout(function () {  premierleagueToday(sender)  }, 0);
+        setTimeout(function () {  laligaToday(sender)  }, 1000);
+        setTimeout(function () {  bundesligaToday(sender)  }, 2000);
+        setTimeout(function () {  serieaToday(sender)  }, 3000);
+        setTimeout(function () {  ligue1Today(sender)  }, 4000);
+        setTimeout(function () {  thaileagueToday(sender)  }, 5000);
       }
       if (text === 'คำสั่ง'){
         sendTextMessage(sender, '**คำสั่งทั้งหมดของเรา**\nเมนูหลัก = กลับมาที่เมนูหลัก\nบอลวันนี้ = จะแสดงการแข่งขันของวันนี้\nบอลพรุ่งนี้ = จะแสดงการแข่งขันของวันพรุ่งนี้\nคำสั่ง = แสดงคำสั่งทั้งหมดอีกครั้ง')
