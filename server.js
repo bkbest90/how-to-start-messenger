@@ -2852,11 +2852,10 @@ function bundesligaToday(sender){
            var dayapi = cdate.getUTCDate();
            var yearapi = cdate.getUTCFullYear();
            var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-              doSetTimeout(i,dateObj,cdate);
+              doSetTimeout(i,dateapi,newdate,date);
   }
-            function doSetTimeout(i,dateObj,cdate) {
+            function doSetTimeout(i,dateapi,newdate,date) {
              setTimeout(function() {
-                console.log(dateObj+" now - api "+cdate);
      if (dateapi === newdate) {
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
