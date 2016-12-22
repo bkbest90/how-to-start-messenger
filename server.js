@@ -53,7 +53,7 @@ app.post('/webhook/', function (req, res) {
       }
       if (text === 'asdf') {
 
-        sendButtonMessage(sender)
+        premierleagueTomorrow(sender)
 /*
        premierleagueTomorrow(sender)
 
@@ -64,6 +64,9 @@ app.post('/webhook/', function (req, res) {
     if (event.postback) {
       let text = JSON.stringify(event.postback)
       var payloadtext = event.postback.payload;
+      if (payloadtext=== 'futboltoday') {
+
+      }
       if (payloadtext === 'USER_DEFINED_PAYLOAD') {
 
          setTimeout(function () {
@@ -2369,6 +2372,7 @@ function premierleagueTomorrow(sender){
 
 
        if (!error && response.statusCode === 200) {
+          today()
 
          for (var i = 0; i < JSON.parse(body).length; i++) {
 
@@ -2376,25 +2380,21 @@ function premierleagueTomorrow(sender){
   }
             function doSetTimeout(i) {
              setTimeout(function() {
+               let time = JSON.stringify(JSON.parse(body)[i].start)
+               var str = time;
+               var num = parseInt(str.replace(/[^0-9]/g, time));
+               var realdate = new Date(num);
+               realdate.setHours(realdate.getHours() +7);
+               var date = new Date(realdate).toUTCString();
+               var cdate = new Date(realdate);
+
+               var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+               var dayapi = cdate.getUTCDate();
+               var yearapi = cdate.getUTCFullYear();
+               var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+
+
           if (dateapi === newdate) {
-            let time = JSON.stringify(JSON.parse(body)[i].start)
-            var str = time;
-            var num = parseInt(str.replace(/[^0-9]/g, time));
-            var realdate = new Date(num);
-            realdate.setHours(realdate.getHours() +7);
-            var date = new Date(realdate).toUTCString();
-            var cdate = new Date(realdate);
-
-            var monthapi = cdate.getUTCMonth()+1; //months from 1-12
-            var dayapi = cdate.getUTCDate();
-            var yearapi = cdate.getUTCFullYear();
-            var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-
-            var dateObj = new Date();
-             var month = dateObj.getUTCMonth() + 1; //months from 1-12
-            var day = dateObj.getUTCDate();
-             var year = dateObj.getUTCFullYear();
-            var newdate = year + "/" + month + "/" + (day+1);
 
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
@@ -6678,6 +6678,14 @@ function thaileagueteam2(sender){
 }
 
 
+function today() {
+  var dateObj = new Date();
+   var month = dateObj.getUTCMonth() + 1; //months from 1-12
+  var day = dateObj.getUTCDate();
+   var year = dateObj.getUTCFullYear();
+  var newdate = year + "/" + month + "/" + (day+1);
+  return newdate;
+}
 //menu
 function sendGenericMessage(sender) {
   let messageData = {
@@ -6818,16 +6826,16 @@ function sendButtonMessage(recipientId, messageText){
         type: "template",
         payload: {
           template_type: "button",
-          text : "หากคุณต้องการมองหาร้านอาหารในปราจีนบุรีอีก เพียงแค่ให้ผมช่วย",
+          text : "คุณอยากรู้อะไร",
             buttons: [{
               type: "postback",
-              title: "🍣 ค้นหาร้านอาหาร",
-              payload: "findRestaurant"
+              title: "บอลวันนี้",
+              payload: "futboltoday"
             },
             {
               type: "postback",
-              title: "❌ ไม่เป็นไร ขอบคุณ",
-              payload: "noThank"
+              title: "บอลพรุ่งนี้",
+              payload: "futboltomorrow"
             }]
         }
       }
