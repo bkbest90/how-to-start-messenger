@@ -64,7 +64,7 @@ app.post('/webhook/', function (req, res) {
            sendButtonMessage(recipientId, messageText)
       }
       if (payloadtext === 'USER_DEFINED_PAYLOAD') {
-
+         sendButtonMessage(recipientId, messageText)
          setTimeout(function () {
         sendGenericMessage (sender)
        }, 10);
@@ -6733,6 +6733,34 @@ function sendGenericMessage(sender) {
 }
 
 function sendButtonMessage(recipientId, messageText){
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "button",
+          text : "คุณอยากรู้อะไร",
+            buttons: [{
+              type: "postback",
+              title: "บอลวันนี้",
+              payload: "futboltoday"
+            },
+            {
+              type: "postback",
+              title: "บอลพรุ่งนี้",
+              payload: "futboltomorrow"
+            }]
+        }
+      }
+    }
+  };
+  callSendAPI(messageData);
+}
+
+function futboltoday(recipientId, messageText){
   var messageData = {
     recipient: {
       id: recipientId
