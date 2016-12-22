@@ -65,7 +65,7 @@ app.post('/webhook/', function (req, res) {
       let text = JSON.stringify(event.postback)
       var payloadtext = event.postback.payload;
       if (payloadtext=== 'futboltoday') {
-
+           sendButtonMessage(recipientId, messageText)
       }
       if (payloadtext === 'USER_DEFINED_PAYLOAD') {
 
