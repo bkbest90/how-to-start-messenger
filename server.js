@@ -82,15 +82,8 @@ app.post('/webhook/', function (req, res) {
           thaileagueToday(sender)
       }
       if (payloadtext === 'USER_DEFINED_PAYLOAD') {
-
-         setTimeout(function () {
-        sendGenericMessage (sender)
-       }, 10);
-        setTimeout(function () {
-          sendTextMessage(sender, '**คำสั่งทั้งหมดของเรา**\nเมนูหลัก = กลับมาที่เมนูหลัก\nบอลวันนี้ = จะแสดงการแข่งขันของวันนี้\nบอลพรุ่งนี้ = จะแสดงการแข่งขันของวันพรุ่งนี้\nคำสั่ง = แสดงคำสั่งทั้งหมดอีกครั้ง')
-
-        }, 1000);
-
+        sendButtonMessage(sender)
+        sendButtonMessage(sender)  
       }
       if (payloadtext === 'premierleaguetable') {
         premierleaguetable(sender)
@@ -6778,53 +6771,135 @@ function sendButtonMessage(sender){
   callSendAPI(messageData);
 }
 
-function futbolToday(sender){
-  var messageData = {
-    recipient: {
-      id: sender
-    },
-    message: {
-      attachment: {
-        type: "template",
-        payload: {
-          template_type: "ganeric",
-          text : "กรุณาเลือกลีก",
-            buttons: [{
-              type: "postback",
-              title: "Premier league",
-              payload: "premierleaguetoday"
-            },
-            {
-              type: "postback",
-              title: "La liga",
-              payload: "laligatoday"
-            },
-            {
-              type: "postback",
-              title: "Bundesliga",
-              payload: "bundesligatoday"
-            },
-            {
-              type: "postback",
-              title: "Serie A",
-              payload: "serieatoday"
-            },
-            {
-              type: "postback",
-              title: "Ligue 1",
-              payload: "ligue1today"
-            },
-            {
-              type: "postback",
-              title: "Premier league Thailand",
-              payload: "thaileaguetoday"
+function futbolToday(sender) {
+  let messageData = {
+    'attachment': {
+      'type': 'template',
+      'payload': {
+        'template_type': 'generic',
+        'elements': [{
+          'title': 'Premier league',
+          'subtitle': 'England',
+          'image_url': 'https://lh3.googleusercontent.com/-EQPiqGtIjK0/WCdAucVWzLI/AAAAAAAAITg/vIAkCtWB5nQ0DPGrFJTQ_8EmT0TReQWCQCJoC/w800-h800/Premier_League_Rebrands_DesignStudio_02.jpg',
+          'buttons': [{
+            'type': 'web_url',
+            'url': 'https://www.premierleague.com',
+            'title': 'เว็บไซต์'
+          }, {
+            'type': 'postback',
+            'title': 'ตารางคะแนน',
+            'payload': 'premierleaguetable'
+          }, {
+            'type': 'postback',
+            'title': 'ทีม',
+            'payload': 'premierleagueteam'
+          }]
+        }, {
+        'title': 'La liga',
+        'subtitle': 'Spain',
+        'image_url': 'http://worldsoccertalk.com/wp-content/uploads/2015/06/la-liga.jpg',
+        'buttons': [{
+          'type': 'web_url',
+          'url': 'http://www.laliga.es/en',
+          'title': 'เว็บไซต์'
+        }, {
+          'type': 'postback',
+          'title': 'ตารางคะแนน',
+          'payload': 'laligatable'
+          }, {
+            'type': 'postback',
+            'title': 'ทีม',
+            'payload': 'laligateam'
             }]
-        }
+        }, {
+        'title': 'Bundesliga',
+        'subtitle': 'German',
+        'image_url': 'http://4.bp.blogspot.com/-wumnC-FeJN0/U87Ng9BAWEI/AAAAAAAAC6I/07HkbDi3V9c/s1600/Logo+Bundesliga.png',
+        'buttons': [{
+          'type': 'web_url',
+          'url': 'http://www.bundesliga.com/en/',
+          'title': 'เว็บไซต์'
+        }, {
+          'type': 'postback',
+          'title': 'ตารางคะแนน',
+          'payload': 'bundesligatable'
+          }, {
+            'type': 'postback',
+            'title': 'ทีม',
+            'payload': 'bundesligateam'
+            }]
+        }, {
+        'title': 'Serie A',
+        'subtitle': 'Italy',
+        'image_url': 'http://2.bp.blogspot.com/-3En8qZGQ2AE/U_YVLBoL0jI/AAAAAAAADrk/kpSpfnbTOgw/s1600/Logo%2BSerie-A%2BItaly.png',
+        'buttons': [{
+          'type': 'web_url',
+          'url': 'http://www.legaseriea.it/en/',
+          'title': 'เว็บไซต์'
+        }, {
+          'type': 'postback',
+          'title': 'ตารางคะแนน',
+          'payload': 'serieatable'
+          }, {
+            'type': 'postback',
+            'title': 'ทีม',
+            'payload': 'serieateam'
+            }]
+        }, {
+        'title': 'Ligue 1',
+        'subtitle': 'France',
+        'image_url': 'http://www.calcioefinanza.it/wp-content/uploads/2015/04/Ligue-13.jpg',
+        'buttons': [{
+          'type': 'web_url',
+          'url': 'http://www.ligue1.com/',
+          'title': 'เว็บไซต์'
+        }, {
+          'type': 'postback',
+          'title': 'ตารางคะแนน',
+          'payload': 'ligue1table'
+          }, {
+            'type': 'postback',
+            'title': 'ทีม',
+            'payload': 'ligue1team'
+            }]
+        }, {
+        'title': 'Premier League Thailand',
+        'subtitle': 'Thai',
+        'image_url': 'http://www.teamthailand.in.th/wp-content/uploads/2016/03/Premier-League-Thailand-1-696x464.png',
+        'buttons': [{
+          'type': 'web_url',
+          'url': 'http://www.thaileague.co.th/official/',
+          'title': 'เว็บไซต์'
+        }, {
+          'type': 'postback',
+          'title': 'ตารางคะแนน',
+          'payload': 'thaileaguetable'
+          }, {
+            'type': 'postback',
+            'title': 'ทีม',
+            'payload': 'thaileagueteam'
+            }]
+        }]
       }
     }
-  };
-  callSendAPI(messageData);
+  }
+  request({
+    url: 'https://graph.facebook.com/v2.6/me/messages',
+    qs: {access_token: token},
+    method: 'POST',
+    json: {
+      recipient: {id: sender},
+      message: messageData
+    }
+  }, function (error, response, body) {
+    if (error) {
+      console.log('Error sending messages: ', error)
+    } else if (response.body.error) {
+      console.log('Error: ', response.body.error)
+    }
+  })
 }
+
 
 function callSendAPI(messageData){
   request({
