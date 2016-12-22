@@ -63,6 +63,24 @@ app.post('/webhook/', function (req, res) {
       if (payloadtext=== 'futboltoday') {
            futbolToday(sender)
       }
+      if (payloadtext==='premierleaguetoday') {
+          premierleagueToday(sender)
+      }
+      if (payloadtext==='laligatoday') {
+          laligaToday(sender)
+      }
+      if (payloadtext==='bundesligatoday') {
+          bundesligaToday(sender)
+      }
+      if (payloadtext==='serieatoday') {
+          serieaToday(sender)
+      }
+      if (payloadtext==='ligue1today') {
+          ligue1Today(sender)
+      }
+      if (payloadtext==='thaileaguetoday') {
+          thaileagueToday(sender)
+      }
       if (payloadtext === 'USER_DEFINED_PAYLOAD') {
 
          setTimeout(function () {
@@ -6778,8 +6796,28 @@ function futbolToday(sender){
             },
             {
               type: "postback",
-              title: "บอลพรุ่งนี้",
-              payload: "futboltomorrow"
+              title: "La liga",
+              payload: "laligatoday"
+            },
+            {
+              type: "postback",
+              title: "Bundesliga",
+              payload: "bundesligatoday"
+            },
+            {
+              type: "postback",
+              title: "Serie A",
+              payload: "serieatoday"
+            },
+            {
+              type: "postback",
+              title: "Ligue 1",
+              payload: "ligue1today"
+            },
+            {
+              type: "postback",
+              title: "Premier league Thailand",
+              payload: "thaileaguetoday"
             }]
         }
       }
