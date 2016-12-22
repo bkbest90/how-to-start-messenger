@@ -51,7 +51,7 @@ app.post('/webhook/', function (req, res) {
       if (text === 'คำสั่ง'){
         sendTextMessage(sender, '**คำสั่งทั้งหมดของเรา**\nเมนูหลัก = กลับมาที่เมนูหลัก\nบอลวันนี้ = จะแสดงการแข่งขันของวันนี้\nบอลพรุ่งนี้ = จะแสดงการแข่งขันของวันพรุ่งนี้\nคำสั่ง = แสดงคำสั่งทั้งหมดอีกครั้ง')
       }
-      if (text === 'asdf') {
+      if (text === 'asd') {
 
         premierleagueTomorrow(sender)
 /*
@@ -2372,8 +2372,8 @@ function premierleagueTomorrow(sender){
 
 
        if (!error && response.statusCode === 200) {
-          today()
-
+          todaycheck()
+           var newdate = newdate1;
          for (var i = 0; i < JSON.parse(body).length; i++) {
 
             doSetTimeout(i);
@@ -6678,13 +6678,13 @@ function thaileagueteam2(sender){
 }
 
 
-function today() {
+function todaycheck() {
   var dateObj = new Date();
    var month = dateObj.getUTCMonth() + 1; //months from 1-12
   var day = dateObj.getUTCDate();
    var year = dateObj.getUTCFullYear();
-  var newdate = year + "/" + month + "/" + (day+1);
-  return newdate;
+  var newdate1 = year + "/" + month + "/" + (day+1);
+  return newdate1;
 }
 //menu
 function sendGenericMessage(sender) {
