@@ -53,11 +53,7 @@ app.post('/webhook/', function (req, res) {
       }
       if (text === 'asd') {
 
-        premierleagueTomorrow(sender)
-/*
-       premierleagueTomorrow(sender)
-
-*/
+        laligaTomorrow(sender)
 
       }
     }
