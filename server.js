@@ -83,7 +83,7 @@ app.post('/webhook/', function (req, res) {
       }
       if (payloadtext === 'USER_DEFINED_PAYLOAD') {
         sendButtonMessage(sender)
-        sendButtonMessage(sender)  
+        sendButtonMessage(sender)
       }
       if (payloadtext === 'premierleaguetable') {
         premierleaguetable(sender)
@@ -6753,11 +6753,16 @@ function sendButtonMessage(sender){
         type: "template",
         payload: {
           template_type: "button",
-          text : "คุณอยากรู้อะไร",
+          text : "",
             buttons: [{
               type: "postback",
               title: "บอลวันนี้",
               payload: "futboltoday"
+            },
+            {
+              type: "postback",
+              title: "บอลพรุ่งนี้",
+              payload: "futboltomorrow"
             },
             {
               type: "postback",
