@@ -53,7 +53,7 @@ app.post('/webhook/', function (req, res) {
       }
       if (text === 'asd') {
 
-        bundesligaTomorrow(sender)
+        bundesligaToday(sender)
 
       }
     }
@@ -2682,35 +2682,32 @@ function premierleagueToday(sender){
     }
   }
     function callback (error, response, body) {
-
-
        if (!error && response.statusCode === 200) {
-
+          var dateObj = new Date();
+          var month = dateObj.getUTCMonth() + 1; //months from 1-12
+          var day = dateObj.getUTCDate();
+          var year = dateObj.getUTCFullYear();
+          var newdate = year + "/" + month + "/" + day;
          for (var i = 0; i < JSON.parse(body).length; i++) {
+           let time = JSON.stringify(JSON.parse(body)[i].start)
+           var str = time;
+           var num = parseInt(str.replace(/[^0-9]/g, time));
+           var realdate = new Date(num);
+           realdate.setHours(realdate.getHours() +7);
+           var date = new Date(realdate).toUTCString();
+           var cdate = new Date(realdate);
 
-            doSetTimeout(i);
+           var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+           var dayapi = cdate.getUTCDate();
+           var yearapi = cdate.getUTCFullYear();
+           var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+
+
+            doSetTimeout(i,dateapi,newdate);
   }
-            function doSetTimeout(i) {
+            function doSetTimeout(i,dateapi,newdate) {
              setTimeout(function() {
      if (dateapi === newdate) {
-       let time = JSON.stringify(JSON.parse(body)[i].start)
-       var str = time;
-       var num = parseInt(str.replace(/[^0-9]/g, time));
-       var realdate = new Date(num);
-       realdate.setHours(realdate.getHours() +7);
-       var date = new Date(realdate).toUTCString();
-       var cdate = new Date(realdate);
-
-       var monthapi = cdate.getUTCMonth()+1; //months from 1-12
-       var dayapi = cdate.getUTCDate();
-       var yearapi = cdate.getUTCFullYear();
-       var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-
-       var dateObj = new Date();
-        var month = dateObj.getUTCMonth() + 1; //months from 1-12
-       var day = dateObj.getUTCDate();
-        var year = dateObj.getUTCFullYear();
-       var newdate = year + "/" + month + "/" + day;
 
              if (JSON.parse(body)[i].outcome !== null) {
                  sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
@@ -2743,36 +2740,30 @@ function laligaToday(sender){
 
 
        if (!error && response.statusCode === 200) {
-
+          var dateObj = new Date();
+          var month = dateObj.getUTCMonth() + 1; //months from 1-12
+          var day = dateObj.getUTCDate();
+          var year = dateObj.getUTCFullYear();
+          var newdate = year + "/" + month + "/" + day;
          for (var i = 0; i < JSON.parse(body).length; i++) {
+           let time = JSON.stringify(JSON.parse(body)[i].start)
+           var str = time;
+           var num = parseInt(str.replace(/[^0-9]/g, time));
+           var realdate = new Date(num);
+           realdate.setHours(realdate.getHours() +7);
+           var date = new Date(realdate).toUTCString();
+           var cdate = new Date(realdate);
 
-            doSetTimeout(i);
+           var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+           var dayapi = cdate.getUTCDate();
+           var yearapi = cdate.getUTCFullYear();
+           var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+            doSetTimeout(i,dateapi,newdate);
   }
-            function doSetTimeout(i) {
+            function doSetTimeout(i,dateapi,newdate) {
              setTimeout(function() {
 
      if (dateapi === newdate) {
-       let time = JSON.stringify(JSON.parse(body)[i].start)
-       var str = time;
-       var num = parseInt(str.replace(/[^0-9]/g, time));
-       var realdate = new Date(num);
-       realdate.setHours(realdate.getHours() +7);
-       var date = new Date(realdate).toUTCString();
-       var cdate = new Date(realdate);
-
-       var monthapi = cdate.getUTCMonth()+1; //months from 1-12
-       var dayapi = cdate.getUTCDate();
-       var yearapi = cdate.getUTCFullYear();
-       var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-
-
-
-       var dateObj = new Date();
-        var month = dateObj.getUTCMonth() + 1; //months from 1-12
-       var day = dateObj.getUTCDate();
-        var year = dateObj.getUTCFullYear();
-       var newdate = year + "/" + month + "/" + day;
-
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
                 +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
@@ -2801,36 +2792,30 @@ function bundesligaToday(sender){
     }
   }
     function callback (error, response, body) {
-
-
        if (!error && response.statusCode === 200) {
-
+          var dateObj = new Date();
+          var month = dateObj.getUTCMonth() + 1; //months from 1-12
+          var day = dateObj.getUTCDate();
+          var year = dateObj.getUTCFullYear();
+          var newdate = year + "/" + month + "/" + day;
          for (var i = 0; i < JSON.parse(body).length; i++) {
+           let time = JSON.stringify(JSON.parse(body)[i].start)
+           var str = time;
+           var num = parseInt(str.replace(/[^0-9]/g, time));
+           var realdate = new Date(num);
+           realdate.setHours(realdate.getHours() +7);
+           var date = new Date(realdate).toUTCString();
+           var cdate = new Date(realdate);
 
-            doSetTimeout(i);
+           var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+           var dayapi = cdate.getUTCDate();
+           var yearapi = cdate.getUTCFullYear();
+           var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+              doSetTimeout(i,dateapi,newdate);
   }
-            function doSetTimeout(i) {
+            function doSetTimeout(i,dateapi,newdate) {
              setTimeout(function() {
      if (dateapi === newdate) {
-       let time = JSON.stringify(JSON.parse(body)[i].start)
-       var str = time;
-       var num = parseInt(str.replace(/[^0-9]/g, time));
-       var realdate = new Date(num);
-       realdate.setHours(realdate.getHours() +7);
-       var date = new Date(realdate).toUTCString();
-       var cdate = new Date(realdate);
-
-       var monthapi = cdate.getUTCMonth()+1; //months from 1-12
-       var dayapi = cdate.getUTCDate();
-       var yearapi = cdate.getUTCFullYear();
-       var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-
-       var dateObj = new Date();
-        var month = dateObj.getUTCMonth() + 1; //months from 1-12
-       var day = dateObj.getUTCDate();
-        var year = dateObj.getUTCFullYear();
-       var newdate = year + "/" + month + "/" + day;
-
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
                 +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
@@ -2862,36 +2847,29 @@ function serieaToday(sender){
 
 
        if (!error && response.statusCode === 200) {
-
+          var dateObj = new Date();
+          var month = dateObj.getUTCMonth() + 1; //months from 1-12
+          var day = dateObj.getUTCDate();
+          var year = dateObj.getUTCFullYear();
+          var newdate = year + "/" + month + "/" + day;
          for (var i = 0; i < JSON.parse(body).length; i++) {
+           let time = JSON.stringify(JSON.parse(body)[i].start)
+           var str = time;
+           var num = parseInt(str.replace(/[^0-9]/g, time));
+           var realdate = new Date(num);
+           realdate.setHours(realdate.getHours() +7);
+           var date = new Date(realdate).toUTCString();
+           var cdate = new Date(realdate);
 
-            doSetTimeout(i);
+           var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+           var dayapi = cdate.getUTCDate();
+           var yearapi = cdate.getUTCFullYear();
+           var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+            doSetTimeout(i,dateapi,newdate);
   }
-            function doSetTimeout(i) {
+            function doSetTimeout(i,dateapi,newdate) {
              setTimeout(function() {
-
      if (dateapi === newdate) {
-       let time = JSON.stringify(JSON.parse(body)[i].start)
-       var str = time;
-       var num = parseInt(str.replace(/[^0-9]/g, time));
-       var realdate = new Date(num);
-       realdate.setHours(realdate.getHours() +7);
-       var date = new Date(realdate).toUTCString();
-       var cdate = new Date(realdate);
-
-       var monthapi = cdate.getUTCMonth()+1; //months from 1-12
-       var dayapi = cdate.getUTCDate();
-       var yearapi = cdate.getUTCFullYear();
-       var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-
-
-
-       var dateObj = new Date();
-        var month = dateObj.getUTCMonth() + 1; //months from 1-12
-       var day = dateObj.getUTCDate();
-        var year = dateObj.getUTCFullYear();
-       var newdate = year + "/" + month + "/" + day;
-
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
                 +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
@@ -2923,33 +2901,29 @@ function ligue1Today(sender){
 
 
        if (!error && response.statusCode === 200) {
-
+          var dateObj = new Date();
+          var month = dateObj.getUTCMonth() + 1; //months from 1-12
+          var day = dateObj.getUTCDate();
+          var year = dateObj.getUTCFullYear();
+          var newdate = year + "/" + month + "/" + day;
          for (var i = 0; i < JSON.parse(body).length; i++) {
+           let time = JSON.stringify(JSON.parse(body)[i].start)
+           var str = time;
+           var num = parseInt(str.replace(/[^0-9]/g, time));
+           var realdate = new Date(num);
+           realdate.setHours(realdate.getHours() +7);
+           var date = new Date(realdate).toUTCString();
+           var cdate = new Date(realdate);
 
-            doSetTimeout(i);
+           var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+           var dayapi = cdate.getUTCDate();
+           var yearapi = cdate.getUTCFullYear();
+           var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+            doSetTimeout(i,dateapi,newdate);
   }
-            function doSetTimeout(i) {
+            function doSetTimeout(i,dateapi,newdate) {
              setTimeout(function() {
      if (dateapi === newdate) {
-       let time = JSON.stringify(JSON.parse(body)[i].start)
-       var str = time;
-       var num = parseInt(str.replace(/[^0-9]/g, time));
-       var realdate = new Date(num);
-       realdate.setHours(realdate.getHours() +7);
-       var date = new Date(realdate).toUTCString();
-       var cdate = new Date(realdate);
-
-       var monthapi = cdate.getUTCMonth()+1; //months from 1-12
-       var dayapi = cdate.getUTCDate();
-       var yearapi = cdate.getUTCFullYear();
-       var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-
-       var dateObj = new Date();
-        var month = dateObj.getUTCMonth() + 1; //months from 1-12
-       var day = dateObj.getUTCDate();
-        var year = dateObj.getUTCFullYear();
-       var newdate = year + "/" + month + "/" + day;
-
                  if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
                 +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
@@ -2981,34 +2955,29 @@ function thaileagueToday(sender){
 
 
        if (!error && response.statusCode === 200) {
-
+          var dateObj = new Date();
+          var month = dateObj.getUTCMonth() + 1; //months from 1-12
+          var day = dateObj.getUTCDate();
+          var year = dateObj.getUTCFullYear();
+          var newdate = year + "/" + month + "/" + day;
          for (var i = 0; i < JSON.parse(body).length; i++) {
+           let time = JSON.stringify(JSON.parse(body)[i].start)
+           var str = time;
+           var num = parseInt(str.replace(/[^0-9]/g, time));
+           var realdate = new Date(num);
+           realdate.setHours(realdate.getHours() +7);
+           var date = new Date(realdate).toUTCString();
+           var cdate = new Date(realdate);
 
-            doSetTimeout(i);
+           var monthapi = cdate.getUTCMonth()+1; //months from 1-12
+           var dayapi = cdate.getUTCDate();
+           var yearapi = cdate.getUTCFullYear();
+           var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
+            doSetTimeout(i,dateapi,newdate);
   }
-            function doSetTimeout(i) {
+            function doSetTimeout(i,dateapi,newdate) {
              setTimeout(function() {
      if (dateapi === newdate) {
-        let time = JSON.stringify(JSON.parse(body)[i].start)
-        var str = time;
-        var num = parseInt(str.replace(/[^0-9]/g, time));
-        var realdate = new Date(num);
-        realdate.setHours(realdate.getHours() +7);
-        var date = new Date(realdate).toUTCString();
-        var cdate = new Date(realdate);
-
-        var monthapi = cdate.getUTCMonth()+1; //months from 1-12
-        var dayapi = cdate.getUTCDate();
-        var yearapi = cdate.getUTCFullYear();
-        var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-
-
-
-        var dateObj = new Date();
-         var month = dateObj.getUTCMonth() + 1; //months from 1-12
-        var day = dateObj.getUTCDate();
-         var year = dateObj.getUTCFullYear();
-        var newdate = year + "/" + month + "/" + day;
 
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
@@ -3029,11 +2998,6 @@ function thaileagueToday(sender){
   request(options, callback)
 
 }
-
-
-
-
-
 
 //previous matches
 
