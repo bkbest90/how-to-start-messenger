@@ -6754,7 +6754,7 @@ function thaileagueteam2(sender){
 
 
 
-function sendGenericMessage (sender) {
+function sendGenericMessage(sender) {
   let messageData = {
     'attachment': {
       'type': 'template',
@@ -6883,30 +6883,35 @@ function sendGenericMessage (sender) {
   })
 }
 
-function sendButtonMessage (sender) {
-  let messageData = {
-    'attachment': {
-      'type': 'template',
-      'payload': {
-        'template_type': 'generic',
-        'elements': [{
-        'buttons': [{
-            'type': 'web_url',
-            'url': 'https://www.premierleague.com',
-            'title': 'เว็บไซต์'
-          }, {
-            'type': 'postback',
-            'title': 'ตารางคะแนน',
-            'payload': 'premierleaguetable'
-          }, {
-            'type': 'postback',
-            'title': 'ทีม',
-            'payload': 'premierleagueteam'
-          }]
-        }]
+function sendButtonMessage(recipientId, messageText) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "button",
+          text : "หากคุณต้องการมองหาร้านอาหารในปราจีนบุรีอีก เพียงแค่ให้ผมช่วย",
+            buttons: [{
+              type: "postback",
+              title: "🍣 ค้นหาร้านอาหาร",
+              payload: "findRestaurant"
+            },
+            {
+              type: "postback",
+              title: "❌ ไม่เป็นไร ขอบคุณ",
+              payload: "noThank"
+            }]
+        }
       }
     }
-  }
+  };
+  callSendAPI(messageData);
+}
+
+function callSendAPI(messageData) {
   request({
     url: 'https://graph.facebook.com/v2.6/me/messages',
     qs: {access_token: token},
@@ -6921,140 +6926,8 @@ function sendButtonMessage (sender) {
     } else if (response.body.error) {
       console.log('Error: ', response.body.error)
     }
-  })
+
 }
-
-
-
-/*
-function premierleagueteam2(sender){
-
-    var options = {
-      url: 'https://api.crowdscores.com/v1/teams?competition_ids=2',
-      headers: {
-        'x-crowdscores-api-key': '913c96f103e1455680ea7fa572422835'
-      }
-    }
-
-    function callback (error, response, body) {
-      if (!error && response.statusCode === 200) {
-        let messageData = {
-          'attachment': {
-            'type': 'template',
-            'payload': {
-              'template_type': 'generic',
-              'elements': [{
-                'title': '11  '+JSON.parse(body)[10].name,
-                'image_url': JSON.parse(body)[10].flagUrl,
-                'subtitle':"Stadium: "+JSON.parse(body)[10].defaultHomeVenue.name
-                          ,
-                'buttons': [{
-                  'type': 'postback',
-                  'title': 'Next match',
-                  'payload': 'next1'
-                },{
-                  'type': 'postback',
-                  'title': 'All matches',
-                  'payload': 'all1'
-                }]
-              }, {
-                'title': '12  '+JSON.parse(body)[11].name,
-                'subtitle':"Stadium: "+ JSON.parse(body)[11].defaultHomeVenue.name ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }, {
-                'title': '13  '+JSON.parse(body)[12].name,
-                'subtitle': "Stadium: "+JSON.parse(body)[12].defaultHomeVenue.name ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }, {
-                'title': '14  '+JSON.parse(body)[13].name,
-                'subtitle':"Stadium: "+ JSON.parse(body)[13].defaultHomeVenue.name ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }, {
-                'title': '15  '+JSON.parse(body)[14].name,
-                'subtitle':"Stadium: "+ JSON.parse(body)[14].defaultHomeVenue.name ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }, {
-                'title': '16  '+JSON.parse(body)[15].name,
-                'subtitle':"Stadium: "+ JSON.parse(body)[15].defaultHomeVenue.name ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }, {
-                'title': '17  '+JSON.parse(body)[16].name,
-                'subtitle':"Stadium: "+ JSON.parse(body)[16].defaultHomeVenue.name ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }, {
-                'title': '18  '+JSON.parse(body)[17].name,
-                'subtitle':"Stadium: "+ JSON.parse(body)[17].defaultHomeVenue.name ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }, {
-                'title': '19  '+JSON.parse(body)[18].name,
-                'subtitle':"Stadium: "+ JSON.parse(body)[18].defaultHomeVenue.name ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }  , {
-                'title': '20  '+JSON.parse(body)[19].name,
-                'subtitle':"Stadium: "+ JSON.parse(body)[19].defaultHomeVenue.name ,
-                  'buttons': [{
-                  'type': 'postback',
-                  'title': 'Back',
-                  'payload': 'back'
-                }]
-              }]
-            }
-          }
-        }
-        request({
-          url: 'https://graph.facebook.com/v2.6/me/messages',
-          qs: {access_token: token},
-          method: 'POST',
-          json: {
-            recipient: {id: sender},
-            message: messageData
-          }
-        }, function (error, response, body) {
-          if (error) {
-            console.log('Error sending messages: ', error)
-          } else if (response.body.error) {
-            console.log('Error: ', response.body.error)
-          }
-        })
-      }
-    }
-
-    request(options, callback)
-}
-
-*/
 
 app.listen(app.get('port'), function () {
 console.log('running on port', app.get('port'))
