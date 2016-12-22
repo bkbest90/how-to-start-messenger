@@ -2831,6 +2831,7 @@ function bundesligaToday(sender){
           var day = dateObj.getUTCDate();
           var year = dateObj.getUTCFullYear();
           var newdate = year + "/" + month + "/" + day;
+          var matchCount = 0;
          for (var i = 0; i < JSON.parse(body).length; i++) {
            let time = JSON.stringify(JSON.parse(body)[i].start)
            var str = time;
@@ -2849,6 +2850,8 @@ function bundesligaToday(sender){
             function doSetTimeout(i,dateapi,newdate,date) {
              setTimeout(function() {
      if (dateapi === newdate) {
+           matchCount += 1;
+           console.log(" m = "matchCount);
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
                 +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
