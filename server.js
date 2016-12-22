@@ -2851,7 +2851,7 @@ function bundesligaToday(sender){
              setTimeout(function() {
      if (dateapi === newdate) {
            matchCount += 1;
-           console.log(" m = "matchCount);
+           console.log(" m = "+matchCount);
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
                 +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
