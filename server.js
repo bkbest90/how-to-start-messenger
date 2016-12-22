@@ -52,6 +52,7 @@ app.post('/webhook/', function (req, res) {
         sendTextMessage(sender, '**คำสั่งทั้งหมดของเรา**\nเมนูหลัก = กลับมาที่เมนูหลัก\nบอลวันนี้ = จะแสดงการแข่งขันของวันนี้\nบอลพรุ่งนี้ = จะแสดงการแข่งขันของวันพรุ่งนี้\nคำสั่ง = แสดงคำสั่งทั้งหมดอีกครั้ง')
       }
       if (text === 'asdf') {
+        console.log(sender);
 /*
        premierleagueTomorrow(sender)
 
@@ -64,7 +65,7 @@ app.post('/webhook/', function (req, res) {
       var payloadtext = event.postback.payload;
       if (payloadtext === 'USER_DEFINED_PAYLOAD') {
 
-    setTimeout(function () {
+         setTimeout(function () {
         sendGenericMessage (sender)
        }, 10);
         setTimeout(function () {
