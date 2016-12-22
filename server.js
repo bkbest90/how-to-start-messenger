@@ -2423,9 +2423,9 @@ function premierleagueTomorrow(sender){
            var dayapi = cdate.getUTCDate();
            var yearapi = cdate.getUTCFullYear();
            var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-            doSetTimeout(i,dateapi,newdate);
+            doSetTimeout(i,dateapi,newdate,date);
   }
-            function doSetTimeout(i,dateapi,newdate) {
+            function doSetTimeout(i,dateapi,newdate,date) {
              setTimeout(function() {
 
           if (dateapi === newdate) {
@@ -2474,9 +2474,9 @@ function laligaTomorrow(sender){
            var dayapi = cdate.getUTCDate();
            var yearapi = cdate.getUTCFullYear();
            var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-            doSetTimeout(i,dateapi,newdate)
+            doSetTimeout(i,dateapi,newdate,date)
   }
-            function doSetTimeout(i,dateapi,newdate){
+            function doSetTimeout(i,dateapi,newdate,date){
              setTimeout(function() {
      if (dateapi === newdate) {
              if (JSON.parse(body)[i].outcome !== null) {
@@ -2529,9 +2529,9 @@ function bundesligaTomorrow(sender){
            var dayapi = cdate.getUTCDate();
            var yearapi = cdate.getUTCFullYear();
            var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-            doSetTimeout(i,dateapi,newdate);
+            doSetTimeout(i,dateapi,newdate,date);
   }
-            function doSetTimeout(i,dateapi,newdate) {
+            function doSetTimeout(i,dateapi,newdate,date) {
              setTimeout(function() {
      if (dateapi === newdate) {
 
@@ -2580,9 +2580,9 @@ function serieaTomorrow(sender){
              var dayapi = cdate.getUTCDate();
              var yearapi = cdate.getUTCFullYear();
              var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-            doSetTimeout(i,dateapi,newdate);
+            doSetTimeout(i,dateapi,newdate,date);
   }
-            function doSetTimeout(i,dateapi,newdate) {
+            function doSetTimeout(i,dateapi,newdate,date) {
              setTimeout(function() {
      if (dateapi === newdate) {
              if (JSON.parse(body)[i].outcome !== null) {
@@ -2632,9 +2632,9 @@ function ligue1Tomorrow(sender){
            var dayapi = cdate.getUTCDate();
            var yearapi = cdate.getUTCFullYear();
            var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-            doSetTimeout(i,dateapi,newdate);
+            doSetTimeout(i,dateapi,newdate,date);
   }
-            function doSetTimeout(i,dateapi,newdate) {
+            function doSetTimeout(i,dateapi,newdate,date) {
              setTimeout(function() {
      if (dateapi === newdate) {
                  if (JSON.parse(body)[i].outcome !== null) {
@@ -2663,8 +2663,6 @@ function thaileagueTomorrow(sender){
     }
   }
     function callback (error, response, body) {
-
-
        if (!error && response.statusCode === 200) {
           var dateObj = new Date();
           var month = dateObj.getUTCMonth() + 1; //months from 1-12
@@ -2685,13 +2683,11 @@ function thaileagueTomorrow(sender){
            var dayapi = cdate.getUTCDate();
            var yearapi = cdate.getUTCFullYear();
            var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-            doSetTimeout(i,dateapi,newdate);
+            doSetTimeout(i,dateapi,newdate,date);
   }
-            function doSetTimeout(i,dateapi,newdate) {
+            function doSetTimeout(i,dateapi,newdate,date) {
              setTimeout(function() {
-
      if (dateapi === newdate) {
-
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
                 +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
@@ -2700,16 +2696,12 @@ function thaileagueTomorrow(sender){
               sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
                   +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
                      }
-
-
          }
        }, i*500);
                           }
                  }
             }
-
   request(options, callback)
-
 }
 
 //today
@@ -2743,9 +2735,9 @@ function premierleagueToday(sender){
            var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
 
 
-            doSetTimeout(i,dateapi,newdate);
+            doSetTimeout(i,dateapi,newdate,date);
   }
-            function doSetTimeout(i,dateapi,newdate) {
+            function doSetTimeout(i,dateapi,newdate,date) {
              setTimeout(function() {
      if (dateapi === newdate) {
 
@@ -2798,9 +2790,9 @@ function laligaToday(sender){
            var dayapi = cdate.getUTCDate();
            var yearapi = cdate.getUTCFullYear();
            var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-            doSetTimeout(i,dateapi,newdate);
+            doSetTimeout(i,dateapi,newdate,date);
   }
-            function doSetTimeout(i,dateapi,newdate) {
+            function doSetTimeout(i,dateapi,newdate,date) {
              setTimeout(function() {
 
      if (dateapi === newdate) {
@@ -2906,9 +2898,9 @@ function serieaToday(sender){
            var dayapi = cdate.getUTCDate();
            var yearapi = cdate.getUTCFullYear();
            var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-            doSetTimeout(i,dateapi,newdate);
+            doSetTimeout(i,dateapi,newdate,date);
   }
-            function doSetTimeout(i,dateapi,newdate) {
+            function doSetTimeout(i,dateapi,newdate,date) {
              setTimeout(function() {
      if (dateapi === newdate) {
              if (JSON.parse(body)[i].outcome !== null) {
@@ -2960,9 +2952,9 @@ function ligue1Today(sender){
            var dayapi = cdate.getUTCDate();
            var yearapi = cdate.getUTCFullYear();
            var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-            doSetTimeout(i,dateapi,newdate);
+            doSetTimeout(i,dateapi,newdate,date);
   }
-            function doSetTimeout(i,dateapi,newdate) {
+            function doSetTimeout(i,dateapi,newdate,date){
              setTimeout(function() {
      if (dateapi === newdate) {
                  if (JSON.parse(body)[i].outcome !== null) {
@@ -2993,8 +2985,6 @@ function thaileagueToday(sender){
     }
   }
     function callback (error, response, body) {
-
-
        if (!error && response.statusCode === 200) {
           var dateObj = new Date();
           var month = dateObj.getUTCMonth() + 1; //months from 1-12
@@ -3014,9 +3004,9 @@ function thaileagueToday(sender){
            var dayapi = cdate.getUTCDate();
            var yearapi = cdate.getUTCFullYear();
            var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-            doSetTimeout(i,dateapi,newdate);
+            doSetTimeout(i,dateapi,newdate,date);
   }
-            function doSetTimeout(i,dateapi,newdate) {
+            function doSetTimeout(i,dateapi,newdate,date){
              setTimeout(function() {
      if (dateapi === newdate) {
 
