@@ -6770,11 +6770,11 @@ function futbolToday(sender){
         type: "template",
         payload: {
           template_type: "button",
-          text : "คุณอยากรู้อะไร",
+          text : "กรุณาเลือกลีก",
             buttons: [{
               type: "postback",
-              title: "บอลวันนี้",
-              payload: "futboltoday"
+              title: "Premier league",
+              payload: "premierleaguetoday"
             },
             {
               type: "postback",
