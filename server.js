@@ -53,7 +53,7 @@ app.post('/webhook/', function (req, res) {
       }
       if (text === 'asd') {
 
-        sendButtonMessage(sender, messageText)
+        sendButtonMessage(sender)
 
       }
     }
@@ -61,7 +61,7 @@ app.post('/webhook/', function (req, res) {
       let text = JSON.stringify(event.postback)
       var payloadtext = event.postback.payload;
       if (payloadtext=== 'futboltoday') {
-           sendButtonMessage(sender, messageText)
+           futbolToday(sender)
       }
       if (payloadtext === 'USER_DEFINED_PAYLOAD') {
 
@@ -6732,7 +6732,7 @@ function sendGenericMessage(sender) {
   })
 }
 
-function sendButtonMessage(sender, messageText){
+function sendButtonMessage(sender){
   var messageData = {
     recipient: {
       id: sender
@@ -6760,7 +6760,7 @@ function sendButtonMessage(sender, messageText){
   callSendAPI(messageData);
 }
 
-function futboltoday(sender, messageText){
+function futbolToday(sender){
   var messageData = {
     recipient: {
       id: sender
