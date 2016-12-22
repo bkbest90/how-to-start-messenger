@@ -6888,27 +6888,26 @@ function sendButtonMessage (sender) {
     'attachment': {
       'type': 'template',
       'payload': {
-        'template_type': 'button',
-        'text': "test generic button",
-        'elements': [{           
-          'buttons':[{
-          'type': "web_url",
-          'url': "https://www.oculus.com/en-us/rift/",
-          'title': "Open Web URL"
-        }, {
-          'type': "postback",
-          'title': "Trigger Postback",
-          'payload': "DEVELOPER_DEFINED_PAYLOAD"
-        }, {
-          'type': "phone_number",
-          'title': "Call Phone Number",
-          'payload': "0904385216"
-     }]
+        'template_type': 'generic',
+        'elements': [{
+        'buttons': [{
+            'type': 'web_url',
+            'url': 'https://www.premierleague.com',
+            'title': 'เว็บไซต์'
+          }, {
+            'type': 'postback',
+            'title': 'ตารางคะแนน',
+            'payload': 'premierleaguetable'
+          }, {
+            'type': 'postback',
+            'title': 'ทีม',
+            'payload': 'premierleagueteam'
+          }]
         }]
       }
     }
-    }
-    request({
+  }
+  request({
     url: 'https://graph.facebook.com/v2.6/me/messages',
     qs: {access_token: token},
     method: 'POST',
@@ -6924,6 +6923,7 @@ function sendButtonMessage (sender) {
     }
   })
 }
+
 
 
 /*
