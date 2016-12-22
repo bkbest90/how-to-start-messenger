@@ -26,7 +26,7 @@ app.post('/webhook/', function (req, res) {
       var text = event.message.text
 
       if (text === 'mainmenu' || text === 'เมนูหลัก') {
-        sendGenericMessage(sender)
+        sendButtonMessage(sender)
         continue
       }
       if (text === 'บอลวันนี้'){
@@ -60,31 +60,58 @@ app.post('/webhook/', function (req, res) {
     if (event.postback) {
       let text = JSON.stringify(event.postback)
       var payloadtext = event.postback.payload;
+      if (payloadtext === 'USER_DEFINED_PAYLOAD') {
+        sendButtonMessage(sender)
+
+      }
+      if (payloadtext==='league') {
+        sendGenericMessage(sender)
+      }
       if (payloadtext=== 'futboltoday') {
            futbolToday(sender)
       }
-      if (payloadtext==='premierleaguetoday') {
+      if (payloadtext=== 'futboltomorrow') {
+           futbolTomorrow(sender)
+      }
+     //tomorrow
+      if (payloadtext==='premierleagueTomorrowselected') {
+          premierleagueTomorrow(sender)
+      }
+      if (payloadtext==='laligaTomorrowselected') {
+          laligaTomorrow(sender)
+      }
+      if (payloadtext==='bundesligaTomorrowselected') {
+          bundesligaTomorrow(sender)
+      }
+      if (payloadtext==='serieaTomorrowselected') {
+          serieaTomorrow(sender)
+      }
+      if (payloadtext==='ligue1Tomorrowselected') {
+          ligue1Tomorrow(sender)
+      }
+      if (payloadtext==='thaileagueTomorrowselected') {
+          thaileagueTomorrow(sender)
+      }
+     //today
+      if (payloadtext==='premierleagueTodayselected') {
           premierleagueToday(sender)
       }
-      if (payloadtext==='laligatoday') {
+      if (payloadtext==='laligaTodayselected') {
           laligaToday(sender)
       }
-      if (payloadtext==='bundesligatoday') {
+      if (payloadtext==='bundesligaTodayselected') {
           bundesligaToday(sender)
       }
-      if (payloadtext==='serieatoday') {
+      if (payloadtext==='serieaTodayselected') {
           serieaToday(sender)
       }
-      if (payloadtext==='ligue1today') {
+      if (payloadtext==='ligue1Todayselected') {
           ligue1Today(sender)
       }
-      if (payloadtext==='thaileaguetoday') {
+      if (payloadtext==='thaileagueTodayselected') {
           thaileagueToday(sender)
       }
-      if (payloadtext === 'USER_DEFINED_PAYLOAD') {
-        sendButtonMessage(sender)
-        sendButtonMessage(sender)
-      }
+     //table
       if (payloadtext === 'premierleaguetable') {
         premierleaguetable(sender)
       }
@@ -103,6 +130,7 @@ app.post('/webhook/', function (req, res) {
       if (payloadtext === 'thaileaguetable') {
         thaileaguetable(sender)
       }
+     //team
       if (payloadtext === 'premierleagueteam') {
        setTimeout(function() {  premierleagueteam1(sender)}, 100);
        setTimeout(function() {  premierleagueteam2(sender)}, 500);
@@ -6753,7 +6781,7 @@ function sendButtonMessage(sender){
         type: "template",
         payload: {
           template_type: "button",
-      
+          text : "คุณอยากรู้อะไร",
             buttons: [{
               type: "postback",
               title: "บอลวันนี้",
@@ -6766,8 +6794,8 @@ function sendButtonMessage(sender){
             },
             {
               type: "postback",
-              title: "บอลพรุ่งนี้",
-              payload: "futboltomorrow"
+              title: "ลีก",
+              payload: "league"
             }]
         }
       }
@@ -6787,102 +6815,135 @@ function futbolToday(sender) {
           'subtitle': 'England',
           'image_url': 'https://lh3.googleusercontent.com/-EQPiqGtIjK0/WCdAucVWzLI/AAAAAAAAITg/vIAkCtWB5nQ0DPGrFJTQ_8EmT0TReQWCQCJoC/w800-h800/Premier_League_Rebrands_DesignStudio_02.jpg',
           'buttons': [{
-            'type': 'web_url',
-            'url': 'https://www.premierleague.com',
-            'title': 'เว็บไซต์'
-          }, {
             'type': 'postback',
-            'title': 'ตารางคะแนน',
-            'payload': 'premierleaguetable'
-          }, {
-            'type': 'postback',
-            'title': 'ทีม',
-            'payload': 'premierleagueteam'
+            'title': 'เลือก',
+            'payload': 'premierleagueTodayselected'
           }]
         }, {
         'title': 'La liga',
         'subtitle': 'Spain',
         'image_url': 'http://worldsoccertalk.com/wp-content/uploads/2015/06/la-liga.jpg',
         'buttons': [{
-          'type': 'web_url',
-          'url': 'http://www.laliga.es/en',
-          'title': 'เว็บไซต์'
-        }, {
-          'type': 'postback',
-          'title': 'ตารางคะแนน',
-          'payload': 'laligatable'
-          }, {
             'type': 'postback',
-            'title': 'ทีม',
-            'payload': 'laligateam'
+            'title': 'เลือก',
+            'payload': 'laligaTodayselected'
             }]
         }, {
         'title': 'Bundesliga',
         'subtitle': 'German',
         'image_url': 'http://4.bp.blogspot.com/-wumnC-FeJN0/U87Ng9BAWEI/AAAAAAAAC6I/07HkbDi3V9c/s1600/Logo+Bundesliga.png',
         'buttons': [{
-          'type': 'web_url',
-          'url': 'http://www.bundesliga.com/en/',
-          'title': 'เว็บไซต์'
-        }, {
-          'type': 'postback',
-          'title': 'ตารางคะแนน',
-          'payload': 'bundesligatable'
-          }, {
             'type': 'postback',
-            'title': 'ทีม',
-            'payload': 'bundesligateam'
+            'title': 'เลือก',
+            'payload': 'bundesligaTodayselected'
             }]
         }, {
         'title': 'Serie A',
         'subtitle': 'Italy',
         'image_url': 'http://2.bp.blogspot.com/-3En8qZGQ2AE/U_YVLBoL0jI/AAAAAAAADrk/kpSpfnbTOgw/s1600/Logo%2BSerie-A%2BItaly.png',
         'buttons': [{
-          'type': 'web_url',
-          'url': 'http://www.legaseriea.it/en/',
-          'title': 'เว็บไซต์'
-        }, {
-          'type': 'postback',
-          'title': 'ตารางคะแนน',
-          'payload': 'serieatable'
-          }, {
             'type': 'postback',
-            'title': 'ทีม',
-            'payload': 'serieateam'
+            'title': 'เลือก',
+            'payload': 'serieaTodayselected'
             }]
         }, {
         'title': 'Ligue 1',
         'subtitle': 'France',
         'image_url': 'http://www.calcioefinanza.it/wp-content/uploads/2015/04/Ligue-13.jpg',
         'buttons': [{
-          'type': 'web_url',
-          'url': 'http://www.ligue1.com/',
-          'title': 'เว็บไซต์'
-        }, {
-          'type': 'postback',
-          'title': 'ตารางคะแนน',
-          'payload': 'ligue1table'
-          }, {
             'type': 'postback',
-            'title': 'ทีม',
-            'payload': 'ligue1team'
+            'title': 'เลือก',
+            'payload': 'ligue1Todayselected'
             }]
         }, {
         'title': 'Premier League Thailand',
         'subtitle': 'Thai',
         'image_url': 'http://www.teamthailand.in.th/wp-content/uploads/2016/03/Premier-League-Thailand-1-696x464.png',
         'buttons': [{
-          'type': 'web_url',
-          'url': 'http://www.thaileague.co.th/official/',
-          'title': 'เว็บไซต์'
-        }, {
-          'type': 'postback',
-          'title': 'ตารางคะแนน',
-          'payload': 'thaileaguetable'
-          }, {
             'type': 'postback',
-            'title': 'ทีม',
-            'payload': 'thaileagueteam'
+            'title': 'เลือก',
+            'payload': 'thaileagueTodayselected'
+            }]
+        }]
+      }
+    }
+  }
+  request({
+    url: 'https://graph.facebook.com/v2.6/me/messages',
+    qs: {access_token: token},
+    method: 'POST',
+    json: {
+      recipient: {id: sender},
+      message: messageData
+    }
+  }, function (error, response, body) {
+    if (error) {
+      console.log('Error sending messages: ', error)
+    } else if (response.body.error) {
+      console.log('Error: ', response.body.error)
+    }
+  })
+}
+
+function futbolTomorrow(sender) {
+  let messageData = {
+    'attachment': {
+      'type': 'template',
+      'payload': {
+        'template_type': 'generic',
+        'elements': [{
+          'title': 'Premier league',
+          'subtitle': 'England',
+          'image_url': 'https://lh3.googleusercontent.com/-EQPiqGtIjK0/WCdAucVWzLI/AAAAAAAAITg/vIAkCtWB5nQ0DPGrFJTQ_8EmT0TReQWCQCJoC/w800-h800/Premier_League_Rebrands_DesignStudio_02.jpg',
+          'buttons': [{
+            'type': 'postback',
+            'title': 'เลือก',
+            'payload': 'premierleagueTomorrowselected'
+          }]
+        }, {
+        'title': 'La liga',
+        'subtitle': 'Spain',
+        'image_url': 'http://worldsoccertalk.com/wp-content/uploads/2015/06/la-liga.jpg',
+        'buttons': [{
+            'type': 'postback',
+            'title': 'เลือก',
+            'payload': 'laligaTomorrowselected'
+            }]
+        }, {
+        'title': 'Bundesliga',
+        'subtitle': 'German',
+        'image_url': 'http://4.bp.blogspot.com/-wumnC-FeJN0/U87Ng9BAWEI/AAAAAAAAC6I/07HkbDi3V9c/s1600/Logo+Bundesliga.png',
+        'buttons': [{
+            'type': 'postback',
+            'title': 'เลือก',
+            'payload': 'bundesligaTomorrowselected'
+            }]
+        }, {
+        'title': 'Serie A',
+        'subtitle': 'Italy',
+        'image_url': 'http://2.bp.blogspot.com/-3En8qZGQ2AE/U_YVLBoL0jI/AAAAAAAADrk/kpSpfnbTOgw/s1600/Logo%2BSerie-A%2BItaly.png',
+        'buttons': [{
+            'type': 'postback',
+            'title': 'เลือก',
+            'payload': 'serieaTomorrowselected'
+            }]
+        }, {
+        'title': 'Ligue 1',
+        'subtitle': 'France',
+        'image_url': 'http://www.calcioefinanza.it/wp-content/uploads/2015/04/Ligue-13.jpg',
+        'buttons': [{
+            'type': 'postback',
+            'title': 'เลือก',
+            'payload': 'ligue1Tomorrowselected'
+            }]
+        }, {
+        'title': 'Premier League Thailand',
+        'subtitle': 'Thai',
+        'image_url': 'http://www.teamthailand.in.th/wp-content/uploads/2016/03/Premier-League-Thailand-1-696x464.png',
+        'buttons': [{
+            'type': 'postback',
+            'title': 'เลือก',
+            'payload': 'thaileagueTomorrowselected'
             }]
         }]
       }
