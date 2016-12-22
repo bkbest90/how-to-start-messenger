@@ -2854,10 +2854,10 @@ function bundesligaToday(sender){
            var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
               doSetTimeout(i,dateapi,newdate);
   }
-            function doSetTimeout(i,dateapi,newdate) {
+            function doSetTimeout(i,dateapi,newdate,date) {
               console.log(dateapi);
              setTimeout(function() {
-                console.log(newdate+" now - api "+dateapi);
+                console.log(newdate+" now - api "+date);
      if (dateapi === newdate) {
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
