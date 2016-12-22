@@ -6753,7 +6753,7 @@ function sendButtonMessage(sender){
         type: "template",
         payload: {
           template_type: "button",
-          text : "",
+      
             buttons: [{
               type: "postback",
               title: "บอลวันนี้",
