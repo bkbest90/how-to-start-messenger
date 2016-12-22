@@ -6736,8 +6736,8 @@ function sendGenericMessage(sender) {
         }]
       }
     }
-  }
-  callSendAPI(messageData)
+  };
+  callSendAPI(messageData);
 }
 
 function sendButtonMessage(sender){
