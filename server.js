@@ -53,6 +53,7 @@ app.post('/webhook/', function (req, res) {
       }
       if (text === 'asdf') {
         console.log(sender);
+        sendButtonMessage(sender)
 /*
        premierleagueTomorrow(sender)
 
@@ -6886,6 +6887,51 @@ function sendGenericMessage (sender) {
     }
   })
 }
+
+function sendButtonMessage (sender) {
+  let messageData = {
+    'attachment': {
+      'type': 'template',
+      'payload': {
+        'template_type': 'button',
+        'text': "test generic button",
+        'elements': [{
+          'title': 'Premier league',
+          'subtitle': 'England',
+          'buttons':[{
+          'type': "web_url",
+          'url': "https://www.oculus.com/en-us/rift/",
+          'title': "Open Web URL"
+        }, {
+          'type': "postback",
+          'title': "Trigger Postback",
+          'payload': "DEVELOPER_DEFINED_PAYLOAD"
+        }, {
+          'type': "phone_number",
+          'title': "Call Phone Number",
+          'payload': "0904385216"
+     }]
+        }]
+      }
+    }
+    }
+    request({
+    url: 'https://graph.facebook.com/v2.6/me/messages',
+    qs: {access_token: token},
+    method: 'POST',
+    json: {
+      recipient: {id: sender},
+      message: messageData
+    }
+  }, function (error, response, body) {
+    if (error) {
+      console.log('Error sending messages: ', error)
+    } else if (response.body.error) {
+      console.log('Error: ', response.body.error)
+    }
+  })
+}
+
 
 /*
 function premierleagueteam2(sender){
