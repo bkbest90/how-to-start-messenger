@@ -53,7 +53,7 @@ app.post('/webhook/', function (req, res) {
       }
       if (text === 'asd') {
 
-        bundesligaToday(sender)
+        sendButtonMessage(recipientId, messageText)
 
       }
     }
@@ -64,7 +64,7 @@ app.post('/webhook/', function (req, res) {
            sendButtonMessage(recipientId, messageText)
       }
       if (payloadtext === 'USER_DEFINED_PAYLOAD') {
-         sendButtonMessage(recipientId, messageText)
+
          setTimeout(function () {
         sendGenericMessage (sender)
        }, 10);
