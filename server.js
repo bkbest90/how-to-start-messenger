@@ -2793,6 +2793,7 @@ function bundesligaToday(sender){
   }
     function callback (error, response, body) {
        if (!error && response.statusCode === 200) {
+         sendTextMessage(sender,'กรุณารอสักครู่.....')
           var dateObj = new Date();
           var month = dateObj.getUTCMonth() + 1; //months from 1-12
           var day = dateObj.getUTCDate();
