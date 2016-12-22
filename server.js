@@ -2814,6 +2814,7 @@ function bundesligaToday(sender){
               doSetTimeout(i,dateapi,newdate);
   }
             function doSetTimeout(i,dateapi,newdate) {
+              console.log(dateapi);
              setTimeout(function() {
      if (dateapi === newdate) {
              if (JSON.parse(body)[i].outcome !== null) {
