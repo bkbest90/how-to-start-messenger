@@ -2427,6 +2427,7 @@ function premierleagueTomorrow(sender){
   }
             function doSetTimeout(i,dateapi,newdate) {
              setTimeout(function() {
+
           if (dateapi === newdate) {
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
@@ -2856,6 +2857,7 @@ function bundesligaToday(sender){
             function doSetTimeout(i,dateapi,newdate) {
               console.log(dateapi);
              setTimeout(function() {
+                console.log(newdate+" now - api "+dateapi);
      if (dateapi === newdate) {
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
