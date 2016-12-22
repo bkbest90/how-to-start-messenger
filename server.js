@@ -6736,7 +6736,7 @@ function sendGenericMessage(sender) {
         }]
       }
     }
-  };
+  }
   callSendAPI(messageData);
 }
 
