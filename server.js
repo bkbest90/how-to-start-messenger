@@ -2717,10 +2717,6 @@ function premierleagueToday(sender){
        if (!error && response.statusCode === 200) {
          sendTextMessage(sender,'กรุณารอสักครู่....')
           var dateObj = new Date();
-          var month = dateObj.getUTCMonth() + 1; //months from 1-12
-          var day = dateObj.getUTCDate();
-          var year = dateObj.getUTCFullYear();
-          var newdate = year + "/" + month + "/" + day;
           var matchCount=0;
          for (var i = 0; i < JSON.parse(body).length; i++) {
            let time = JSON.stringify(JSON.parse(body)[i].start)
@@ -2729,21 +2725,12 @@ function premierleagueToday(sender){
            var realdate = new Date(num);
            realdate.setHours(realdate.getHours() +7);
            var date = new Date(realdate).toUTCString();
-           var cdate = new Date(realdate);
 
-           var monthapi = cdate.getUTCMonth()+1; //months from 1-12
-           var dayapi = cdate.getUTCDate();
-           var yearapi = cdate.getUTCFullYear();
-           var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-           console.log(dateObj+" now - api "+realdate);
-            doSetTimeout(i,dateapi,newdate,date);
-
-
+            doSetTimeout(i,dateObj,realdate,date);
   }
-
-            function doSetTimeout(i,dateapi,newdate,date) {
+            function doSetTimeout(i,dateObj,realdate,date) {
              setTimeout(function() {
-     if (dateapi === newdate) {
+     if (dateObj === realdate) {
              matchCount++;
              if (JSON.parse(body)[i].outcome !== null) {
                  sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
@@ -2757,7 +2744,7 @@ function premierleagueToday(sender){
          if (i==(JSON.parse(body).length-1) && matchCount == 0){
            sendTextMessage(sender, 'วันนี้ '+JSON.parse(body)[0].competition.name+' ไม่มีการแข่งขัน...')
          }
-       }, i*500);
+       }, i*150);
 
                           }
                  }
@@ -2778,10 +2765,6 @@ function laligaToday(sender){
        if (!error && response.statusCode === 200) {
          sendTextMessage(sender,'กรุณารอสักครู่....')
           var dateObj = new Date();
-          var month = dateObj.getUTCMonth() + 1; //months from 1-12
-          var day = dateObj.getUTCDate();
-          var year = dateObj.getUTCFullYear();
-          var newdate = year + "/" + month + "/" + day;
           var matchCount=0;
          for (var i = 0; i < JSON.parse(body).length; i++) {
            let time = JSON.stringify(JSON.parse(body)[i].start)
@@ -2790,18 +2773,12 @@ function laligaToday(sender){
            var realdate = new Date(num);
            realdate.setHours(realdate.getHours() +7);
            var date = new Date(realdate).toUTCString();
-           var cdate = new Date(realdate);
 
-           var monthapi = cdate.getUTCMonth()+1; //months from 1-12
-           var dayapi = cdate.getUTCDate();
-           var yearapi = cdate.getUTCFullYear();
-           var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-            doSetTimeout(i,dateapi,newdate,date);
-
+            doSetTimeout(i,dateObj,realdate,date);
   }
-            function doSetTimeout(i,dateapi,newdate,date) {
+            function doSetTimeout(i,dateObj,realdate,date) {
              setTimeout(function() {
-     if (dateapi === newdate) {
+     if (dateObj === realdate) {
        matchCount++;
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
@@ -2815,7 +2792,7 @@ function laligaToday(sender){
          if (i==(JSON.parse(body).length-1) && matchCount == 0){
            sendTextMessage(sender, 'วันนี้ '+JSON.parse(body)[0].competition.name+' ไม่มีการแข่งขัน...')
          }
-       }, i*500);
+       }, i*150);
                           }
                  }
             }
@@ -2833,10 +2810,6 @@ function bundesligaToday(sender){
        if (!error && response.statusCode === 200) {
          sendTextMessage(sender,'กรุณารอสักครู่....')
           var dateObj = new Date();
-          var month = dateObj.getUTCMonth() + 1; //months from 1-12
-          var day = dateObj.getUTCDate();
-          var year = dateObj.getUTCFullYear();
-          var newdate = year + "/" + month + "/" + day;
           var matchCount = 0;
          for (var i = 0; i < JSON.parse(body).length; i++) {
            let time = JSON.stringify(JSON.parse(body)[i].start)
@@ -2845,20 +2818,15 @@ function bundesligaToday(sender){
            var realdate = new Date(num);
            realdate.setHours(realdate.getHours() +7);
            var date = new Date(realdate).toUTCString();
-           var cdate = new Date(realdate);
 
-           var monthapi = cdate.getUTCMonth()+1; //months from 1-12
-           var dayapi = cdate.getUTCDate();
-           var yearapi = cdate.getUTCFullYear();
-           var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-              doSetTimeout(i,dateapi,newdate,date);
+              doSetTimeout(i,dateObj,realdate,date);
               if (i==(JSON.parse(body).length-1) && matchCount == 0){
                 sendTextMessage(sender, 'วันนี้ '+JSON.parse(body)[0].competition.name+' ไม่มีการแข่งขัน...')
               }
   }
-            function doSetTimeout(i,dateapi,newdate,date) {
+            function doSetTimeout(i,dateObj,realdate,date) {
              setTimeout(function() {
-     if (dateapi === newdate) {
+     if (dateObj === realdate) {
            matchCount++;
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
@@ -2872,7 +2840,7 @@ function bundesligaToday(sender){
          if (i==(JSON.parse(body).length-1) && matchCount == 0){
            sendTextMessage(sender, 'วันนี้ '+JSON.parse(body)[0].competition.name+' ไม่มีการแข่งขัน...')
          }
-       }, i*500);
+       }, i*150);
                           }
                  }
             }
@@ -2910,12 +2878,12 @@ function serieaToday(sender){
            var dayapi = cdate.getUTCDate();
            var yearapi = cdate.getUTCFullYear();
            var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-            doSetTimeout(i,dateapi,newdate,date);
+            doSetTimeout(i,dateObj,realdate,date);
 
   }
-            function doSetTimeout(i,dateapi,newdate,date) {
+            function doSetTimeout(i,dateObj,realdate,date) {
              setTimeout(function() {
-     if (dateapi === newdate) {
+     if (dateObj === realdate) {
        matchCount++;
        console.log("matchCount != 0");
              if (JSON.parse(body)[i].outcome !== null) {
@@ -2930,7 +2898,7 @@ function serieaToday(sender){
          if (i==(JSON.parse(body).length-1) && matchCount == 0){
            sendTextMessage(sender, 'วันนี้ '+JSON.parse(body)[0].competition.name+' ไม่มีการแข่งขัน...')
          }
-       }, i*500);
+       }, i*150);
                           }
                  }
             }
@@ -2948,10 +2916,6 @@ function ligue1Today(sender){
        if (!error && response.statusCode === 200) {
          sendTextMessage(sender,'กรุณารอสักครู่....')
           var dateObj = new Date();
-          var month = dateObj.getUTCMonth() + 1; //months from 1-12
-          var day = dateObj.getUTCDate();
-          var year = dateObj.getUTCFullYear();
-          var newdate = year + "/" + month + "/" + day;
           var matchCount =0;
          for (var i = 0; i < JSON.parse(body).length; i++) {
            let time = JSON.stringify(JSON.parse(body)[i].start)
@@ -2960,18 +2924,12 @@ function ligue1Today(sender){
            var realdate = new Date(num);
            realdate.setHours(realdate.getHours() +7);
            var date = new Date(realdate).toUTCString();
-           var cdate = new Date(realdate);
 
-           var monthapi = cdate.getUTCMonth()+1; //months from 1-12
-           var dayapi = cdate.getUTCDate();
-           var yearapi = cdate.getUTCFullYear();
-           var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-            doSetTimeout(i,dateapi,newdate,date);
-
+            doSetTimeout(i,dateObj,realdate,date);
   }
-            function doSetTimeout(i,dateapi,newdate,date){
+            function doSetTimeout(i,dateObj,realdate,date){
              setTimeout(function() {
-     if (dateapi === newdate) {
+     if (dateObj === realdate) {
        matchCount++;
                  if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
@@ -2985,7 +2943,7 @@ function ligue1Today(sender){
          if (i==(JSON.parse(body).length-1) && matchCount == 0){
            sendTextMessage(sender, 'วันนี้ '+JSON.parse(body)[0].competition.name+' ไม่มีการแข่งขัน...')
          }
-       }, i*500);
+       }, i*150);
                           }
                  }
             }
@@ -3005,10 +2963,6 @@ function thaileagueToday(sender){
        if (!error && response.statusCode === 200) {
          sendTextMessage(sender,'กรุณารอสักครู่....')
           var dateObj = new Date();
-          var month = dateObj.getUTCMonth() + 1; //months from 1-12
-          var day = dateObj.getUTCDate();
-          var year = dateObj.getUTCFullYear();
-          var newdate = year + "/" + month + "/" + day;
           var matchCount =0;
          for (var i = 0; i < JSON.parse(body).length; i++) {
            let time = JSON.stringify(JSON.parse(body)[i].start)
@@ -3017,18 +2971,12 @@ function thaileagueToday(sender){
            var realdate = new Date(num);
            realdate.setHours(realdate.getHours() +7);
            var date = new Date(realdate).toUTCString();
-           var cdate = new Date(realdate);
 
-           var monthapi = cdate.getUTCMonth()+1; //months from 1-12
-           var dayapi = cdate.getUTCDate();
-           var yearapi = cdate.getUTCFullYear();
-           var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-            doSetTimeout(i,dateapi,newdate,date);
-
+            doSetTimeout(i,dateObj,realdate,date);
   }
-            function doSetTimeout(i,dateapi,newdate,date){
+            function doSetTimeout(i,dateObj,realdate,date){
              setTimeout(function() {
-     if (dateapi === newdate) {
+     if (dateObj === realdate) {
            matchCount++;
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
@@ -3042,7 +2990,7 @@ function thaileagueToday(sender){
          if (i==(JSON.parse(body).length-1) && matchCount == 0){
            sendTextMessage(sender, 'วันนี้ '+JSON.parse(body)[0].competition.name+' ไม่มีการแข่งขัน...')
          }
-       }, i*500);
+       }, i*150);
                           }
                  }
             }
