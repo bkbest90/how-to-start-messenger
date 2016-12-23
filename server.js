@@ -2412,10 +2412,8 @@ function premierleagueTomorrow(sender){
     function callback (error, response, body) {
        if (!error && response.statusCode === 200) {
          var dateObj = new Date();
-         var month = dateObj.getUTCMonth() + 1; //months from 1-12
-         var day = dateObj.getUTCDate();
-         var year = dateObj.getUTCFullYear();
-         var newdate = year + "/" + month + "/" + day;
+         dateObj.setHours(dateObj.getHours() +24);
+         var date = new Date(dateObj);
          for (var i = 0; i < JSON.parse(body).length; i++) {
            let time = JSON.stringify(JSON.parse(body)[i].start)
            var str = time;
@@ -2423,12 +2421,7 @@ function premierleagueTomorrow(sender){
            var realdate = new Date(num);
            realdate.setHours(realdate.getHours() +7);
            var date = new Date(realdate).toUTCString();
-           var cdate = new Date(realdate);
 
-           var monthapi = cdate.getUTCMonth()+1; //months from 1-12
-           var dayapi = cdate.getUTCDate();
-           var yearapi = cdate.getUTCFullYear();
-           var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
             doSetTimeout(i,dateapi,newdate,date);
   }
             function doSetTimeout(i,dateapi,newdate,date) {
@@ -2904,7 +2897,7 @@ function serieaToday(sender){
          if (i==(JSON.parse(body).length-1) && matchCount == 0){
            sendTextMessage(sender, 'วันนี้ '+JSON.parse(body)[0].competition.name+' ไม่มีการแข่งขัน...')
          }
-       }, i*150);
+       }, i*500);
                           }
                  }
             }
