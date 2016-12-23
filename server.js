@@ -2813,9 +2813,6 @@ function laligaToday(sender){
                      }
          }
        }, i*500);
-       if (matchCount == 0){
-         sendTextMessage(sender, 'วันนี้ '+JSON.parse(body)[0].competition.name+' ไม่มีการแข่งขัน...')
-       }
                           }
                  }
             }
@@ -2872,9 +2869,6 @@ function bundesligaToday(sender){
 
          }
        }, i*500);
-       if (matchCount == 0){
-         sendTextMessage(sender, 'วันนี้ '+JSON.parse(body)[0].competition.name+' ไม่มีการแข่งขัน...')
-       }
                           }
                  }
             }
@@ -2920,7 +2914,7 @@ function serieaToday(sender){
              setTimeout(function() {
      if (dateapi === newdate) {
        matchCount++;
-       console.log('matchCount != 0');
+       console.log("matchCount != 0");
              if (JSON.parse(body)[i].outcome !== null) {
                sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
                 +JSON.parse(body)[i].awayGoals+"\n"+JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
@@ -2931,9 +2925,6 @@ function serieaToday(sender){
                      }
          }
        }, i*500);
-       if (matchCount == 0){
-         sendTextMessage(sender, 'วันนี้ '+JSON.parse(body)[0].competition.name+' ไม่มีการแข่งขัน...')
-       }
                           }
                  }
             }
@@ -2989,9 +2980,6 @@ function ligue1Today(sender){
 
          }
        }, i*500);
-       if (matchCount == 0){
-         sendTextMessage(sender, 'วันนี้ '+JSON.parse(body)[0].competition.name+' ไม่มีการแข่งขัน...')
-       }
                           }
                  }
             }
@@ -3047,9 +3035,6 @@ function thaileagueToday(sender){
                      }
          }
        }, i*500);
-       if (matchCount == 0){
-         sendTextMessage(sender, 'วันนี้ '+JSON.parse(body)[0].competition.name+' ไม่มีการแข่งขัน...')
-       }
                           }
                  }
             }
