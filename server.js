@@ -2735,7 +2735,7 @@ function premierleagueToday(sender){
            var dayapi = cdate.getUTCDate();
            var yearapi = cdate.getUTCFullYear();
            var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
-           console.log((JSON.parse(body).length-1));
+           console.log(dateObj" now - api "realdate);
             doSetTimeout(i,dateapi,newdate,date);
 
 
