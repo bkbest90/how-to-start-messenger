@@ -2735,7 +2735,9 @@ function premierleagueToday(sender){
            var yearapi = cdate.getUTCFullYear();
            var dateapi = yearapi + "/" + monthapi + "/" + dayapi;
             doSetTimeout(i,dateapi,newdate,date);
+
   }
+
             function doSetTimeout(i,dateapi,newdate,date) {
              setTimeout(function() {
      if (dateapi === newdate) {
@@ -2748,13 +2750,12 @@ function premierleagueToday(sender){
               sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\nvs\n"
                   +JSON.parse(body)[i].awayTeam.name +"\nวันเวลาที่แข่ง\n"+ date +" +7"  )
                      }
-
-
+                     if (i==(JSON.parse(body).length-1) && matchCount == 0){
+                       sendTextMessage(sender, 'วันนี้ '+JSON.parse(body)[0].competition.name+' ไม่มีการแข่งขัน...')
+                     }
          }
        }, i*500);
-       if (matchCount == 0){
-         sendTextMessage(sender, 'วันนี้ '+JSON.parse(body)[0].competition.name+' ไม่มีการแข่งขัน...')
-       }
+
                           }
                  }
             }
