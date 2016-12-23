@@ -2715,6 +2715,7 @@ function premierleagueToday(sender){
   }
     function callback (error, response, body) {
        if (!error && response.statusCode === 200) {
+         sendTextMessage(sender,'กรุณารอสักครู่....')
           var dateObj = new Date();
           var month = dateObj.getUTCMonth() + 1; //months from 1-12
           var day = dateObj.getUTCDate();
@@ -2775,6 +2776,7 @@ function laligaToday(sender){
   }
     function callback (error, response, body) {
        if (!error && response.statusCode === 200) {
+         sendTextMessage(sender,'กรุณารอสักครู่....')
           var dateObj = new Date();
           var month = dateObj.getUTCMonth() + 1; //months from 1-12
           var day = dateObj.getUTCDate();
@@ -2828,7 +2830,7 @@ function bundesligaToday(sender){
   }
     function callback (error, response, body) {
        if (!error && response.statusCode === 200) {
-         sendTextMessage(sender,'กรุณารอสักครู่.....')
+         sendTextMessage(sender,'กรุณารอสักครู่....')
           var dateObj = new Date();
           var month = dateObj.getUTCMonth() + 1; //months from 1-12
           var day = dateObj.getUTCDate();
@@ -2886,6 +2888,7 @@ function serieaToday(sender){
   }
     function callback (error, response, body) {
        if (!error && response.statusCode === 200) {
+         sendTextMessage(sender,'กรุณารอสักครู่....')
           var dateObj = new Date();
           var month = dateObj.getUTCMonth() + 1; //months from 1-12
           var day = dateObj.getUTCDate();
@@ -2940,6 +2943,7 @@ function ligue1Today(sender){
   }
     function callback (error, response, body) {
        if (!error && response.statusCode === 200) {
+         sendTextMessage(sender,'กรุณารอสักครู่....')
           var dateObj = new Date();
           var month = dateObj.getUTCMonth() + 1; //months from 1-12
           var day = dateObj.getUTCDate();
@@ -2997,6 +3001,7 @@ function thaileagueToday(sender){
   }
     function callback (error, response, body) {
        if (!error && response.statusCode === 200) {
+         sendTextMessage(sender,'กรุณารอสักครู่....')
           var dateObj = new Date();
           var month = dateObj.getUTCMonth() + 1; //months from 1-12
           var day = dateObj.getUTCDate();
