@@ -94,21 +94,27 @@ app.post('/webhook/', function (req, res) {
       }
      //today
       if (payloadtext==='premierleagueTodayselected') {
+         sendTextMessage(sender,'กรุณารอสักครู่....')
           premierleagueToday(sender)
       }
       if (payloadtext==='laligaTodayselected') {
+        sendTextMessage(sender,'กรุณารอสักครู่....')
           laligaToday(sender)
       }
       if (payloadtext==='bundesligaTodayselected') {
+        sendTextMessage(sender,'กรุณารอสักครู่....')
           bundesligaToday(sender)
       }
       if (payloadtext==='serieaTodayselected') {
+        sendTextMessage(sender,'กรุณารอสักครู่....')
           serieaToday(sender)
       }
       if (payloadtext==='ligue1Todayselected') {
+        sendTextMessage(sender,'กรุณารอสักครู่....')
           ligue1Today(sender)
       }
       if (payloadtext==='thaileagueTodayselected') {
+        sendTextMessage(sender,'กรุณารอสักครู่....')
           thaileagueToday(sender)
       }
      //table
@@ -2715,7 +2721,7 @@ function premierleagueToday(sender){
   }
     function callback (error, response, body) {
        if (!error && response.statusCode === 200) {
-         sendTextMessage(sender,'กรุณารอสักครู่....')
+
           var dateObj = new Date();
           var matchCount=0;
          for (var i = 0; i < JSON.parse(body).length; i++) {
@@ -2763,7 +2769,7 @@ function laligaToday(sender){
   }
     function callback (error, response, body) {
        if (!error && response.statusCode === 200) {
-         sendTextMessage(sender,'กรุณารอสักครู่....')
+
           var dateObj = new Date();
           var matchCount=0;
          for (var i = 0; i < JSON.parse(body).length; i++) {
@@ -2808,7 +2814,7 @@ function bundesligaToday(sender){
   }
     function callback (error, response, body) {
        if (!error && response.statusCode === 200) {
-         sendTextMessage(sender,'กรุณารอสักครู่....')
+
           var dateObj = new Date();
           var matchCount = 0;
          for (var i = 0; i < JSON.parse(body).length; i++) {
@@ -2858,7 +2864,7 @@ function serieaToday(sender){
   }
     function callback (error, response, body) {
        if (!error && response.statusCode === 200) {
-         sendTextMessage(sender,'กรุณารอสักครู่....')
+
           var dateObj = new Date();
           var month = dateObj.getUTCMonth() + 1; //months from 1-12
           var day = dateObj.getUTCDate();
@@ -2914,7 +2920,7 @@ function ligue1Today(sender){
   }
     function callback (error, response, body) {
        if (!error && response.statusCode === 200) {
-         sendTextMessage(sender,'กรุณารอสักครู่....')
+
           var dateObj = new Date();
           var matchCount =0;
          for (var i = 0; i < JSON.parse(body).length; i++) {
@@ -2961,7 +2967,7 @@ function thaileagueToday(sender){
   }
     function callback (error, response, body) {
        if (!error && response.statusCode === 200) {
-         sendTextMessage(sender,'กรุณารอสักครู่....')
+
           var dateObj = new Date();
           var matchCount =0;
          for (var i = 0; i < JSON.parse(body).length; i++) {
