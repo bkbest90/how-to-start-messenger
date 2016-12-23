@@ -2745,7 +2745,7 @@ function premierleagueToday(sender){
             function doSetTimeout(i,dateapi,newdate,date) {
              setTimeout(function() {
      if (dateapi === newdate) {
-             matchCount+=1;
+             matchCount++;
              console.log('matchCount != 0');
              if (JSON.parse(body)[i].outcome !== null) {
                  sendTextMessage(sender, JSON.parse(body)[i].homeTeam.name +"\n" +JSON.parse(body)[i].homeGoals +" - "
